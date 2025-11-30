@@ -81,17 +81,22 @@ class _LoginScreenState extends State<LoginScreen> {
                       Gap(20),
                       CustomTextFormField(
                         hint: "Enter Your Password",
-                        suffixIcon: Icon(Icons.person),
+                        suffixIcon: const Icon(Icons.person),
                         keyboardType: TextInputType.visiblePassword,
                         controller: password ,
                         filled: true,
                         borderColor: AppColors.whiteBackground,
 
                       ),
-                      Text("Forget Password",
-                        style: StyleApp.font18WhiteMedium.copyWith(
-                            fontSize: 13,color: AppColors.blackSecondary),),
-                      Gap(60),
+                      const Gap(10),
+                      Container(
+                        alignment: Alignment.centerRight,
+                        child: Text("Forget Password",
+                          style: StyleApp.font18WhiteMedium.copyWith(
+                              fontSize: 13,color: AppColors.blackSecondary),
+                         ),),
+
+                      const Gap(60),
                       CustomButton(
                           onTap: () => Navigator.of(context).pushNamed(
                             Routers.HomePage,)

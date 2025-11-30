@@ -1,4 +1,6 @@
 
+import 'package:diagnosis_project/Core/Routing/routes.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -125,7 +127,11 @@ class _RegisterScreen extends State<RegisterScreen> {
                         borderColor: AppColors.whiteBackground,
 
                       ),
-                      Gap(10),
+                      Gap(43),
+                      CustomButton(
+                          onTap: () => Navigator.of(context).pushNamed(
+                               Routers.HomePage,)
+                          , text: "Sign Up"),
                     ],
                   ),
 

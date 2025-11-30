@@ -1,8 +1,12 @@
 
+import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_button.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_text_form_field.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
+import '../../../../Core/Routing/routes.dart';
+import '../../../../Core/Theme App/Fonts.dart';
 import '../../../../core/Theme App/colors.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -20,7 +24,7 @@ class _LoginScreenState extends State<LoginScreen> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/doctor.png',
+              'assets/image/doctor.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -84,6 +88,14 @@ class _LoginScreenState extends State<LoginScreen> {
                         borderColor: AppColors.whiteBackground,
 
                       ),
+                      Text("Forget Password",
+                        style: StyleApp.font18WhiteMedium.copyWith(
+                            fontSize: 13,color: AppColors.blackSecondary),),
+                      Gap(60),
+                      CustomButton(
+                          onTap: () => Navigator.of(context).pushNamed(
+                            Routers.HomePage,)
+                          , text: "Sign Up"),
                     ],
                   ),
 

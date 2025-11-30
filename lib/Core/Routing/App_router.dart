@@ -2,8 +2,9 @@
 import 'package:diagnosis_project/Core/Routing/routes.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Auth/HomePage.dart';
-import '../../Feature/Auth/Login Screen/login_screen.dart';
-import '../../Feature/Auth/Register Screen/register_screen.dart';
+import '../../Feature/Auth/Presention/Login Screen/login_screen.dart';
+import '../../Feature/Auth/Presention/Register Screen/register_screen.dart';
+
 
 
 class AppRouter {

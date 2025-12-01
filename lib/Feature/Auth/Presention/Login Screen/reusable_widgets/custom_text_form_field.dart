@@ -1,3 +1,4 @@
+import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:flutter/material.dart';
 
 import '../../../../../Core/Theme App/colors.dart';
@@ -22,7 +23,7 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.controller,
     this.keyboardType,
-    this.validator, required bool filled,
+    this.validator, required bool filled,  required bool obscureText,
   });
 
   @override
@@ -60,12 +61,8 @@ class CustomTextFormField extends StatelessWidget {
             color: borderColor ?? AppColors.BluePrimary,
           ),
         ),
-        prefixIcon: Icon(Icons.lock),
       ),
-      style: TextStyle(
-          color: AppColors.blackSecondary,
-          fontSize: 20,
-          fontWeight: FontWeight.w500),
+      style:StyleApp.font15GrayRegular,
       onTap: onTap,
       onChanged: onChanged,
       controller: controller,

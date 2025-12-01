@@ -42,11 +42,11 @@ class StyleApp{
   // color: AppColor.gray,
   // );
   //
-  // static TextStyle font12GrayRegular = TextStyle(
-  // fontSize: 12.sp,
-  // fontWeight: Fonts.regular,
-  // color: AppColor.gray,
-  // );
+  static TextStyle font15GrayRegular = TextStyle(
+  fontSize: 15.sp,
+  fontWeight:FontWeight.w400,
+  color: AppColors.gray,
+  );
 
   // static TextStyle font12GrayMedium = TextStyle(
   // fontSize: 12.sp,
@@ -60,6 +60,12 @@ class StyleApp{
   fontSize: 12.sp,
   fontWeight: Fonts.regular,
   color: AppColors.BluePrimary,
+  );
+
+  static TextStyle font16BlackRegular = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.BluePrimary,
   );
 
   static TextStyle font13BlueRegular = TextStyle(

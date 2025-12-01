@@ -2,6 +2,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_button.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_text_form_field.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Register%20Screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -15,6 +16,7 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  final formKey = GlobalKey<FormState>();
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   @override
@@ -42,8 +44,7 @@ class _LoginScreenState extends State<LoginScreen> {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Logo and Text Row
-                  Row(
+                  const Row(
                     children: [
                       CircleAvatar(
                         radius: 20,
@@ -70,37 +71,70 @@ class _LoginScreenState extends State<LoginScreen> {
                   Column(
                     children: [
                       CustomTextFormField(
-                        hint: "Enter Your e-mail or Phone number",
-                        suffixIcon: Icon(Icons.person),
+                        hint: "Enter Your e-mail ",
                         keyboardType: TextInputType.emailAddress,
+
                         controller: email,
                         filled: true,
+                        obscureText: false,
+                        validator: (value) {
+                          if((value == null || value.isEmpty)){
+                            return "Please enter Your e-mail";
+                          }if(!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)){
+                            return 'please enter email like *****@gmail.com';
+                          }
+                          return null;
+                        },
+
                         borderColor: AppColors.whiteBackground,
 
                       ),
-                      Gap(20),
+                      const Gap(20),
                       CustomTextFormField(
                         hint: "Enter Your Password",
                         suffixIcon: const Icon(Icons.person),
                         keyboardType: TextInputType.visiblePassword,
                         controller: password ,
+                        validator: (value) {
+                          if((value == null || value.isEmpty)){
+                            return "Please enter Your Password";
+                          }if(value.length > 8){
+                            return "please enter 8 numbers";
+                          }
+                          return null;
+                        },
                         filled: true,
-                        borderColor: AppColors.whiteBackground,
+                        obscureText: true,
+
+                        // borderColor: AppColors.whiteBackground,
 
                       ),
                       const Gap(10),
-                      Container(
-                        alignment: Alignment.centerRight,
-                        child: Text("Forget Password",
-                          style: StyleApp.font18WhiteMedium.copyWith(
-                              fontSize: 13,color: AppColors.blackSecondary),
-                         ),),
+                     TextButton(
+                         onPressed: () =>
+                             Navigator.of(context).pushReplacement(Routers.ResetPassword as Route<Object?>),
+                         child: Text("Forget your Password"
+                         ,style: StyleApp.font16BlackRegular.copyWith(
+                               decoration: TextDecoration.underline),)),
 
                       const Gap(60),
                       CustomButton(
-                          onTap: () => Navigator.of(context).pushNamed(
-                            Routers.HomePage,)
-                          , text: "Sign Up"),
+                        onTap: () {
+                          if (formKey.currentState!.validate()) {
+                            Navigator.of(context).pushNamed(Routers.HomePage);
+                          }
+                        },
+                        text: "Sign In",
+                      ),
+                      const Gap(8),
+                      TextButton(
+                          onPressed: () => Navigator.pushReplacementNamed(
+                            context,
+                            Routers.RegisterScreen),
+
+                          child: Text("Didn't Have an Account?"
+                            ,style: StyleApp.font16BlackRegular.copyWith(
+                                decoration: TextDecoration.underline),)),
                     ],
                   ),
 

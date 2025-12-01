@@ -1,24 +1,28 @@
-
 import 'package:diagnosis_project/Core/Routing/routes.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-
 import '../../../../core/Theme App/colors.dart';
 import '../Login Screen/reusable_widgets/custom_text_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
+
+  const RegisterScreen({Key? key, }) : super(key: key);
+
+
   @override
-  State<RegisterScreen> createState() => _RegisterScreen();
+  State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisterScreen extends State<RegisterScreen> {
+class _RegisterScreenState extends State<RegisterScreen>{
+  final formKey = GlobalKey<FormState>();
+
   TextEditingController email = TextEditingController();
   TextEditingController password = TextEditingController();
   TextEditingController firstName = TextEditingController();
   TextEditingController lastName = TextEditingController();
-  TextEditingController phone = TextEditingController();
-  TextEditingController confirmPassword = TextEditingController();
+  String? selectedGender;
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +31,7 @@ class _RegisterScreen extends State<RegisterScreen> {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/doctor.png',
+              'assets/image/doctor.png',
               fit: BoxFit.cover,
             ),
           ),
@@ -38,15 +42,13 @@ class _RegisterScreen extends State<RegisterScreen> {
             ),
           ),
 
-          // Content
           SafeArea(
             child: Padding(
               padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  // Logo and Text Row
-                  Row(
+                  const Row(
                     children: [
                       CircleAvatar(
                         radius: 20,
@@ -56,7 +58,7 @@ class _RegisterScreen extends State<RegisterScreen> {
                           color: Colors.blue,
                         ),
                       ),
-                      SizedBox(width: 8),
+                      Gap(8),
                       Text(
                         'Diagnosis',
                         style: TextStyle(
@@ -68,73 +70,172 @@ class _RegisterScreen extends State<RegisterScreen> {
                     ],
                   ),
 
-                  Spacer(),
+                  const Gap(40),
 
-                  Column(
-                    children: [
-                      CustomTextFormField(
-                        hint: "First Name",
-                        keyboardType: TextInputType.name,
-                        controller: firstName,
-                        filled: true,
+                  Expanded(
+                    child: SingleChildScrollView(
+                      child: Container(
+                        padding: const EdgeInsets.all(20),
+                        child: Form(
+                          key: formKey,
+                          child: Column(
+                            children: [
+                              CustomTextFormField(
+                                hint: "First Name",
+                                keyboardType: TextInputType.name,
+                                controller: firstName,
+                                filled: true,
+                                validator: (value) {
+                                  if(value == null || value.isEmpty){
+                                    return "Please enter Your FirstName";
+                                  }
+                                  return null;
+                                },
+                                borderColor: AppColors.whiteBackground,
+                                obscureText: false,
+                          
+                              ),
+                              const Gap(20),
+                              CustomTextFormField(
+                                hint: "Last Name",
+                                keyboardType: TextInputType.name,
+                                controller: lastName,
+                                validator: (value) {
+                                  if(value == null || value.isEmpty){
+                                    return "Please enter Your LastName";
+                                  }
+                                  return null;
+                                },
+                                filled: true,
+                                borderColor: AppColors.whiteBackground,
+                                obscureText: false,
+                              ),
+                              const Gap(20),
+                              CustomTextFormField(
+                                hint: "Enter Your e-mail ",
+                                suffixIcon: const Icon(Icons.person),
+                                keyboardType: TextInputType.emailAddress,
+                                controller: email,
+                                validator: (value) {
+                                  if(value == null || value.isEmpty){
+                                    return "Please enter Your e-mail";
+                                  }
+                                  return null;
+                                },
+                                borderColor: AppColors.whiteBackground,
+                                filled: true,
+                                obscureText: false,
+                              ),
+                              const Gap(20),
+                              CustomTextFormField(
+                                hint: "Enter Your Password",
+                                suffixIcon: const Icon(Icons.person),
+                                keyboardType: TextInputType.visiblePassword,
+                                controller: password ,
+                                validator: (value) {
+                                  if(value!.isEmpty || value == null){
+                                    return "Please enter Your Password";
+                                  }if(value.length > 8){
+                                    return "please enter 8 numbers";
+                                  }
+                                  return null;
+                                },
+                                filled: true,
+                                obscureText: true,
+                          
+                                borderColor: AppColors.whiteBackground,
+                          
+                              ),
+                              const Gap(20),
+                              Container(
+                                alignment: Alignment.centerLeft,
+                                child: const Text(
+                                  'Gender',
+                                  style: TextStyle(
+                                    fontWeight: FontWeight.bold,
+                                    fontSize: 16,
+                                    color: AppColors.whiteBackground
+                                  ),
+                                ),
+                              ),
+                              const Gap(10),
+                              Row(
+                                children: [
+                                  Expanded(
+                                    child: RadioListTile<String>(
+                                      title: const Text('Male',
+                                          style: TextStyle(color: AppColors.whiteBackground)
+                                      ),
+                                      value: 'Male',
+                                      groupValue: selectedGender,
+                          
+                                   activeColor: AppColors.whiteBackground,
+                                    fillColor:  WidgetStateProperty.resolveWith((states) {
+                                      if (states.contains(WidgetState.selected)) {
+                                       return Colors.green;
+                                          }
+                                       return Colors.grey;
+                                  }),
+                                    onChanged: (value) {
+                                     setState(() {
+                                  selectedGender = value;
+                                });
+                                 },
+                               ),
+                                    ),
+                                  Expanded(
+                                    child: RadioListTile<String>(
+                                      title:  Text('Female',
+                                        textAlign: TextAlign.left,
+                                        style: TextStyle(color: AppColors.whiteBackground,
+                                          fontSize: 18.sp,
+                                          fontWeight: FontWeight.w400
+                          
+                                        ),),
+                                      value: 'Female',
+                                      groupValue: selectedGender,
+                                      activeColor: AppColors.whiteBackground,
+                                      fillColor:  WidgetStateProperty.resolveWith((states) {
+                                   if (states.contains(WidgetState.selected)) {
+                                   return Colors.green;
+                              }
+                                 return Colors.grey;
+                                      }),
+                                      dense: true ,
+                                      contentPadding: EdgeInsets.zero,
+                                      onChanged: (value) {
+                                        setState(() {
+                                          selectedGender = value;
+                                        });
+                                      },
+                                    ),
+                                  ),
+                                ],
+                              ),
+                              const Gap(30),
+                              CustomButton(
+                                onTap: () {
+                                  if (formKey.currentState!.validate()) {
+                                    if (selectedGender == null) {
+                                      ScaffoldMessenger.of(context).showSnackBar(
+                                        const SnackBar(
+                                          content: Text("Please select your gender"),
+                                        ),
+                                      );
+                                      return;
+                                    }
+                                    Navigator.of(context).pushNamed(Routers.HomePage);
+                                  }
+                                },
+                                text: "Sign Up",
+                              ),
 
-                        borderColor: AppColors.whiteBackground,
-
+                            ],
+                          ),
+                        ),
                       ),
-                      Gap(20),
-                      CustomTextFormField(
-                        hint: "Last Name",
-                        keyboardType: TextInputType.name,
-                        controller: lastName ,
-
-                        filled: true,
-                        borderColor: AppColors.whiteBackground,
-
-                      ),
-                      Gap(10),
-                      CustomTextFormField(
-                        hint: "Enter Your e-mail or Phone number",
-                        suffixIcon: Icon(Icons.person),
-                        keyboardType: TextInputType.emailAddress,
-                        controller: email,
-                        borderColor: AppColors.whiteBackground, filled: true,
-
-                      ),
-                      Gap(10),
-                      CustomTextFormField(
-                        hint: "Password",
-                        keyboardType: TextInputType.visiblePassword,
-                        controller: password,
-                        filled: true,
-                        borderColor: AppColors.whiteBackground,
-
-                      ),
-                      Gap(10),
-                      CustomTextFormField(
-                        hint: "Confirm Password",
-                        keyboardType: TextInputType.visiblePassword,
-                        controller: confirmPassword,
-                        filled: true,
-                        borderColor: AppColors.whiteBackground,
-
-                      ),
-                      Gap(10),
-                      CustomTextFormField(
-                        hint: "Phone number",
-                        keyboardType: TextInputType.phone,
-                        controller: phone,
-                        filled: true,
-                        borderColor: AppColors.whiteBackground,
-
-                      ),
-                      Gap(43),
-                      CustomButton(
-                          onTap: () => Navigator.of(context).pushNamed(
-                               Routers.HomePage,)
-                          , text: "Sign Up"),
-                    ],
+                    ),
                   ),
-
                 ],
               ),
             ),

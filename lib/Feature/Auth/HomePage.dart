@@ -12,7 +12,7 @@ class Homepage extends StatelessWidget {
         children: [
           Positioned.fill(
             child: Image.asset(
-              'assets/images/doctor.png',
+              'assets/image/doctor.png',
               fit: BoxFit.cover,
             ),
           ),

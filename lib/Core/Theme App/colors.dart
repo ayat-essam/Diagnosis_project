@@ -7,4 +7,6 @@ class AppColors {
   static const Color RedError = Color(0xffEF4444);
   static const Color OrangeWarning = Color(0xffF59F00);
   static const Color GreenSuccess = Color(0xff00D262);
+  static const Color gray = Color(0xff00000080);
+
 }

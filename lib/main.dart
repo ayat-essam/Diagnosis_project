@@ -3,6 +3,7 @@ import 'package:diagnosis_project/Feature/Auth/Presention/Register%20Screen/regi
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
+import 'Core/Routing/routes.dart';
 import 'Feature/Auth/Presention/Login Screen/login_screen.dart';
 
 void main() {
@@ -24,8 +25,6 @@ class MyApp extends StatelessWidget {
 
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-
-      title: 'Flutter Demo',
 
       home:  child,
     );

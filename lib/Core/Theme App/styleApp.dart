@@ -36,12 +36,12 @@ class StyleApp{
   color: AppColors.whiteBackground,
   );
 
-  // static TextStyle font13GrayRegular = TextStyle(
-  // fontSize: 13.sp,
-  // fontWeight: Fonts.regular,
-  // color: AppColor.gray,
-  // );
-  //
+  static TextStyle font40whiteRegular = TextStyle(
+  fontSize: 40.sp,
+  fontWeight: Fonts.bold,
+  color: AppColors.whiteBackground,
+  );
+
   static TextStyle font15GrayRegular = TextStyle(
   fontSize: 15.sp,
   fontWeight:FontWeight.w400,

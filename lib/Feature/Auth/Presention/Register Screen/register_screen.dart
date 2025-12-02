@@ -3,12 +3,13 @@ import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusabl
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import '../../../../Core/Theme App/styleApp.dart';
 import '../../../../core/Theme App/colors.dart';
 import '../Login Screen/reusable_widgets/custom_text_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
 
-  const RegisterScreen({Key? key, }) : super(key: key);
+  const RegisterScreen({super.key, });
 
 
   @override
@@ -22,6 +23,7 @@ class _RegisterScreenState extends State<RegisterScreen>{
   TextEditingController password = TextEditingController();
   TextEditingController firstName = TextEditingController();
   TextEditingController lastName = TextEditingController();
+
   String? selectedGender;
 
   @override
@@ -48,29 +50,19 @@ class _RegisterScreenState extends State<RegisterScreen>{
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const Row(
-                    children: [
-                      CircleAvatar(
-                        radius: 20,
-                        backgroundColor: Colors.white,
-                        child: Icon(
-                          Icons.medical_services,
-                          color: Colors.blue,
-                        ),
-                      ),
-                      Gap(8),
-                      Text(
-                        'Diagnosis',
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                          fontSize: 18,
-                        ),
-                      ),
-                    ],
+                  Container(
+                    margin: const EdgeInsets.all(20),
+                    alignment: Alignment.center,
+                    child: Column(
+                      children: [
+                        Text("Register",
+                          style: StyleApp.font40whiteRegular,
+                        )
+                      ],
+                    ),
                   ),
 
-                  const Gap(40),
+                  const Gap(78),
 
                   Expanded(
                     child: SingleChildScrollView(
@@ -113,7 +105,6 @@ class _RegisterScreenState extends State<RegisterScreen>{
                               const Gap(20),
                               CustomTextFormField(
                                 hint: "Enter Your e-mail ",
-                                suffixIcon: const Icon(Icons.person),
                                 keyboardType: TextInputType.emailAddress,
                                 controller: email,
                                 validator: (value) {
@@ -129,7 +120,6 @@ class _RegisterScreenState extends State<RegisterScreen>{
                               const Gap(20),
                               CustomTextFormField(
                                 hint: "Enter Your Password",
-                                suffixIcon: const Icon(Icons.person),
                                 keyboardType: TextInputType.visiblePassword,
                                 controller: password ,
                                 validator: (value) {

@@ -14,9 +14,11 @@ class CustomTextFormField extends StatelessWidget {
   String? Function(String?)? validator;
   Color? borderColor;
   Widget? suffixIcon;
+  Color? TextColor;
   CustomTextFormField({
     this.borderColor,
     this.suffixIcon,
+    this.TextColor,
     super.key,
     this.hint,
     this.onTap,
@@ -30,9 +32,13 @@ class CustomTextFormField extends StatelessWidget {
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
+       hoverColor: AppColors.gray,
+        hintStyle: TextStyle(
+          color: AppColors.BluePrimary
+        ),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
-          borderSide: BorderSide(color: borderColor ?? AppColors.BluePrimary),
+          borderSide: const BorderSide(color: AppColors.BluePrimary),
         ),
         border: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
@@ -62,11 +68,10 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
       ),
-      style:StyleApp.font15GrayRegular,
+      style:StyleApp.font15GrayRegular.copyWith(color: AppColors.BluePrimary),
       onTap: onTap,
       onChanged: onChanged,
       controller: controller,
-      obscuringCharacter: '*',
       keyboardType: keyboardType,
       validator: validator,
       cursorColor: AppColors.BluePrimary,

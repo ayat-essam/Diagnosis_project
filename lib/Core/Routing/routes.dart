@@ -1,5 +1,7 @@
 class Routers{
-  static const String HomePage = '/homepage';
+  static const String DashBoard = '/dashBoard';
+  static const String SliderBar = '/slider';
+
   static const String LoginScreen = '/login';
   static const String Doctor = '/doctor';
   static const String Patient = '/patient';

@@ -1,5 +1,7 @@
 
 import 'package:diagnosis_project/Core/Routing/routes.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Auth/HomePage.dart';
 import '../../Feature/Auth/Presention/Login Screen/login_screen.dart';
@@ -19,8 +21,11 @@ class AppRouter {
       case Routers.LoginScreen:
         return MaterialPageRoute(builder: (_) =>  LoginScreen(),);
 
-      case Routers.HomePage:
-        return MaterialPageRoute(builder: (_) =>  Homepage());
+      case Routers.DashBoard:
+        return MaterialPageRoute(builder: (_) =>  DashBoard());
+
+      case Routers.SliderBar:
+        return MaterialPageRoute(builder: (_) =>  SliderBar());
 
 
       case Routers.RegisterScreen:

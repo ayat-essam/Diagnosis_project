@@ -118,7 +118,7 @@ class _LoginScreenState extends State<LoginScreen> {
                               CustomButton(
                                 onTap: () {
                                   if (formKey.currentState!.validate()) {
-                                    Navigator.of(context).pushNamed(Routers.HomePage);
+                                    Navigator.of(context).pushNamed(Routers.DashBoard);
                                   }
                                 },
                                 text: "Sign In",

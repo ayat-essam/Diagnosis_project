@@ -214,7 +214,7 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                       );
                                       return;
                                     }
-                                    Navigator.of(context).pushNamed(Routers.HomePage);
+                                    Navigator.of(context).pushNamed(Routers.DashBoard);
                                   }
                                 },
                                 text: "Sign Up",

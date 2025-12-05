@@ -48,11 +48,11 @@ class StyleApp{
   color: AppColors.gray,
   );
 
-  // static TextStyle font12GrayMedium = TextStyle(
-  // fontSize: 12.sp,
-  // fontWeight: Fonts.medium,
-  // color: AppColor.gray,
-  // );
+  static TextStyle font14GrayMedium = TextStyle(
+  fontSize: 14.sp,
+  fontWeight: Fonts.medium,
+  color: AppColors.gray,
+  );
 
 
 

@@ -1,5 +1,7 @@
 import 'package:diagnosis_project/Feature/Auth/HomePage.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Register%20Screen/register_screen.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
@@ -29,7 +31,7 @@ class MyApp extends StatelessWidget {
       home:  child,
     );
       },
-      child: LoginScreen(),
+      child: SliderBar(),
 
 
     );

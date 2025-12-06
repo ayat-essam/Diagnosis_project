@@ -1,9 +1,9 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-
 import '../../../../Core/Theme App/styleApp.dart';
 import 'drawer_item.dart';
+import 'menu_Item.dart';
 
 class SliderBar extends StatefulWidget {
   const SliderBar({super.key});
@@ -24,7 +24,7 @@ class _SliderBarState extends State<SliderBar> {
         child: Column(
           children: [
             Padding(
-              padding: const EdgeInsets.all(40),
+              padding: const EdgeInsets.all(20),
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
@@ -32,7 +32,7 @@ class _SliderBarState extends State<SliderBar> {
                 ],
               ),
             ),
-            const Gap(40),
+            const Gap(10),
 
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -46,7 +46,7 @@ class _SliderBarState extends State<SliderBar> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Gap(15),
+                  const Gap(10),
                   ...buildMenuItems(),
                 ],
               ),
@@ -66,38 +66,13 @@ class _SliderBarState extends State<SliderBar> {
                       fontWeight: FontWeight.bold,
                     ),
                   ),
-                  const Gap(15),
-                  ..._buildGeneralItems(),
+                  const Gap(10),
+                  ...buildGeneralItems(),
                 ],
               ),
             ),
 
-            const Gap(30),
-
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 20.0),
-              child: ElevatedButton.icon(
-                onPressed: () {
-                  Navigator.pop(context);
-                },
-                icon: const Icon(Icons.logout, size: 20),
-                label: Text(
-                  'Logout',
-                  style: StyleApp.font16BlackRegular.copyWith(
-                      fontWeight: FontWeight.w700, color: AppColors.RedError),
-                ),
-                style: ElevatedButton.styleFrom(
-                  backgroundColor: Colors.red.withOpacity(0.1),
-                  foregroundColor: Colors.red,
-                  minimumSize: const Size(double.infinity, 50),
-                  shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10),
-                  ),
-                ),
-              ),
-            ),
-
-            const Gap(20),
+            const Gap(10),
           ],
         ),
       ),
@@ -106,19 +81,59 @@ class _SliderBarState extends State<SliderBar> {
 
   List<Widget> buildMenuItems() {
     final menuItems = [
-      MenuItemData(title: 'DashBoard', iconPath: "assets/image SVG/dashBoardIcon.svg"),
-      MenuItemData(title: 'Diagnosis Module', iconPath: "assets/image SVG/DiagnosisModuleIcon.svg"),
-      MenuItemData(title: 'Ai Diagnosis Result', iconPath: "assets/image SVG/aiMessage.svg"),
-      MenuItemData(title: 'Drug Checker', iconPath: "assets/image SVG/Vector.svg"),
-      MenuItemData(title: 'Physiotherapy', iconPath: "assets/image SVG/Physiotherapy.svg"),
-      MenuItemData(title: 'Inquiries', iconPath: "assets/image SVG/Inquiries.svg"),
-      MenuItemData(title: 'Complaints', iconPath: "assets/image SVG/Diagnosis.svg"),
-      MenuItemData(title: 'Directory', iconPath: "assets/image SVG/DirectoryIcon.svg"),
-      MenuItemData(title: 'Appointments', iconPath: "assets/image SVG/opppointIcon.svg"),
-      MenuItemData(title: 'Medical Files', iconPath: "assets/image SVG/Medical FilesIcon.svg"),
+      MenuItemData(
+        title: 'DashBoard',
+        iconPath: "assets/image SVG/dashBoardIcon.svg",
+        routeName: '/dashboard',
+      ),
+      MenuItemData(
+        title: 'Diagnosis Module',
+        iconPath: "assets/image SVG/DiagnosisModuleIcon.svg",
+        routeName: '/diagnosis-module',
+      ),
+      MenuItemData(
+        title: 'Ai Diagnosis Result',
+        iconPath: "assets/image SVG/aiMessage.svg",
+        routeName: '/ai-diagnosis-result',
+      ),
+      MenuItemData(
+        title: 'Drug Checker',
+        iconPath: "assets/image SVG/Vector.svg",
+        routeName: '/drug-checker',
+      ),
+      MenuItemData(
+        title: 'Physiotherapy',
+        iconPath: "assets/image SVG/Physiotherapy.svg",
+        routeName: '/physiotherapy',
+      ),
+      MenuItemData(
+        title: 'Inquiries',
+        iconPath: "assets/image SVG/Inquiries.svg",
+        routeName: '/inquiries',
+      ),
+      MenuItemData(
+        title: 'Complaints',
+        iconPath: "assets/image SVG/Diagnosis.svg",
+        routeName: '/complaints',
+      ),
+      MenuItemData(
+        title: 'Directory',
+        iconPath: "assets/image SVG/DirectoryIcon.svg",
+        routeName: '/directory',
+      ),
+      MenuItemData(
+        title: 'Appointments',
+        iconPath: "assets/image SVG/opppointIcon.svg",
+        routeName: '/appointments',
+      ),
+      MenuItemData(
+        title: 'Medical Files',
+        iconPath: "assets/image SVG/Medical FilesIcon.svg",
+        routeName: '/medical-files',
+      ),
     ];
 
-    return menuItems.map((item) {
+    return menuItems.map<Widget>((item) {
       return DrawerItem(
         title: item.title,
         iconPath: item.iconPath,
@@ -127,19 +142,37 @@ class _SliderBarState extends State<SliderBar> {
           setState(() {
             selectedMenuItem = item.title;
           });
-          print('Selected: ${item.title}');
+
+          Navigator.pop(context);
+
+          if (item.routeName != null) {
+            Navigator.pushNamed(context, item.routeName!);
+          }
         },
       );
     }).toList();
   }
 
-  List<Widget> _buildGeneralItems() {
+  List<Widget> buildGeneralItems() {
     final generalItems = [
-      MenuItemData(title: 'Settings', iconPath: "assets/image SVG/settingIcon.svg"),
-      MenuItemData(title: 'Help', iconPath: "assets/image SVG/helpIcon.svg"),
+      MenuItemData(
+        title: 'Settings',
+        iconPath: "assets/image SVG/settingIcon.svg",
+        routeName: '/settings',
+      ),
+      MenuItemData(
+        title: 'Help',
+        iconPath: "assets/image SVG/helpIcon.svg",
+        routeName: '/help',
+      ),
+      MenuItemData(
+        title: 'Log Out',
+        iconPath: 'assets/image SVG/logOutIcon.svg',
+        routeName: null,
+      ),
     ];
 
-    return generalItems.map((item) {
+    return generalItems.map<Widget>((item) {
       return DrawerItem(
         title: item.title,
         iconPath: item.iconPath,
@@ -148,19 +181,43 @@ class _SliderBarState extends State<SliderBar> {
           setState(() {
             selectedGeneralItem = item.title;
           });
-          print('Selected: ${item.title}');
+          Navigator.pop(context);
+          if (item.title == 'Log Out') {
+            handleLogout(context);
+          }
+          else if (item.routeName != null) {
+            Navigator.pushNamed(context, item.routeName!);
+          }
         },
       );
     }).toList();
   }
-}
 
-class MenuItemData {
-  final String title;
-  final String iconPath;
+  void handleLogout(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('LogOut'),
+        content: const Text('Are You Sure you want Exit ?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
 
-  MenuItemData({
-    required this.title,
-    required this.iconPath,
-  });
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                '/login',
+                    (route) => false,
+              );
+            },
+            child: const Text('Log Out', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+  }
 }

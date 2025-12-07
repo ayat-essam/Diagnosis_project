@@ -7,7 +7,6 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
 import '../../../../Core/Routing/routes.dart';
-import '../../../../Core/Theme App/Fonts.dart';
 import '../../../../core/Theme App/colors.dart';
 
 class LoginScreen extends StatefulWidget {

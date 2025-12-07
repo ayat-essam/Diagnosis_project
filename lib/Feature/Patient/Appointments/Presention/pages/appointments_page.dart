@@ -5,11 +5,10 @@ import 'package:diagnosis_project/Core/reusable_widgets/appointments_add_button.
 import 'package:diagnosis_project/Core/reusable_widgets/appointments_app_bar.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/appointments_tab_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/view_past_appointments_button.dart';
-import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointments_search_page.dart';
-import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointment_details_page.dart';
+import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointment_details_page.dart';
+import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 class Appointments extends StatefulWidget {
   const Appointments({super.key});
 
@@ -22,74 +21,74 @@ class _AppointmentsState extends State<Appointments> {
   final List<Map<String, dynamic>> appointments = [
     {
       'name': 'Mohamed Reda',
-      'age': 32,
+      'specialty': "Cardiologist",
       'time': '10.00 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Amira Mohamed',
-      'age': 27,
+      'specialty': "Cardiologist",
       'time': '10.30 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Mohamed Ahmed',
-      'age': 24,
+      'specialty': "Cardiologist",
       'time': '11.00 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Amal Ramadan',
-      'age': 31,
+      'specialty': "Cardiologist",
       'time': '11.30 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Rawan Mohamed',
-      'age': 48,
+      'specialty': "Cardiologist",
       'time': '12.00 PM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Shahd Mohamed',
-      'age': 30,
+      'specialty': "Cardiologist",
       'time': '12.30 PM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Ahmed Reda',
-      'age': 33,
+      'specialty': "Cardiologist",
       'time': '04.00 PM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Rawan Ali',
-      'age': 48,
+      'specialty': "Cardiologist",
       'time': '12.00 PM',
-      'status': 'New patient'
+      'status': 'Pending'
     },
     {
       'name': 'Ali Mohamed',
-      'age': 30,
+      'specialty': "Cardiologist",
       'time': '12.30 PM',
-      'status': 'New patient'
+      'status': 'Pending'
     },
     {
       'name': 'Fahmy Reda',
-      'age': 33,
+      'specialty': "Cardiologist",
       'time': '04.00 PM',
-      'status': 'New patient'
+      'status': 'Pending'
     },
-    {'name': 'Reem Ali', 'age': 48, 'time': '12.00 PM', 'status': 'Urgent'},
+    {'name': 'Reem Ali', 'specialty': "Cardiologist", 'time': '12.00 PM', 'status': 'Cancelled'},
     {
       'name': 'Walaa Mohamed',
-      'age': 30,
+      'specialty': "Cardiologist",
       'time': '12.30 PM',
-      'status': 'Urgent'
+      'status': 'Cancelled'
     },
-    {'name': 'Ahmed Reda', 'age': 33, 'time': '04.00 PM', 'status': 'Urgent'},
+    {'name': 'Ahmed Reda', 'specialty': "Cardiologist", 'time': '04.00 PM', 'status': 'Cancelled'},
   ];
-  final List status = ["Follow-up", "New patient", "Urgent"];
+  final List status = ["Confirmed", "Pending", "Cancelled"];
   final List<Color> selectedColors = [
     AppColors.green, // زرار 1
     AppColors.orange, // زرار 2
@@ -123,7 +122,7 @@ class _AppointmentsState extends State<Appointments> {
           Row(
             children: List.generate(
               3,
-              (index) => AppointmentsTabButton(
+                  (index) => AppointmentsTabButton(
                 title: status[index],
                 // ["Follow-up", "New patient", "Urgent"][index],
                 isSelected: selectedIndex == index,
@@ -142,19 +141,18 @@ class _AppointmentsState extends State<Appointments> {
             child: ListView.separated(
                 itemBuilder: (context, index) {
                   return AppointmentItem(
-                    image: "assets/image/person.png",
-                    name: "${filteredAppointments[index]['name']}",
-                    hintText:
-                        "${filteredAppointments[index]['age']} years | Meeting on ${filteredAppointments[index]['time']}",
+                    image: "assets/image/Group.png",
                     color: selectedColors[selectedIndex],
+                    hintText:"${filteredAppointments[index]['specialty']} | Meeting ${filteredAppointments[index]['time']}",
+                    name: "Dr. ${filteredAppointments[index]['name']}",
                     moreIconOnTap: () {},
                     rowOnTap: () {
                       Navigator.push(
                         context,
                         MaterialPageRoute(
                             builder: (context) => AppointmentDetails(
-                                  patient: filteredAppointments[index],
-                                )),
+                              patient: filteredAppointments[index],
+                            )),
                       );
                     },
                   );

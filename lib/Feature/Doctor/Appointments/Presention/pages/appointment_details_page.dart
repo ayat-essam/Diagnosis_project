@@ -6,8 +6,8 @@ import 'package:diagnosis_project/Core/reusable_widgets/details_row.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PatientAppointmentDetails extends StatelessWidget {
-  const PatientAppointmentDetails({super.key, required this.patient});
+class AppointmentDetails extends StatelessWidget {
+  const AppointmentDetails({super.key, required this.patient});
   final Map<String, dynamic> patient;
 
   @override

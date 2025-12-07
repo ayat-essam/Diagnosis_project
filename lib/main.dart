@@ -1,6 +1,6 @@
 import 'package:diagnosis_project/Feature/Auth/HomePage.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Register%20Screen/register_screen.dart';
-import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
+import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';

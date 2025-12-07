@@ -6,15 +6,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class AppointmentItem extends StatelessWidget {
   const AppointmentItem(
       {super.key,
-      required this.appointments,
       required this.rowOnTap,
       required this.moreIconOnTap,
-      required this.color});
-  final Map<String, dynamic> appointments;
+      required this.color, required this.name, required this.hintText, required this.image});
   final VoidCallback rowOnTap;
   final VoidCallback moreIconOnTap;
-  // final int index;
+  final String name;
+  final String hintText;
   final Color color;
+  final String image;
+
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -25,7 +26,7 @@ class AppointmentItem extends StatelessWidget {
         child: Row(
           children: [
             // Colored Dot
-            Image.asset("assets/image/person.png", scale: 4),
+            Image.asset(image, scale: 4),
 
             const SizedBox(width: 16),
 
@@ -33,14 +34,14 @@ class AppointmentItem extends StatelessWidget {
             Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [
-                Text('${appointments['name']}',
+                Text(name,
                     style:
                         StyleApp.font18BlackSemiBold.copyWith(fontSize: 14.sp)),
                 SizedBox(height: 3.h),
                 Row(
                   children: [
                     Text(
-                      '${appointments['age']} years | Meeting on ${appointments['time']}',
+                      hintText,
                       style: StyleApp.font14graySecondaryRegular,
                     ),
                     SizedBox(
@@ -50,7 +51,6 @@ class AppointmentItem extends StatelessWidget {
                       Icons.circle,
                       size: 10.r,
                       color: color,
-                      // color: AppColors.BluePrimary,
                     )
                   ],
                 ),
@@ -74,3 +74,5 @@ class AppointmentItem extends StatelessWidget {
     );
   }
 }
+// {appointments['age']} years
+//{appointments['name']}

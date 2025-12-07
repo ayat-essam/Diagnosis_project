@@ -3,7 +3,7 @@ import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/appointment_grey_container.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/appointment_item.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/appointments_app_bar.dart';
-import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointment_details_page.dart';
+import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointment_details_page.dart';
 import 'package:flutter/material.dart';
 
 class AppointmentsSearchPage extends StatefulWidget {
@@ -19,72 +19,82 @@ class _AppointmentsSearchPageState extends State<AppointmentsSearchPage> {
   final List<Map<String, dynamic>> allAppointments = [
     {
       'name': 'Mohamed Reda',
-      'age': 32,
+      'specialty': "Cardiologist",
       'time': '10.00 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Amira Mohamed',
-      'age': 27,
+      'specialty': "Cardiologist",
       'time': '10.30 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Mohamed Ahmed',
-      'age': 24,
+      'specialty': "Cardiologist",
       'time': '11.00 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Amal Ramadan',
-      'age': 31,
+      'specialty': "Cardiologist",
       'time': '11.30 AM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Rawan Mohamed',
-      'age': 48,
+      'specialty': "Cardiologist",
       'time': '12.00 PM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Shahd Mohamed',
-      'age': 30,
+      'specialty': "Cardiologist",
       'time': '12.30 PM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Ahmed Reda',
-      'age': 33,
+      'specialty': "Cardiologist",
       'time': '04.00 PM',
-      'status': 'Follow-up'
+      'status': 'Confirmed'
     },
     {
       'name': 'Rawan Ali',
-      'age': 48,
+      'specialty': "Cardiologist",
       'time': '12.00 PM',
-      'status': 'New patient'
+      'status': 'Pending'
     },
     {
       'name': 'Ali Mohamed',
-      'age': 30,
+      'specialty': "Cardiologist",
       'time': '12.30 PM',
-      'status': 'New patient'
+      'status': 'Pending'
     },
     {
       'name': 'Fahmy Reda',
-      'age': 33,
+      'specialty': "Cardiologist",
       'time': '04.00 PM',
-      'status': 'New patient'
+      'status': 'Pending'
     },
-    {'name': 'Reem Ali', 'age': 48, 'time': '12.00 PM', 'status': 'Urgent'},
+    {
+      'name': 'Reem Ali',
+      'specialty': "Cardiologist",
+      'time': '12.00 PM',
+      'status': 'Cancelled'
+    },
     {
       'name': 'Walaa Mohamed',
-      'age': 30,
+      'specialty': "Cardiologist",
       'time': '12.30 PM',
-      'status': 'Urgent'
+      'status': 'Cancelled'
     },
-    {'name': 'Ahmed Reda', 'age': 33, 'time': '04.00 PM', 'status': 'Urgent'},
+    {
+      'name': 'Ahmed Reda',
+      'specialty': "Cardiologist",
+      'time': '04.00 PM',
+      'status': 'Cancelled'
+    },
   ];
 
   List<Map<String, dynamic>> filteredList = [];
@@ -133,11 +143,11 @@ class _AppointmentsSearchPageState extends State<AppointmentsSearchPage> {
 
   Color getStatusColor(String status) {
     switch (status) {
-      case "Follow-up":
+      case "Confirmed":
         return AppColors.green;
-      case "New patient":
+      case "Pending":
         return AppColors.orange;
-      case "Urgent":
+      case "Cancelled":
         return AppColors.RedError;
       default:
         return Colors.grey;
@@ -169,9 +179,10 @@ class _AppointmentsSearchPageState extends State<AppointmentsSearchPage> {
               itemCount: filteredList.length,
               itemBuilder: (context, index) {
                 return AppointmentItem(
-                  image: "assets/image/person.png",
-                  name: "${filteredList[index]['name']}",
-                  hintText: "${filteredList[index]['age']} years | Meeting on ${filteredList[index]['time']}",
+                  image: "assets/image/Group.png",
+                  name: "Dr. ${filteredList[index]['name']}",
+                  hintText:
+                      "${filteredList[index]['specialty']} | Meeting ${filteredList[index]['time']}",
                   moreIconOnTap: () {},
                   rowOnTap: () {
                     Navigator.push(

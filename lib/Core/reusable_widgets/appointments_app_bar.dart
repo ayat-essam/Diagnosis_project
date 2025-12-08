@@ -21,7 +21,7 @@ class AppointmentsAppBar extends StatelessWidget implements PreferredSizeWidget{
       //   title,
       //   style: StyleApp.font18BlackSemiBold,
       // ):textField,
-      actionsPadding: EdgeInsets.only(right: 20.w),
+      // actionsPadding: EdgeInsets.only(right: 20.w),
       actions: [
         if (isSearch==true)
           IconButton(

@@ -91,9 +91,9 @@ class _AppointmentsState extends State<Appointments> {
   ];
   final List status = ["Follow-up", "New patient", "Urgent"];
   final List<Color> selectedColors = [
-    AppColors.green, // زرار 1
-    AppColors.orange, // زرار 2
-    AppColors.RedError, // زرار 3
+    AppColors.green,
+    AppColors.orange,
+    AppColors.RedError,
   ];
 
   List<Map<String, dynamic>> get filteredAppointments {
@@ -125,7 +125,6 @@ class _AppointmentsState extends State<Appointments> {
               3,
               (index) => AppointmentsTabButton(
                 title: status[index],
-                // ["Follow-up", "New patient", "Urgent"][index],
                 isSelected: selectedIndex == index,
                 index: index,
                 onTap: () {
@@ -137,7 +136,6 @@ class _AppointmentsState extends State<Appointments> {
             ),
           ),
           const AppointmentGreyContainer(title: 'Today'),
-          // Appointments List
           Expanded(
             child: ListView.separated(
                 itemBuilder: (context, index) {

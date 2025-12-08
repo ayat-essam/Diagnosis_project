@@ -1,7 +1,7 @@
 
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_button.dart';
-import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_text_form_field.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_button.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_text_form_field.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Register%20Screen/register_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
@@ -89,7 +89,6 @@ class _LoginScreenState extends State<LoginScreen> {
                               const Gap(20),
                               CustomTextFormField(
                                 hint: "Enter Your Password",
-                                suffixIcon: const Icon(Icons.person),
                                 keyboardType: TextInputType.visiblePassword,
                                 controller: password ,
                                 validator: (value) {

@@ -1,4 +1,6 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Complaints/Complaints_Screen.dart';
+import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
@@ -84,52 +86,73 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemData(
         title: 'DashBoard',
         iconPath: "assets/image SVG/dashBoardIcon.svg",
-        routeName: '/dashboard',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Diagnosis Module',
         iconPath: "assets/image SVG/DiagnosisModuleIcon.svg",
-        routeName: '/diagnosis-module',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Ai Diagnosis Result',
         iconPath: "assets/image SVG/aiMessage.svg",
-        routeName: '/ai-diagnosis-result',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Drug Checker',
         iconPath: "assets/image SVG/Vector.svg",
-        routeName: '/drug-checker',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Physiotherapy',
         iconPath: "assets/image SVG/Physiotherapy.svg",
-        routeName: '/physiotherapy',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Inquiries',
         iconPath: "assets/image SVG/Inquiries.svg",
-        routeName: '/inquiries',
+          onTap: () {
+
+          },
       ),
       MenuItemData(
         title: 'Complaints',
         iconPath: "assets/image SVG/Diagnosis.svg",
-        routeName: '/complaints',
+        onTap: () {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ComplaintsScreen(),));
+
+        },
       ),
       MenuItemData(
         title: 'Directory',
         iconPath: "assets/image SVG/DirectoryIcon.svg",
-        routeName: '/directory',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Appointments',
         iconPath: "assets/image SVG/opppointIcon.svg",
-        routeName: '/appointments',
+        onTap:() {
+          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Appointments(),));
+        },
       ),
       MenuItemData(
         title: 'Medical Files',
         iconPath: "assets/image SVG/Medical FilesIcon.svg",
-        routeName: '/medical-files',
+        onTap: () {
+
+        },
       ),
     ];
 
@@ -145,8 +168,8 @@ class _SliderBarState extends State<SliderBar> {
 
           Navigator.pop(context);
 
-          if (item.routeName != null) {
-            Navigator.pushNamed(context, item.routeName!);
+          if (item.onTap != null) {
+            Navigator.pushNamed(context, item.onTap as String);
           }
         },
       );
@@ -158,17 +181,23 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemData(
         title: 'Settings',
         iconPath: "assets/image SVG/settingIcon.svg",
-        routeName: '/settings',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Help',
         iconPath: "assets/image SVG/helpIcon.svg",
-        routeName: '/help',
+        onTap: () {
+
+        },
       ),
       MenuItemData(
         title: 'Log Out',
         iconPath: 'assets/image SVG/logOutIcon.svg',
-        routeName: null,
+        onTap: () {
+
+        },
       ),
     ];
 
@@ -185,8 +214,8 @@ class _SliderBarState extends State<SliderBar> {
           if (item.title == 'Log Out') {
             handleLogout(context);
           }
-          else if (item.routeName != null) {
-            Navigator.pushNamed(context, item.routeName!);
+          else if (item.onTap != null) {
+            Navigator.pushNamed(context, item.onTap as String);
           }
         },
       );

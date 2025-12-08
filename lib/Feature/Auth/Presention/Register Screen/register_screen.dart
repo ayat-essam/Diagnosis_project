@@ -1,11 +1,12 @@
 import 'package:diagnosis_project/Core/Routing/routes.dart';
-import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/reusable_widgets/custom_button.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
 import '../../../../core/Theme App/colors.dart';
-import '../Login Screen/reusable_widgets/custom_text_form_field.dart';
+import '../Login Screen/widgets/custom_button.dart';
+import '../Login Screen/widgets/custom_text_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
 
@@ -216,10 +217,10 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                       );
                                       return;
                                     }
-                                    Navigator.of(context).pushNamed(Routers.DashBoard);
+                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoard(),));
                                   }
                                 },
-                                text: "Sign Up",
+                                text: "Register",
                               ),
 
                             ],

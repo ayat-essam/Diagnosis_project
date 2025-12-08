@@ -8,6 +8,7 @@ import 'package:gap/gap.dart';
 
 import '../../../../Core/Routing/routes.dart';
 import '../../../../core/Theme App/colors.dart';
+import '../Reset Password/reset_password.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -106,9 +107,10 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               const Gap(10),
                              TextButton(
-                                 onPressed: () =>
-                                     Navigator.of(context).pushReplacementNamed(
-                                         Routers.ResetPassword ),
+                             onPressed: () => Navigator.pushReplacement(
+                              context,
+                               MaterialPageRoute(builder: (context) =>  ResetPassword()),
+                               ),
                                  child: Text("Forget your Password"
                                  ,style: StyleApp.font16BlackRegular.copyWith(
                                        decoration: TextDecoration.underline),)),

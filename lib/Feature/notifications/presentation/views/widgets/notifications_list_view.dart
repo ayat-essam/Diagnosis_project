@@ -20,12 +20,6 @@ class NotificationsListView extends StatelessWidget {
         image2: 'assets/image SVG/PhysiotherapyAlerts2.svg',
         isCompleted: false),
     NoitificationModel(
-        title: 'Medical Notifications',
-        subtitle: ' New lab re sults and medical reports',
-        image1: 'assets/image SVG/Medical_Notifications1.svg',
-        image2: 'assets/image SVG/Medical_Notifications2.svg',
-        isCompleted: false),
-    NoitificationModel(
         title: 'Appointments Alerts',
         subtitle: 'Reminders and confirmations of upcoming appointmentss',
         image1: 'assets/image SVG/Appointments_Alerts1.svg',
@@ -35,8 +29,7 @@ class NotificationsListView extends StatelessWidget {
         title: 'Doctors Responses',
         subtitle: ' Replies to your inquiries and messagess',
         image1: 'assets/image SVG/DoctorsResponses.svg',
-        image2: 'assets/image SVG/Appointments_Alerts2.svg',
-        isCompleted: false),
+        isCompleted: true),
   ];
 
   @override

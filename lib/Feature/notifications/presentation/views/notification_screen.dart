@@ -21,7 +21,7 @@ class NotificationScreen extends StatelessWidget {
               color: Colors.grey[300],
             ),
             const SizedBox(
-              height: 16,
+              height: 20,
             ),
             Center(
                 child: Text('Notification Screen',
@@ -30,7 +30,7 @@ class NotificationScreen extends StatelessWidget {
                         fontWeight: FontWeight.bold,
                         color: AppColors.blackSecondary))),
             const SizedBox(
-              height: 16,
+              height: 20,
             ),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 9),

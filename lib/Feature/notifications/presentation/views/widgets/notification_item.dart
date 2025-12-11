@@ -29,21 +29,23 @@ class NotificationItem extends StatelessWidget {
             const SizedBox(
               width: 12,
             ),
-            Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Text(
-                  noitificationModel.title,
-                  style: StyleApp.font20BlackMedium,
-                ),
-                Text(noitificationModel.subtitle,
-                    style: TextStyle(
-                        fontSize: 12,
-                        color: AppColors.blackSecondary,
-                        fontWeight: FontWeight.w400)),
-              ],
+            Expanded(
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    noitificationModel.title,
+                    style: StyleApp.font20BlackMedium,
+                  ),
+                  Text(noitificationModel.subtitle,
+                      maxLines: 2,
+                      style: TextStyle(
+                          fontSize: 12,
+                          color: AppColors.blackSecondary,
+                          fontWeight: FontWeight.w400)),
+                ],
+              ),
             ),
-            const Spacer(),
             SvgPicture.asset(noitificationModel.image2),
           ],
         ));

@@ -3,7 +3,7 @@ import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_s
 import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/cheack_password.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctors/doctors_screen.dart';
-import 'package:diagnosis_project/Feature/notifications/presentation/views/notification_screen.dart';
+import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
@@ -30,11 +30,12 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return MaterialApp(
           debugShowCheckedModeBanner: false,
-          home: DoctorsScreen(),
+          home: GuestBookApointmentScreen()//DoctorsScreen(),
         );
       },
-      // child:
-      //     SliderBar(),
+      child: SliderBar(),
+
+
     );
   }
 }

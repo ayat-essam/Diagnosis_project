@@ -130,4 +130,32 @@ class StyleApp {
     fontWeight: FontWeight.w500,
     color: AppColors.blackSecondary,
   );
+  static TextStyle font25blackbold = TextStyle(
+    fontSize: 25.sp,
+    fontFamily: 'Poppins',
+    fontWeight: Fonts.bold,
+    color: AppColors.black,
+  );
+
+  static TextStyle font15BlueMedium = TextStyle(
+      fontSize: 15.sp,
+      fontWeight: Fonts.medium,
+      color: AppColors.BluePrimary,
+      fontFamily: 'Poppins');
+  static TextStyle font12WhiteRegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: Fonts.regular,
+    color: AppColors.whiteBackground,
+  );
+  static TextStyle font20BlackSemiBold = TextStyle(
+    fontSize: 20.sp,
+    fontFamily: 'Poppins',
+    fontWeight: Fonts.semiBold,
+    color: AppColors.black,
+  );
+  static TextStyle font20WhiteSemiBold = TextStyle(
+    fontSize: 20.sp,
+    fontWeight: Fonts.semiBold,
+    color: AppColors.whiteBackground,
+  );
 }

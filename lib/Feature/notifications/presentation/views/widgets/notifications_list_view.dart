@@ -10,32 +10,32 @@ class NotificationsListView extends StatelessWidget {
     NoitificationModel(
         title: 'Medical Notifications',
         subtitle: ' New lab results and medical reports',
-        image1: 'assets/image SVG/Medical Notifications1.svg',
-        image2: 'assets/image SVG/Medical Notifications2.svg',
+        image1: 'assets/image_SVG/Medical Notifications1.svg',
+        image2: 'assets/image_SVG/Medical Notifications2.svg',
         isCompleted: false),
     NoitificationModel(
         title: 'Physiotherapy Alerts',
         subtitle: ' Reminders for your exercises and sessions',
-        image1: 'assets/image SVG/Physiotherapy Alerts1.svg',
-        image2: 'assets/image SVG/Physiotherapy Alerts2.svg',
+        image1: 'assets/image_SVG/Physiotherapy Alerts1.svg',
+        image2: 'assets/image_SVG/Physiotherapy Alerts2.svg',
         isCompleted: false),
     NoitificationModel(
         title: 'Medical Notifications',
         subtitle: ' New lab re sults and medical reports',
-        image1: 'assets/image SVG/Medical Notifications1.svg',
-        image2: 'assets/image SVG/Medical Notifications2.svg',
+        image1: 'assets/image_SVG/Medical Notifications1.svg',
+        image2: 'assets/image_SVG/Medical Notifications2.svg',
         isCompleted: false),
     NoitificationModel(
         title: 'Appointments Alerts',
         subtitle: 'Reminders and confirmations of upcoming appointmentss',
-        image1: 'assets/image SVG/Appointments Alerts1.svg.svg',
-        image2: 'assets/image SVG/Appointments Alerts2.svg',
+        image1: 'assets/image_SVG/Appointments Alerts1.svg.svg',
+        image2: 'assets/image_SVG/Appointments Alerts2.svg',
         isCompleted: false),
     NoitificationModel(
         title: 'Doctors Responses',
         subtitle: ' Replies to your inquiries and messagess',
-        image1: 'assets/image SVG/DoctorsResponses.svg',
-        image2: 'assets/image SVG/Medical Notifications2.svg',
+        image1: 'assets/image_SVG/DoctorsResponses.svg',
+        image2: 'assets/image_SVG/Medical Notifications2.svg',
         isCompleted: false),
   ];
 

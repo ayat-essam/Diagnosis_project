@@ -55,7 +55,7 @@ class CustomAppBar extends StatelessWidget {
               ),
             ),
           ),
-          SvgPicture.asset('assets/image SVG/notification.svg'),
+          SvgPicture.asset('assets/image_SVG/notification.svg'),
         ]),
         const SizedBox(
           width: 20,

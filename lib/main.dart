@@ -1,3 +1,4 @@
+import 'package:device_preview/device_preview.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/cheack_password.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
@@ -10,7 +11,10 @@ import 'Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-  runApp(const MyApp());
+  runApp(DevicePreview(
+    enabled: true,
+    builder: (context) => const MyApp(),
+  ));
 }
 
 class MyApp extends StatelessWidget {

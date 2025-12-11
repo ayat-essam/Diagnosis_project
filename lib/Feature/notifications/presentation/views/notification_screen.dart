@@ -11,28 +11,32 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(80), child: const CustomAppBar()),
+          preferredSize: Size.fromHeight(65), child: const CustomAppBar()),
       body: SafeArea(
           child: SingleChildScrollView(
-        child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 9),
-          child: Column(
-            children: [
-              const SizedBox(
-                height: 16,
-              ),
-              Center(
-                  child: Text('Notification Screen',
-                      style: TextStyle(
-                          fontSize: 20,
-                          fontWeight: FontWeight.w700,
-                          color: AppColors.blackSecondary))),
-              const SizedBox(
-                height: 16,
-              ),
-              NotificationsListView()
-            ],
-          ),
+        child: Column(
+          children: [
+            Container(
+              height: 3,
+              color: Colors.grey[300],
+            ),
+            const SizedBox(
+              height: 16,
+            ),
+            Center(
+                child: Text('Notification Screen',
+                    style: TextStyle(
+                        fontSize: 20,
+                        fontWeight: FontWeight.bold,
+                        color: AppColors.blackSecondary))),
+            const SizedBox(
+              height: 16,
+            ),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 9),
+              child: NotificationsListView(),
+            )
+          ],
         ),
       )),
     );

@@ -45,8 +45,11 @@ class NotificationsListView extends StatelessWidget {
       shrinkWrap: true,
       itemCount: notifications.length,
       itemBuilder: (context, index) {
-        return NotificationItem(
-          noitificationModel: notifications[index],
+        return Padding(
+          padding: const EdgeInsets.only(bottom: 16),
+          child: NotificationItem(
+            noitificationModel: notifications[index],
+          ),
         );
       },
     );

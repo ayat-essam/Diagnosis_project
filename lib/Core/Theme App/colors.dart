@@ -14,7 +14,4 @@ class AppColors {
   static const Color graySecondary = Color(0xff888888);
   static const Color grayF2 = Color(0xffF2F2F2);
   static const Color grayE2 = Color(0xffE2E2E2);
-
-
-
 }

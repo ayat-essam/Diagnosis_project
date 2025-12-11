@@ -14,8 +14,8 @@ class BookApointmentAppBar extends StatelessWidget {
       scrolledUnderElevation: 0,
       backgroundColor: AppColors.whiteBackground,
       surfaceTintColor: AppColors.whiteBackground,
-      elevation: 4,
-      shadowColor: AppColors.black.withOpacity(.7),
+      elevation: 5,
+      shadowColor: AppColors.black.withOpacity(.8),
       title: Image.asset(
         "assets/image/logo.png",
         height: 38.h,

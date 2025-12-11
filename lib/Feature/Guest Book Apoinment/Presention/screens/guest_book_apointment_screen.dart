@@ -15,7 +15,7 @@ class GuestBookApointmentScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(70.h),
+        preferredSize: Size.fromHeight(75.h),
         child: const BookApointmentAppBar(),
       ),
       body: SingleChildScrollView(
@@ -46,7 +46,7 @@ class GuestBookApointmentScreen extends StatelessWidget {
               ),
               const PickDateTimeSection(),
               SizedBox(
-                height: 25.h,
+                height: 29.h,
               ),
               BookNowButtonWidget(onTap: () {}),
             ],

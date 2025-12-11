@@ -43,6 +43,9 @@ class NotificationItem extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
+                    // noitificationModel.isCompleted
+                    //     ? CompleteButton()
+                    //     : Text(''),
                     Text(
                       noitificationModel.title,
                       style: StyleApp.font20BlackMedium,
@@ -71,12 +74,13 @@ class CompleteButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
+      alignment: Alignment.topRight,
       decoration: BoxDecoration(
         color: AppColors.BluePrimary,
         borderRadius: BorderRadius.circular(15),
       ),
       child: Padding(
-        padding: const EdgeInsets.all(8.0),
+        padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 8),
         child: Text(
           'Completed',
           style: TextStyle(

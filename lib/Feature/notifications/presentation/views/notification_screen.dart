@@ -1,4 +1,4 @@
-import 'package:diagnosis_project/Feature/notifications/presentation/views/widgets/custom_appBar.dart';
+import 'package:diagnosis_project/Feature/services/presentation/views/widgets/custom_appBar_services.dart';
 import 'package:diagnosis_project/Feature/notifications/presentation/views/widgets/notifications_list_view.dart';
 import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
@@ -11,7 +11,8 @@ class NotificationScreen extends StatelessWidget {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(65), child: const CustomAppBar()),
+          preferredSize: Size.fromHeight(65),
+          child: const CustomAppBarServices()),
       body: SafeArea(
           child: SingleChildScrollView(
         child: Column(

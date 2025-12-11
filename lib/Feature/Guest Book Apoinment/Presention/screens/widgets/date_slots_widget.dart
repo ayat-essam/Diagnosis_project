@@ -27,7 +27,7 @@ class _DateSlotsWidgetState extends State<DateSlotsWidget> {
               setState(() => selectedTime = index);
             },
             child: Container(
-              width: 52.w,
+              width: 48.w,
               margin: const EdgeInsets.only(right: 10),
               padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 1),
               decoration: BoxDecoration(
@@ -43,7 +43,7 @@ class _DateSlotsWidgetState extends State<DateSlotsWidget> {
                       color: isSelected
                           ? AppColors.whiteBackground
                           : AppColors.black,
-                      fontWeight: FontWeight.w500,
+                      fontWeight: FontWeight.w700,
                       fontFamily: 'Poppins',
                     ),
                   ),
@@ -54,7 +54,7 @@ class _DateSlotsWidgetState extends State<DateSlotsWidget> {
                       color: isSelected
                           ? AppColors.whiteBackground
                           : AppColors.black,
-                      fontWeight: FontWeight.w400,
+                      fontWeight: FontWeight.w700,
                        fontFamily: 'Poppins',
                     ),
                   ),

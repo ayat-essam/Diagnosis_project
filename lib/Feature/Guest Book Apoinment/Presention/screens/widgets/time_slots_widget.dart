@@ -25,10 +25,12 @@ class _TimeSlotsWidgetState extends State<TimeSlotsWidget> {
         itemBuilder: (context, index) {
           bool isSelected = selectedTime == index;
           return GestureDetector(
-            onTap: () {},
+            onTap: () {
+              setState(() => selectedTime = index);
+            },
             child: Container(
               margin: const EdgeInsets.only(right: 10),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 18),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
               decoration: BoxDecoration(
                 color: isSelected
                     ? AppColors.BluePrimary

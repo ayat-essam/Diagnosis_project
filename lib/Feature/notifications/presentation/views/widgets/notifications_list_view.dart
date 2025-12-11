@@ -35,7 +35,7 @@ class NotificationsListView extends StatelessWidget {
         title: 'Doctors Responses',
         subtitle: ' Replies to your inquiries and messagess',
         image1: 'assets/image SVG/DoctorsResponses.svg',
-        image2: 'assets/image SVG/DoctorsResponses.svg',
+        image2: 'assets/image SVG/Appointments_Alerts2.svg',
         isCompleted: false),
   ];
 

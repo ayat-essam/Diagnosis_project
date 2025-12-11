@@ -56,31 +56,9 @@ class NotificationItem extends StatelessWidget {
                   ],
                 ),
               ),
-              SvgPicture.asset(noitificationModel.image2),
+              SvgPicture.asset(noitificationModel.image2!),
             ],
           )),
     );
   }
-}
-
-class GradientBorderPainter extends CustomPainter {
-  @override
-  void paint(Canvas canvas, Size size) {
-    final rect = Offset.zero & size;
-
-    final gradient = LinearGradient(
-      colors: [Colors.blue, Colors.purple],
-    );
-
-    final paint = Paint()
-      ..shader = gradient.createShader(rect)
-      ..style = PaintingStyle.stroke
-      ..strokeWidth = 2; // سمك الحد
-
-    final rrect = RRect.fromRectAndRadius(rect, Radius.circular(12));
-    canvas.drawRRect(rrect, paint);
-  }
-
-  @override
-  bool shouldRepaint(covariant CustomPainter oldDelegate) => false;
 }

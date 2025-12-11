@@ -21,7 +21,7 @@ class NotificationAppBarWdget extends StatelessWidget {
         ),
         Positioned(
           top: -10,
-          right: -4,
+          right: -2,
           child: Container(
             width: 18.w,
             height: 18.h,

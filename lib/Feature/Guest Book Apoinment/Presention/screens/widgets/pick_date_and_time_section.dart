@@ -14,7 +14,7 @@ class PickDateTimeSection extends StatelessWidget {
       children: [
         Text("Pick Date & Time", style: StyleApp.font20BlackSemiBold),
         SizedBox(
-          height: 24.h,
+          height: 20.h,
         ),
         const DateSlotsWidget(),
         SizedBox(

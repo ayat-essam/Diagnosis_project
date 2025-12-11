@@ -17,7 +17,7 @@ class BookNowButtonWidget extends StatelessWidget {
       onTap: onTap,
       child: Container(
         width: double.infinity,
-        padding: EdgeInsets.symmetric(vertical: 12.h),
+        padding: EdgeInsets.symmetric(vertical: 10.h),
         decoration: BoxDecoration(
           color: AppColors.BluePrimary,
           borderRadius: BorderRadius.circular(14.r),

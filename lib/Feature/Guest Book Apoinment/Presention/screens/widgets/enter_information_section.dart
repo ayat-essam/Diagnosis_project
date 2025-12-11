@@ -13,7 +13,7 @@ class EnterInformationSection extends StatelessWidget {
       children: [
         Text("Enter Your Information", style: StyleApp.font20BlackSemiBold),
         SizedBox(
-          height: 25.h,
+          height: 20.h,
         ),
         const TextFormFiledCustom(
             hintText: "Full Name", icon: 'assets/image/Person_icon.png'),

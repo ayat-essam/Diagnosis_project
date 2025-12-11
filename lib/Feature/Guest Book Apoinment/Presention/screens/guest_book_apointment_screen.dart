@@ -1,6 +1,6 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/notification_appbar_widget.dart';
+import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/book_apoinment_appbar.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/book_now_button_widget.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/enter_information_section.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/pick_date_and_time_section.dart';
@@ -14,21 +14,9 @@ class GuestBookApointmentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
-      appBar: AppBar(
-        backgroundColor: AppColors.whiteBackground,
-        title: Image.asset(
-          "assets/image/logo.png",
-          height: 38.h,
-          width: 138.w,
-        ),
-        actionsPadding: EdgeInsets.only(right: 20.w),
-        actions: const [
-          NotificationAppBarWdget(),
-          CircleAvatar(
-            radius: 25,
-            backgroundImage: AssetImage("assets/image/person.png"),
-          )
-        ],
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(70.h),
+        child: const BookApointmentAppBar(),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -54,7 +42,7 @@ class GuestBookApointmentScreen extends StatelessWidget {
               ),
               const EnterInformationSection(),
               SizedBox(
-                height: 24.h,
+                height: 20.h,
               ),
               const PickDateTimeSection(),
               SizedBox(

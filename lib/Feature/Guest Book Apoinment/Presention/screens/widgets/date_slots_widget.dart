@@ -27,12 +27,12 @@ class _DateSlotsWidgetState extends State<DateSlotsWidget> {
               setState(() => selectedTime = index);
             },
             child: Container(
-              width: 55.w,
+              width: 52.w,
               margin: const EdgeInsets.only(right: 10),
               padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 1),
               decoration: BoxDecoration(
                 color: isSelected ? AppColors.BluePrimary : AppColors.dateSloteColor,
-                borderRadius: BorderRadius.circular(30.r),
+                borderRadius: BorderRadius.circular(24.r),
               ),
               child: Column(
                 children: [

@@ -18,7 +18,7 @@ class _TimeSlotsWidgetState extends State<TimeSlotsWidget> {
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      height: 44.h,
+      height: 40.h,
       child: ListView.builder(
         scrollDirection: Axis.horizontal,
         itemCount: times.length,
@@ -28,7 +28,7 @@ class _TimeSlotsWidgetState extends State<TimeSlotsWidget> {
             onTap: () {},
             child: Container(
               margin: const EdgeInsets.only(right: 10),
-              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 20),
+              padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 18),
               decoration: BoxDecoration(
                 color: isSelected
                     ? AppColors.BluePrimary

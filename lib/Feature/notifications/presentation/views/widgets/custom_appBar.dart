@@ -11,8 +11,23 @@ class CustomAppBar extends StatelessWidget {
   Widget build(BuildContext context) {
     return AppBar(
       backgroundColor: AppColors.whiteBackground,
-      foregroundColor: Colors.black,
       elevation: 0,
+      // bottom: PreferredSize(
+      //   preferredSize: Size.fromHeight(1.0),
+      //   child: Container(
+      //     height: 1.0,
+      //     decoration: BoxDecoration(
+      //       boxShadow: [
+      //         BoxShadow(
+      //           color: Colors.grey[600]!.withOpacity(0.5),
+      //           spreadRadius: 0,
+      //           blurRadius: 4,
+      //           offset: Offset(0, 3),
+      //         ),
+      //       ],
+      //     ),
+      //   ),
+      // ),
       title: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [

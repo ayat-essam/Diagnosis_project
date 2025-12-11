@@ -1,0 +1,70 @@
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
+import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/notification_appbar_widget.dart';
+import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/book_now_button_widget.dart';
+import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/enter_information_section.dart';
+import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/pick_date_and_time_section.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+class GuestBookApointmentScreen extends StatelessWidget {
+  const GuestBookApointmentScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.whiteBackground,
+      appBar: AppBar(
+        backgroundColor: AppColors.whiteBackground,
+        title: Image.asset(
+          "assets/image/logo.png",
+          height: 38.h,
+          width: 138.w,
+        ),
+        actionsPadding: EdgeInsets.only(right: 20.w),
+        actions: const [
+          NotificationAppBarWdget(),
+          CircleAvatar(
+            radius: 25,
+            backgroundImage: AssetImage("assets/image/person.png"),
+          )
+        ],
+      ),
+      body: SingleChildScrollView(
+        child: Padding(
+          padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 20.w),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Row(
+                children: [
+                  Image.asset(
+                    "assets/image/arrow_back.png",
+                    color: AppColors.black,
+                  ),
+                  SizedBox(width: 20.w),
+                  Text(
+                    "Book Apointment",
+                    style: StyleApp.font25blackbold,
+                  ),
+                ],
+              ),
+              SizedBox(
+                height: 14.h,
+              ),
+              const EnterInformationSection(),
+              SizedBox(
+                height: 24.h,
+              ),
+              const PickDateTimeSection(),
+              SizedBox(
+                height: 25.h,
+              ),
+              BookNowButtonWidget(onTap: () {}),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

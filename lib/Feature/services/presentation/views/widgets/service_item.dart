@@ -10,7 +10,8 @@ class ServiceItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      decoration: BoxDecoration(border: Border.all(color: Color(0xffE5E7EB))),
+      decoration:
+          BoxDecoration(border: Border.all(color: const Color(0xffE5E7EB))),
       child: Padding(
         padding: const EdgeInsets.symmetric(vertical: 10),
         child: ListTile(

@@ -11,7 +11,7 @@ class ServicesListView extends StatelessWidget {
     return Expanded(
       child: ListView.builder(
         shrinkWrap: true,
-        itemCount: 10,
+        itemCount: 7,
         itemBuilder: (context, index) {
           return const ServiceItem();
         },

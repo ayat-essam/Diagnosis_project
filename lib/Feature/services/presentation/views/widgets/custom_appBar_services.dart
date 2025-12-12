@@ -16,7 +16,7 @@ class CustomAppBarServices extends StatelessWidget {
           height: 70,
           width: 170,
         ),
-        Spacer(),
+        const Spacer(),
         Stack(clipBehavior: Clip.none, children: [
           Positioned(
             bottom: 12,
@@ -56,7 +56,7 @@ class CustomAppBarServices extends StatelessWidget {
         ),
         const SizedBox(
           width: 8,
-        ),
+        )
       ],
     );
   }

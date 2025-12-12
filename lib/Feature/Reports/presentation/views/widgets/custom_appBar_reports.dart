@@ -32,7 +32,7 @@ class CustomAppBarReports extends StatelessWidget {
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Good Morning, Ahmed',
+            'Good Morning, Dr.Ahmed',
             style: TextStyle(
                 color: Color(0xff404040),
                 fontSize: 20,
@@ -75,19 +75,12 @@ class CustomAppBarReports extends StatelessWidget {
         const SizedBox(
           width: 20,
         ),
-        Container(
-          height: 40,
-          width: 40,
-          decoration: const BoxDecoration(
-              shape: BoxShape.circle, color: AppColors.BluePrimary),
-          child: const Center(
-            child: Text(
-              'A',
-              style: TextStyle(
-                  color: Colors.white,
-                  fontSize: 14,
-                  fontWeight: FontWeight.w400),
-            ),
+        ClipOval(
+          child: Image.asset(
+            'assets/image/profile.png',
+            width: 36,
+            height: 36,
+            fit: BoxFit.cover,
           ),
         ),
         const SizedBox(

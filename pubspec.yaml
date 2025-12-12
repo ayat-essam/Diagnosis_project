@@ -76,10 +76,7 @@ flutter:
   assets:
     - assets/image/
     - assets/icons/
-   
-    - assets/image SVG/
-   
-
+    - assets/image_SVG/
   # example:
   fonts:
     - family: Poppins

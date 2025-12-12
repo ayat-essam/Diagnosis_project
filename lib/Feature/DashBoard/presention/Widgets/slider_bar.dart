@@ -85,49 +85,49 @@ class _SliderBarState extends State<SliderBar> {
     final menuItems = [
       MenuItemData(
         title: 'DashBoard',
-        iconPath: "assets/image SVG/dashBoardIcon.svg",
+        iconPath: "assets/image_SVG/dashBoardIcon.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Diagnosis Module',
-        iconPath: "assets/image SVG/DiagnosisModuleIcon.svg",
+        iconPath: "assets/image_SVG/DiagnosisModuleIcon.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Ai Diagnosis Result',
-        iconPath: "assets/image SVG/aiMessage.svg",
+        iconPath: "assets/image_SVG/aiMessage.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Drug Checker',
-        iconPath: "assets/image SVG/Vector.svg",
+        iconPath: "assets/image_SVG/Vector.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Physiotherapy',
-        iconPath: "assets/image SVG/Physiotherapy.svg",
+        iconPath: "assets/image_SVG/Physiotherapy.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Inquiries',
-        iconPath: "assets/image SVG/Inquiries.svg",
+        iconPath: "assets/image_SVG/Inquiries.svg",
           onTap: () {
 
           },
       ),
       MenuItemData(
         title: 'Complaints',
-        iconPath: "assets/image SVG/Diagnosis.svg",
+        iconPath: "assets/image_SVG/Diagnosis.svg",
         onTap: () {
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ComplaintsScreen(),));
 
@@ -135,21 +135,21 @@ class _SliderBarState extends State<SliderBar> {
       ),
       MenuItemData(
         title: 'Directory',
-        iconPath: "assets/image SVG/DirectoryIcon.svg",
+        iconPath: "assets/image_SVG/DirectoryIcon.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Appointments',
-        iconPath: "assets/image SVG/opppointIcon.svg",
+        iconPath: "assets/image_SVG/opppointIcon.svg",
         onTap:() {
           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Appointments(),));
         },
       ),
       MenuItemData(
         title: 'Medical Files',
-        iconPath: "assets/image SVG/Medical FilesIcon.svg",
+        iconPath: "assets/image_SVG/Medical FilesIcon.svg",
         onTap: () {
 
         },
@@ -180,21 +180,21 @@ class _SliderBarState extends State<SliderBar> {
     final generalItems = [
       MenuItemData(
         title: 'Settings',
-        iconPath: "assets/image SVG/settingIcon.svg",
+        iconPath: "assets/image_SVG/settingIcon.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Help',
-        iconPath: "assets/image SVG/helpIcon.svg",
+        iconPath: "assets/image_SVG/helpIcon.svg",
         onTap: () {
 
         },
       ),
       MenuItemData(
         title: 'Log Out',
-        iconPath: 'assets/image SVG/logOutIcon.svg',
+        iconPath: 'assets/image_SVG/logOutIcon.svg',
         onTap: () {
 
         },

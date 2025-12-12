@@ -25,7 +25,6 @@ class AppointmentDetails extends StatelessWidget {
       }
     }
 
-
     return Scaffold(
       appBar: const AppointmentsAppBar(
         title: "Patient Details",

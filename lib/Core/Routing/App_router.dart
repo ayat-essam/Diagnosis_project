@@ -8,7 +8,7 @@ import '../../Feature/Appointments/Appointments_Screen.dart';
 import '../../Feature/Auth/HomePage.dart';
 import '../../Feature/Auth/Presention/Login Screen/login_screen.dart';
 import '../../Feature/Auth/Presention/Register Screen/register_screen.dart';
-import '../../Feature/Complaints/Complaints_Screen.dart';
+import '../../Feature/Complaints/presentation/screens/Complaints_Screen.dart';
 import '../../Feature/Diagnosis Module/Diagnosis_Module_Screen.dart';
 import '../../Feature/Directory/Director_ Screen.dart';
 import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';

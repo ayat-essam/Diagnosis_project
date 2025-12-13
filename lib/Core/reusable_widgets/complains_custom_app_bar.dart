@@ -82,6 +82,8 @@ class ComplaintsCustomAppBar extends StatelessWidget {
                   ],
                 )
                 ,
+
+
                 SizedBox(width: 14.w),
                 const CircleAvatar(
                   backgroundColor: AppColors.BluePrimary,

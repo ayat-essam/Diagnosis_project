@@ -2,6 +2,7 @@
 import 'package:diagnosis_project/Core/Routing/routes.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
+import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
 import '../../Feature/Appointments/Appointments_Screen.dart';
@@ -9,7 +10,8 @@ import '../../Feature/Auth/HomePage.dart';
 import '../../Feature/Auth/Presention/Login Screen/login_screen.dart';
 import '../../Feature/Auth/Presention/Register Screen/register_screen.dart';
 import '../../Feature/Complaints/presentation/screens/Complaints_Screen.dart';
-import '../../Feature/Diagnosis Module/Diagnosis_Module_Screen.dart';
+//import '../../Feature/Complaints/Complaints_Screen.dart';
+
 import '../../Feature/Directory/Director_ Screen.dart';
 import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';
 import '../../Feature/Help/Help_Screen.dart';

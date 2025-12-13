@@ -1,0 +1,33 @@
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/consultations_section.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/custom_appBar_Consultations.dart';
+import 'package:flutter/material.dart';
+
+class ConsultationsView extends StatelessWidget {
+  const ConsultationsView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      backgroundColor: AppColors.whiteBackground,
+      appBar: const PreferredSize(
+          preferredSize: Size.fromHeight(65),
+          child: CustomAppBarConsultations()),
+      body: SafeArea(
+        child: SingleChildScrollView(
+            child: Column(
+          children: [
+            Container(
+              height: 3,
+              color: Colors.grey[300],
+            ),
+            const SizedBox(
+              height: 10,
+            ),
+            const ConsultationsSection(),
+          ],
+        )),
+      ),
+    );
+  }
+}

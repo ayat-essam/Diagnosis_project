@@ -5,8 +5,9 @@ import '../Theme App/Fonts.dart';
 import '../Theme App/colors.dart';
 
 class ComplaintsCustomAppBar extends StatelessWidget {
-  const ComplaintsCustomAppBar({super.key});
+  const ComplaintsCustomAppBar({super.key, required this.title});
 
+  final String title;
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -24,7 +25,7 @@ class ComplaintsCustomAppBar extends StatelessWidget {
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Text(
-                      "Good morning, Ahmed",
+                      title,
                       style: TextStyle(
                         fontSize: 12.sp,
                         fontWeight: Fonts.semiBold,

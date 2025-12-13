@@ -31,7 +31,14 @@ class StyleApp {
   static TextStyle font16WhiteSemiBold = TextStyle(
     fontSize: 16.sp,
     fontWeight: Fonts.semiBold,
+    fontFamily: 'Poppins',
     color: AppColors.whiteBackground,
+  );
+  static TextStyle font16BlueSemiBold = TextStyle(
+    fontSize: 16.sp,
+    fontWeight: Fonts.semiBold,
+    fontFamily: 'Poppins',
+    color: AppColors.BluePrimary,
   );
   static TextStyle font12WhiteSemiBold = TextStyle(
     fontSize: 12.sp,
@@ -87,7 +94,8 @@ class StyleApp {
   static TextStyle font16BlackRegular = TextStyle(
     fontSize: 16.sp,
     fontWeight: FontWeight.w400,
-    color: AppColors.BluePrimary,
+    fontFamily: 'Poppins',
+    color: AppColors.black,
   );
   static TextStyle font16graySecondaryRegular = TextStyle(
     fontSize: 16.sp,
@@ -156,6 +164,13 @@ class StyleApp {
   static TextStyle font20WhiteSemiBold = TextStyle(
     fontSize: 20.sp,
     fontWeight: Fonts.semiBold,
+    color: AppColors.whiteBackground,
+  );
+
+  static TextStyle font12WhiteMedium = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: Fonts.medium,
+    fontFamily: 'Poppins',
     color: AppColors.whiteBackground,
   );
 }

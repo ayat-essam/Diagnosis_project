@@ -10,7 +10,6 @@ class CustomButton extends StatelessWidget {
     required this.text,
   });
 
-
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

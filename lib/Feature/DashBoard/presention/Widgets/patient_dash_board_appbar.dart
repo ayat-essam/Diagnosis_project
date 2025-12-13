@@ -3,8 +3,8 @@ import 'package:diagnosis_project/Core/reusable_widgets/notification_appbar_widg
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class BookApointmentAppBar extends StatelessWidget {
-  const BookApointmentAppBar({
+class PationDashBoardAppbar extends StatelessWidget {
+  const PationDashBoardAppbar({
     super.key,
   });
 
@@ -16,8 +16,9 @@ class BookApointmentAppBar extends StatelessWidget {
       surfaceTintColor: AppColors.whiteBackground,
       elevation: 5,
       shadowColor: AppColors.black.withOpacity(.8),
+      leading: const Icon(Icons.menu, color: AppColors.black),
       title: Image.asset(
-        "assets/image/logo.png",
+        "assets/image/logo2.png",
         height: 38.h,
         width: 138.w,
       ),

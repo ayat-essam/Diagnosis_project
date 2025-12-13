@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/notification_appbar_widget.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/notification_appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

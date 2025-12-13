@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 import '../Theme App/Fonts.dart';
 import '../Theme App/colors.dart';
@@ -80,12 +81,8 @@ class ComplaintsCustomAppBar extends StatelessWidget {
                     ),
 
                   ],
-                )
-                ,
-
-
-
-                SizedBox(width: 14.w),
+                ),
+                Gap(14),
                 const CircleAvatar(
                   backgroundColor: AppColors.BluePrimary,
                   radius: 20,

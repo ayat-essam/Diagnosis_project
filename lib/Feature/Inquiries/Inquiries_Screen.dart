@@ -51,8 +51,8 @@ class _PreviousRepliesSection extends StatelessWidget {
         StatusCard(
           title: 'Long wait time at clinic',
           status: 'Replied',
-          description:
-              'We appreciate your understanding. As a gesture of goodwill, we\'d like to offer you priority scheduling for your next visit.',
+          description:'# TKT-2024-1156',
+              // 'We appreciate your understanding. As a gesture of goodwill, we\'d like to offer you priority scheduling for your next visit.',
           textButton: "View full conversation",
         ),
       ],

@@ -17,17 +17,9 @@ class CustomDoctorAppBar extends StatelessWidget {
       child: AppBar(
         scrolledUnderElevation: 0,
         backgroundColor: AppColors.whiteBackground,
-        title: Row(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.menu, color: AppColors.black),
-            ),
-            Text(
-              "Good Morning, Dr.Ahmed",
-              style: StyleApp.font12BlackSemiBold,
-            ),
-          ],
+        title: Text(
+          "Good Morning, Dr.Ahmed",
+          style: StyleApp.font12BlackSemiBold,
         ),
         actionsPadding: EdgeInsets.only(right: 20.w),
         actions: const [

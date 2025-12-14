@@ -3,6 +3,7 @@ import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/bar_chart
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/grid_view_dashboard_container.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/line_chart_widget.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_dash_board_appbar.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -15,7 +16,10 @@ class PatientDashboard extends StatelessWidget {
       backgroundColor: Colors.white,
       appBar: PreferredSize(
           preferredSize: Size.fromHeight(70.h),
-          child: const PationDashBoardAppbar()),
+          child: const PationDashBoardAppbar(),
+      ),
+          drawer: const SliderBar(),
+   
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(

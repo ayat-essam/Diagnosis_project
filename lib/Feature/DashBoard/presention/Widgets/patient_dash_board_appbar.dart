@@ -16,11 +16,21 @@ class PationDashBoardAppbar extends StatelessWidget {
       surfaceTintColor: AppColors.whiteBackground,
       elevation: 5,
       shadowColor: AppColors.black.withOpacity(.8),
-      leading: const Icon(Icons.menu, color: AppColors.black),
-      title: Image.asset(
-        "assets/image/logo2.png",
-        height: 38.h,
-        width: 138.w,
+      leadingWidth: 110.w,
+      leading: Row(
+        children: [
+          IconButton(
+            icon: const Icon(Icons.menu, color: AppColors.black),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+          Image.asset(
+            "assets/image/logo2.png",
+            height: 38.h,
+            width: 38.w,
+          ),
+        ],
       ),
       actionsPadding: EdgeInsets.only(right: 20.w),
       actions: const [

@@ -39,7 +39,7 @@ class DiagnocsisTempletContainer extends StatelessWidget {
                     ),
                   ),
                   Gap(12.h),
-                  Text(title, style: StyleApp.font12BlackSemiBold),
+                  Text(title, style: StyleApp.font18BlackSemiBold),
                   Gap(4.h)
                 ],
               ),

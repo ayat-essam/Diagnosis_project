@@ -2,6 +2,7 @@
 import 'package:diagnosis_project/Core/Routing/routes.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
@@ -34,11 +35,11 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) =>  LoginScreen(),);
 
       case Routers.DashBoard:
-        return MaterialPageRoute(builder: (_) =>  DashBoard());
+        return MaterialPageRoute(builder: (_) =>  const PatientDashboard());
 
     // Drawer Routers Items
       case Routers.diagnosisModule:
-        return MaterialPageRoute(builder: (_) => DiagnosisModuleScreen());
+        return MaterialPageRoute(builder: (_) => const DiagnosisModuleScreen());
       case Routers.aiDiagnosisResult:
         return MaterialPageRoute(builder: (_) => AiDiagnosisResultScreen());
       case Routers.drugChecker:

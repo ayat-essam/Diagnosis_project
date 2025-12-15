@@ -15,4 +15,5 @@ class AppColors {
   static const Color grayF2 = Color(0xffF2F2F2);
   static const Color grayE2 = Color(0xffE2E2E2);
   static const Color dateSloteColor = Color(0xffdae4fa);
+  static const Color greyLight = Color(0xfff7f7f7);
 }

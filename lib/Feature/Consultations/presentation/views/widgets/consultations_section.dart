@@ -1,7 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/Consultation_form.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/StatusDropdown.dart';
-import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/consultation_Items_listView.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/consultation_item.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/custom_search_consultations.dart';
 import 'package:flutter/material.dart';
 
@@ -72,7 +72,7 @@ class ConsultationsSection extends StatelessWidget {
                   SizedBox(
                     height: 43,
                   ),
-                  ConsultationItemsListView()
+                  ConsultationItem()
                 ],
               ))),
     );

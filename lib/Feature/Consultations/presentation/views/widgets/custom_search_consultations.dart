@@ -8,7 +8,7 @@ class CustomConsultationSearch extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: Color(0xffFFFFFF),
+      color: const Color(0xffFFFFFF),
       child: TextField(
         controller: controller,
         onChanged: onChanged,

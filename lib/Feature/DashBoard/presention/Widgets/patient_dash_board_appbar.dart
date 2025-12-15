@@ -32,12 +32,17 @@ class PationDashBoardAppbar extends StatelessWidget {
           ),
         ],
       ),
-      actionsPadding: EdgeInsets.only(right: 20.w),
-      actions: const [
-        NotificationAppBarWdget(),
-        CircleAvatar(
-          radius: 25,
-          backgroundImage: AssetImage("assets/image/person.png"),
+      actions:  const [
+        Padding(
+          padding: EdgeInsets.only(right: 20),
+          child: NotificationAppBarWdget(),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 20),
+          child: CircleAvatar(
+            radius: 25,
+            backgroundImage: AssetImage("assets/image/person.png"),
+          ),
         )
       ],
     );

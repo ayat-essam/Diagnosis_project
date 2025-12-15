@@ -36,7 +36,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: ConsultationsView() //DoctorsScreen(),
+              home: LoginScreen() //DoctorsScreen(),
               );
         });
 

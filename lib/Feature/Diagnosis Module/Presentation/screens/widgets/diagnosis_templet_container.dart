@@ -24,8 +24,8 @@ class DiagnocsisTempletContainer extends StatelessWidget {
         fit: BoxFit.scaleDown,
         child: Padding(
           padding: const EdgeInsets.all(8.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.start,
             spacing: 2.h,
             children: [
               Row(

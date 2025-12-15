@@ -21,9 +21,11 @@ class BookApointmentAppBar extends StatelessWidget {
         height: 38.h,
         width: 138.w,
       ),
-      actionsPadding: EdgeInsets.only(right: 20.w),
       actions: const [
-        NotificationAppBarWdget(),
+        Padding(
+          padding: EdgeInsets.only(right: 20),
+          child: NotificationAppBarWdget(),
+        ),
         CircleAvatar(
           radius: 25,
           backgroundImage: AssetImage("assets/image/person.png"),

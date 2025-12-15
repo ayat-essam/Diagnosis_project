@@ -33,7 +33,17 @@ class _SliderBarState extends State<SliderBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset('assets/image/logo.png'),
+                  Row(
+                    children: [
+                      Image.asset('assets/image/logo2.png'),
+                      const Text("Diagnosis",style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: AppColors.BluePrimary,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold
+                      ),)
+                    ],
+                  ),
                 ],
               ),
             ),

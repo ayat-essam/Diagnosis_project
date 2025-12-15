@@ -1,17 +1,18 @@
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
-import '../../../../Core/Theme App/colors.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 
 class CustomBottomNav extends StatelessWidget {
-  final int currentIndex;
-  final Function(int) onTap;
-
   const CustomBottomNav({
     super.key,
     required this.currentIndex,
     required this.onTap,
   });
+
+  final int currentIndex;
+  final Function(int) onTap;
 
   final List<String> _labels = const [
     'Home',
@@ -20,11 +21,11 @@ class CustomBottomNav extends StatelessWidget {
     'Settings',
   ];
 
-  final List<IconData> _items = const [
-    Icons.home_outlined,
-    Icons.hub_outlined,
-    Icons.add_box_outlined,
-    Icons.settings_outlined,
+  final List<String> _items = const [
+    'assets/image_SVG/homeIcon.svg',
+    'assets/image_SVG/servicesIcon.svg',
+    'assets/image_SVG/doctorBagIcon.svg',
+    'assets/image_SVG/iconSetting.svg',
   ];
 
   @override
@@ -35,11 +36,11 @@ class CustomBottomNav extends StatelessWidget {
         height: 70.h,
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
-          color:  AppColors.BluePrimary,
+          color: AppColors.BluePrimary,
           borderRadius: BorderRadius.circular(40.r),
           boxShadow: [
             BoxShadow(
-              color: AppColors.black.withOpacity(0.15),
+              color: Colors.black.withOpacity(0.15),
               blurRadius: 10,
               offset: const Offset(0, 6),
             ),
@@ -59,17 +60,22 @@ class CustomBottomNav extends StatelessWidget {
                   vertical: 8.h,
                 ),
                 decoration: BoxDecoration(
-                  color: isActive ?  AppColors.whiteBackground : Colors.transparent,
+                  color: isActive ? Colors.white : Colors.transparent,
                   borderRadius: BorderRadius.circular(30.r),
                 ),
                 child: Row(
                   children: [
-                    Icon(
+                    SvgPicture.asset(
                       _items[index],
-                      color: isActive ?AppColors.BluePrimary: AppColors.whiteBackground,
+                      width: 24,
+                      height: 24,
+                      colorFilter: ColorFilter.mode(
+                        isActive ? AppColors.BluePrimary : Colors.white,
+                        BlendMode.srcIn,
+                      ),
                     ),
                     if (isActive) ...[
-                      SizedBox(width: 6.w),
+                      const Gap(6),
                       Text(
                         _labels[index],
                         style: TextStyle(
@@ -78,7 +84,7 @@ class CustomBottomNav extends StatelessWidget {
                           fontSize: 14.sp,
                         ),
                       ),
-                    ]
+                    ],
                   ],
                 ),
               ),
@@ -89,4 +95,3 @@ class CustomBottomNav extends StatelessWidget {
     );
   }
 }
-

@@ -3,7 +3,7 @@ import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/wid
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../Core/reusable_widgets/complains_custom_app_bar.dart';
+import '../../../../../Core/reusable_widgets/custom_app_bar.dart';
 import '../widgets/finance_chart_widget.dart';
 import '../widgets/finance_hider_widget.dart';
 
@@ -24,7 +24,7 @@ class _FinanceDoctorScreenState extends State<FinanceDoctorScreen> {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           children: [
-            ComplaintsCustomAppBar(title: "Good morning Dr.Ahmed",),
+            CustomAppBar(title: "Good morning Dr.Ahmed",),
             FinanceHeader(),
             Gap(16),
             EarningCardWidget(),

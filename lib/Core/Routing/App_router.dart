@@ -6,7 +6,6 @@ import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
-import '../../Feature/Appointments/Appointments_Screen.dart';
 import '../../Feature/Auth/HomePage.dart';
 import '../../Feature/Auth/Presention/Login Screen/login_screen.dart';
 import '../../Feature/Auth/Presention/Register Screen/register_screen.dart';
@@ -53,8 +52,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ComplaintsScreen());
       case Routers.directory:
         return MaterialPageRoute(builder: (_) => DirectoryScreen());
-      case Routers.appointments:
-        return MaterialPageRoute(builder: (_) => AppointmentsScreen());
       case Routers.medicalFiles:
         return MaterialPageRoute(builder: (_) => MedicalFilesScreen());
       case Routers.settings:

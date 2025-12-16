@@ -1,12 +1,12 @@
-class loginResponse {
+class LoginResponse {
   bool? success;
   String? token;
   Null? errorMessage;
   String? expiresAt;
 
-  loginResponse({this.success, this.token, this.errorMessage, this.expiresAt});
+  LoginResponse({this.success, this.token, this.errorMessage, this.expiresAt});
 
-  loginResponse.fromJson(Map<String, dynamic> json) {
+  LoginResponse.fromJson(Map<String, dynamic> json) {
     success = json['success'];
     token = json['token'];
     errorMessage = json['errorMessage'];

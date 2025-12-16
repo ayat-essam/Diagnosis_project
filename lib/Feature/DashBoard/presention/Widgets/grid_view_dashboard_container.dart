@@ -64,11 +64,7 @@ class _GridViewDashboardContainerState
             });
           },
           child: InfoContainer(
-            title: card.title,
-            subtitle: card.subtitle,
-            description: card.description,
-            imgPath: card.imgPath,
-            isSelected: selectedIndex == index,
+            infoContainerModel: card,
           ),
         );
       },

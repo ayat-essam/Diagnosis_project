@@ -173,4 +173,9 @@ class StyleApp {
     fontFamily: 'Poppins',
     color: AppColors.whiteBackground,
   );
+
+  static TextStyle font9grayTextChart = TextStyle(
+    fontSize: 9.sp,
+    color: AppColors.grayTextChart,
+  );
 }

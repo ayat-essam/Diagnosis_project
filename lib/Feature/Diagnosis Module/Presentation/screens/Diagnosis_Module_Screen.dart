@@ -20,12 +20,9 @@ class DiagnosisModuleScreen extends StatelessWidget {
       drawer: const SliderBar(),
       body: CustomScrollView(
         slivers: [
-          /// App Bar
           const SliverToBoxAdapter(
             child: CustomDoctorAppBar(),
           ),
-
-          /// Content
           SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             sliver: SliverToBoxAdapter(

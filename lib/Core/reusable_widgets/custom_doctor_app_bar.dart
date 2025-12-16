@@ -17,25 +17,22 @@ class CustomDoctorAppBar extends StatelessWidget {
       child: AppBar(
         scrolledUnderElevation: 0,
         backgroundColor: AppColors.whiteBackground,
-        title: Row(
-          children: [
-            IconButton(
-              onPressed: () {},
-              icon: const Icon(Icons.menu, color: AppColors.black),
-            ),
-            Text(
-              "Good Morning, Dr.Ahmed",
-              style: StyleApp.font12BlackSemiBold,
-            ),
-          ],
+        title: Text(
+          "Good Morning, Dr.Ahmed",
+          style: StyleApp.font12BlackSemiBold,
         ),
-        actionsPadding: EdgeInsets.only(right: 20.w),
         actions: const [
-          NotificationAppBarWdget(),
-          SizedBox(width: 5),
-          CircleAvatar(
-            radius: 18,
-            backgroundImage: AssetImage("assets/image/profile.png"),
+          Padding(
+            padding: EdgeInsets.only(right: 20),
+            child: NotificationAppBarWdget(),
+          ),
+          Gap(5),
+          Padding(
+            padding: EdgeInsets.only(right: 20),
+            child: CircleAvatar(
+              radius: 18,
+              backgroundImage: AssetImage("assets/image/profile.png"),
+            ),
           )
         ],
       ),

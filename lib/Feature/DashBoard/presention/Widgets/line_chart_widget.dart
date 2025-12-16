@@ -24,13 +24,19 @@ class LineChartWidget extends StatelessWidget {
                         show: true,
                       ),
                       titlesData: FlTitlesData(
+                        topTitles: const AxisTitles(
+                          sideTitles: SideTitles(showTitles: false),
+                        ),
+                        rightTitles: const AxisTitles(
+                          sideTitles: SideTitles(showTitles: false),
+                        ),
                         leftTitles: AxisTitles(
                           sideTitles: SideTitles(
                             showTitles: true,
                             getTitlesWidget: (value, meta) {
                               return FittedBox(
                                 fit: BoxFit.scaleDown,
-                                child: Row(
+                                child: Wrap(
                                   spacing: 3,
                                   children: [
                                     // الرقم نفسه

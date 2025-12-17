@@ -11,7 +11,7 @@ class PationDashBoardAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      scrolledUnderElevation: 0,
+      scrolledUnderElevation: 5,//make it 5 to make ظل ثابت أثناء scroll
       backgroundColor: AppColors.whiteBackground,
       surfaceTintColor: AppColors.whiteBackground,
       elevation: 5,
@@ -41,7 +41,7 @@ class PationDashBoardAppbar extends StatelessWidget {
           padding: EdgeInsets.only(right: 20),
           child: CircleAvatar(
             radius: 25,
-            backgroundImage: AssetImage("assets/image/person.png"),
+            backgroundImage: AssetImage("assets/image/profile.png"),
           ),
         )
       ],

@@ -49,7 +49,7 @@ class LineChartLegand extends StatelessWidget {
         Text(
           text,
           textAlign: TextAlign.center,
-          style: TextStyle(fontSize: 10, color: color),
+          style: TextStyle(fontSize: 15, color: color),
         ),
       ],
     );

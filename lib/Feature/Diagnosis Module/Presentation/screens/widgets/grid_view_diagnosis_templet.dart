@@ -38,9 +38,7 @@ class GridViewDiagnosisTemplet extends StatelessWidget {
           (context, index) {
             final card = infoCards[index];
             return DiagnocsisTempletContainer(
-              title: card.title,
-              backgroundImageColor: card.backgroundImageColor,
-              imgPath: card.imgPath,
+              diagnosisTemplatesModel: card,
             );
           },
           childCount: infoCards.length,

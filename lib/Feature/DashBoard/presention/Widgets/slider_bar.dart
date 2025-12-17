@@ -33,6 +33,7 @@ class _SliderBarState extends State<SliderBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
+
                   Row(
                     children: [
                       Image.asset('assets/image/logo2.png'),

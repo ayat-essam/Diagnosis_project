@@ -15,6 +15,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
 import 'Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
+import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -35,9 +36,11 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return MaterialApp(
+          return const MaterialApp(
               debugShowCheckedModeBanner: false,
+
               home: SettingDoctorView() //DoctorsScreen(),
+
 
               );
         });

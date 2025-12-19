@@ -18,4 +18,6 @@ class AppColors {
   static const Color greyLight = Color(0xfff7f7f7);
   static const Color blueDark = Color(0xff1F3A70);
   static const Color grayTextChart = Color(0xff404040);
+  static const Color grayDark = Color(0xff505050);
+  static const Color gratext = Color(0xff777777);
 }

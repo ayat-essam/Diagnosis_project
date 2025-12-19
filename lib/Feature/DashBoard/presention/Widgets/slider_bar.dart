@@ -220,8 +220,8 @@ class _SliderBarState extends State<SliderBar> {
           Navigator.pop(context);
           if (item.title == 'Log Out') {
             handleLogout(context);
-          } else if (item.onTap != null) {
-            Navigator.pushNamed(context, item.onTap as String);
+          } if (item.onTap != null) {
+            item.onTap!();
           }
         },
       );

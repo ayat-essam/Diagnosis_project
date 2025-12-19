@@ -29,8 +29,8 @@ class InfoContainer extends StatelessWidget {
                 : Border.all(color: AppColors.whiteBackground, width: 2.w)),
         child: FittedBox(
           fit: BoxFit.scaleDown,
-          child: Wrap(
-            crossAxisAlignment: WrapCrossAlignment.start,
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 2.h,
             children: [
               CircleAvatar(

@@ -46,7 +46,6 @@ class _FilterOptionState extends State<FilterOption> {
     return FittedBox(
       fit: BoxFit.scaleDown,
       child: Row(
-        spacing: 6.w,
         children: [
           Image.asset(
             'assets/image/filters.png',
@@ -57,56 +56,67 @@ class _FilterOptionState extends State<FilterOption> {
             style: StyleApp.font16BlackRegular
                 .copyWith(color: AppColors.blackSecondary),
           ),
-          Row(
+          Gap(5.w),
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              CustomDropdownButton(
-                items: locationOptions,
-                selectedValue: selectedLocation,
-                onChanged: (value) => setState(() => selectedLocation = value),
-                width: 110.w,
-                backgroundColor: AppColors.greyLight,
-                borderRadius: 16.r,
-              ),
-              Gap(5.w),
-              CustomDropdownButton(
-                items: experienceOptions,
-                selectedValue: selectedExperience,
-                onChanged: (value) =>
-                    setState(() => selectedExperience = value),
-                width: 110.w,
-                backgroundColor: AppColors.greyLight,
-                borderRadius: 16.r,
-              ),
-              Gap(5.w),
-              CustomDropdownButton(
-                items: availabilityOptions,
-                selectedValue: selectedAvailability,
-                onChanged: (value) =>
-                    setState(() => selectedAvailability = value),
-                width: 110.w,
-                backgroundColor: AppColors.greyLight,
-                borderRadius: 16.r,
-              ),
-              Gap(5.w),
-              CustomDropdownButton(
-                items: rateOptions,
-                selectedValue: selectedRate,
-                onChanged: (value) => setState(() => selectedRate = value),
-                width: 110.w,
-                backgroundColor: AppColors.greyLight,
-                borderRadius: 16.r,
-              ),
-              Gap(5.w),
-              GestureDetector(
-                onTap: _resetFilters,
-                child: Padding(
-                  padding: EdgeInsets.only(left: 4.w),
-                  child: Text(
-                    'Reset Filters',
-                    style: StyleApp.font12WhiteMedium
-                        .copyWith(color: AppColors.BluePrimary),
+              Row(
+                children: [
+                  CustomDropdownButton(
+                    items: locationOptions,
+                    selectedValue: selectedLocation,
+                    onChanged: (value) =>
+                        setState(() => selectedLocation = value),
+                    width: 120.w,
+                    backgroundColor: AppColors.greyLight,
+                    borderRadius: 16.r,
                   ),
-                ),
+                  Gap(5.w),
+                  CustomDropdownButton(
+                    items: experienceOptions,
+                    selectedValue: selectedExperience,
+                    onChanged: (value) =>
+                        setState(() => selectedExperience = value),
+                    width: 120.w,
+                    backgroundColor: AppColors.greyLight,
+                    borderRadius: 16.r,
+                  ),
+                  Gap(5.w),
+                  CustomDropdownButton(
+                    items: availabilityOptions,
+                    selectedValue: selectedAvailability,
+                    onChanged: (value) =>
+                        setState(() => selectedAvailability = value),
+                    width: 120.w,
+                    backgroundColor: AppColors.greyLight,
+                    borderRadius: 16.r,
+                  ),
+                ],
+              ),
+              Gap(5.h),
+              Row(
+                children: [
+                  CustomDropdownButton(
+                    items: rateOptions,
+                    selectedValue: selectedRate,
+                    onChanged: (value) => setState(() => selectedRate = value),
+                    width: 120.w,
+                    backgroundColor: AppColors.greyLight,
+                    borderRadius: 16.r,
+                  ),
+                  Gap(5.w),
+                  GestureDetector(
+                    onTap: _resetFilters,
+                    child: Padding(
+                      padding: EdgeInsets.only(left: 4.w),
+                      child: Text(
+                        'Reset Filters',
+                        style: StyleApp.font12WhiteMedium
+                            .copyWith(color: AppColors.BluePrimary),
+                      ),
+                    ),
+                  ),
+                ],
               ),
             ],
           ),

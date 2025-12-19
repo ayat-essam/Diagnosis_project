@@ -13,18 +13,20 @@ class CustomAppButton extends StatelessWidget {
     this.borderRedius = 14,
     this.width = double.infinity,
     this.backgroundColor = AppColors.BluePrimary,
+    this.verticalPadding = 6,
   });
   final String text;
   final double borderRedius;
   final double width;
   final Color backgroundColor;
+  final double verticalPadding;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: width,
-        padding: EdgeInsets.symmetric(vertical: 8.h),
+        padding: EdgeInsets.symmetric(vertical: verticalPadding.h),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRedius),

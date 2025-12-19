@@ -5,6 +5,7 @@ import 'package:diagnosis_project/Feature/Consultations/presentation/views/Consu
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctors/doctors_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/screens/recent_transactions_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/Setting_doctor_view.dart';
@@ -39,7 +40,8 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return const MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: GuestSettingView() //DoctorsScreen(),
+
+              home: DirectoryScreen() //DoctorsScreen(),
 
 
               );

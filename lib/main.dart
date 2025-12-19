@@ -11,13 +11,14 @@ import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/scr
 import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/Setting_doctor_view.dart';
 import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/doctor_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
-import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_setting_view.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
 import 'Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
 import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
+import 'Feature/Help/presentation/screens/Help_Screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -41,7 +42,7 @@ class MyApp extends StatelessWidget {
           return const MaterialApp(
               debugShowCheckedModeBanner: false,
 
-              home: DirectoryScreen() //DoctorsScreen(),
+              home: HelpScreen()//DoctorsScreen(),
 
 
               );

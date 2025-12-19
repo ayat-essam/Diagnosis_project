@@ -10,6 +10,7 @@ import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/scr
 import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/Setting_doctor_view.dart';
 import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/doctor_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
+import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_setting_view.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
@@ -38,8 +39,7 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return const MaterialApp(
               debugShowCheckedModeBanner: false,
-
-              home: DiagnosisModuleScreen() //DoctorsScreen(),
+              home: GuestSettingView() //DoctorsScreen(),
 
 
               );

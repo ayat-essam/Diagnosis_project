@@ -34,9 +34,13 @@ class DirectoryScreen extends StatelessWidget {
             Gap(20.h),
             Expanded(
               child: CustomLinearGradiantContainer(
+                borderRadius: 8.r,
                 child: Padding(
                   padding: const EdgeInsets.only(
-                      top: 28.0, left: 8.0, right: 8.0,),
+                    top: 28.0,
+                    left: 8.0,
+                    right: 8.0,
+                  ),
                   child: Column(
                     children: [
                       const FilterOption(),

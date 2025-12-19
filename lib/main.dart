@@ -39,7 +39,7 @@ class MyApp extends StatelessWidget {
           return const MaterialApp(
               debugShowCheckedModeBanner: false,
 
-              home: SettingDoctorView() //DoctorsScreen(),
+              home: DiagnosisModuleScreen() //DoctorsScreen(),
 
 
               );

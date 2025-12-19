@@ -2,7 +2,6 @@ import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_doctor_app_bar.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
-import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/clinical_findings_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/diagnosis_assistant_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/diagnosis_details_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/grid_view_diagnosis_templet.dart';
@@ -48,9 +47,7 @@ class DiagnosisModuleScreen extends StatelessWidget {
                   ),
                   Gap(5.h),
                   const DiagnosisDetailsSection(),
-                  Gap(10.h),
-                  const ClinicalFindingsSection(),
-                  Gap(16.h),
+                  Gap(20.h),
                   Text(
                     "Diagnosis Templates",
                     style: StyleApp.font20BlackMedium,

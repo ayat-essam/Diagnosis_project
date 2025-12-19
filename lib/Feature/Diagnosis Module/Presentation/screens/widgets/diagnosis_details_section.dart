@@ -1,10 +1,11 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
+import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/clinical_findings_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/row_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class DiagnosisDetailsSection extends StatelessWidget {
   const DiagnosisDetailsSection({
@@ -32,13 +33,6 @@ class DiagnosisDetailsSection extends StatelessWidget {
                       style: StyleApp.font14graySecondaryRegular,
                     ),
                   ],
-                ),
-                const Spacer(),
-                CustomAppButton(
-                  onTap: () {},
-                  text: 'Edit',
-                  borderRedius: 25.r,
-                  width: 100.w,
                 ),
               ],
             ),
@@ -75,7 +69,9 @@ Glipizide 5mg - Once daily before breakfast
 Atorvastatin 10mg - Once daily at bedtime""",
               style: StyleApp.font14graySecondaryRegular
                   .copyWith(color: Colors.black),
-            )
+            ),
+            Gap(24.h),
+            const ClinicalFindingsSection()
           ],
         ),
       ),

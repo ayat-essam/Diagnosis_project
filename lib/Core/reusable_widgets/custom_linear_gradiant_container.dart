@@ -3,15 +3,19 @@ import 'package:flutter/cupertino.dart';
 
 class CustomLinearGradiantContainer extends StatelessWidget {
   const CustomLinearGradiantContainer(
-      {super.key, required this.child, this.color = AppColors.greyLight});
+      {super.key,
+      required this.child,
+      this.color = AppColors.greyLight,
+      this.borderRadius = 20});
   final Widget child;
   final Color color;
+  final double borderRadius;
   @override
   Widget build(BuildContext context) {
     return Container(
         padding: const EdgeInsets.all(2),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
+            borderRadius: BorderRadius.circular(borderRadius),
             gradient: LinearGradient(
               colors: [
                 AppColors.BluePrimary,
@@ -22,7 +26,7 @@ class CustomLinearGradiantContainer extends StatelessWidget {
             )),
         child: Container(
           decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
+              borderRadius: BorderRadius.circular(borderRadius),
               gradient: LinearGradient(
                 colors: [
                   color,

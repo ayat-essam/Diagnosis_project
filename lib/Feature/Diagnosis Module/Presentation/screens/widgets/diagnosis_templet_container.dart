@@ -16,37 +16,42 @@ class DiagnocsisTempletContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomLinearGradiantContainer(
-      child: FittedBox(
-        fit: BoxFit.scaleDown,
-        child: Padding(
-          padding: const EdgeInsets.all(8.0),
-          child: Column(
-            children: [
-              Row(
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Gap(20.h),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Row(
                 children: [
-                  CircleAvatar(
-                    radius: 30.r,
-                    backgroundColor:
-                        diagnosisTemplatesModel.backgroundImageColor,
+                  Container(
+                    width: 45.w,
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                      color: diagnosisTemplatesModel.backgroundImageColor,
+                      borderRadius: BorderRadius.circular(30.r),
+                    ),
                     child: Image.asset(
                       diagnosisTemplatesModel.imgPath,
                     ),
                   ),
                   Gap(12.h),
-                  Text(diagnosisTemplatesModel.title,
-                      style: StyleApp.font18BlackSemiBold),
-                  Gap(4.h)
+                  Text(
+                    diagnosisTemplatesModel.title,
+                    style: StyleApp.font20BlackMedium,
+                  ),
                 ],
               ),
-              Gap(12.h),
-              CustomAppButton(
-                onTap: () {},
-                text: 'Use template',
-                width: 180.w,
-                borderRedius: 25.r,
-              )
-            ],
-          ),
+            ),
+            Gap(12.h),
+            CustomAppButton(
+              onTap: () {},
+              text: 'Use Template',
+              width: 140.w,
+              borderRedius: 8.r,
+            )
+          ],
         ),
       ),
     );

@@ -176,6 +176,19 @@ class StyleApp {
 
   static TextStyle font9grayTextChart = TextStyle(
     fontSize: 9.sp,
+    fontFamily: 'Poppins',
     color: AppColors.grayTextChart,
+  );
+  static TextStyle font25grayDarkMedium = TextStyle(
+    fontSize: 25.sp,
+    fontFamily: 'Poppins',
+    fontWeight: Fonts.medium,
+    color: AppColors.grayDark,
+  );
+  static TextStyle font10blackSecondryMedium = TextStyle(
+    fontSize: 10.sp,
+    fontFamily: 'Poppins',
+    fontWeight: Fonts.medium,
+    color: AppColors.blackSecondary,
   );
 }

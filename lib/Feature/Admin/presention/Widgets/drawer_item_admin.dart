@@ -5,13 +5,13 @@ import '../../../../Core/Theme App/colors.dart';
 
 class DrawerItemAdmin extends StatelessWidget {
   final String title;
-  final String iconPath;
+  final String imagePath;
   final bool isActive;
   final VoidCallback onTap;
 
   const DrawerItemAdmin({
     super.key,
-    required this.iconPath,
+    required this.imagePath,
     required this.title,
     required this.isActive,
     required this.onTap,
@@ -19,6 +19,7 @@ class DrawerItemAdmin extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
@@ -69,9 +70,9 @@ class DrawerItemAdmin extends StatelessWidget {
   }
 
   Widget buildIcon() {
-    iconPath.toLowerCase().endsWith('.svg') ;
+    imagePath.toLowerCase().endsWith('.svg') ;
     return SvgPicture.asset(
-      iconPath,
+      imagePath,
       colorFilter: ColorFilter.mode(
         isActive ? Colors.white : Colors.grey[600]!,
         BlendMode.srcIn,

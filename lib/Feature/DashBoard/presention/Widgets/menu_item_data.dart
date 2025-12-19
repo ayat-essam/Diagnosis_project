@@ -1,13 +1,15 @@
+
+
 import 'dart:ui';
 
 class MenuItemData{
   final String title;
   final String iconPath;
-  final VoidCallback onTab;
+  final VoidCallback onTap;
   MenuItemData
       ({
     required this.title,
   required this.iconPath,
-        required this.onTab,
+        required this.onTap,
 });
 }

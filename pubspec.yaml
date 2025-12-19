@@ -54,7 +54,9 @@ dependencies:
   injectable: ^2.4.4
   shared_preferences: ^2.3.2
   smooth_page_indicator: ^1.2.0+3
+#  fl_chart: ^0.71.0
   fl_chart: ^0.63.0
+
   jwt_decoder: ^2.0.1
 
 

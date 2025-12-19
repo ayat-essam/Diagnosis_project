@@ -4,7 +4,8 @@ import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
 import '../../../DashBoard/presention/Widgets/drawer_item.dart';
-import '../../../DashBoard/presention/Widgets/menu_Item.dart';
+import '../../../DashBoard/presention/Widgets/menu_item_data.dart';
+import 'menu_Item_admin.dart';
 
 
 class SliderBarAdmin extends StatefulWidget {
@@ -33,7 +34,7 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
 
                   Row(
                     children: [
-                      Image.asset('assets/image/logo2.png'),
+                      Image.asset('assets/image/logo2.png',width: 80,fit: BoxFit.fitWidth,),
                       const Text("Diagnosis",style: TextStyle(
                           fontFamily: 'Poppins',
                           color: AppColors.BluePrimary,
@@ -42,9 +43,12 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
                       ),)
                     ],
                   ),
+
                 ],
               ),
             ),
+            const Divider(height: 10, thickness: 1),
+
             const Gap(10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -90,28 +94,32 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
 
   List<Widget> buildMenuItems() {
     final menuItems = [
-      MenuItemData(
+      MenuItemDataAdmin(
         title: 'DashBoard',
-        iconPath: "assets/image_SVG/dashBoardIcon.svg",
+        imagePath: "assets/image_SVG/dashBoardIcon.svg",
+          imageColor: AppColors.gray,
         onTap: () {
 
         },
       ),
-      MenuItemData(
+      MenuItemDataAdmin(
         title: 'Doctors\n Management',
-        iconPath: "assets/image_SVG/doctorMangementIcon.svg",
+        imagePath: "assets/image_SVG/doctorMangementIcon.svg",
+        imageColor: AppColors.gray,
         onTap: () {
 
         },
       ),
-      MenuItemData(
+      MenuItemDataAdmin(
         title: 'Patients\n Management',
-        iconPath: "assets/image_SVG/patientsMangmentsIcon.svg",
+        imagePath: "assets/image_SVG/patientsMangmentsIcon.svg",
+    imageColor: AppColors.gray,
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemDataAdmin(
         title: 'System\n Settings',
-        iconPath: "assets/image_SVG/systemSettingIcon.svg",
+        imagePath: "assets/image_SVG/systemSettingIcon.svg",
+        imageColor: AppColors.gray,
         onTap: () {},
       ),
     ];
@@ -119,7 +127,7 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
     return menuItems.map<Widget>((item) {
       return DrawerItemAdmin(
         title: item.title,
-        iconPath: item.iconPath,
+        imagePath: item.imagePath,
         isActive: selectedMenuItem == item.title,
         onTap: () {
           setState(() {
@@ -128,9 +136,7 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
 
           Navigator.pop(context);
           item.onTap?.call();
-          // if (item.onTap != null) {
-          //   Navigator.pushNamed(context, item.onTap as String);
-          // }
+
         },
       );
     }).toList();
@@ -138,23 +144,24 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
 
   List<Widget> buildGeneralItems() {
     final generalItems = [
-      MenuItemData(
+      MenuItemDataAdmin(
         title: 'Settings',
-        iconPath: "assets/image_SVG/settingIcon.svg",
-        onTap: () {},
+        imagePath: "assets/image_SVG/settingIcon.svg",
+        onTap: () {}, imageColor: AppColors.gray,
       ),
 
-      MenuItemData(
-        title: 'Log Out',
-        iconPath: 'assets/image_SVG/logOutIcon.svg',
+      MenuItemDataAdmin(
+        title: "LogOut",
+        imagePath: 'assets/image_SVG/logOutIcon.svg',
+        imageColor: AppColors.RedError,
         onTap: () {},
       ),
     ];
 
     return generalItems.map<Widget>((item) {
-      return DrawerItem(
+      return DrawerItemAdmin(
         title: item.title,
-        iconPath: item.iconPath,
+        imagePath: item.imagePath,
         isActive: selectedGeneralItem == item.title,
         onTap: () {
           setState(() {
@@ -192,7 +199,7 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
                     (route) => false,
               );
             },
-            child: const Text('Log Out', style: TextStyle(color: Colors.red)),
+            child: const Text('LogOut', style: TextStyle(color: Colors.red)),
           ),
         ],
       ),

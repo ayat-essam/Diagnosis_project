@@ -4,6 +4,7 @@ import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screen
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
+import '../../../Help/presentation/screens/Help_Screen.dart';
 import 'drawer_item.dart';
 import 'menu_item_data.dart';
 
@@ -186,7 +187,14 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemData(
         title: 'Help',
         iconPath: "assets/image_SVG/helpIcon.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HelpScreen(),
+            ),
+          );
+        },
       ),
       MenuItemData(
         title: 'Log Out',

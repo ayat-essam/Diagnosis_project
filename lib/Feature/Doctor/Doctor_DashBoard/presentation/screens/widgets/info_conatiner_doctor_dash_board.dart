@@ -1,11 +1,12 @@
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
-import 'package:diagnosis_project/Feature/Doctor_DashBoard/data/models/doctor_dash_board_container_model.dart';
-import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/widgets/custom_linear_gradiant_circle.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../../data/models/doctor_dash_board_container_model.dart';
+import 'custom_linear_gradiant_circle.dart';
 
 class InfoConatinerDoctorDashBoard extends StatelessWidget {
   const InfoConatinerDoctorDashBoard(

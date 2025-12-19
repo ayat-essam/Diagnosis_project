@@ -1,8 +1,9 @@
-import 'package:diagnosis_project/Feature/Doctor_DashBoard/data/models/doctor_dash_board_container_model.dart';
-import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/widgets/info_conatiner_doctor_dash_board.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../../data/models/doctor_dash_board_container_model.dart';
+import 'info_conatiner_doctor_dash_board.dart';
 
 class RowDoctorDashBoardContainer extends StatelessWidget {
   const RowDoctorDashBoardContainer({super.key});

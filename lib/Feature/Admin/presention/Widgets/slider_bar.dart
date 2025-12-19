@@ -1,20 +1,20 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
-import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'package:diagnosis_project/Feature/Admin/presention/Widgets/drawer_item_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
-import 'drawer_item.dart';
-import 'menu_Item.dart';
+import '../../../DashBoard/presention/Widgets/drawer_item.dart';
+import '../../../DashBoard/presention/Widgets/menu_Item.dart';
 
-class SliderBar extends StatefulWidget {
-  const SliderBar({super.key});
+
+class SliderBarAdmin extends StatefulWidget {
+  const SliderBarAdmin({super.key});
 
   @override
-  State<SliderBar> createState() => _SliderBarState();
+  State<SliderBarAdmin> createState() => _SliderBarAdminState();
 }
 
-class _SliderBarState extends State<SliderBar> {
+class _SliderBarAdminState extends State<SliderBarAdmin> {
   String? selectedMenuItem;
   String? selectedGeneralItem;
 
@@ -35,10 +35,10 @@ class _SliderBarState extends State<SliderBar> {
                     children: [
                       Image.asset('assets/image/logo2.png'),
                       const Text("Diagnosis",style: TextStyle(
-                        fontFamily: 'Poppins',
-                        color: AppColors.BluePrimary,
-                        fontSize: 24,
-                        fontWeight: FontWeight.bold
+                          fontFamily: 'Poppins',
+                          color: AppColors.BluePrimary,
+                          fontSize: 24,
+                          fontWeight: FontWeight.bold
                       ),)
                     ],
                   ),
@@ -94,70 +94,30 @@ class _SliderBarState extends State<SliderBar> {
         title: 'DashBoard',
         iconPath: "assets/image_SVG/dashBoardIcon.svg",
         onTap: () {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const PatientDashboard(),
-              ));
-        },
-      ),
-      MenuItemData(
-        title: 'Diagnosis Module',
-        iconPath: "assets/image_SVG/DiagnosisModuleIcon.svg",
-        onTap: () {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const DiagnosisModuleScreen(),
-              ));
-        },
-      ),
-      MenuItemData(
-        title: 'Ai Diagnosis Result',
-        iconPath: "assets/image_SVG/aiMessage.svg",
-        onTap: () {},
-      ),
-      MenuItemData(
-        title: 'Drug Checker',
-        iconPath: "assets/image_SVG/Vector.svg",
-        onTap: () {},
-      ),
-      MenuItemData(
-        title: 'Physiotherapy',
-        iconPath: "assets/image_SVG/Physiotherapy.svg",
-        onTap: () {},
-      ),
-      MenuItemData(
-        title: 'Inquiries',
-        iconPath: "assets/image_SVG/Inquiries.svg",
-        onTap: () {},
-      ),
-      MenuItemData(
-        title: 'Complaints',
-        iconPath: "assets/image_SVG/Diagnosis.svg",
-        onTap: () {
-          // Navigator.pushReplacement(
-          //     context,
-          //     MaterialPageRoute(
-          //       builder: (context) => ComplaintsScreen(),
-          //     ));
-        },
-      ),
-      MenuItemData(
-        title: 'Directory',
-        iconPath: "assets/image_SVG/DirectoryIcon.svg",
-        onTap: () {},
-      ),
 
+        },
+      ),
       MenuItemData(
-        title: 'Medical Files',
-        iconPath: "assets/image_SVG/Medical FilesIcon.svg",
+        title: 'Doctors\n Management',
+        iconPath: "assets/image_SVG/doctorMangementIcon.svg",
+        onTap: () {
+
+        },
+      ),
+      MenuItemData(
+        title: 'Patients\n Management',
+        iconPath: "assets/image_SVG/patientsMangmentsIcon.svg",
+        onTap: () {},
+      ),
+      MenuItemData(
+        title: 'System\n Settings',
+        iconPath: "assets/image_SVG/systemSettingIcon.svg",
         onTap: () {},
       ),
     ];
 
     return menuItems.map<Widget>((item) {
-      return DrawerItem(
+      return DrawerItemAdmin(
         title: item.title,
         iconPath: item.iconPath,
         isActive: selectedMenuItem == item.title,
@@ -183,11 +143,7 @@ class _SliderBarState extends State<SliderBar> {
         iconPath: "assets/image_SVG/settingIcon.svg",
         onTap: () {},
       ),
-      MenuItemData(
-        title: 'Help',
-        iconPath: "assets/image_SVG/helpIcon.svg",
-        onTap: () {},
-      ),
+
       MenuItemData(
         title: 'Log Out',
         iconPath: 'assets/image_SVG/logOutIcon.svg',
@@ -233,7 +189,7 @@ class _SliderBarState extends State<SliderBar> {
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 '/login',
-                (route) => false,
+                    (route) => false,
               );
             },
             child: const Text('Log Out', style: TextStyle(color: Colors.red)),

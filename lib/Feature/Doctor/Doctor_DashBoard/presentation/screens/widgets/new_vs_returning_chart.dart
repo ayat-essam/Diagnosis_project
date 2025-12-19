@@ -1,12 +1,13 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
-import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/widgets/custom_linear_gradiant_circle.dart';
-import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/widgets/row_new_vs_returning_leganed.dart';
+import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/row_new_vs_returning_leganed.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import 'custom_linear_gradiant_circle.dart';
 
 class NewVsReturningChart extends StatelessWidget {
   const NewVsReturningChart({super.key});
@@ -53,7 +54,7 @@ class NewVsReturningChart extends StatelessWidget {
                             showTitles: true,
                             reservedSize: 40,
                             getTitlesWidget: (value, meta) => SideTitleWidget(
-                              meta: meta,
+                              axisSide: meta.axisSide,
                               child: Text(ChartData.days[value.toInt()],
                                   style: StyleApp.font9grayTextChart),
                             ),

@@ -1,5 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/custom_appBar_Consultations.dart';
+import 'package:diagnosis_project/Feature/Guest%20Setting/views/about_us_view.dart';
+import 'package:diagnosis_project/Feature/Guest%20Setting/views/terms-and-conditions.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/setting_card.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/setting_item.dart';
 import 'package:flutter/material.dart';
@@ -49,7 +51,14 @@ class GuestSettingView extends StatelessWidget {
                   SettingItem(
                     image: 'assets/image/terms.png',
                     title: 'Terms and Conditions',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) =>
+                                const TermsAndConditionsView()),
+                      );
+                    },
                     size: 16,
                   ),
                   const SizedBox(
@@ -64,7 +73,13 @@ class GuestSettingView extends StatelessWidget {
                   SettingItem(
                     image: 'assets/image/about.png',
                     title: 'About Us',
-                    onPressed: () {},
+                    onPressed: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const AboutUsView()),
+                      );
+                    },
                     size: 16,
                   ),
                 ],

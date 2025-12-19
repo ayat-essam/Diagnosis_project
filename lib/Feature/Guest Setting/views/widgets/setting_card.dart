@@ -28,7 +28,7 @@ class SettingsCard extends StatelessWidget {
             title: 'Notifications',
             size: 16,
             onPressed: () {
-              Navigator.pushReplacement(
+              Navigator.push(
                 context,
                 MaterialPageRoute(
                     builder: (context) => const GuestNotificationView()),

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 
-guestNotificationAppBar(BuildContext context) {
+guestAppBar(BuildContext context, String title) {
   return Container(
     decoration: const BoxDecoration(
         gradient: LinearGradient(
@@ -21,9 +21,9 @@ guestNotificationAppBar(BuildContext context) {
         },
       ),
       centerTitle: true,
-      title: const Text(
-        'Notifications',
-        style: TextStyle(
+      title: Text(
+        title,
+        style: const TextStyle(
             color: Colors.white,
             fontSize: 20,
             fontWeight: FontWeight.w500,

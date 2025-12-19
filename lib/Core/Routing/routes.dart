@@ -22,4 +22,6 @@ class Routers {
   static const String ResetPassword = '/resetPass';
   static const String CheckPassword = '/checkpass';
   static const String guestNotificationScreen = '/guest-notification';
+  static const String termsAndConditions = '/terms-and-conditions';
+  static const String aboutUs = '/about-us';
 }

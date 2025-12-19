@@ -3,7 +3,9 @@ import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'package:diagnosis_project/Feature/Guest%20Setting/views/about_us_view.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_notification_view.dart';
+import 'package:diagnosis_project/Feature/Guest%20Setting/views/terms-and-conditions.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
 import '../../Feature/Appointments/Appointments_Screen.dart';
@@ -70,6 +72,11 @@ class AppRouter {
 
       case Routers.guestNotificationScreen:
         return MaterialPageRoute(builder: (_) => const GuestNotificationView());
+      case Routers.termsAndConditions:
+        return MaterialPageRoute(
+            builder: (_) => const TermsAndConditionsView());
+      case Routers.aboutUs:
+        return MaterialPageRoute(builder: (_) => const AboutUsView());
 
       default:
         return MaterialPageRoute(

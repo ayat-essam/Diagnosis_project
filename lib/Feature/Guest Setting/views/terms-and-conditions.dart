@@ -25,6 +25,7 @@ class TermsAndConditionsView extends StatelessWidget {
                       maxLines: 30,
                       style: TextStyle(
                           fontFamily: 'Poppins',
+                          letterSpacing: 0.1,
                           fontSize: 16,
                           color: Color(0xff646464),
                           height: 1.5,

@@ -39,7 +39,7 @@ class NewVsReturningChart extends StatelessWidget {
                     BarChartData(
                       alignment: BarChartAlignment.spaceBetween,
                       maxY: 70,
-                      barTouchData: const BarTouchData(enabled: false),
+                      barTouchData:  BarTouchData(enabled: false),
                       titlesData: FlTitlesData(
                         topTitles: const AxisTitles(
                           sideTitles: SideTitles(showTitles: false),

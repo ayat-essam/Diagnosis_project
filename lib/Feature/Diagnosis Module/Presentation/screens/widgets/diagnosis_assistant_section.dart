@@ -46,7 +46,7 @@ class DiagnosisAssistantSection extends StatelessWidget {
             CustomAppButton(
               onTap: () {},
               text: 'Save diagnosis',
-              borderRedius: 25.r,
+              borderRedius: 8.r,
             ),
             Gap(
               10.h,
@@ -54,7 +54,7 @@ class DiagnosisAssistantSection extends StatelessWidget {
             CustomAppButton(
               onTap: () {},
               text: 'Analyze with AI',
-              borderRedius: 25.r,
+              borderRedius: 8.r,
             ),
           ],
         ),

@@ -1,3 +1,4 @@
+import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_notification_view.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/setting_item.dart';
 import 'package:flutter/material.dart';
 
@@ -26,7 +27,13 @@ class SettingsCard extends StatelessWidget {
             image: 'assets/image/notif.png',
             title: 'Notifications',
             size: 16,
-            onPressed: () {},
+            onPressed: () {
+              Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => const GuestNotificationView()),
+              );
+            },
           ),
           SettingItem(
             decoration: const BoxDecoration(),

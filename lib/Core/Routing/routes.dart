@@ -1,7 +1,7 @@
-class Routers{
+class Routers {
   static const String DashBoard = '/dashBoard';
   static const String SliderBar = '/slider';
- // Drawer Routers Items
+  // Drawer Routers Items
   static const String dashboard = '/dashboard';
   static const String diagnosisModule = '/diagnosis-module';
   static const String aiDiagnosisResult = '/ai-diagnosis-result';
@@ -15,13 +15,13 @@ class Routers{
   static const String settings = '/settings';
   static const String help = '/help';
 
-
   static const String LoginScreen = '/login';
   static const String Doctor = '/doctor';
   static const String Patient = '/patient';
   static const String RegisterScreen = '/register';
   static const String ResetPassword = '/resetPass';
   static const String CheckPassword = '/checkpass';
-
-
+  static const String guestNotificationScreen = '/guest-notification';
+  static const String termsAndConditions = '/terms-and-conditions';
+  static const String aboutUs = '/about-us';
 }

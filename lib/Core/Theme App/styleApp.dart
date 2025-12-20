@@ -10,6 +10,12 @@ class StyleApp {
     color: AppColors.blackSecondary,
   );
 
+  static TextStyle font25LightGrayMedium = TextStyle(
+    fontSize: 25.sp,
+    fontWeight: FontWeight.w400,
+    color: AppColors.blackSecondary,
+  );
+
   static TextStyle font32BlueBold = TextStyle(
     fontSize: 32.sp,
     fontWeight: Fonts.bold,

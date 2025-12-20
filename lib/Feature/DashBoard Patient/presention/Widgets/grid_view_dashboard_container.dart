@@ -1,6 +1,8 @@
-import 'package:diagnosis_project/Feature/DashBoard/data/models/info_container_model.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/info_container.dart';
+
 import 'package:flutter/material.dart';
+
+import '../../data/models/info_container_model.dart';
+import 'info_container.dart';
 
 class GridViewDashboardContainer extends StatefulWidget {
   const GridViewDashboardContainer({super.key});

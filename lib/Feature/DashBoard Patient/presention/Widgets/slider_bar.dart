@@ -1,20 +1,20 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
+import '../patient_dashboard.dart';
 import 'drawer_item.dart';
-import 'menu_item_data.dart';
+import 'menu_item_patient.dart';
 
-class SliderBar extends StatefulWidget {
-  const SliderBar({super.key});
+class SliderBarPatient extends StatefulWidget {
+  const SliderBarPatient({super.key});
 
   @override
-  State<SliderBar> createState() => _SliderBarState();
+  State<SliderBarPatient> createState() => _SliderBarPatientState();
 }
 
-class _SliderBarState extends State<SliderBar> {
+class _SliderBarPatientState extends State<SliderBarPatient> {
   String? selectedMenuItem;
   String? selectedGeneralItem;
 
@@ -112,29 +112,29 @@ class _SliderBarState extends State<SliderBar> {
               ));
         },
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Ai Diagnosis Result',
-        iconPath: "assets/image_SVG/aiMessage.svg",
+        ImagePath: "assets/image_SVG/aiMessage.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Drug Checker',
-        iconPath: "assets/image_SVG/Vector.svg",
+        ImagePath: "assets/image_SVG/Vector.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Physiotherapy',
-        iconPath: "assets/image_SVG/Physiotherapy.svg",
+        ImagePath: "assets/image_SVG/Physiotherapy.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Inquiries',
-        iconPath: "assets/image_SVG/Inquiries.svg",
+        ImagePath: "assets/image_SVG/Inquiries.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Complaints',
-        iconPath: "assets/image_SVG/Diagnosis.svg",
+        ImagePath: "assets/image_SVG/Diagnosis.svg",
         onTap: () {
           // Navigator.pushReplacement(
           //     context,
@@ -143,15 +143,15 @@ class _SliderBarState extends State<SliderBar> {
           //     ));
         },
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Directory',
-        iconPath: "assets/image_SVG/DirectoryIcon.svg",
+        ImagePath: "assets/image_SVG/DirectoryIcon.svg",
         onTap: () {},
       ),
 
-      MenuItemData(
+      MenuItemPatients(
         title: 'Medical Files',
-        iconPath: "assets/image_SVG/Medical FilesIcon.svg",
+        ImagePath: "assets/image_SVG/Medical FilesIcon.svg",
         onTap: () {},
       ),
     ];

@@ -1,10 +1,11 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
-import 'package:diagnosis_project/Feature/DashBoard/data/models/info_container_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../data/models/info_container_model.dart';
 
 class InfoContainer extends StatelessWidget {
   const InfoContainer({

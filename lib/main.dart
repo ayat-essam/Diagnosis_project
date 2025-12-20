@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/cheack_password.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/Consultations_view.dart';
@@ -11,7 +12,10 @@ import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/view
 import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/doctor_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_setting_view.dart';
+import 'package:diagnosis_project/generated/l10n.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
 import 'Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
@@ -20,10 +24,16 @@ import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-  runApp(DevicePreview(
-    enabled: true,
-    builder: (context) => const MyApp(),
-  ));
+
+  runApp(
+    BlocProvider(
+      create: (_) => LocaleCubit(),
+      child: DevicePreview(
+        enabled: true,
+        builder: (context) => const MyApp(),
+      ),
+    ),
+  );
 }
 
 class MyApp extends StatelessWidget {
@@ -36,11 +46,31 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return MaterialApp(
-              debugShowCheckedModeBanner: false,
-              home: GuestSettingView() //DoctorsScreen(),
+          return BlocBuilder<LocaleCubit, LocaleState>(
+            builder: (context, state) {
+              Locale locale = const Locale('en');
 
-              );
+              if (state is LocaleInitial) {
+                locale = state.locale;
+              } else if (state is LocaleChanged) {
+                locale = state.locale;
+              }
+
+              return MaterialApp(
+                  locale: locale,
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                  debugShowCheckedModeBanner: false,
+                  home: const GuestSettingView() //DoctorsScreen(),
+
+                  );
+            },
+          );
         });
   }
 }

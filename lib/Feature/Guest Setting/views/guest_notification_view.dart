@@ -2,6 +2,7 @@ import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_setting_view.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/guest_notifi_item.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/guest_app_Bar.dart';
+import 'package:diagnosis_project/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class GuestNotificationView extends StatelessWidget {
@@ -13,7 +14,7 @@ class GuestNotificationView extends StatelessWidget {
         backgroundColor: AppColors.whiteBackground,
         body: Column(
           children: [
-            guestAppBar(context, 'Notifications'),
+            guestAppBar(context, S.of(context).notifications),
             const Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 16),
                 child: Column(

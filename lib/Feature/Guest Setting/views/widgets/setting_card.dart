@@ -1,5 +1,7 @@
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_notification_view.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/setting_item.dart';
+import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/show_language_bottom_sheet.dart';
+import 'package:diagnosis_project/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class SettingsCard extends StatelessWidget {
@@ -25,7 +27,7 @@ class SettingsCard extends StatelessWidget {
           SettingItem(
             decoration: const BoxDecoration(),
             image: 'assets/image/notif.png',
-            title: 'Notifications',
+            title: S.of(context).notifications,
             size: 16,
             onPressed: () {
               Navigator.push(
@@ -39,8 +41,10 @@ class SettingsCard extends StatelessWidget {
             decoration: const BoxDecoration(),
             trailing: Icons.keyboard_arrow_down,
             image: 'assets/image/general.png',
-            title: 'Language',
-            onPressed: () {},
+            title: S.of(context).language,
+            onPressed: () {
+              showLanguageBottomSheet(context);
+            },
           ),
         ],
       ),

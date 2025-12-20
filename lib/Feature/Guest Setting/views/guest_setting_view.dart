@@ -4,6 +4,7 @@ import 'package:diagnosis_project/Feature/Guest%20Setting/views/about_us_view.da
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/terms-and-conditions.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/setting_card.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/widgets/setting_item.dart';
+import 'package:diagnosis_project/generated/l10n.dart';
 import 'package:flutter/material.dart';
 
 class GuestSettingView extends StatelessWidget {
@@ -32,8 +33,8 @@ class GuestSettingView extends StatelessWidget {
                   const SizedBox(
                     height: 27,
                   ),
-                  const SettingText(
-                    text: "My Settings",
+                  SettingText(
+                    text: S.of(context).My_settings,
                   ),
                   const SizedBox(
                     height: 22,
@@ -42,15 +43,15 @@ class GuestSettingView extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  const SettingText(
-                    text: "Policies",
+                  SettingText(
+                    text: S.of(context).Policies,
                   ),
                   const SizedBox(
                     height: 22,
                   ),
                   SettingItem(
                     image: 'assets/image/terms.png',
-                    title: 'Terms and Conditions',
+                    title: S.of(context).terms_and_conditions,
                     onPressed: () {
                       Navigator.push(
                         context,
@@ -64,15 +65,15 @@ class GuestSettingView extends StatelessWidget {
                   const SizedBox(
                     height: 24,
                   ),
-                  const SettingText(
-                    text: "About Us",
+                  SettingText(
+                    text: S.of(context).aboutUs,
                   ),
                   const SizedBox(
                     height: 22,
                   ),
                   SettingItem(
                     image: 'assets/image/about.png',
-                    title: 'About Us',
+                    title: S.of(context).aboutUs,
                     onPressed: () {
                       Navigator.push(
                         context,

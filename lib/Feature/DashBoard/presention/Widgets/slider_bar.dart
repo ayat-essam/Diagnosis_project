@@ -7,6 +7,7 @@ import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/a
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
+import '../../../Help/presentation/screens/Help_Screen.dart';
 import 'drawer_item.dart';
 import 'menu_Item.dart';
 
@@ -33,7 +34,18 @@ class _SliderBarState extends State<SliderBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset('assets/image/logo2.png'),
+
+                  Row(
+                    children: [
+                      Image.asset('assets/image/logo2.png'),
+                      const Text("Diagnosis",style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: AppColors.BluePrimary,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold
+                      ),)
+                    ],
+                  ),
                 ],
               ),
             ),
@@ -188,7 +200,14 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemData(
         title: 'Help',
         iconPath: "assets/image_SVG/helpIcon.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HelpScreen(),
+            ),
+          );
+        },
       ),
       MenuItemData(
         title: 'Log Out',

@@ -8,14 +8,13 @@ import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_notificati
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/terms-and-conditions.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
-import '../../Feature/Appointments/Appointments_Screen.dart';
 import '../../Feature/Auth/HomePage.dart';
 import '../../Feature/Auth/Presention/Login Screen/login_screen.dart';
 import '../../Feature/Auth/Presention/Register Screen/register_screen.dart';
 import '../../Feature/Complaints/presentation/screens/Complaints_Screen.dart';
 //import '../../Feature/Complaints/Complaints_Screen.dart';
 
-import '../../Feature/Directory/Director_ Screen.dart';
+import '../../Feature/Directory/presentation/screens/Directory_ Screen.dart';
 import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';
 import '../../Feature/Help/Help_Screen.dart';
 import '../../Feature/Inquiries/Inquiries_Screen.dart';
@@ -55,8 +54,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => ComplaintsScreen());
       case Routers.directory:
         return MaterialPageRoute(builder: (_) => DirectoryScreen());
-      case Routers.appointments:
-        return MaterialPageRoute(builder: (_) => AppointmentsScreen());
       case Routers.medicalFiles:
         return MaterialPageRoute(builder: (_) => MedicalFilesScreen());
       case Routers.settings:

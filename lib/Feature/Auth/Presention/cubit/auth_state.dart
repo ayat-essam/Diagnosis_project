@@ -1,26 +1,22 @@
-abstract class AuthState{
+abstract class AuthState{}
 
+class initialState extends AuthState{
+}
+class SuccessLoginState extends AuthState{
+}
+class FailureLoginState  extends AuthState{
+  final String message;
+  FailureLoginState(this.message);
+}
+class LoadingLoginState extends AuthState{
 }
 
-class LoginLoading extends AuthState{}
 
-class LoginSuccess extends AuthState{}
-
-class LoginError extends AuthState{
-  String errorMess;
-  LoginError({required this.errorMess});
+class SuccessRegisterState extends AuthState{
 }
-
-//register states
-
-class RegisterLoading extends AuthState{
-
+class FailureRegisterState extends AuthState{
+  final String message;
+  FailureRegisterState(this.message);
 }
-class RegisterSuccess extends AuthState{}
-
-class RegisterError extends AuthState{
-
-  String errorMess;
-  RegisterError({required this.errorMess});
+class LoadingRegisterState extends AuthState{
 }
-

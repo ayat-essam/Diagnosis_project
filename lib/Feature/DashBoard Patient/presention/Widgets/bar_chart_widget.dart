@@ -1,9 +1,10 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/bar_chart_legand.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'bar_chart_legand.dart';
 
 class BarChartWidget extends StatelessWidget {
   const BarChartWidget({super.key});

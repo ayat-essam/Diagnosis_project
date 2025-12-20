@@ -1,11 +1,12 @@
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/bar_chart_widget.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/grid_view_dashboard_container.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/line_chart_widget.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_dash_board_appbar.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import 'Widgets/bar_chart_widget.dart';
+import 'Widgets/grid_view_dashboard_container.dart';
+import 'Widgets/line_chart_widget.dart';
+import 'Widgets/patient_dash_board_appbar.dart';
+import 'Widgets/slider_bar.dart';
 
 class PatientDashboard extends StatelessWidget {
   const PatientDashboard({super.key});
@@ -18,7 +19,7 @@ class PatientDashboard extends StatelessWidget {
           preferredSize: Size.fromHeight(70.h),
           child: const PationDashBoardAppbar(),
       ),
-          drawer: const SliderBar(),
+          drawer: const SliderBarPatient(),
    
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),

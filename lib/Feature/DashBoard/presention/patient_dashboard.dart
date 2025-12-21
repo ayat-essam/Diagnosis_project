@@ -6,6 +6,7 @@ import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_d
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class PatientDashboard extends StatelessWidget {
   const PatientDashboard({super.key});
@@ -15,35 +16,34 @@ class PatientDashboard extends StatelessWidget {
     return Scaffold(
       backgroundColor: Colors.white,
       appBar: PreferredSize(
-          preferredSize: Size.fromHeight(70.h),
-          child: const PationDashBoardAppbar(),
+        preferredSize: Size.fromHeight(70.h),
+        child: const PationDashBoardAppbar(),
       ),
-          drawer: const SliderBar(),
-   
+      drawer: const SliderBar(),
       body: SingleChildScrollView(
         padding: const EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            SizedBox(height: 22.h),
+            Gap(22.h),
             const GridViewDashboardContainer(),
-            SizedBox(height: 27.h),
-            Text('Medication Progress Overview',
+            Gap(27.h),
+            Text('Treatment Progress Overview',
                 style: StyleApp.font16BlackRegular),
-            SizedBox(height: 6.h),
+            Gap(6.h),
             Text('Last 6 Months',
                 style:
                     StyleApp.font16BlackRegular.copyWith(color: Colors.grey)),
-            SizedBox(height: 12.h),
+            Gap(12.h),
             const LineChartWidget(),
-            SizedBox(height: 24.h),
-            Text('Symptom & Condition Patterns',
+            Gap(24.h),
+            Text('Symptom Severity Trends',
                 style: StyleApp.font16BlackRegular),
-            SizedBox(height: 6.h),
+            Gap(6.h),
             Text('Current Week',
                 style:
                     StyleApp.font16BlackRegular.copyWith(color: Colors.grey)),
-            const SizedBox(height: 12),
+            Gap(11.h),
             const BarChartWidget(),
           ],
         ),

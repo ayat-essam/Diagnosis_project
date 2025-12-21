@@ -6,6 +6,7 @@ import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screen
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/about_us_view.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_notification_view.dart';
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/terms-and-conditions.dart';
+import 'package:diagnosis_project/Feature/Help/presentation/screens/Help_Screen.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
 import '../../Feature/Auth/HomePage.dart';
@@ -16,7 +17,6 @@ import '../../Feature/Complaints/presentation/screens/Complaints_Screen.dart';
 
 import '../../Feature/Directory/presentation/screens/Directory_ Screen.dart';
 import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';
-import '../../Feature/Help/Help_Screen.dart';
 import '../../Feature/Inquiries/Inquiries_Screen.dart';
 import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';

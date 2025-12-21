@@ -1,0 +1,73 @@
+import 'package:diagnosis_project/Feature/Admin_dashBoard/data/models/info_admin_dash_board_model.dart';
+import 'package:diagnosis_project/Feature/Admin_dashBoard/presentation/screens/widgets/admin_dashboard_info_container.dart';
+import 'package:flutter/material.dart';
+
+class ListViewAdminDashboardInfoContainer extends StatefulWidget {
+  const ListViewAdminDashboardInfoContainer({super.key});
+
+  @override
+  State<ListViewAdminDashboardInfoContainer> createState() =>
+      _ListViewAdminDashboardInfoContainerState();
+}
+
+class _ListViewAdminDashboardInfoContainerState
+    extends State<ListViewAdminDashboardInfoContainer> {
+  int selectedIndex = 0;
+  @override
+  Widget build(BuildContext context) {
+    List<InfoAdminDashBoardModel> infoCards = [
+      InfoAdminDashBoardModel(
+        title: 'Total Doctors',
+        subtitle: '156',
+        description: '12% vs last months',
+        imgPath: 'assets/image_SVG/doctorBagIcon.svg',
+      ),
+      InfoAdminDashBoardModel(
+        title: 'Active Doctors',
+        subtitle: '142',
+        description: '8% vs last months',
+        imgPath: 'assets/image_SVG/doctorBagIcon.svg',
+      ),
+      InfoAdminDashBoardModel(
+        title: 'Total Patients',
+        subtitle: '3,421',
+        description: '12% vs last months',
+        imgPath: 'assets/image_SVG/doctorBagIcon.svg',
+      ),
+      InfoAdminDashBoardModel(
+        title: 'Active Doctors',
+        subtitle: '142',
+        description: '23% vs las months',
+        imgPath: 'assets/image_SVG/doctorBagIcon.svg',
+      ),
+    ];
+
+    return SizedBox(
+      height: 140,
+      child: ListView.builder(
+        padding: EdgeInsets.zero,
+        scrollDirection: Axis.horizontal,
+        shrinkWrap: true,
+        itemCount: infoCards.length,
+        itemBuilder: (context, index) {
+          final card = infoCards[index];
+
+          return Padding(
+            padding: const EdgeInsets.only(right: 16.0),
+            child: GestureDetector(
+              onTap: () {
+                setState(() {
+                  selectedIndex = index;
+                });
+              },
+              child: AdminDashboardInfoContainer(
+                infoAdminDashBoardModel: card,
+                isSelected: selectedIndex == index,
+              ),
+            ),
+          );
+        },
+      ),
+    );
+  }
+}

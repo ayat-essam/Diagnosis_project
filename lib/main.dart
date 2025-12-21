@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin_dashBoard/presentation/screens/admin_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/cheack_password.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/Consultations_view.dart';
@@ -35,9 +36,11 @@ void main() {
   runApp(
     BlocProvider(
       create: (_) => LocaleCubit(),
-      child: DevicePreview(
-        enabled: true,
-        builder: (context) => const MyApp(),
+      child: 
+       DevicePreview(
+     enabled: true,
+         builder: (context) =>
+         const MyApp(),
       ),
     ),
   );
@@ -74,9 +77,9 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
-                  home: const GuestSettingView() //DoctorsScreen(),
+                  home: const AdminDashboardScreen() //DoctorsScreen(),
 
-        
+    
 
                   );
             },

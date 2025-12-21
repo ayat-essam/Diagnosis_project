@@ -16,7 +16,8 @@ import '../../Feature/Complaints/presentation/screens/Complaints_Screen.dart';
 
 import '../../Feature/Directory/presentation/screens/Directory_ Screen.dart';
 import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';
-import '../../Feature/Help/Help_Screen.dart';
+
+import '../../Feature/Help/presentation/screens/Help_Screen.dart';
 import '../../Feature/Inquiries/Inquiries_Screen.dart';
 import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';

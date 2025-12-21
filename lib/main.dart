@@ -6,7 +6,6 @@ import 'package:diagnosis_project/Feature/Consultations/presentation/views/Consu
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
-import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctors/doctors_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/screens/recent_transactions_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/Setting_doctor_view.dart';
@@ -23,6 +22,8 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
+import 'Core/Theme App/colors.dart';
+import 'Feature/Admin/Admin Setting System/presentation/screens/admin_setting_screen.dart';
 import 'Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
 import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
@@ -53,6 +54,20 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
+          return MaterialApp(
+              debugShowCheckedModeBanner: false,
+
+              theme: ThemeData(
+                primaryColor: AppColors.BluePrimary,
+                scaffoldBackgroundColor: Colors.white,
+                colorScheme: ColorScheme.fromSeed(
+                  seedColor: AppColors.BluePrimary,
+                  primary: AppColors.BluePrimary,
+                  background: AppColors.whiteBackground,
+                  surface: AppColors.whiteBackground,
+                ),
+              ),
+              home: const AdminSettingScreen()//DoctorsScreen(),
 
           return BlocBuilder<LocaleCubit, LocaleState>(
             builder: (context, state) {

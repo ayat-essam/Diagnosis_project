@@ -27,19 +27,31 @@ class _ListViewAdminDashboardInfoContainerState
         title: 'Active Doctors',
         subtitle: '142',
         description: '↑ 8% vs last months',
-        imgPath: 'assets/image_SVG/doctorBagIcon.svg',
+        imgPath: 'assets/image_SVG/active_doctors.svg',
       ),
       InfoAdminDashBoardModel(
         title: 'Total Patients',
         subtitle: '3,421',
         description: '↑ 12% vs last months',
-        imgPath: 'assets/image_SVG/doctorBagIcon.svg',
+        imgPath: 'assets/image_SVG/total_patient.svg',
       ),
       InfoAdminDashBoardModel(
-        title: 'Active Doctors',
-        subtitle: '142',
-        description: '↑ 23% vs las months',
-        imgPath: 'assets/image_SVG/doctorBagIcon.svg',
+        title: 'Peak Useage Time',
+        subtitle: '2:00 PM - 4:00 PM',
+        description: 'Highiest system activity window',
+        imgPath: 'assets/image_SVG/peak_useage_time.svg',
+      ),
+      InfoAdminDashBoardModel(
+        title: 'Ai Diagnosis',
+        subtitle: '2,123',
+        description: '↑ 8% vs last months',
+        imgPath: 'assets/image_SVG/aiMessage.svg',
+      ),
+      InfoAdminDashBoardModel(
+        title: 'Doctor Diagnosis',
+        subtitle: '1,687',
+        description: '↑ 7% vs last months',
+        imgPath: 'assets/image_SVG/doctor_diagnosis.svg',
       ),
     ];
 

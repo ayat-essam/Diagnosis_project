@@ -1,9 +1,12 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Complaints/presentation/screens/Complaints_Screen.dart';
 //import 'package:diagnosis_project/Feature/Complaints/Complaints_Screen.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_dash_board_appbar.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
+import 'package:diagnosis_project/Feature/Inquiries/Inquiries_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
@@ -134,23 +137,35 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemData(
         title: 'Inquiries',
         iconPath: "assets/image_SVG/Inquiries.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => InquiriesScreen(),
+              ));
+        },
       ),
       MenuItemData(
         title: 'Complaints',
         iconPath: "assets/image_SVG/Diagnosis.svg",
         onTap: () {
-          // Navigator.pushReplacement(
-          //     context,
-          //     MaterialPageRoute(
-          //       builder: (context) => ComplaintsScreen(),
-          //     ));
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ComplaintsScreen(),
+              ));
         },
       ),
       MenuItemData(
         title: 'Directory',
         iconPath: "assets/image_SVG/DirectoryIcon.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DirectoryScreen(),
+              ));
+        },
       ),
       MenuItemData(
         title: 'Appointments',

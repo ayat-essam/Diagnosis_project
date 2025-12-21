@@ -74,7 +74,7 @@ class StyleApp {
     color: AppColors.gray,
   );
   static TextStyle font18BlackSemiBold = TextStyle(
-    fontSize: 18.sp,
+    fontSize: 18,
     fontWeight: Fonts.semiBold,
     color: AppColors.black,
   );

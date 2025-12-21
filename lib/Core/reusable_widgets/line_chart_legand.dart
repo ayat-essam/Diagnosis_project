@@ -1,30 +1,4 @@
-import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/cupertino.dart';
-
-class LineChartLegend extends StatelessWidget {
-  const LineChartLegend({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        LineChartLegand(
-          color: AppColors.GreenSuccess,
-          text: 'Dosage\n Consistency',
-        ),
-        LineChartLegand(
-          color: AppColors.OrangeWarning,
-          text: 'Routine\n Completion',
-        ),
-        LineChartLegand(
-          color: AppColors.BluePrimary,
-          text: 'Symptom\n Severity',
-        ),
-      ],
-    );
-  }
-}
 
 class LineChartLegand extends StatelessWidget {
   final Color color;

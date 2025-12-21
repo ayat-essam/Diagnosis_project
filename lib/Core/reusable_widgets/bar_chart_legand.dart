@@ -1,22 +1,4 @@
-import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/cupertino.dart';
-
-class BarChartLegand extends StatelessWidget {
-  const BarChartLegand({super.key});
-
-  @override
-  Widget build(BuildContext context) {
-    return const Row(
-      mainAxisAlignment: MainAxisAlignment.spaceAround,
-      children: [
-        BarLegendItem(
-          color: AppColors.BluePrimary,
-          text: 'symptomSeverity',
-        ),
-      ],
-    );
-  }
-}
 
 class BarLegendItem extends StatelessWidget {
   final Color color;

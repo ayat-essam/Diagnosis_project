@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/line_chart_legand.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/line_chart_legand.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';

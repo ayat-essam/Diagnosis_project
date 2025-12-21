@@ -1,6 +1,7 @@
 import 'package:diagnosis_project/Feature/Admin_dashBoard/data/models/info_admin_dash_board_model.dart';
 import 'package:diagnosis_project/Feature/Admin_dashBoard/presentation/screens/widgets/admin_dashboard_info_container.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class ListViewAdminDashboardInfoContainer extends StatefulWidget {
   const ListViewAdminDashboardInfoContainer({super.key});
@@ -19,31 +20,31 @@ class _ListViewAdminDashboardInfoContainerState
       InfoAdminDashBoardModel(
         title: 'Total Doctors',
         subtitle: '156',
-        description: '12% vs last months',
+        description: '↑ 12% vs last months',
         imgPath: 'assets/image_SVG/doctorBagIcon.svg',
       ),
       InfoAdminDashBoardModel(
         title: 'Active Doctors',
         subtitle: '142',
-        description: '8% vs last months',
+        description: '↑ 8% vs last months',
         imgPath: 'assets/image_SVG/doctorBagIcon.svg',
       ),
       InfoAdminDashBoardModel(
         title: 'Total Patients',
         subtitle: '3,421',
-        description: '12% vs last months',
+        description: '↑ 12% vs last months',
         imgPath: 'assets/image_SVG/doctorBagIcon.svg',
       ),
       InfoAdminDashBoardModel(
         title: 'Active Doctors',
         subtitle: '142',
-        description: '23% vs las months',
+        description: '↑ 23% vs las months',
         imgPath: 'assets/image_SVG/doctorBagIcon.svg',
       ),
     ];
 
     return SizedBox(
-      height: 140,
+      height: 140.h,
       child: ListView.builder(
         padding: EdgeInsets.zero,
         scrollDirection: Axis.horizontal,

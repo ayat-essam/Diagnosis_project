@@ -1,8 +1,8 @@
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/bar_chart_widget.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/grid_view_dashboard_container.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/line_chart_widget.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_bar_chart.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_dash_board_appbar.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_line_chart.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -35,16 +35,15 @@ class PatientDashboard extends StatelessWidget {
                 style:
                     StyleApp.font16BlackRegular.copyWith(color: Colors.grey)),
             Gap(12.h),
-            const LineChartWidget(),
+            const PatientLineChart(),
             Gap(24.h),
-            Text('Symptom Severity Trends',
-                style: StyleApp.font16BlackRegular),
+            Text('Symptom Severity Trends', style: StyleApp.font16BlackRegular),
             Gap(6.h),
             Text('Current Week',
                 style:
                     StyleApp.font16BlackRegular.copyWith(color: Colors.grey)),
             Gap(11.h),
-            const BarChartWidget(),
+            const PatientBarChart(),
           ],
         ),
       ),

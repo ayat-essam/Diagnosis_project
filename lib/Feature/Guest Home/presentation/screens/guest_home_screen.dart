@@ -31,11 +31,11 @@ class _GuestHomeScreenState extends State<GuestHomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: AppColors.whiteBackground,
-drawer: const SliderBar(),
+
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(75.h),
         child: CustomAppBar(
-          showMenu: true,
+
           onMenuTap: () {
             _scaffoldKey.currentState?.openDrawer();
           },

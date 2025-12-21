@@ -14,6 +14,8 @@ import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/sc
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
+import 'Core/Theme App/colors.dart';
+import 'Feature/Admin/Admin Setting System/presentation/screens/admin_setting_screen.dart';
 import 'Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
 import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
@@ -38,10 +40,20 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-          return const MaterialApp(
+          return MaterialApp(
               debugShowCheckedModeBanner: false,
 
-              home: HelpScreen()//DoctorsScreen(),
+              theme: ThemeData(
+                primaryColor: AppColors.BluePrimary,
+                scaffoldBackgroundColor: Colors.white,
+                colorScheme: ColorScheme.fromSeed(
+                  seedColor: AppColors.BluePrimary,
+                  primary: AppColors.BluePrimary,
+                  background: AppColors.whiteBackground,
+                  surface: AppColors.whiteBackground,
+                ),
+              ),
+              home: const AdminSettingScreen()//DoctorsScreen(),
 
 
               );

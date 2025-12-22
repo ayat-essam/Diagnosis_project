@@ -4,7 +4,7 @@ import 'package:gap/gap.dart';
 
 import '../widgets/doctors_Widget.dart';
 import '../widgets/guest_carousel_widget.dart';
-import '../widgets/search_bar_widget.dart';
+import '../../../../Core/reusable_widgets/search_bar_widget.dart';
 import '../widgets/services_widget.dart';
 
 class GuestHomeContent extends StatelessWidget {
@@ -19,7 +19,7 @@ class GuestHomeContent extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
           children:  [
-            const SearchBarWidget(),
+            const SearchBarWidget(hintText: 'Search...',),
             GuestCarouselWidget(),
             const Gap(20),
             const Text("Services",style: TextStyle(

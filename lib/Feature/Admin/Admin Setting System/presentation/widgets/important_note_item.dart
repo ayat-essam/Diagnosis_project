@@ -1,4 +1,4 @@
-import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/setting_button.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/custom_button.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/setting_confirm_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -90,11 +90,13 @@ class ImportantNoteCard extends StatelessWidget {
               ],
             ),
             Gap(12.h),
-            SettingButton(
+            CustomButton(
                 text: 'Save Settings',
                 onPressed: () {
                   showConfirmDialog(context);
                 },
+                width: 120.w,
+                height: 40.h,
                 backgroundColor: AppColors.BluePrimary,
                 textColor: AppColors.whiteBackground)
           ],

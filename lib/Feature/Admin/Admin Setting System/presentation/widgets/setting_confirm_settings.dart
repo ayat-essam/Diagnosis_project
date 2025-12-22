@@ -1,4 +1,4 @@
-import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/setting_button.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/custom_button.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -100,21 +100,26 @@ class ConfirmDialog extends StatelessWidget {
               Row(
                 children: [
                   Expanded(
-                    child: SettingButton(
+                    child: CustomButton(
                       text: 'Save Changes',
                       onPressed: onConfirm,
+                      width: 120.w,
+                      height: 40.h,
                       backgroundColor: AppColors.BluePrimary,
                       textColor: AppColors.whiteBackground,
                     ),
+
                   ),
                   const Gap(10),
                   Expanded(
-                    child: SettingButton(
-                      text: 'Cancel',
-                      onPressed: onCancel,
-                      backgroundColor: AppColors.whiteBackground,
-                      textColor: AppColors.BluePrimary,
-                    ),
+                    child: CustomButton(
+                        text: 'Cancel',
+                        onPressed: onCancel,
+                        width: 120.w,
+                        height: 40.h,
+                        backgroundColor: AppColors.whiteBackground,
+                      textColor: AppColors.BluePrimary,),
+
                   ),
                 ],
               ),

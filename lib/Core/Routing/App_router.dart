@@ -20,7 +20,7 @@ import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';
 import '../../Feature/Inquiries/Inquiries_Screen.dart';
 import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';
-import '../../Feature/physiotherapy/Physiotherapy_Screen.dart';
+import '../../Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {

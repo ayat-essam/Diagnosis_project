@@ -29,6 +29,7 @@ import 'Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
 import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
 import 'Feature/Help/presentation/screens/Help_Screen.dart';
+import 'Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -68,7 +69,7 @@ class MyApp extends StatelessWidget {
                   surface: AppColors.whiteBackground,
                 ),
               ),
-              home: const AdminDashboardScreen()//DoctorsScreen(),
+              home: const PhysiotherapyScreen()//DoctorsScreen(),
           );
 //           return BlocBuilder<LocaleCubit, LocaleState>(
 //             builder: (context, state) {

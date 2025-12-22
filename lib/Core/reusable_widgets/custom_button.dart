@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import '../../../../../Core/Theme App/Fonts.dart';
-import '../../../../../Core/reusable_widgets/custom_text.dart';
+import '../Theme App/Fonts.dart';
+import 'custom_text.dart';
 
-class SettingButton extends StatelessWidget {
+class CustomButton extends StatelessWidget {
   final String text;
   final VoidCallback onPressed;
   final double width;
@@ -14,17 +14,21 @@ class SettingButton extends StatelessWidget {
   final FontWeight fontWeight;
   final double borderRadius;
 
-  const SettingButton({
+  const CustomButton({
     super.key,
     required this.text,
     required this.onPressed,
-    this.width = 120,
-    this.height = 40,
+    // this.width = 120,
+    required this.width,
+    // this.height = 40,
+    required this.height,
     required this.backgroundColor,
     required this.textColor,
     this.fontSize = 15,
+    // required this.fontSize,
     this.fontWeight = Fonts.bold,
     this.borderRadius = 8,
+    // required this.borderRadius,
   });
 
   @override

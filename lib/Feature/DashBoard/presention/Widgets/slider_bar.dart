@@ -7,6 +7,7 @@ import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screen
 import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
 import 'package:diagnosis_project/Feature/Inquiries/Inquiries_Screen.dart';
+import 'package:diagnosis_project/Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
@@ -132,7 +133,14 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemData(
         title: 'Physiotherapy',
         iconPath: "assets/image_SVG/Physiotherapy.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PhysiotherapyScreen(),
+              ));
+
+        },
       ),
       MenuItemData(
         title: 'Inquiries',

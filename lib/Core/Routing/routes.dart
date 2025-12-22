@@ -22,6 +22,7 @@ class Routers{
   static const String RegisterScreen = '/register';
   static const String ResetPassword = '/resetPass';
   static const String CheckPassword = '/checkpass';
+  static const String forgetPasswordPath = '/forgetPass';
 
 
 }

@@ -1,40 +1,36 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/custom_linear_gradiant_container.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
+import 'package:diagnosis_project/Feature/DashBoard/data/models/info_container_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 
 class InfoContainer extends StatelessWidget {
   const InfoContainer({
     super.key,
-    required this.title,
-    required this.subtitle,
-    required this.description,
-    required this.imgPath,
+    required this.infoContainerModel,
     required this.isSelected,
   });
 
-  final String title;
-  final String subtitle;
-  final String description;
-  final String imgPath;
+  final InfoContainerModel infoContainerModel;
   final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
+    final TextStyle textStyle = isSelected == true
+        ? StyleApp.font12WhiteSemiBold
+        : StyleApp.font12BlackSemiBold.copyWith(color: AppColors.blackSecondary);
+    final Color backgroundColor =
+        isSelected == true ? AppColors.BluePrimary : AppColors.greyLight;
+
     return CustomLinearGradiantContainer(
-      child: Container(
-        padding: const EdgeInsets.all(14),
-        decoration: BoxDecoration(
-            color: isSelected == true
-                ? AppColors.BluePrimary
-                : AppColors.greyLight,
-            borderRadius: BorderRadius.circular(20),
-            border: isSelected == true
-                ? null
-                : Border.all(color: AppColors.whiteBackground, width: 2.w)),
-        child: FittedBox(
-          fit: BoxFit.scaleDown,
+      borderRadius: 12.r,
+      color: backgroundColor  ,
+      child: FittedBox(
+        child: Padding(
+          padding: const EdgeInsets.all(12.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             spacing: 2.h,
@@ -43,28 +39,22 @@ class InfoContainer extends StatelessWidget {
                 backgroundColor: isSelected == true
                     ? AppColors.whiteBackground
                     : AppColors.BluePrimary,
-                child: Image.asset(imgPath,
-                    width: 40.w,
-                    height: 40.h,
+                child: SvgPicture.asset(infoContainerModel.imgPath,
+                    width: 15.w,
+                    height: 15.h,
                     color: isSelected == true
                         ? AppColors.black
                         : AppColors.whiteBackground),
               ),
-              const SizedBox(height: 12),
-              Text(title,
-                  style: isSelected == true
-                      ? StyleApp.font12WhiteSemiBold
-                      : StyleApp.font12BlackSemiBold),
-              const SizedBox(height: 4),
-              Text(subtitle,
+              Gap(12.h),
+              Text(infoContainerModel.title, style: textStyle),
+              Gap(4.h),
+              Text(infoContainerModel.subtitle,
                   style: isSelected == true
                       ? StyleApp.font16WhiteSemiBold
                       : StyleApp.font16BlueSemiBold),
-              const SizedBox(height: 4),
-              Text(description,
-                  style: isSelected == true
-                      ? StyleApp.font12WhiteSemiBold
-                      : StyleApp.font12BlackSemiBold),
+              Gap(4.h),
+              Text(infoContainerModel.description, style: textStyle),
             ],
           ),
         ),

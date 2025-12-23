@@ -17,7 +17,7 @@ class InfoConatinerDoctorDashBoard extends StatelessWidget {
     return CustomLinearGradiantContainer(
       child: SizedBox(
         width: 190.w,
-        height: 155.h,
+        height: 160.h,
         child: Padding(
           padding: const EdgeInsets.all(14.0),
           child: Column(

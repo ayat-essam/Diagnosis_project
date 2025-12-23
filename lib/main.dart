@@ -1,8 +1,9 @@
 import 'package:device_preview/device_preview.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
-import 'Feature/Admin/presention/Widgets/slider_bar_admin.dart';
+import 'Feature/Directory/presentation/screens/Directory_ Screen.dart';
 
 
 void main() {
@@ -26,7 +27,8 @@ class MyApp extends StatelessWidget {
         builder: (context, child) {
           return const MaterialApp(
               debugShowCheckedModeBanner: false,
-              home: SliderBarAdmin() //DoctorsScreen(),
+
+              home: DirectoryScreen() //DoctorsScreen(),
 
 
               );

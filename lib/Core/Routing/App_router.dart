@@ -1,19 +1,22 @@
+
 import 'package:diagnosis_project/Core/Routing/routes.dart';
+
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
-import 'package:diagnosis_project/Feature/Help/presentation/screens/Help_Screen.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
 import '../../Feature/Auth/Presention/Login Screen/login_screen.dart';
 import '../../Feature/Auth/Presention/Register Screen/register_screen.dart';
 import '../../Feature/Complaints/presentation/screens/Complaints_Screen.dart';
+
 import '../../Feature/DashBoard Patient/presention/Widgets/slider_bar.dart';
 import '../../Feature/DashBoard Patient/presention/patient_dashboard.dart';
 import '../../Feature/Directory/presentation/screens/Directory_ Screen.dart';
 import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';
+import '../../Feature/Help/presentation/screens/Help_Screen.dart';
 import '../../Feature/Inquiries/Inquiries_Screen.dart';
 import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';
-import '../../Feature/physiotherapy/Physiotherapy_Screen.dart';
+import '../../Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 
 
 
@@ -21,10 +24,10 @@ class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     // final arguments = settings.arguments;
     switch (settings.name) {
-      // case Routers.LoginScreen:
+      // case Routers.LoginScr:
       //   return MaterialPageRoute(builder: (_) =>  BlocProvider(
       //       create: ( context) => getIt<LoginCubit>(),
-      //       child:  LoginScreen(isPassword: false,)));
+      //       child: const LoginScr(isPassword: false,)));
 
       case Routers.LoginScreen:
         return MaterialPageRoute(builder: (_) =>  LoginScreen(),);
@@ -51,7 +54,6 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => MedicalFilesScreen());
       case Routers.settings:
         return MaterialPageRoute(builder: (_) => SettingsScreen());
-
       case Routers.help:
         return MaterialPageRoute(builder: (_) => HelpScreen());
 

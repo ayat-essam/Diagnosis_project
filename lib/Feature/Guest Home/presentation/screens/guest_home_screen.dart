@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../Core/Theme App/colors.dart';
 import '../../../../Core/reusable_widgets/custom_app_bar.dart';
-
 import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 import '../../../Doctor/Doctors/widgets/custom_bottom_nav.dart';
 import 'guest_home_content.dart';
@@ -31,7 +29,7 @@ class _GuestHomeScreenState extends State<GuestHomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: AppColors.whiteBackground,
-drawer: const SliderBarPatient(),
+drawer: const SliderBar(),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(75.h),
         child: CustomAppBar(

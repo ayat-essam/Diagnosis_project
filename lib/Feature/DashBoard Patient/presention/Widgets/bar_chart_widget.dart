@@ -3,14 +3,25 @@ import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_c
 import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
+import '../../../../Core/Theme App/styleApp.dart';
 import 'bar_chart_legand.dart';
 
 class BarChartWidget extends StatelessWidget {
-  const BarChartWidget({super.key});
+  final List<BarChartGroupData> barGroups;
+  final List<Map<String, dynamic>>? legendItems;
+  final List<String>? bottomLabels;
+
+  const BarChartWidget({
+    super.key,
+    required this.barGroups,
+    this.legendItems,
+    this.bottomLabels = const ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+  });
 
   @override
   Widget build(BuildContext context) {
+    final labels =
+        bottomLabels ?? ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'];
     return CustomLinearGradiantContainer(
       child: SizedBox(
         height: 230.h,
@@ -70,33 +81,33 @@ class BarChartWidget extends StatelessWidget {
                       bottomTitles: AxisTitles(
                         sideTitles: SideTitles(
                           showTitles: true,
+                          interval: 1,
+                          reservedSize: 45,
                           getTitlesWidget: (value, meta) {
-                            const days = [
-                              'Mon',
-                              'Tue',
-                              'Wed',
-                              'Thu',
-                              'Fri',
-                              'Sat',
-                              'Sun'
-                            ];
-                            return FittedBox(
-                              fit: BoxFit.scaleDown,
+                            final index = value.toInt();
+
+                            if (index < 0 || index >= labels.length) {
+                              return const SizedBox.shrink();
+                            }
+
+                            final parts = labels[index].split('.');
+
+                            return SizedBox(
+                              height: 40,
                               child: Column(
+                                mainAxisAlignment: MainAxisAlignment.start,
                                 children: [
-                                  // الخط اللي برّه الرسم (قبل اسم اليوم)
                                   Container(
                                     width: 1,
                                     height: 5,
                                     margin: const EdgeInsets.only(bottom: 4),
                                     color: Colors.grey,
                                   ),
-
-                                  // اسم اليوم
-                                  Text(
-                                    days[value.toInt()],
-                                    style: const TextStyle(fontSize: 15),
-                                  ),
+                                  Text(parts[0],
+                                      style: StyleApp.font9grayTextChart),
+                                  if (parts.length > 1)
+                                    Text(parts[1],
+                                        style: StyleApp.font9grayTextChart),
                                 ],
                               ),
                             );
@@ -104,62 +115,20 @@ class BarChartWidget extends StatelessWidget {
                         ),
                       ),
                     ),
-                    barGroups: [
-                      BarChartGroupData(x: 0, barRods: [
-                        BarChartRodData(
-                            toY: 10,
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.zero,
-                            width: 20)
-                      ]),
-                      BarChartGroupData(x: 1, barRods: [
-                        BarChartRodData(
-                            toY: 10,
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.zero,
-                            width: 20)
-                      ]),
-                      BarChartGroupData(x: 2, barRods: [
-                        BarChartRodData(
-                            toY: 7,
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.zero,
-                            width: 20)
-                      ]),
-                      BarChartGroupData(x: 3, barRods: [
-                        BarChartRodData(
-                            toY: 10,
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.zero,
-                            width: 20)
-                      ]),
-                      BarChartGroupData(x: 4, barRods: [
-                        BarChartRodData(
-                            toY: 10,
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.zero,
-                            width: 20)
-                      ]),
-                      BarChartGroupData(x: 5, barRods: [
-                        BarChartRodData(
-                            toY: 6,
-                            color: Colors.blue,
-                            borderRadius: BorderRadius.zero,
-                            width: 20)
-                      ]),
-                      BarChartGroupData(x: 6, barRods: [
-                        BarChartRodData(
-                            toY: 10,
-                            color: Colors.blue,
-                            width: 20,
-                            borderRadius: BorderRadius.zero),
-                      ]),
-                    ],
+                    barGroups: barGroups,
                   ),
                 ),
               ),
               SizedBox(height: 5.h),
-              const BarChartLegand(),
+              legendItems != null
+                  ? Row(
+                      mainAxisAlignment: MainAxisAlignment.spaceAround,
+                      children: legendItems!
+                          .map((item) => BarLegendItem(
+                              color: item['color'], text: item['text']))
+                          .toList(),
+                    )
+                  : const SizedBox.shrink(),
             ],
           ),
         ),

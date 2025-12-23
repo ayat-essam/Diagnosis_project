@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../../DashBoard Patient/presention/Widgets/line_chart_legand.dart';
+import '../../../../../../Core/reusable_widgets/line_chart_legand.dart';
 
 class RowNewVsReturningLeganed extends StatelessWidget {
   const RowNewVsReturningLeganed({super.key});

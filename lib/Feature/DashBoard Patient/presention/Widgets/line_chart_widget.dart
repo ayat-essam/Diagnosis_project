@@ -7,7 +7,16 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'line_chart_legand.dart';
 
 class LineChartWidget extends StatelessWidget {
-  const LineChartWidget({super.key});
+  final List<LineChartBarData> lineBarsData;
+  final List<Map<String, dynamic>>? legendItems;
+  final List<String>? bottomLabels;
+
+  const LineChartWidget({
+    super.key,
+    required this.lineBarsData,
+    this.legendItems,
+    this.bottomLabels = const ['Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov'],
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -60,29 +69,25 @@ class LineChartWidget extends StatelessWidget {
                         bottomTitles: AxisTitles(
                           sideTitles: SideTitles(
                             showTitles: true,
+                            interval: 1,
                             getTitlesWidget: (value, meta) {
-                              const months = [
-                                'Jun',
-                                'Jul',
-                                'Aug',
-                                'Sep',
-                                'Oct',
-                                'Nov'
-                              ];
+                              final index = value.toInt();
+
+                              if (index < 0 || index >= bottomLabels!.length) {
+                                return const SizedBox.shrink();
+                              }
+
                               return FittedBox(
-                                fit: BoxFit.scaleDown,
                                 child: Column(
                                   children: [
-                                    // الخط الصغير قبل الرقم
                                     Container(
                                       width: 1,
                                       height: 5,
                                       margin: const EdgeInsets.only(bottom: 4),
                                       color: Colors.grey,
                                     ),
-                                    // الرقم نفسه
                                     Text(
-                                      months[value.toInt()],
+                                      bottomLabels![index],
                                       style: const TextStyle(fontSize: 15),
                                     ),
                                   ],
@@ -100,57 +105,20 @@ class LineChartWidget extends StatelessWidget {
                             left: BorderSide(
                                 color: AppColors.graySecondary, width: 1.3),
                           )),
-                      lineBarsData: [
-                        /// الخط الأزرق (Symptom Severity)
-                        LineChartBarData(
-                            spots: const [
-                              FlSpot(0, 18),
-                              FlSpot(1, 17.5),
-                              FlSpot(2, 17),
-                              FlSpot(3, 16.5),
-                              FlSpot(4, 16),
-                              FlSpot(5, 15.8),
-                            ],
-                            isCurved: true,
-                            color: Colors.blue,
-                            barWidth: 3,
-                            isStrokeCapRound: true),
-
-                        /// الأخضر (Dosage Consistency)
-                        LineChartBarData(
-                          spots: const [
-                            FlSpot(0, 12),
-                            FlSpot(1, 12.3),
-                            FlSpot(2, 12.8),
-                            FlSpot(3, 12.5),
-                            FlSpot(4, 12.2),
-                            FlSpot(5, 12.3),
-                          ],
-                          isCurved: true,
-                          color: Colors.green,
-                          barWidth: 3,
-                        ),
-
-                        /// الأصفر (Routine Completion)
-                        LineChartBarData(
-                          spots: const [
-                            FlSpot(0, 8),
-                            FlSpot(1, 7.9),
-                            FlSpot(2, 7.6),
-                            FlSpot(3, 7.2),
-                            FlSpot(4, 7),
-                            FlSpot(5, 6.9),
-                          ],
-                          isCurved: true,
-                          color: Colors.orange,
-                          barWidth: 3,
-                        ),
-                      ],
+                      lineBarsData: lineBarsData,
                     ),
                   ),
                 ),
                 SizedBox(height: 5.h),
-                const LineChartLegend()
+                legendItems != null
+                    ? Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceAround,
+                        children: legendItems!
+                            .map((item) => LineChartLegand(
+                                color: item['color'], text: item['text']))
+                            .toList(),
+                      )
+                    : SizedBox.shrink(),
               ],
             ),
           )),

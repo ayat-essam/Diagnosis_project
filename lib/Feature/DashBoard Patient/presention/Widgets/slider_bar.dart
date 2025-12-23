@@ -1,21 +1,20 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
-import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
+import '../../../Diagnosis Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import '../patient_dashboard.dart';
 import 'drawer_item.dart';
-import 'drawer_item_patients.dart';
+import 'menu_item_patient.dart';
 
-class SliderBarPatient extends StatefulWidget {
-  const SliderBarPatient({super.key});
+class SliderBar extends StatefulWidget {
+  const SliderBar({super.key});
 
   @override
-  State<SliderBarPatient> createState() => _SliderBarPatientState();
+  State<SliderBar> createState() => _SliderBarState();
 }
 
-class _SliderBarPatientState extends State<SliderBarPatient> {
+class _SliderBarState extends State<SliderBar> {
   String? selectedMenuItem;
   String? selectedGeneralItem;
 
@@ -91,9 +90,9 @@ class _SliderBarPatientState extends State<SliderBarPatient> {
 
   List<Widget> buildMenuItems() {
     final menuItems = [
-      MenuItemData(
+      MenuItemPatients(
         title: 'DashBoard',
-        iconPath: "assets/image_SVG/dashBoardIcon.svg",
+        ImagePath: "assets/image_SVG/dashBoardIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
               context,
@@ -102,9 +101,9 @@ class _SliderBarPatientState extends State<SliderBarPatient> {
               ));
         },
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Diagnosis Module',
-        iconPath: "assets/image_SVG/DiagnosisModuleIcon.svg",
+        ImagePath: "assets/image_SVG/DiagnosisModuleIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
               context,
@@ -113,29 +112,29 @@ class _SliderBarPatientState extends State<SliderBarPatient> {
               ));
         },
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Ai Diagnosis Result',
-        iconPath: "assets/image_SVG/aiMessage.svg",
+        ImagePath: "assets/image_SVG/aiMessage.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Drug Checker',
-        iconPath: "assets/image_SVG/Vector.svg",
+        ImagePath: "assets/image_SVG/Vector.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Physiotherapy',
-        iconPath: "assets/image_SVG/Physiotherapy.svg",
+        ImagePath: "assets/image_SVG/Physiotherapy.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Inquiries',
-        iconPath: "assets/image_SVG/Inquiries.svg",
+        ImagePath: "assets/image_SVG/Inquiries.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Complaints',
-        iconPath: "assets/image_SVG/Diagnosis.svg",
+        ImagePath: "assets/image_SVG/Diagnosis.svg",
         onTap: () {
           // Navigator.pushReplacement(
           //     context,
@@ -144,23 +143,23 @@ class _SliderBarPatientState extends State<SliderBarPatient> {
           //     ));
         },
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Directory',
-        iconPath: "assets/image_SVG/DirectoryIcon.svg",
+        ImagePath: "assets/image_SVG/DirectoryIcon.svg",
         onTap: () {},
       ),
 
-      MenuItemData(
+      MenuItemPatients(
         title: 'Medical Files',
-        iconPath: "assets/image_SVG/Medical FilesIcon.svg",
+        ImagePath: "assets/image_SVG/Medical FilesIcon.svg",
         onTap: () {},
       ),
     ];
 
     return menuItems.map<Widget>((item) {
-      return DrawerItemPatients(
-        title: item?.title,
-        iconPath: item.iconPath,
+      return DrawerItem(
+        title: item.title,
+        iconPath: item.ImagePath,
         isActive: selectedMenuItem == item.title,
         onTap: () {
           setState(() {
@@ -179,19 +178,19 @@ class _SliderBarPatientState extends State<SliderBarPatient> {
 
   List<Widget> buildGeneralItems() {
     final generalItems = [
-      MenuItemData(
+      MenuItemPatients(
         title: 'Settings',
-        iconPath: "assets/image_SVG/settingIcon.svg",
+        ImagePath: "assets/image_SVG/settingIcon.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Help',
-        iconPath: "assets/image_SVG/helpIcon.svg",
+        ImagePath: "assets/image_SVG/helpIcon.svg",
         onTap: () {},
       ),
-      MenuItemData(
+      MenuItemPatients(
         title: 'Log Out',
-        iconPath: 'assets/image_SVG/logOutIcon.svg',
+        ImagePath: 'assets/image_SVG/logOutIcon.svg',
         onTap: () {},
       ),
     ];
@@ -199,7 +198,7 @@ class _SliderBarPatientState extends State<SliderBarPatient> {
     return generalItems.map<Widget>((item) {
       return DrawerItem(
         title: item.title,
-        iconPath: item.iconPath,
+        iconPath: item.ImagePath,
         isActive: selectedGeneralItem == item.title,
         onTap: () {
           setState(() {

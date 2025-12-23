@@ -40,7 +40,7 @@ class PationDashBoardAppbar extends StatelessWidget {
         Padding(
           padding: EdgeInsets.only(right: 20),
           child: CircleAvatar(
-            radius: 25,
+            radius: 22,
             backgroundImage: AssetImage("assets/image/profile.png"),
           ),
         )

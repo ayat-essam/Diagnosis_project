@@ -4,11 +4,12 @@ import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/doctor_management_search_section.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/doctor_management_tabs.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/doctors_table.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_dash_board_appbar.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../../../DashBoard Patient/presention/Widgets/patient_dash_board_appbar.dart';
+import '../../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 
 class DoctorsMangementScreen extends StatelessWidget {
   const DoctorsMangementScreen({super.key});

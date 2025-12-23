@@ -13,7 +13,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(color: AppColors.gray74),
+          border: Border.all(color: AppColors.greyLight),
           borderRadius: BorderRadius.circular(8),
           color: AppColors.whiteBackground),
       child: Padding(
@@ -22,7 +22,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
           height: height,
           child: TextFormField(
             maxLines: maxLines,
-            style: StyleApp.font14GrayMedium.copyWith(color: AppColors.gray74),
+            style: StyleApp.font14GrayMedium.copyWith(color: AppColors.greyLight),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.zero,

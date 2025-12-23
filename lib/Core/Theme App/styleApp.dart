@@ -71,6 +71,7 @@ class StyleApp {
   static TextStyle font14GrayMedium = TextStyle(
     fontSize: 14.sp,
     fontWeight: Fonts.medium,
+    fontFamily: 'Poppins',
     color: AppColors.gray,
   );
   static TextStyle font18BlackSemiBold = TextStyle(
@@ -88,7 +89,14 @@ class StyleApp {
   static TextStyle font12BlueRegular = TextStyle(
     fontSize: 12.sp,
     fontWeight: Fonts.regular,
+    fontFamily: 'Poppins',
     color: AppColors.BluePrimary,
+  );
+    static TextStyle font12gray7ARegular = TextStyle(
+    fontSize: 12.sp,
+    fontWeight: Fonts.regular,
+    fontFamily: 'Poppins',
+    color: AppColors.gray7A,
   );
 
   static TextStyle font16BlackRegular = TextStyle(
@@ -179,6 +187,12 @@ class StyleApp {
     fontFamily: 'Poppins',
     color: AppColors.grayTextChart,
   );
+  static TextStyle font10gray74Regular = TextStyle(
+    fontSize: 9.sp,
+    fontFamily: 'Poppins',
+    fontWeight: Fonts.regular,
+    color: AppColors.gray74,
+  );
   static TextStyle font25grayDarkMedium = TextStyle(
     fontSize: 25.sp,
     fontFamily: 'Poppins',
@@ -190,5 +204,11 @@ class StyleApp {
     fontFamily: 'Poppins',
     fontWeight: Fonts.medium,
     color: AppColors.blackSecondary,
+  );
+  static TextStyle font18GrayDarkBold = TextStyle(
+    fontSize: 18.sp,
+    fontWeight: Fonts.bold,
+    fontFamily: 'Poppins',
+    color: AppColors.grayDark,
   );
 }

@@ -14,12 +14,15 @@ class CustomAppButton extends StatelessWidget {
     this.width = double.infinity,
     this.backgroundColor = AppColors.BluePrimary,
     this.verticalPadding = 6,
+    this.borderColor = AppColors.BluePrimary,
   });
   final String text;
   final double borderRedius;
   final double width;
   final Color backgroundColor;
+  final Color borderColor;
   final double verticalPadding;
+
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -31,15 +34,15 @@ class CustomAppButton extends StatelessWidget {
           color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRedius),
           border: Border.all(
-            color: AppColors.BluePrimary,
+            color: borderColor,
           ),
         ),
         child: Center(
           child: Text(text,
               style: backgroundColor == AppColors.BluePrimary
-                  ? StyleApp.font14BlueSemiBold
+                  ? StyleApp.font16BlueSemiBold
                       .copyWith(color: AppColors.whiteBackground)
-                  : StyleApp.font14BlueSemiBold),
+                  : StyleApp.font16BlueSemiBold.copyWith(color: borderColor)),
         ),
       ),
     );

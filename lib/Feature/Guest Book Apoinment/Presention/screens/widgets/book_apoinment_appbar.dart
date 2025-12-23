@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/notification_appbar_widget.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/notification_appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -21,9 +21,11 @@ class BookApointmentAppBar extends StatelessWidget {
         height: 38.h,
         width: 138.w,
       ),
-      actionsPadding: EdgeInsets.only(right: 20.w),
       actions: const [
-        NotificationAppBarWdget(),
+        Padding(
+          padding: EdgeInsets.only(right: 20),
+          child: NotificationAppBarWdget(),
+        ),
         CircleAvatar(
           radius: 25,
           backgroundImage: AssetImage("assets/image/person.png"),

@@ -1,7 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/book_apoinment_appbar.dart';
-import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/book_now_button_widget.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/enter_information_section.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/pick_date_and_time_section.dart';
 import 'package:flutter/material.dart';
@@ -48,7 +48,7 @@ class GuestBookApointmentScreen extends StatelessWidget {
               SizedBox(
                 height: 29.h,
               ),
-              BookNowButtonWidget(onTap: () {}),
+              CustomAppButton(onTap: () {}, text: 'Book Now',),
             ],
           ),
         ),

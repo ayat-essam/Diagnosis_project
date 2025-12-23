@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/notification_appbar_widget.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/notification_appbar_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,23 +11,38 @@ class PationDashBoardAppbar extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      scrolledUnderElevation: 0,
+      scrolledUnderElevation: 5,//make it 5 to make ظل ثابت أثناء scroll
       backgroundColor: AppColors.whiteBackground,
       surfaceTintColor: AppColors.whiteBackground,
       elevation: 5,
       shadowColor: AppColors.black.withOpacity(.8),
-      leading: const Icon(Icons.menu, color: AppColors.black),
-      title: Image.asset(
-        "assets/image/logo2.png",
-        height: 38.h,
-        width: 138.w,
+      leadingWidth: 110.w,
+      leading: Row(
+        children: [
+          IconButton(
+            icon: const Icon(Icons.menu, color: AppColors.black),
+            onPressed: () {
+              Scaffold.of(context).openDrawer();
+            },
+          ),
+          Image.asset(
+            "assets/image/logo2.png",
+            height: 38.h,
+            width: 38.w,
+          ),
+        ],
       ),
-      actionsPadding: EdgeInsets.only(right: 20.w),
-      actions: const [
-        NotificationAppBarWdget(),
-        CircleAvatar(
-          radius: 25,
-          backgroundImage: AssetImage("assets/image/person.png"),
+      actions:  const [
+        Padding(
+          padding: EdgeInsets.only(right: 20),
+          child: NotificationAppBarWdget(),
+        ),
+        Padding(
+          padding: EdgeInsets.only(right: 20),
+          child: CircleAvatar(
+            radius: 25,
+            backgroundImage: AssetImage("assets/image/profile.png"),
+          ),
         )
       ],
     );

@@ -3,7 +3,7 @@ import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/Theme App/colors.dart';
-import '../../../../Core/reusable_widgets/complains_custom_app_bar.dart';
+import '../../../../Core/reusable_widgets/custom_app_bar.dart';
 import '../widgets/previous_replies_card.dart';
 import '../widgets/submit_inquiries_card.dart';
 import '../widgets/support_info_section.dart';
@@ -38,7 +38,7 @@ class _ComplaintsScreenState extends State<ComplaintsScreen> {
       backgroundColor: AppColors.whiteBackground,
       body: Column(
         children: [
-          const ComplaintsCustomAppBar(title: "Good morning Ahmed",),
+          const CustomAppBar(title: "Good morning Ahmed",),
           Expanded(
             child: SingleChildScrollView(
               padding: EdgeInsets.all(16.w),

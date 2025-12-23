@@ -1,9 +1,17 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Complaints/presentation/screens/Complaints_Screen.dart';
+//import 'package:diagnosis_project/Feature/Complaints/Complaints_Screen.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_dash_board_appbar.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/patient_dashboard.dart';
+import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointments_page.dart';
+import 'package:diagnosis_project/Feature/Inquiries/Inquiries_Screen.dart';
+import 'package:diagnosis_project/Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
+import '../../../Help/presentation/screens/Help_Screen.dart';
 import 'drawer_item.dart';
 import 'menu_Item.dart';
 
@@ -30,12 +38,22 @@ class _SliderBarState extends State<SliderBar> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-                  Image.asset('assets/image/logo.png'),
+
+                  Row(
+                    children: [
+                      Image.asset('assets/image/logo2.png'),
+                      const Text("Diagnosis",style: TextStyle(
+                        fontFamily: 'Poppins',
+                        color: AppColors.BluePrimary,
+                        fontSize: 24,
+                        fontWeight: FontWeight.bold
+                      ),)
+                    ],
+                  ),
                 ],
               ),
             ),
             const Gap(10),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
@@ -53,9 +71,7 @@ class _SliderBarState extends State<SliderBar> {
                 ],
               ),
             ),
-
             const Divider(height: 30, thickness: 1),
-
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
               child: Column(
@@ -73,7 +89,6 @@ class _SliderBarState extends State<SliderBar> {
                 ],
               ),
             ),
-
             const Gap(10),
           ],
         ),
@@ -87,72 +102,94 @@ class _SliderBarState extends State<SliderBar> {
         title: 'DashBoard',
         iconPath: "assets/image_SVG/dashBoardIcon.svg",
         onTap: () {
-
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PatientDashboard(),
+              ));
         },
       ),
       MenuItemData(
         title: 'Diagnosis Module',
         iconPath: "assets/image_SVG/DiagnosisModuleIcon.svg",
         onTap: () {
-
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DiagnosisModuleScreen(),
+              ));
         },
       ),
       MenuItemData(
         title: 'Ai Diagnosis Result',
         iconPath: "assets/image_SVG/aiMessage.svg",
-        onTap: () {
-
-        },
+        onTap: () {},
       ),
       MenuItemData(
         title: 'Drug Checker',
         iconPath: "assets/image_SVG/Vector.svg",
-        onTap: () {
-
-        },
+        onTap: () {},
       ),
       MenuItemData(
         title: 'Physiotherapy',
         iconPath: "assets/image_SVG/Physiotherapy.svg",
         onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const PhysiotherapyScreen(),
+              ));
 
         },
       ),
       MenuItemData(
         title: 'Inquiries',
         iconPath: "assets/image_SVG/Inquiries.svg",
-          onTap: () {
-
-          },
+        onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => InquiriesScreen(),
+              ));
+        },
       ),
       MenuItemData(
         title: 'Complaints',
         iconPath: "assets/image_SVG/Diagnosis.svg",
         onTap: () {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => ComplaintsScreen(),));
-
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ComplaintsScreen(),
+              ));
         },
       ),
       MenuItemData(
         title: 'Directory',
         iconPath: "assets/image_SVG/DirectoryIcon.svg",
         onTap: () {
-
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => DirectoryScreen(),
+              ));
         },
       ),
       MenuItemData(
         title: 'Appointments',
         iconPath: "assets/image_SVG/opppointIcon.svg",
-        onTap:() {
-          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => Appointments(),));
+        onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Appointments(),
+              ));
         },
       ),
       MenuItemData(
         title: 'Medical Files',
         iconPath: "assets/image_SVG/Medical FilesIcon.svg",
-        onTap: () {
-
-        },
+        onTap: () {},
       ),
     ];
 
@@ -167,10 +204,10 @@ class _SliderBarState extends State<SliderBar> {
           });
 
           Navigator.pop(context);
-
-          if (item.onTap != null) {
-            Navigator.pushNamed(context, item.onTap as String);
-          }
+          item.onTap?.call();
+          // if (item.onTap != null) {
+          //   Navigator.pushNamed(context, item.onTap as String);
+          // }
         },
       );
     }).toList();
@@ -181,23 +218,24 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemData(
         title: 'Settings',
         iconPath: "assets/image_SVG/settingIcon.svg",
-        onTap: () {
-
-        },
+        onTap: () {},
       ),
       MenuItemData(
         title: 'Help',
         iconPath: "assets/image_SVG/helpIcon.svg",
         onTap: () {
-
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(
+              builder: (context) => const HelpScreen(),
+            ),
+          );
         },
       ),
       MenuItemData(
         title: 'Log Out',
         iconPath: 'assets/image_SVG/logOutIcon.svg',
-        onTap: () {
-
-        },
+        onTap: () {},
       ),
     ];
 
@@ -213,9 +251,8 @@ class _SliderBarState extends State<SliderBar> {
           Navigator.pop(context);
           if (item.title == 'Log Out') {
             handleLogout(context);
-          }
-          else if (item.onTap != null) {
-            Navigator.pushNamed(context, item.onTap as String);
+          } if (item.onTap != null) {
+            item.onTap!();
           }
         },
       );
@@ -240,7 +277,7 @@ class _SliderBarState extends State<SliderBar> {
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 '/login',
-                    (route) => false,
+                (route) => false,
               );
             },
             child: const Text('Log Out', style: TextStyle(color: Colors.red)),

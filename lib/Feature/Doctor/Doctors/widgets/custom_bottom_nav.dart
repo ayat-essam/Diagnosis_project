@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../Core/Theme App/colors.dart';
 
 class CustomBottomNav extends StatelessWidget {
   final int currentIndex;
@@ -10,93 +13,80 @@ class CustomBottomNav extends StatelessWidget {
     required this.onTap,
   });
 
+  final List<String> _labels = const [
+    'Home',
+    'Services',
+    'Doctors',
+    'Settings',
+  ];
+
+  final List<IconData> _items = const [
+    Icons.home_outlined,
+    Icons.hub_outlined,
+    Icons.add_box_outlined,
+    Icons.settings_outlined,
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.all(16),
+      padding: EdgeInsets.fromLTRB(16.w, 0, 16.w, 16.h),
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 30, vertical: 14),
+        height: 70.h,
+        padding: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
-          color: const Color(0xFF4A8CFF), 
-          borderRadius: BorderRadius.circular(40),
-        ),
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceBetween,
-          children: [
-            _navItem(
-              index: 0,
-              icon: Icons.home_outlined,
-              label: "Home",
-            ),
-            _navItem(
-              index: 1,
-              icon: Icons.hub_outlined,
-              label: "Explore",
-            ),
-            _navItem(
-              index: 2,
-              icon: Icons.medical_services_outlined,
-              label: "Doctors",
-              isCenter: true,
-            ),
-            _navItem(
-              index: 3,
-              icon: Icons.settings_outlined,
-              label: "Settings",
+          color:  AppColors.BluePrimary,
+          borderRadius: BorderRadius.circular(40.r),
+          boxShadow: [
+            BoxShadow(
+              color: AppColors.black.withOpacity(0.15),
+              blurRadius: 10,
+              offset: const Offset(0, 6),
             ),
           ],
         ),
-      ),
-    );
-  }
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(_items.length, (index) {
+            final isActive = index == currentIndex;
 
-  Widget _navItem({
-    required int index,
-    required IconData icon,
-    required String label,
-    bool isCenter = false,
-  }) {
-    bool selected = currentIndex == index;
-
-    if (isCenter) {
-      return GestureDetector(
-        onTap: () => onTap(index),
-        child: AnimatedContainer(
-          duration: const Duration(milliseconds: 200),
-          padding: const EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-          decoration: BoxDecoration(
-            color: selected ? Colors.white : Colors.transparent,
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Row(
-            children: [
-              Icon(
-                icon,
-                color: selected ? Colors.black : Colors.white,
-              ),
-              const SizedBox(width: 6),
-              if (selected)
-                Text(
-                  label,
-                  style: const TextStyle(
-                    fontSize: 16,
-                    color: Colors.black,
-                    fontWeight: FontWeight.w600,
-                  ),
+            return GestureDetector(
+              onTap: () => onTap(index),
+              child: AnimatedContainer(
+                duration: const Duration(milliseconds: 250),
+                padding: EdgeInsets.symmetric(
+                  horizontal: isActive ? 18.w : 12.w,
+                  vertical: 8.h,
                 ),
-            ],
-          ),
+                decoration: BoxDecoration(
+                  color: isActive ?  AppColors.whiteBackground : Colors.transparent,
+                  borderRadius: BorderRadius.circular(30.r),
+                ),
+                child: Row(
+                  children: [
+                    Icon(
+                      _items[index],
+                      color: isActive ?AppColors.BluePrimary: AppColors.whiteBackground,
+                    ),
+                    if (isActive) ...[
+                      SizedBox(width: 6.w),
+                      Text(
+                        _labels[index],
+                        style: TextStyle(
+                          color: AppColors.BluePrimary,
+                          fontWeight: FontWeight.bold,
+                          fontSize: 14.sp,
+                        ),
+                      ),
+                    ]
+                  ],
+                ),
+              ),
+            );
+          }),
         ),
-      );
-    }
-
-    return GestureDetector(
-      onTap: () => onTap(index),
-      child: Icon(
-        icon,
-        color: Colors.white,
-        size: 26,
       ),
     );
   }
 }
+

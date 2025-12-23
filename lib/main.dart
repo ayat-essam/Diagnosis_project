@@ -1,5 +1,6 @@
 import 'package:device_preview/device_preview.dart';
 import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/doctors_mangement_screen.dart';
 import 'package:diagnosis_project/Feature/Admin_dashBoard/presentation/screens/admin_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/cheack_password.dart';
@@ -70,7 +71,7 @@ class MyApp extends StatelessWidget {
                   surface: AppColors.whiteBackground,
                 ),
               ),
-              home: const PhysiotherapyScreen()//DoctorsScreen(),
+              home: const DoctorsMangementScreen()//DoctorsScreen(),
           );
 //           return BlocBuilder<LocaleCubit, LocaleState>(
 //             builder: (context, state) {

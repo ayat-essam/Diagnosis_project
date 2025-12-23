@@ -4,17 +4,18 @@ import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screen
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
+import '../patient_dashboard.dart';
 import 'drawer_item.dart';
-import 'menu_item_data.dart';
+import 'drawer_item_patients.dart';
 
-class SliderBar extends StatefulWidget {
-  const SliderBar({super.key});
+class SliderBarPatient extends StatefulWidget {
+  const SliderBarPatient({super.key});
 
   @override
-  State<SliderBar> createState() => _SliderBarState();
+  State<SliderBarPatient> createState() => _SliderBarPatientState();
 }
 
-class _SliderBarState extends State<SliderBar> {
+class _SliderBarPatientState extends State<SliderBarPatient> {
   String? selectedMenuItem;
   String? selectedGeneralItem;
 
@@ -157,8 +158,8 @@ class _SliderBarState extends State<SliderBar> {
     ];
 
     return menuItems.map<Widget>((item) {
-      return DrawerItem(
-        title: item.title,
+      return DrawerItemPatients(
+        title: item?.title,
         iconPath: item.iconPath,
         isActive: selectedMenuItem == item.title,
         onTap: () {

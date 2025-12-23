@@ -5,6 +5,8 @@ import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/slider_bar_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'Widgets/header_call.dart';
+import 'Widgets/patient.dart';
 
 class MyPatientsScreen extends StatefulWidget {
   const MyPatientsScreen({super.key});
@@ -29,17 +31,14 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
   void initState() {
     super.initState();
 
-    // تهيئة البيانات
     _initializePatients();
 
     _filteredPatients = List<Patient>.from(_patients);
 
-    // إضافة listener للبحث
     _searchController.addListener(_onSearchChanged);
   }
 
   void _initializePatients() {
-    // إضافة البيانات إلى القائمة
     _patients.addAll([
       Patient(
         name: 'June 8min',
@@ -93,7 +92,6 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
     super.dispose();
   }
 
-  // دالة البحث مع debounce لتقليل rebuilds
   void _onSearchChanged() {
     if (_searchDebounce?.isActive ?? false) {
       _searchDebounce!.cancel();
@@ -116,7 +114,6 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
     });
   }
 
-  // حساب البيانات الحالية للصفحة
   List<Patient> get _currentPagePatients {
     final startIndex = (_currentPage - 1) * _itemsPerPage;
     final endIndex = startIndex + _itemsPerPage;
@@ -187,7 +184,6 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
             ),
             const Gap(40),
 
-            // حقل البحث
             TextField(
               controller: _searchController,
               decoration: InputDecoration(
@@ -201,7 +197,6 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
             ),
             const Gap(12),
 
-            // رأس الجدول
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               decoration: BoxDecoration(
@@ -210,23 +205,21 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
               ),
               child: const Row(
                 children: [
-                  _HeaderCell(text: 'Patient Name', flex: 2),
-                  _HeaderCell(text: 'ID'),
-                  _HeaderCell(text: 'Last Visit'),
-                  _HeaderCell(text: 'Status'),
-                  _HeaderCell(text: 'Contact Info', flex: 2),
-                  _HeaderCell(text: 'Action', flex: 2),
+                  HeaderCell(text: 'Patient Name', flex: 2),
+                  HeaderCell(text: 'ID'),
+                  HeaderCell(text: 'Last Visit'),
+                  HeaderCell(text: 'Status'),
+                  HeaderCell(text: 'Contact Info', flex: 2),
+                  HeaderCell(text: 'Action', flex: 2),
                 ],
               ),
             ),
             const Gap(8),
 
-            // قائمة المرضى
             Expanded(
               child: _buildPatientsList(),
             ),
 
-            // التقسيم (Pagination)
             _buildPaginationFooter(),
           ],
         ),
@@ -243,7 +236,6 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
         ),
       );
     }
-
     return ListView.separated(
       itemCount: _currentPagePatients.length,
       separatorBuilder: (context, index) => const Divider(height: 1),
@@ -280,7 +272,7 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
     return Container(
       padding: const EdgeInsets.symmetric(vertical: 16),
       decoration: BoxDecoration(
-        border: Border(top: BorderSide(color: Colors.grey[300]!)), // صححت هنا
+        border: Border(top: BorderSide(color: Colors.grey[300]!)),
       ),
       child: Row(
         mainAxisAlignment: MainAxisAlignment.spaceBetween,
@@ -312,7 +304,7 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
                   style: const TextStyle(color: Colors.white),
                 ),
               ),
-              const SizedBox(width: 16),
+              const Gap(16),
               _buildPaginationButton(
                 text: 'Next >',
                 isEnabled: hasNext,
@@ -349,10 +341,10 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
       child: Container(
         padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 8),
         decoration: BoxDecoration(
-          color: isActive ? Colors.green[50] : Colors.orange[50],
+          color: isActive ? AppColors.green : AppColors.orange,
           borderRadius: BorderRadius.circular(12),
           border: Border.all(
-            color: isActive ? Colors.green[100]! : Colors.orange[100]!,
+            color: isActive ? AppColors.green : AppColors.orange,
           ),
         ),
         child: Text(
@@ -417,46 +409,4 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
       ),
     );
   }
-}
-
-// باقي الـ Widgets المساعدة
-class _HeaderCell extends StatelessWidget {
-  final String text;
-  final int flex;
-
-  const _HeaderCell({
-    required this.text,
-    this.flex = 1,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Expanded(
-      flex: flex,
-      child: Text(
-        text,
-        style: const TextStyle(
-          fontWeight: FontWeight.bold,
-          color: Colors.black87,
-          fontSize: 12,
-        ),
-      ),
-    );
-  }
-}
-
-class Patient {
-  final String name;
-  final String id;
-  final String lastVisit;
-  final String status;
-  final String contact;
-
-  Patient({
-    required this.name,
-    required this.id,
-    required this.lastVisit,
-    required this.status,
-    required this.contact,
-  });
 }

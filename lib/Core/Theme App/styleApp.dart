@@ -133,7 +133,7 @@ class StyleApp {
     color: AppColors.whiteBackground,
   );
 
-  static TextStyle font20BlackMedium = TextStyle(
+  static TextStyle font20BlackMedium = const TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w500,
     color: AppColors.blackSecondary,
@@ -190,5 +190,11 @@ class StyleApp {
     fontFamily: 'Poppins',
     fontWeight: Fonts.medium,
     color: AppColors.blackSecondary,
+  );
+  static TextStyle font15blackSecondryMedium = const TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blackSecondary,
+    fontFamily: 'Poppins',
   );
 }

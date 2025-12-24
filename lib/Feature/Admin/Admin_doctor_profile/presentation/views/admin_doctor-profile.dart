@@ -1,13 +1,14 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile.dart/presentation/views/widgets/BackToPatientTablebutton.dart';
-import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile.dart/presentation/views/widgets/ConsultationHistory.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile.dart/presentation/views/widgets/Dashboard_section.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile.dart/presentation/views/widgets/PersonalInfoCard.dart';
-import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile.dart/presentation/views/widgets/patient_image.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/BackToPatientTablebutton.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/ConsultationHistory.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/patient_image.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/custom_appBar_Consultations.dart';
 import 'package:flutter/material.dart';
 
-class AdminPatientProfile extends StatelessWidget {
-  const AdminPatientProfile({super.key});
+class AdminDoctorProfile extends StatelessWidget {
+  const AdminDoctorProfile({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -33,7 +34,7 @@ class AdminPatientProfile extends StatelessWidget {
             Row(
               children: [
                 Text(
-                  "Patient Profile ",
+                  "Doctor Profile ",
                   style: TextStyle(
                       fontSize: 25,
                       fontWeight: FontWeight.w500,
@@ -66,7 +67,14 @@ class AdminPatientProfile extends StatelessWidget {
             SizedBox(
               height: 14,
             ),
+            DashboardSection(),
+            SizedBox(
+              height: 14,
+            ),
             ConsultationHistory(),
+            SizedBox(
+              height: 14,
+            ),
           ]),
         )
       ]))),

@@ -13,10 +13,10 @@ class FilterOption extends StatefulWidget {
 }
 
 class _FilterOptionState extends State<FilterOption> {
-  String? selectedLocation;
-  String? selectedExperience;
-  String? selectedAvailability;
-  String? selectedRate;
+  String? selectedLocation='All';
+  String? selectedExperience='10+ years';
+  String? selectedAvailability='Available';
+  String? selectedRate='5 stars';
 
   final List<String> locationOptions = ['All', 'Cairo', 'Alexandria', 'Giza'];
   final List<String> experienceOptions = [

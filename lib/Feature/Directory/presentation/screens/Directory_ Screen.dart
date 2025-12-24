@@ -2,13 +2,14 @@ import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/patient_dash_board_appbar.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
 import 'package:diagnosis_project/Feature/Directory/presentation/screens/widgets/filter_option_row.dart';
 import 'package:diagnosis_project/Feature/Directory/presentation/screens/widgets/filter_result_list.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../../DashBoard Patient/presention/Widgets/patient_dash_board_appbar.dart';
+import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 
 class DirectoryScreen extends StatelessWidget {
   const DirectoryScreen({super.key});

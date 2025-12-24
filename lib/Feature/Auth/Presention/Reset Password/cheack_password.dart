@@ -1,7 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/Fonts.dart';
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_button.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/patient_dashboard.dart';
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -49,7 +49,7 @@ class CheckPassword extends StatelessWidget {
                    CustomButton(
                        onTap: () {
                          Navigator.pushReplacement(context, MaterialPageRoute(
-                           builder: (context) => DashBoard(),));
+                           builder: (context) => PatientDashboard(),));
                        },
                        text: "Confirm")
                  ],

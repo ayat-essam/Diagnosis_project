@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../Core/Theme App/colors.dart';
 import '../../../../Core/reusable_widgets/custom_app_bar.dart';
-import '../../../DashBoard/presention/Widgets/slider_bar.dart';
-import '../../../Guest Home/presentation/widgets/search_bar_widget.dart';
+import '../../../../Core/reusable_widgets/search_bar_widget.dart';
+import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 import '../widgets/contact_support_item.dart';
 import '../widgets/faqItem.dart';
 
@@ -41,7 +39,7 @@ class _HelpScreenState extends State<HelpScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SearchBarWidget(),
+              SearchBarWidget(hintText: 'Search...',),
               FaqExpansionList(),
               ContactSupportItem(),
 

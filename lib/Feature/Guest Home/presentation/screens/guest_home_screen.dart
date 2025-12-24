@@ -1,10 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-
 import '../../../../Core/Theme App/colors.dart';
 import '../../../../Core/reusable_widgets/custom_app_bar.dart';
-
-import '../../../DashBoard/presention/Widgets/slider_bar.dart';
+import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 import '../../../Doctor/Doctors/widgets/custom_bottom_nav.dart';
 import 'guest_home_content.dart';
 

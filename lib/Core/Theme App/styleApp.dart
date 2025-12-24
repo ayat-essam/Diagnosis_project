@@ -147,7 +147,7 @@ class StyleApp {
     color: AppColors.whiteBackground,
   );
 
-  static TextStyle font20BlackMedium = TextStyle(
+  static TextStyle font20BlackMedium = const TextStyle(
     fontSize: 20,
     fontWeight: FontWeight.w500,
     color: AppColors.blackSecondary,
@@ -211,10 +211,17 @@ class StyleApp {
     fontWeight: Fonts.medium,
     color: AppColors.blackSecondary,
   );
+  static TextStyle font15blackSecondryMedium = const TextStyle(
+    fontSize: 17,
+    fontWeight: FontWeight.w500,
+    color: AppColors.blackSecondary,
+    fontFamily: 'Poppins',
+
   static TextStyle font18GrayDarkBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: Fonts.bold,
     fontFamily: 'Poppins',
     color: AppColors.grayDark,
+
   );
 }

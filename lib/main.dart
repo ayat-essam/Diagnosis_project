@@ -13,9 +13,8 @@ import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/view
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
 
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_setting_view.dart';
+import 'package:diagnosis_project/Feature/Patient/profile-patient/presentation/views/profile_patient_view.dart';
 import 'package:diagnosis_project/generated/l10n.dart';
-
-
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -55,6 +54,11 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
+
+          return BlocBuilder<LocaleCubit, LocaleState>(
+            builder: (context, state) {
+              Locale locale = const Locale('en');
+
           return MaterialApp(
               debugShowCheckedModeBanner: false,
 
@@ -74,11 +78,25 @@ class MyApp extends StatelessWidget {
 //             builder: (context, state) {
 //               Locale locale = const Locale('en');
 
+
 //               if (state is LocaleInitial) {
 //                 locale = state.locale;
 //               } else if (state is LocaleChanged) {
 //                 locale = state.locale;
 //               }
+
+
+              return MaterialApp(
+                  locale: locale,
+                  localizationsDelegates: const [
+                    S.delegate,
+                    GlobalMaterialLocalizations.delegate,
+                    GlobalWidgetsLocalizations.delegate,
+                    GlobalCupertinoLocalizations.delegate,
+                  ],
+                  supportedLocales: S.delegate.supportedLocales,
+                  debugShowCheckedModeBanner: false,
+                  home: const ProfilePatientView() //DoctorsScreen(),
 
 //               return MaterialApp(
 //                   locale: locale,
@@ -93,6 +111,7 @@ class MyApp extends StatelessWidget {
 //                   home: const GuestSettingView() //DoctorsScreen(),
 
         
+
 
 //                   );
 //             },

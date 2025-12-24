@@ -4,6 +4,7 @@ import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_ba
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
+import 'Feature/Diagnosis Module/Diagnosis_Module_Screen.dart';
 import 'Feature/SuggestedTreatment/presentation/view/suggested_treatment.dart';
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -30,7 +31,7 @@ class MyApp extends StatelessWidget {
       builder: (context, child) {
         return  MaterialApp(
           debugShowCheckedModeBanner: false,
-          home:  SuggestedTreatmentScreen(),//RecentTransactionsScreen(),
+          home:  DiagnosisModuleScreen(),//RecentTransactionsScreen(),
         );
       },
       child: const SliderBar(),

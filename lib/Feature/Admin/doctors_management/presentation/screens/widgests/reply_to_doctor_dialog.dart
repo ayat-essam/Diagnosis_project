@@ -7,8 +7,8 @@ import 'custom_text_form_field.dart';
 import 'dialog_actions.dart';
 import 'dialog_header.dart';
 
-class SupportTicketDialog extends StatelessWidget {
-  const SupportTicketDialog({super.key});
+class ReplyToDoctorDialog extends StatelessWidget {
+  const ReplyToDoctorDialog({super.key});
 
   @override
   Widget build(BuildContext context) {

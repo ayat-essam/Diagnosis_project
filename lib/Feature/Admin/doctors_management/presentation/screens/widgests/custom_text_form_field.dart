@@ -13,7 +13,7 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       decoration: BoxDecoration(
-          border: Border.all(color: AppColors.greyLight),
+          border: Border.all(color: AppColors.gray74),
           borderRadius: BorderRadius.circular(8),
           color: AppColors.whiteBackground),
       child: Padding(

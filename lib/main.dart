@@ -14,9 +14,8 @@ import 'package:diagnosis_project/Feature/Doctor_DashBoard/presentation/screens/
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
 
 import 'package:diagnosis_project/Feature/Guest%20Setting/views/guest_setting_view.dart';
+import 'package:diagnosis_project/Feature/Patient/profile-patient/presentation/views/profile_patient_view.dart';
 import 'package:diagnosis_project/generated/l10n.dart';
-
-
 
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -53,7 +52,6 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-
           return BlocBuilder<LocaleCubit, LocaleState>(
             builder: (context, state) {
               Locale locale = const Locale('en');
@@ -74,9 +72,7 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
-                  home: const GuestSettingView() //DoctorsScreen(),
-
-        
+                  home: const ProfilePatientView() //DoctorsScreen(),
 
                   );
             },

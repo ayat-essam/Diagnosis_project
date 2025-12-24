@@ -1,11 +1,12 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/presentation/screens/admin_dashboard_screen.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/doctors_mangement_screen.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/drawer_item_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
 
 import 'menu_Item_admin.dart';
-
 
 class SliderBarAdmin extends StatefulWidget {
   const SliderBarAdmin({super.key});
@@ -30,24 +31,27 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-
                   Row(
                     children: [
-                      Image.asset('assets/image/logo2.png',width: 80,fit: BoxFit.fitWidth,),
-                      const Text("Diagnosis",style: TextStyle(
-                          fontFamily: 'Poppins',
-                          color: AppColors.BluePrimary,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold
-                      ),)
+                      Image.asset(
+                        'assets/image/logo2.png',
+                        width: 80,
+                        fit: BoxFit.fitWidth,
+                      ),
+                      const Text(
+                        "Diagnosis",
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            color: AppColors.BluePrimary,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      )
                     ],
                   ),
-
                 ],
               ),
             ),
             const Divider(height: 10, thickness: 1),
-
             const Gap(10),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 20.0),
@@ -96,9 +100,12 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
       MenuItemDataAdmin(
         title: 'DashBoard',
         imagePath: "assets/image_SVG/dashBoardIcon.svg",
-          imageColor: AppColors.gray,
+        imageColor: AppColors.gray,
         onTap: () {
-
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) {
+            return const AdminDashboardScreen();
+          }));
         },
       ),
       MenuItemDataAdmin(
@@ -106,13 +113,16 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
         imagePath: "assets/image_SVG/doctorMangementIcon.svg",
         imageColor: AppColors.gray,
         onTap: () {
-
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) {
+            return const DoctorsMangementScreen();
+          }));
         },
       ),
       MenuItemDataAdmin(
         title: 'Patients\n Management',
         imagePath: "assets/image_SVG/patientsMangmentsIcon.svg",
-    imageColor: AppColors.gray,
+        imageColor: AppColors.gray,
         onTap: () {},
       ),
       MenuItemDataAdmin(
@@ -135,7 +145,6 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
 
           Navigator.pop(context);
           item.onTap?.call();
-
         },
       );
     }).toList();
@@ -146,9 +155,9 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
       MenuItemDataAdmin(
         title: 'Settings',
         imagePath: "assets/image_SVG/settingIcon.svg",
-        onTap: () {}, imageColor: AppColors.gray,
+        onTap: () {},
+        imageColor: AppColors.gray,
       ),
-
       MenuItemDataAdmin(
         title: "LogOut",
         imagePath: 'assets/image_SVG/logOutIcon.svg',
@@ -195,7 +204,7 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 '/login',
-                    (route) => false,
+                (route) => false,
               );
             },
             child: const Text('LogOut', style: TextStyle(color: Colors.red)),

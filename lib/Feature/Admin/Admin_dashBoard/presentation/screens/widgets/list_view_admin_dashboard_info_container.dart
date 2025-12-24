@@ -1,5 +1,5 @@
-import 'package:diagnosis_project/Feature/Admin_dashBoard/data/models/info_admin_dash_board_model.dart';
-import 'package:diagnosis_project/Feature/Admin_dashBoard/presentation/screens/widgets/admin_dashboard_info_container.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/data/models/info_admin_dash_board_model.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/presentation/screens/widgets/admin_dashboard_info_container.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 

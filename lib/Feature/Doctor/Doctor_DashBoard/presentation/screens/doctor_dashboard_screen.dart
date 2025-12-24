@@ -1,4 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/Widgets/patient_dash_board_appbar.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/buttons_taps.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/common_diagnosis_chart.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/new_vs_returning_chart.dart';
@@ -8,8 +9,6 @@ import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/s
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-
-import '../../../../DashBoard Patient/presention/Widgets/patient_dash_board_appbar.dart';
 
 class DoctorDashboardScreen extends StatelessWidget {
   const DoctorDashboardScreen({super.key});

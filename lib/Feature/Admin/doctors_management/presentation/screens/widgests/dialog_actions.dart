@@ -31,7 +31,7 @@ class DialogActions extends StatelessWidget {
             borderRedius: 8.r,
             verticalPadding: 12,
             backgroundColor: AppColors.greyLight,
-            borderColor: AppColors.greyLight,
+            borderColor: AppColors.gray74,
           ),
         ),
     ]

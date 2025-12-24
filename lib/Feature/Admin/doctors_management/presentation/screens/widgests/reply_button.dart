@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/support_ticket_dialog.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/reply_to_doctor_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -11,7 +11,7 @@ class ReplyButton extends StatelessWidget {
     return OutlinedButton.icon(
       onPressed: () {
         showDialog(
-            context: context, builder: (context) => const SupportTicketDialog());
+            context: context, builder: (context) => const ReplyToDoctorDialog());
       },
       icon: const Icon(Icons.reply, size: 16),
       label: const Text("Reply"),

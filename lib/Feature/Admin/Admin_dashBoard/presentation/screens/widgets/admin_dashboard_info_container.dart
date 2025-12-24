@@ -1,7 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
-import 'package:diagnosis_project/Feature/Admin_dashBoard/data/models/info_admin_dash_board_model.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/data/models/info_admin_dash_board_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';

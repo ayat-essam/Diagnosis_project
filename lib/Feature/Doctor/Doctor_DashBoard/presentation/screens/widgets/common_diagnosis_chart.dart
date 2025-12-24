@@ -45,14 +45,14 @@ class CommonDiagnosisChart extends StatelessWidget {
                       onTap: () {},
                       text: 'All patients',
                       borderRedius: 25.r,
-                      width: 90.w,
+                      width: 110.w,
                     ),
                     Gap(10.w),
                     CustomAppButton(
                       onTap: () {},
                       text: 'This month',
                       borderRedius: 25.r,
-                      width: 90.w,
+                      width: 110.w,
                       backgroundColor: AppColors.whiteBackground,
                     )
                   ]),
@@ -62,7 +62,7 @@ class CommonDiagnosisChart extends StatelessWidget {
                     BarChartData(
                       alignment: BarChartAlignment.spaceBetween,
                       maxY: 70,
-                      barTouchData:  BarTouchData(enabled: false),
+                      barTouchData: BarTouchData(enabled: false),
                       titlesData: FlTitlesData(
                         topTitles: const AxisTitles(
                           sideTitles: SideTitles(showTitles: false),

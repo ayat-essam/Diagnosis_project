@@ -2,6 +2,7 @@ import 'dart:ui';
 
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/svg.dart';
 import 'package:gap/gap.dart';
 
 class MenuItemDataAdmin extends StatelessWidget{
@@ -23,7 +24,7 @@ class MenuItemDataAdmin extends StatelessWidget{
       onTap: onTap,
      child:Row(
        children: [
-         Image.asset(imagePath,height: 24,width: 24, color: imageColor,),
+         SvgPicture.asset(imagePath,height: 24,width: 24, color: imageColor,),
          Gap(8),
          Text(title,
          style: title =="LogOut"? const TextStyle(color:AppColors.RedError)

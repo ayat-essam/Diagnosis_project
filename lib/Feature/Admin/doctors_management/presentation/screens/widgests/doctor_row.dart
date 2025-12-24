@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:gap/gap.dart';
-import '../../data/models/doctor_model.dart';
+import '../../../data/models/doctor_model.dart';
 import 'status_badge.dart';
 import 'reply_button.dart';
 

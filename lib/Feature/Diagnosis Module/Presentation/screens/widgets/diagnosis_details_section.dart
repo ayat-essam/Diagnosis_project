@@ -1,8 +1,8 @@
-import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/clinical_findings_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/row_text.dart';
+import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -24,22 +24,18 @@ class DiagnosisDetailsSection extends StatelessWidget {
               children: [
                 Column(
                   children: [
-                    Text(
-                      "Diagnosis Details",
-                      style: StyleApp.font20BlackMedium,
-                    ),
-                    Text(
-                      "Type 2 Diabetes Mellitus",
-                      style: StyleApp.font14graySecondaryRegular,
-                    ),
+                    Text("Type 2 Diabetes Mellitus",
+                        style: StyleApp.font16BlueSemiBold
+                            .copyWith(color: AppColors.grayDark)),
                   ],
                 ),
               ],
             ),
+            Gap(9.h),
             Text(
               "Sypmtons",
-              style:
-                  StyleApp.font14GrayMedium.copyWith(color: AppColors.RedError),
+              style: StyleApp.font14BlueSemiBold
+                  .copyWith(fontWeight: FontWeight.w400),
             ),
             const RowText(
               text: 'Increased thirst and frequent urination',
@@ -56,13 +52,13 @@ class DiagnosisDetailsSection extends StatelessWidget {
             const RowText(
               text: 'Slow-healing sores',
             ),
+            Gap(5.h),
             Text(
               "Suggested Medication",
-              style: StyleApp.font14GrayMedium.copyWith(color: AppColors.green),
+              style: StyleApp.font14BlueSemiBold
+                  .copyWith(fontWeight: FontWeight.w400),
             ),
-            SizedBox(
-              height: 3.h,
-            ),
+            Gap(3.h),
             Text(
               """Metformin 500mg- Twice daily with meals
 Glipizide 5mg - Once daily before breakfast

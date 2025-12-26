@@ -43,8 +43,8 @@ class GridViewDiagnosisTemplet extends StatelessWidget {
           },
           childCount: infoCards.length,
         ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
           childAspectRatio: 1,

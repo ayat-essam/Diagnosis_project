@@ -44,7 +44,7 @@ class InfoContainer extends StatelessWidget {
                     width: 15.w,
                     height: 15.h,
                     color: isSelected == true
-                        ? AppColors.black
+                        ? AppColors.grayDark
                         : AppColors.whiteBackground),
               ),
               Gap(12.h),

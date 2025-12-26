@@ -33,7 +33,7 @@ class DiagnosisAssistantSection extends StatelessWidget {
               10.h,
             ),
             DiagnosisTextFormField(
-              hintText: 'Notes / Description*',
+              hintText: 'Notes / Description',
               height: 100.h,
             ),
             Gap(
@@ -45,16 +45,9 @@ class DiagnosisAssistantSection extends StatelessWidget {
             ),
             CustomAppButton(
               onTap: () {},
-              text: 'Save diagnosis',
-              borderRedius: 8.r,
-            ),
-            Gap(
-              10.h,
-            ),
-            CustomAppButton(
-              onTap: () {},
               text: 'Analyze with AI',
               borderRedius: 8.r,
+              width: 400.w,
             ),
           ],
         ),

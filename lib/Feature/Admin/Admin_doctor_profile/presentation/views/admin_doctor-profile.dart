@@ -1,8 +1,8 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile.dart/presentation/views/widgets/Dashboard_section.dart';
-import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile.dart/presentation/views/widgets/PersonalInfoCard.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_doctor_profile/presentation/views/widgets/Dashboard_section.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/BackToPatientTablebutton.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/ConsultationHistory.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/PersonalInfoCard.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/patient_image.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/custom_appBar_Consultations.dart';
 import 'package:flutter/material.dart';

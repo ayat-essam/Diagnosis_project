@@ -1,3 +1,4 @@
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/line_chart_widget.dart';
 import 'package:flutter/material.dart';
 
@@ -22,40 +23,29 @@ class PatientLineChart extends StatelessWidget {
               FlSpot(5, 15.8),
             ],
             isCurved: true,
-            color: Colors.blue,
+            color: AppColors.BluePrimary,
             barWidth: 3,
             isStrokeCapRound: true),
         LineChartBarData(
           spots: const [
-            FlSpot(0, 12),
-            FlSpot(1, 12.3),
-            FlSpot(2, 12.8),
-            FlSpot(3, 12.5),
-            FlSpot(4, 12.2),
-            FlSpot(5, 12.3),
+            FlSpot(0, 17),
+            FlSpot(1, 16.5),
+            FlSpot(2, 16),
+            FlSpot(3, 15.5),
+            FlSpot(4, 15),
+            FlSpot(5, 14.8),
           ],
           isCurved: true,
-          color: Colors.green,
-          barWidth: 3,
-        ),
-        LineChartBarData(
-          spots: const [
-            FlSpot(0, 8),
-            FlSpot(1, 7.9),
-            FlSpot(2, 7.6),
-            FlSpot(3, 7.2),
-            FlSpot(4, 7),
-            FlSpot(5, 6.9),
-          ],
-          isCurved: true,
-          color: Colors.orange,
+          color: AppColors.GreenSuccess,
           barWidth: 3,
         ),
       ],
       legendItems: const [
-        {'color': Colors.green, 'text': 'Dosage\n Consistency'},
-        {'color': Colors.orange, 'text': 'Routine\n Completion'},
-        {'color': Colors.blue, 'text': 'Symptom\n Severity'},
+        {
+          'color': AppColors.GreenSuccess,
+          'text': 'Physiotherapy\n Exercises Search'
+        },
+        {'color': AppColors.BluePrimary, 'text': 'AI Physiotherapy'},
       ],
     );
   }

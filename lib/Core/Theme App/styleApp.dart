@@ -217,7 +217,6 @@ class StyleApp {
     color: AppColors.blackSecondary,
     fontFamily: 'Poppins',
   );
-
   static TextStyle font18GrayDarkBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: Fonts.bold,

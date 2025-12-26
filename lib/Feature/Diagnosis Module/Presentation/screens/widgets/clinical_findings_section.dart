@@ -5,6 +5,7 @@ import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_c
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
 class ClinicalFindingsSection extends StatelessWidget {
   const ClinicalFindingsSection({
     super.key,

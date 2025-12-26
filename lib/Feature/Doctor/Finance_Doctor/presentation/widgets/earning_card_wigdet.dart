@@ -46,7 +46,7 @@ class EarningCardWidget extends StatelessWidget {
                     color: AppColors.blackSecondary,
                   ),
                 ),
-                Gap( 4),
+                Gap(4),
                 Text(
                   '\$25,800',
                   style: TextStyle(
@@ -66,7 +66,6 @@ class EarningCardWidget extends StatelessWidget {
                         color: AppColors.green,
                       ),
                     ),
-
                     Text(
                       "vs last month",
                       style: TextStyle(
@@ -81,11 +80,8 @@ class EarningCardWidget extends StatelessWidget {
             ),
           ),
         ),
-
         const DollarIconWidget(),
       ],
     );
-
-
   }
 }

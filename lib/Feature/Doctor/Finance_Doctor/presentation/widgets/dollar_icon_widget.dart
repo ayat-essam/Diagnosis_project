@@ -16,7 +16,6 @@ class DollarIconWidget extends StatelessWidget {
         child: Stack(
           alignment: Alignment.center,
           children: [
-
             Container(
               decoration: BoxDecoration(
                 shape: BoxShape.circle,
@@ -41,7 +40,6 @@ class DollarIconWidget extends StatelessWidget {
                 ),
               ),
             ),
-
             Positioned(
               top: 8,
               child: SvgPicture.asset(

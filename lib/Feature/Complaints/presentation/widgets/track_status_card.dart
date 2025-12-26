@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/Theme App/colors.dart';
 
-
 class TrackStatusCard extends StatelessWidget {
   final String title;
   final String status;
@@ -65,9 +64,9 @@ class TrackStatusCard extends StatelessWidget {
                   ),
                 ),
                 Container(
-                  padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 10, vertical: 4),
                   decoration: BoxDecoration(
-
                     borderRadius: BorderRadius.circular(20),
                   ),
                   child: Text(

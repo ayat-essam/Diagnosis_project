@@ -7,5 +7,10 @@ class InfoContainerModel {
   final String imgPath;
   final bool isSelected;
 
-  InfoContainerModel({required this.title, required this.subtitle,required this.description, required this.imgPath, required this.isSelected});
+  InfoContainerModel(
+      {required this.title,
+      required this.subtitle,
+      required this.description,
+      required this.imgPath,
+      required this.isSelected});
 }

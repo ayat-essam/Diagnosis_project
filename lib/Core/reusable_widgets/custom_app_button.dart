@@ -13,9 +13,9 @@ class CustomAppButton extends StatelessWidget {
     this.borderRedius = 14,
     this.width = double.infinity,
   });
-final String text;
-final double borderRedius;
-final double width;
+  final String text;
+  final double borderRedius;
+  final double width;
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

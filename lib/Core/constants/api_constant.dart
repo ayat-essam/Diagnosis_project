@@ -1,4 +1,3 @@
-class APIConstants{
-  static const String baseURL = '';
-
+class APIConstants {
+  static const String baseURL = 'http://diagnosis.runasp.net';
 }

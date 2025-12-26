@@ -8,17 +8,21 @@ class DetailsRow extends StatelessWidget {
   final String title;
   @override
   Widget build(BuildContext context) {
-    return  Row(
+    return Row(
       children: [
         CircleAvatar(
           backgroundColor: AppColors.grayE2,
-          child:  Icon(
+          child: Icon(
             icon,
             color: Colors.black,
           ),
         ),
         const SizedBox(width: 8),
-         Text(title,style: StyleApp.font18WhiteMedium.copyWith(color: AppColors.blackSecondary),), // placeholder
+        Text(
+          title,
+          style: StyleApp.font18WhiteMedium
+              .copyWith(color: AppColors.blackSecondary),
+        ), // placeholder
       ],
     );
   }

@@ -9,6 +9,7 @@ import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/
 import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_search_page.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+
 class Appointments extends StatefulWidget {
   const Appointments({super.key});
 
@@ -79,14 +80,24 @@ class _AppointmentsState extends State<Appointments> {
       'time': '04.00 PM',
       'status': 'Pending'
     },
-    {'name': 'Reem Ali', 'specialty': "Cardiologist", 'time': '12.00 PM', 'status': 'Cancelled'},
+    {
+      'name': 'Reem Ali',
+      'specialty': "Cardiologist",
+      'time': '12.00 PM',
+      'status': 'Cancelled'
+    },
     {
       'name': 'Walaa Mohamed',
       'specialty': "Cardiologist",
       'time': '12.30 PM',
       'status': 'Cancelled'
     },
-    {'name': 'Ahmed Reda', 'specialty': "Cardiologist", 'time': '04.00 PM', 'status': 'Cancelled'},
+    {
+      'name': 'Ahmed Reda',
+      'specialty': "Cardiologist",
+      'time': '04.00 PM',
+      'status': 'Cancelled'
+    },
   ];
   final List status = ["Confirmed", "Pending", "Cancelled"];
   final List<Color> selectedColors = [
@@ -122,7 +133,7 @@ class _AppointmentsState extends State<Appointments> {
           Row(
             children: List.generate(
               3,
-                  (index) => AppointmentsTabButton(
+              (index) => AppointmentsTabButton(
                 title: status[index],
                 // ["Follow-up", "New patient", "Urgent"][index],
                 isSelected: selectedIndex == index,
@@ -143,7 +154,8 @@ class _AppointmentsState extends State<Appointments> {
                   return AppointmentItem(
                     image: "assets/image/Group.png",
                     color: selectedColors[selectedIndex],
-                    hintText:"${filteredAppointments[index]['specialty']} | Meeting ${filteredAppointments[index]['time']}",
+                    hintText:
+                        "${filteredAppointments[index]['specialty']} | Meeting ${filteredAppointments[index]['time']}",
                     name: "Dr. ${filteredAppointments[index]['name']}",
                     moreIconOnTap: () {},
                     rowOnTap: () {
@@ -151,8 +163,8 @@ class _AppointmentsState extends State<Appointments> {
                         context,
                         MaterialPageRoute(
                             builder: (context) => AppointmentDetails(
-                              patient: filteredAppointments[index],
-                            )),
+                                  patient: filteredAppointments[index],
+                                )),
                       );
                     },
                   );

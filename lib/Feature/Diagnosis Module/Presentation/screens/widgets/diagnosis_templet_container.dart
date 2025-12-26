@@ -35,7 +35,6 @@ class DiagnocsisTempletContainer extends StatelessWidget {
                     backgroundColor: backgroundImageColor,
                     child: Image.asset(
                       imgPath,
-                    
                     ),
                   ),
                   Gap(12.h),
@@ -47,7 +46,7 @@ class DiagnocsisTempletContainer extends StatelessWidget {
               CustomAppButton(
                 onTap: () {},
                 text: 'Use template',
-                width: 180.w  ,
+                width: 180.w,
                 borderRedius: 25.r,
               )
             ],

@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 class DiagnosisTemplatesModel {
   final String title;
   final Color backgroundImageColor;
- final Function() onTap;
+  final Function() onTap;
   final String imgPath;
 
   DiagnosisTemplatesModel({

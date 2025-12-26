@@ -35,7 +35,6 @@ class ComplaintsCustomAppBar extends StatelessWidget {
                         letterSpacing: 0,
                       ),
                     ),
-
                   ],
                 ),
               ],
@@ -52,8 +51,6 @@ class ComplaintsCustomAppBar extends StatelessWidget {
                       width: 36,
                       height: 36,
                     ),
-
-
                     Positioned(
                       top: -4,
                       right: -4,
@@ -79,20 +76,14 @@ class ComplaintsCustomAppBar extends StatelessWidget {
                         ),
                       ),
                     ),
-
                   ],
-                )
-                ,
-
-
-
+                ),
                 SizedBox(width: 14.w),
                 const CircleAvatar(
                   backgroundColor: AppColors.BluePrimary,
                   radius: 20,
                   backgroundImage: AssetImage("assets/image/profile.png"),
                 )
-
               ],
             ),
           ],

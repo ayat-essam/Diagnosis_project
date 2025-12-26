@@ -3,7 +3,6 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../../../../Core/Theme App/colors.dart';
 
-
 class SupportInfoSection extends StatelessWidget {
   const SupportInfoSection({super.key});
 

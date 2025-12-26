@@ -171,7 +171,8 @@ class _AppointmentsSearchPageState extends State<AppointmentsSearchPage> {
                 return AppointmentItem(
                   image: "assets/image/person.png",
                   name: "${filteredList[index]['name']}",
-                  hintText: "${filteredList[index]['age']} years | Meeting on ${filteredList[index]['time']}",
+                  hintText:
+                      "${filteredList[index]['age']} years | Meeting on ${filteredList[index]['time']}",
                   moreIconOnTap: () {},
                   rowOnTap: () {
                     Navigator.push(

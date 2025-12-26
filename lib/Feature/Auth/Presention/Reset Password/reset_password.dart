@@ -118,15 +118,15 @@ class ResetPassword extends StatelessWidget {
                               Gap(43.h),
                               CustomButton(
                                 text: "Confirm",
-                                  onTap: () {
-                                 if(formKey.currentState!.validate()){
-
-                                }Navigator.pushReplacement(context,
-                                 MaterialPageRoute(builder: (context) => CheckPassword() ));
-                               },
+                                onTap: () {
+                                  if (formKey.currentState!.validate()) {}
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              CheckPassword()));
+                                },
                               ),
-
-
                             ],
                           ),
                         ),

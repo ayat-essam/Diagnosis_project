@@ -22,7 +22,8 @@ class RowText extends StatelessWidget {
         ),
         Text(
           text,
-          style: StyleApp.font16graySecondaryRegular.copyWith(color: Colors.black54),
+          style: StyleApp.font16graySecondaryRegular
+              .copyWith(color: Colors.black54),
         )
       ],
     );

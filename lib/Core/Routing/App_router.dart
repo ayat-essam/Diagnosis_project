@@ -1,4 +1,3 @@
-
 import 'package:diagnosis_project/Core/Routing/routes.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
 import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/slider_bar.dart';
@@ -20,8 +19,6 @@ import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';
 import '../../Feature/physiotherapy/Physiotherapy_Screen.dart';
 
-
-
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
     // final arguments = settings.arguments;
@@ -32,12 +29,14 @@ class AppRouter {
       //       child: const LoginScr(isPassword: false,)));
 
       case Routers.LoginScreen:
-        return MaterialPageRoute(builder: (_) =>  LoginScreen(),);
+        return MaterialPageRoute(
+          builder: (_) => LoginScreen(),
+        );
 
       case Routers.DashBoard:
-        return MaterialPageRoute(builder: (_) =>  DashBoard());
+        return MaterialPageRoute(builder: (_) => DashBoard());
 
-    // Drawer Routers Items
+      // Drawer Routers Items
       case Routers.diagnosisModule:
         return MaterialPageRoute(builder: (_) => DiagnosisModuleScreen());
       case Routers.aiDiagnosisResult:
@@ -62,8 +61,7 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => HelpScreen());
 
       case Routers.SliderBar:
-        return MaterialPageRoute(builder: (_) =>  SliderBar());
-
+        return MaterialPageRoute(builder: (_) => SliderBar());
 
       case Routers.RegisterScreen:
         return MaterialPageRoute(builder: (_) => RegisterScreen());
@@ -75,7 +73,6 @@ class AppRouter {
             body: Center(child: Text('No route defined for ${settings.name}')),
           ),
         );
-
     }
   }
 }

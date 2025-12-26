@@ -9,15 +9,15 @@ import '../Login Screen/widgets/custom_button.dart';
 import '../Login Screen/widgets/custom_text_form_field.dart';
 
 class RegisterScreen extends StatefulWidget {
-
-  const RegisterScreen({super.key, });
-
+  const RegisterScreen({
+    super.key,
+  });
 
   @override
   State<RegisterScreen> createState() => _RegisterScreenState();
 }
 
-class _RegisterScreenState extends State<RegisterScreen>{
+class _RegisterScreenState extends State<RegisterScreen> {
   final formKey = GlobalKey<FormState>();
 
   TextEditingController email = TextEditingController();
@@ -38,16 +38,15 @@ class _RegisterScreenState extends State<RegisterScreen>{
               fit: BoxFit.cover,
             ),
           ),
-
           Positioned.fill(
             child: Container(
               color: Colors.black.withOpacity(0.5),
             ),
           ),
-
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -56,15 +55,14 @@ class _RegisterScreenState extends State<RegisterScreen>{
                     alignment: Alignment.center,
                     child: Column(
                       children: [
-                        Text("Register",
+                        Text(
+                          "Register",
                           style: StyleApp.font40whiteRegular,
                         )
                       ],
                     ),
                   ),
-
                   const Gap(78),
-
                   Expanded(
                     child: SingleChildScrollView(
                       child: Container(
@@ -79,14 +77,13 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                 controller: firstName,
                                 filled: true,
                                 validator: (value) {
-                                  if(value == null || value.isEmpty){
+                                  if (value == null || value.isEmpty) {
                                     return "Please enter Your FirstName";
                                   }
                                   return null;
                                 },
                                 borderColor: AppColors.whiteBackground,
                                 obscureText: false,
-                          
                               ),
                               const Gap(20),
                               CustomTextFormField(
@@ -94,7 +91,7 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                 keyboardType: TextInputType.name,
                                 controller: lastName,
                                 validator: (value) {
-                                  if(value == null || value.isEmpty){
+                                  if (value == null || value.isEmpty) {
                                     return "Please enter Your LastName";
                                   }
                                   return null;
@@ -109,9 +106,11 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                 keyboardType: TextInputType.emailAddress,
                                 controller: email,
                                 validator: (value) {
-                                  if(value == null || value.isEmpty){
+                                  if (value == null || value.isEmpty) {
                                     return "Please enter Your e-mail";
-                                  }if(!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)){
+                                  }
+                                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                                      .hasMatch(value)) {
                                     return 'please enter email like *****@gmail.com';
                                   }
                                   return null;
@@ -124,20 +123,19 @@ class _RegisterScreenState extends State<RegisterScreen>{
                               CustomTextFormField(
                                 hint: "Enter Your Password",
                                 keyboardType: TextInputType.visiblePassword,
-                                controller: password ,
+                                controller: password,
                                 validator: (value) {
-                                  if(value!.isEmpty || value == null){
+                                  if (value!.isEmpty || value == null) {
                                     return "Please enter Your Password";
-                                  }if(value.length > 8){
+                                  }
+                                  if (value.length > 8) {
                                     return "please enter 8 numbers";
                                   }
                                   return null;
                                 },
                                 filled: true,
                                 obscureText: true,
-                          
                                 borderColor: AppColors.whiteBackground,
-                          
                               ),
                               const Gap(20),
                               Container(
@@ -145,10 +143,9 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                 child: const Text(
                                   'Gender',
                                   style: TextStyle(
-                                    fontWeight: FontWeight.bold,
-                                    fontSize: 16,
-                                    color: AppColors.whiteBackground
-                                  ),
+                                      fontWeight: FontWeight.bold,
+                                      fontSize: 16,
+                                      color: AppColors.whiteBackground),
                                 ),
                               ),
                               const Gap(10),
@@ -157,44 +154,51 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                   Expanded(
                                     child: RadioListTile<String>(
                                       title: const Text('Male',
-                                          style: TextStyle(color: AppColors.whiteBackground)
-                                      ),
+                                          style: TextStyle(
+                                              color:
+                                                  AppColors.whiteBackground)),
                                       value: 'Male',
                                       groupValue: selectedGender,
-                          
-                                   activeColor: AppColors.whiteBackground,
-                                    fillColor:  WidgetStateProperty.resolveWith((states) {
-                                      if (states.contains(WidgetState.selected)) {
-                                       return Colors.green;
-                                          }
-                                       return Colors.grey;
-                                  }),
-                                    onChanged: (value) {
-                                     setState(() {
-                                  selectedGender = value;
-                                });
-                                 },
-                               ),
+                                      activeColor: AppColors.whiteBackground,
+                                      fillColor:
+                                          WidgetStateProperty.resolveWith(
+                                              (states) {
+                                        if (states
+                                            .contains(WidgetState.selected)) {
+                                          return Colors.green;
+                                        }
+                                        return Colors.grey;
+                                      }),
+                                      onChanged: (value) {
+                                        setState(() {
+                                          selectedGender = value;
+                                        });
+                                      },
                                     ),
+                                  ),
                                   Expanded(
                                     child: RadioListTile<String>(
-                                      title:  Text('Female',
+                                      title: Text(
+                                        'Female',
                                         textAlign: TextAlign.left,
-                                        style: TextStyle(color: AppColors.whiteBackground,
-                                          fontSize: 18.sp,
-                                          fontWeight: FontWeight.w400
-                          
-                                        ),),
+                                        style: TextStyle(
+                                            color: AppColors.whiteBackground,
+                                            fontSize: 18.sp,
+                                            fontWeight: FontWeight.w400),
+                                      ),
                                       value: 'Female',
                                       groupValue: selectedGender,
                                       activeColor: AppColors.whiteBackground,
-                                      fillColor:  WidgetStateProperty.resolveWith((states) {
-                                   if (states.contains(WidgetState.selected)) {
-                                   return Colors.green;
-                              }
-                                 return Colors.grey;
+                                      fillColor:
+                                          WidgetStateProperty.resolveWith(
+                                              (states) {
+                                        if (states
+                                            .contains(WidgetState.selected)) {
+                                          return Colors.green;
+                                        }
+                                        return Colors.grey;
                                       }),
-                                      dense: true ,
+                                      dense: true,
                                       contentPadding: EdgeInsets.zero,
                                       onChanged: (value) {
                                         setState(() {
@@ -210,19 +214,24 @@ class _RegisterScreenState extends State<RegisterScreen>{
                                 onTap: () {
                                   if (formKey.currentState!.validate()) {
                                     if (selectedGender == null) {
-                                      ScaffoldMessenger.of(context).showSnackBar(
+                                      ScaffoldMessenger.of(context)
+                                          .showSnackBar(
                                         const SnackBar(
-                                          content: Text("Please select your gender"),
+                                          content:
+                                              Text("Please select your gender"),
                                         ),
                                       );
                                       return;
                                     }
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => DashBoard(),));
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) => DashBoard(),
+                                        ));
                                   }
                                 },
                                 text: "Register",
                               ),
-
                             ],
                           ),
                         ),

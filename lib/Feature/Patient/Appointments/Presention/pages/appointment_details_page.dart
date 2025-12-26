@@ -61,7 +61,7 @@ class AppointmentDetails extends StatelessWidget {
                       borderRadius: BorderRadius.circular(16.r),
                       color: getStatusColor(patient['status'])),
                   padding:
-                  EdgeInsets.symmetric(horizontal: 15.w, vertical: 4.h),
+                      EdgeInsets.symmetric(horizontal: 15.w, vertical: 4.h),
                   margin: EdgeInsets.only(bottom: 11.h),
                 )
               ],

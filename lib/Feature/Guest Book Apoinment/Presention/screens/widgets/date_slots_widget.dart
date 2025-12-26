@@ -31,7 +31,9 @@ class _DateSlotsWidgetState extends State<DateSlotsWidget> {
               margin: const EdgeInsets.only(right: 10),
               padding: EdgeInsets.symmetric(vertical: 25.h, horizontal: 1),
               decoration: BoxDecoration(
-                color: isSelected ? AppColors.BluePrimary : AppColors.dateSloteColor,
+                color: isSelected
+                    ? AppColors.BluePrimary
+                    : AppColors.dateSloteColor,
                 borderRadius: BorderRadius.circular(24.r),
               ),
               child: Column(
@@ -55,7 +57,7 @@ class _DateSlotsWidgetState extends State<DateSlotsWidget> {
                           ? AppColors.whiteBackground
                           : AppColors.black,
                       fontWeight: FontWeight.w700,
-                       fontFamily: 'Poppins',
+                      fontFamily: 'Poppins',
                     ),
                   ),
                 ],

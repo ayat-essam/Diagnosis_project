@@ -8,7 +8,10 @@ class AppointmentItem extends StatelessWidget {
       {super.key,
       required this.rowOnTap,
       required this.moreIconOnTap,
-      required this.color, required this.name, required this.hintText, required this.image});
+      required this.color,
+      required this.name,
+      required this.hintText,
+      required this.image});
   final VoidCallback rowOnTap;
   final VoidCallback moreIconOnTap;
   final String name;

@@ -13,7 +13,7 @@ class DashBoard extends StatelessWidget {
         child: Row(
           children: [
             IconButton(
-                onPressed: (){
+                onPressed: () {
                   Navigator.of(context).pushNamed(Routers.SliderBar);
                 },
                 icon: Icon(Icons.calendar_view_day_rounded))

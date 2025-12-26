@@ -3,7 +3,6 @@ import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/wid
 import 'package:flutter/material.dart';
 import '../../../../../Core/Theme App/colors.dart';
 
-
 class TransactionsTableContainer extends StatelessWidget {
   const TransactionsTableContainer({super.key});
 
@@ -79,16 +78,18 @@ class TransactionsTableContainer extends StatelessWidget {
                       TransactionsTableHeaderCell(text: 'Session Type'),
                       TransactionsTableHeaderCell(text: 'Amount'),
                       TransactionsTableHeaderCell(text: 'Date'),
-                    ].map(
+                    ]
+                        .map(
                           (e) => SizedBox(width: 180, child: e),
-                    ).toList(),
+                        )
+                        .toList(),
                   ),
 
                   const Divider(height: 1),
 
                   /// Rows
                   ...transactions.map(
-                        (tx) => Row(
+                    (tx) => Row(
                       children: [
                         TransactionsTableDataCell(text: tx['id']),
                         TransactionsTableDataCell(text: tx['patient']),
@@ -97,9 +98,11 @@ class TransactionsTableContainer extends StatelessWidget {
                           text: '\$${tx['amount'].toStringAsFixed(2)}',
                         ),
                         TransactionsTableDataCell(text: tx['date']),
-                      ].map(
+                      ]
+                          .map(
                             (e) => SizedBox(width: 180, child: e),
-                      ).toList(),
+                          )
+                          .toList(),
                     ),
                   ),
                 ],

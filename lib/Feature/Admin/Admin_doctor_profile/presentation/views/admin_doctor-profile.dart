@@ -1,9 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-<<<<<<< HEAD
+
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-=======
 import 'package:diagnosis_project/Feature/Admin/Admin_doctor_profile/presentation/views/widgets/Dashboard_section.dart';
->>>>>>> 7041cd81a13af485f89ac22ff85786d2daf77d4c
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/BackToPatientTablebutton.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/ConsultationHistory.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/widgets/PersonalInfoCard.dart';
@@ -28,7 +26,7 @@ class AdminDoctorProfile extends StatelessWidget {
           height: 3,
           color: Colors.grey[300],
         ),
-        Padding(
+        const Padding(
           padding: EdgeInsets.symmetric(horizontal: 16),
           child:
               Column(crossAxisAlignment: CrossAxisAlignment.start, children: [
@@ -67,11 +65,11 @@ class AdminDoctorProfile extends StatelessWidget {
             SizedBox(
               height: 14,
             ),
-            // PersonalInfoCard(),
+            PersonalInfoCard(),
             SizedBox(
               height: 14,
             ),
-            // DashboardSection(),
+            DashboardSection(),
             SizedBox(
               height: 14,
             ),

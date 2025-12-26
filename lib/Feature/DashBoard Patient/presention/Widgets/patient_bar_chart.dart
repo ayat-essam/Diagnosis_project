@@ -62,7 +62,7 @@ class PatientBarChart extends StatelessWidget {
         ]),
       ],
       legendItems: const [
-        {'color': Colors.blue, 'text': 'symptomSeverity'},
+        {'color': Colors.blue, 'text': 'symptom Severity'},
       ],
     );
   }

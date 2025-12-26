@@ -28,7 +28,7 @@ class PatientDashboard extends StatelessWidget {
             Gap(22.h),
             const GridViewDashboardContainer(),
             Gap(27.h),
-            Text('Treatment Progress Overview',
+            Text('AI Physiotherapy Progress Overview',
                 style: StyleApp.font16BlackRegular),
             Gap(6.h),
             Text('Last 6 Months',

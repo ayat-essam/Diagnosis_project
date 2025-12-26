@@ -1,4 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/line_chart_legand.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -52,7 +53,7 @@ class LineChartWidget extends StatelessWidget {
                                     // الرقم نفسه
                                     Text(
                                       value.toInt().toString(),
-                                      style: const TextStyle(fontSize: 12),
+                                      style: StyleApp.font12gray7ARegular,
                                     ),
                                     // الخط الصغير قبل الرقم
                                     Container(
@@ -88,7 +89,7 @@ class LineChartWidget extends StatelessWidget {
                                     ),
                                     Text(
                                       bottomLabels![index],
-                                      style: const TextStyle(fontSize: 15),
+                                      style: StyleApp.font12gray7ARegular,
                                     ),
                                   ],
                                 ),
@@ -118,7 +119,7 @@ class LineChartWidget extends StatelessWidget {
                                 color: item['color'], text: item['text']))
                             .toList(),
                       )
-                    : SizedBox.shrink(),
+                    : const SizedBox.shrink(),
               ],
             ),
           )),

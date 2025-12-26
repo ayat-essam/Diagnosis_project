@@ -68,7 +68,7 @@ class MyApp extends StatelessWidget {
                   surface: AppColors.whiteBackground,
                 ),
               ),
-              home: const DoctorDashboardScreen(),
+              home: const PatientDashboard(),
           );
 //           return BlocBuilder<LocaleCubit, LocaleState>(
 //             builder: (context, state) {

@@ -1,4 +1,3 @@
-
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_button.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_text_form_field.dart';
@@ -42,7 +41,8 @@ class _LoginScreenState extends State<LoginScreen> {
           // Content
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -51,20 +51,18 @@ class _LoginScreenState extends State<LoginScreen> {
                     alignment: Alignment.center,
                     child: Column(
                       children: [
-                        Text("Log In",
-                        style: StyleApp.font40whiteRegular,
+                        Text(
+                          "Log In",
+                          style: StyleApp.font40whiteRegular,
                         )
                       ],
                     ),
                   ),
-
                   const Gap(24),
-
                   Expanded(
                     child: SingleChildScrollView(
                       child: Container(
                         padding: const EdgeInsets.all(10),
-                      
                         child: Form(
                           key: formKey,
                           child: Column(
@@ -76,70 +74,76 @@ class _LoginScreenState extends State<LoginScreen> {
                                 filled: true,
                                 obscureText: false,
                                 validator: (value) {
-                                  if((value == null || value.isEmpty)){
+                                  if ((value == null || value.isEmpty)) {
                                     return "Please enter Your e-mail";
-                                  }if(!RegExp(r'^[^@]+@[^@]+\.[^@]+').hasMatch(value)){
+                                  }
+                                  if (!RegExp(r'^[^@]+@[^@]+\.[^@]+')
+                                      .hasMatch(value)) {
                                     return 'please enter email like *****@gmail.com';
                                   }
                                   return null;
                                 },
-                          
                                 borderColor: AppColors.whiteBackground,
-                          
                               ),
                               const Gap(20),
                               CustomTextFormField(
                                 hint: "Enter Your Password",
                                 keyboardType: TextInputType.visiblePassword,
-                                controller: password ,
+                                controller: password,
                                 validator: (value) {
-                                  if((value == null || value.isEmpty)){
+                                  if ((value == null || value.isEmpty)) {
                                     return "Please enter Your Password";
-                                  }if(value.length > 8){
+                                  }
+                                  if (value.length > 8) {
                                     return "please enter 8 numbers";
                                   }
                                   return null;
                                 },
                                 filled: true,
                                 obscureText: true,
-                          
-
                               ),
                               const Gap(10),
-                             TextButton(
-                             onPressed: () => Navigator.pushReplacement(
-                              context,
-                               MaterialPageRoute(builder: (context) =>  ForgetPasswordPage()),
-                               ),
-                                 child: Text("Forget your Password"
-                                 ,style: StyleApp.font16BlackRegular.copyWith(
-                                       decoration: TextDecoration.underline),)),
-                          
+                              TextButton(
+                                  onPressed: () => Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ForgetPasswordPage()),
+                                      ),
+                                  child: Text(
+                                    "Forget your Password",
+                                    style: StyleApp.font16BlackRegular.copyWith(
+                                        decoration: TextDecoration.underline),
+                                  )),
                               const Gap(60),
                               CustomButton(
                                 onTap: () {
                                   if (formKey.currentState!.validate()) {
-                                    Navigator.of(context).pushNamed(Routers.DashBoard);
+                                    Navigator.of(context)
+                                        .pushNamed(Routers.DashBoard);
                                   }
                                 },
                                 text: "Sign In",
                               ),
                               const Gap(8),
-                          TextButton(
-                              onPressed: () => Navigator.pushReplacement(
-                                context,
-                                MaterialPageRoute(builder: (context) => const RegisterScreen()),
-                              ),
-                              child: Text("Didn't Have an Account?",
-                                style: StyleApp.font16BlackRegular.copyWith(
-                                    decoration: TextDecoration.underline),)),
+                              TextButton(
+                                  onPressed: () => Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                const RegisterScreen()),
+                                      ),
+                                  child: Text(
+                                    "Didn't Have an Account?",
+                                    style: StyleApp.font16BlackRegular.copyWith(
+                                        decoration: TextDecoration.underline),
+                                  )),
                             ],
                           ),
                         ),
                       ),
                     ),
                   ),
-
                 ],
               ),
             ),

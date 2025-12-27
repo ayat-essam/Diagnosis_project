@@ -26,7 +26,7 @@ class SupportAppBar extends StatelessWidget implements PreferredSizeWidget {
         CircleAvatar(
           radius: 20.r,
           backgroundColor: Colors.grey,
-          child: Image.asset("assets/images/patient.jpg"),
+          child: Image.asset("assets/image/profile.png"),
         ),
         SizedBox(width: 16),
       ],

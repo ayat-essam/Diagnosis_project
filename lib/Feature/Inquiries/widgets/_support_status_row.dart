@@ -13,7 +13,7 @@ class SupportStatusRow extends StatelessWidget {
       children: [
         Row(
           children: [
-            Image.asset("assets/images/doctor.png", width: 40),
+            Image.asset("assets/image/profile.png", width: 30),
             Text(
               "24/7 Medical-oriented",
               style: TextStyle(color: Color(0xff207EFF)),

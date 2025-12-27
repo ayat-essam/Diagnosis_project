@@ -96,8 +96,8 @@ class ResetPassword extends StatelessWidget {
                                 "Reset Password",
                                 style: StyleApp.font40whiteRegular,
                               ),
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
                               Gap(20.h),
                               CustomTextFormField(
                                 filled: true,
@@ -148,7 +148,7 @@ class ResetPassword extends StatelessWidget {
                                               CheckPassword()));
                                 },
                               ),
->>>>>>> Consultations-features
+// >>>>>>> Consultations-features
                             ],
                           ),
                         ),

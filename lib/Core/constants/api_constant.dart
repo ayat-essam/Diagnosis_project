@@ -1,6 +1,6 @@
 class APIConstants {
   static const String baseURL = 'http://diagnosis.runasp.net';
-<<<<<<< HEAD
+// <<<<<<< HEAD
   static String resetPasswordURL = '$baseURL/Auth/change-password';
   static String forgetPasswordURL = '$baseURL/Auth/forget-password';
   static String changePasswordURL = '$baseURL/Auth/change-password';
@@ -9,7 +9,7 @@ class APIConstants {
 
 
 
-
-=======
->>>>>>> Consultations-features
+//
+// =======
+// >>>>>>> Consultations-features
 }

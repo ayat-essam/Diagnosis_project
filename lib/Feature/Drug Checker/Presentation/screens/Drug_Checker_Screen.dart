@@ -2,14 +2,14 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
 
-class Drug_checher extends StatefulWidget {
-  const Drug_checher({super.key});
+class DrugCheckerScreen extends StatefulWidget {
+  const DrugCheckerScreen({super.key});
 
   @override
-  State<Drug_checher> createState() => _Drug_checherState();
+  State<DrugCheckerScreen> createState() => _DrugCheckerScreenState();
 }
 
-class _Drug_checherState extends State<Drug_checher> {
+class _DrugCheckerScreenState extends State<DrugCheckerScreen> {
   final now = DateTime.now();
   late final formatted = DateFormat('EEEE, MMMM d, y').format(now);
   List data = ["Dosage", "Age", "Interactions", "PDF Reports"];

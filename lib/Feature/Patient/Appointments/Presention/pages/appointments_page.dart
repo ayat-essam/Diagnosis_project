@@ -6,7 +6,7 @@ import 'package:diagnosis_project/Core/reusable_widgets/appointments_app_bar.dar
 import 'package:diagnosis_project/Core/reusable_widgets/appointments_tab_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/view_past_appointments_button.dart';
 import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointment_details_page.dart';
-import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_search_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
@@ -118,11 +118,11 @@ class _AppointmentsState extends State<Appointments> {
       appBar: AppointmentsAppBar(
         title: "Appointments",
         onSearchPressed: () {
-          Navigator.push(
-            context,
-            MaterialPageRoute(
-                builder: (context) => const AppointmentsSearchPage()),
-          );
+          // Navigator.push(
+          //   context,
+          //   MaterialPageRoute(
+          //       builder: (context) => const AppointmentsSearchPage()),
+          // );
         },
       ),
       floatingActionButton: AppointmentsAddButton(

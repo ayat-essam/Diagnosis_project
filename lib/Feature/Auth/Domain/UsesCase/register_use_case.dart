@@ -8,5 +8,5 @@ class RegisterUseCase{
   final AuthRepo _authRepo;
   RegisterUseCase(this._authRepo);
 
-  Future<Either<failure, UserEntity>> call(RegisterRequest registerReq) => _authRepo.register(registerReq);
+  // Future<Either<failure, UserEntity>> call(RegisterRequest registerReq) => _authRepo.register(registerReq);
 }

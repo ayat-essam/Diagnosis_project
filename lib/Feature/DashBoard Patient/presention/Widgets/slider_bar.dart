@@ -92,7 +92,7 @@ class _SliderBarState extends State<SliderBar> {
     final menuItems = [
       MenuItemPatients(
         title: 'DashBoard',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/dashBoardIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
@@ -101,14 +101,14 @@ class _SliderBarState extends State<SliderBar> {
                 builder: (context) => const PatientDashboard(),
               ));
         },
-=======
-        iconPath: "assets/image_SVG/dashBoardIcon.svg",
-        onTap: () {},
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/dashBoardIcon.svg",
+//         onTap: () {},
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
       ),
       MenuItemPatients(
         title: 'Diagnosis Module',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/DiagnosisModuleIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
@@ -117,69 +117,69 @@ class _SliderBarState extends State<SliderBar> {
                 builder: (context) => const DiagnosisModuleScreen(),
               ));
         },
-=======
-        iconPath: "assets/image_SVG/DiagnosisModuleIcon.svg",
-        onTap: () {},
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/DiagnosisModuleIcon.svg",
+//         onTap: () {},
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
       ),
       MenuItemPatients(
         title: 'Ai Diagnosis Result',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/aiMessage.svg",
-=======
-        iconPath: "assets/image_SVG/aiMessage.svg",
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/aiMessage.svg",
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Drug Checker',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/Vector.svg",
-=======
-        iconPath: "assets/image_SVG/Vector.svg",
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/Vector.svg",
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Physiotherapy',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/Physiotherapy.svg",
-=======
-        iconPath: "assets/image_SVG/Physiotherapy.svg",
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/Physiotherapy.svg",
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Inquiries',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/Inquiries.svg",
-=======
-        iconPath: "assets/image_SVG/Inquiries.svg",
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/Inquiries.svg",
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Complaints',
         ImagePath: "assets/image_SVG/Diagnosis.svg",
         onTap: () {
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
           // Navigator.pushReplacement(
           //     context,
           //     MaterialPageRoute(
           //       builder: (context) => ComplaintsScreen(),
           //     ));
-=======
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => ComplaintsScreen(),
-              ));
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//           Navigator.pushReplacement(
+//               context,
+//               MaterialPageRoute(
+//                 builder: (context) => ComplaintsScreen(),
+//               ));
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         },
       ),
       MenuItemPatients(
         title: 'Directory',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/DirectoryIcon.svg",
         onTap: () {},
       ),
@@ -187,25 +187,25 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemPatients(
         title: 'Medical Files',
         ImagePath: "assets/image_SVG/Medical FilesIcon.svg",
-=======
-        iconPath: "assets/image_SVG/DirectoryIcon.svg",
-        onTap: () {},
-      ),
-      MenuItemData(
-        title: 'Appointments',
-        iconPath: "assets/image_SVG/opppointIcon.svg",
-        onTap: () {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => Appointments(),
-              ));
-        },
-      ),
-      MenuItemData(
-        title: 'Medical Files',
-        iconPath: "assets/image_SVG/Medical FilesIcon.svg",
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/DirectoryIcon.svg",
+//         onTap: () {},
+//       ),
+//       MenuItemData(
+//         title: 'Appointments',
+//         iconPath: "assets/image_SVG/opppointIcon.svg",
+//         onTap: () {
+//           Navigator.pushReplacement(
+//               context,
+//               MaterialPageRoute(
+//                 builder: (context) => Appointments(),
+//               ));
+//         },
+//       ),
+//       MenuItemData(
+//         title: 'Medical Files',
+//         iconPath: "assets/image_SVG/Medical FilesIcon.svg",
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
     ];
@@ -234,29 +234,29 @@ class _SliderBarState extends State<SliderBar> {
     final generalItems = [
       MenuItemPatients(
         title: 'Settings',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/settingIcon.svg",
-=======
-        iconPath: "assets/image_SVG/settingIcon.svg",
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/settingIcon.svg",
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Help',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: "assets/image_SVG/helpIcon.svg",
-=======
-        iconPath: "assets/image_SVG/helpIcon.svg",
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: "assets/image_SVG/helpIcon.svg",
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Log Out',
-<<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
+// <<<<<<< HEAD:lib/Feature/DashBoard Patient/presention/Widgets/slider_bar.dart
         ImagePath: 'assets/image_SVG/logOutIcon.svg',
-=======
-        iconPath: 'assets/image_SVG/logOutIcon.svg',
->>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
+// =======
+//         iconPath: 'assets/image_SVG/logOutIcon.svg',
+// >>>>>>> Consultations-features:lib/Feature/DashBoard/presention/Widgets/slider_bar.dart
         onTap: () {},
       ),
     ];

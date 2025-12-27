@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/widgets/text_form_filed_custom.dart';
 import 'package:flutter/material.dart';
@@ -33,4 +32,4 @@ class EnterInformationSection extends StatelessWidget {
     );
   }
 }
->>>>>>> Consultations-features
+

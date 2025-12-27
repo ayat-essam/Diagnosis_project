@@ -3,7 +3,7 @@ import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/appointment_grey_container.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/appointment_item.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/appointments_app_bar.dart';
-import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointment_details_page.dart';
+// import 'package:diagnosis_project/Feature/Doctor/Appointments/Presention/pages/appointment_details_page.dart';
 import 'package:flutter/material.dart';
 
 class AppointmentsSearchPage extends StatefulWidget {
@@ -175,14 +175,14 @@ class _AppointmentsSearchPageState extends State<AppointmentsSearchPage> {
                       "${filteredList[index]['age']} years | Meeting on ${filteredList[index]['time']}",
                   moreIconOnTap: () {},
                   rowOnTap: () {
-                    Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                        builder: (context) => AppointmentDetails(
-                          patient: filteredList[index],
-                        ),
-                      ),
-                    );
+                    // Navigator.push(
+                    //   context,
+                    //   MaterialPageRoute(
+                    //     builder: (context) => AppointmentDetails(
+                    //       patient: filteredList[index],
+                    //     ),
+                    //   ),
+                    // );
                   },
                   color: getStatusColor(filteredList[index]['status']),
                 );

@@ -14,7 +14,10 @@ class SupportAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         'Good morning Ahmed',
         style: TextStyle(
-            color: Colors.black, fontWeight: FontWeight.w600, fontSize: 12.sp),
+          color: Colors.black,
+          fontWeight: FontWeight.w600,
+          fontSize: 12.sp,
+        ),
       ),
       leading: const Icon(Icons.menu, color: Colors.black),
       actions: [
@@ -23,7 +26,7 @@ class SupportAppBar extends StatelessWidget implements PreferredSizeWidget {
         CircleAvatar(
           radius: 20.r,
           backgroundColor: Colors.grey,
-          child: Image.asset("assets/image/profile.png"),
+          child: Image.asset("assets/images/patient.jpg"),
         ),
         SizedBox(width: 16),
       ],

@@ -1,4 +1,5 @@
 // ---------------- Inquiry Form ----------------
+import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
@@ -45,11 +46,11 @@ class InquiryFormCard extends StatelessWidget {
           PrimaryButton(
               text: 'Select doctor',
               onPressed: () {
-                dialogProgress(
-                  context,
-                  patientId: 1,
-                  inquiryId: 1,
-                );
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DirectoryScreen(),
+                    ));
               }),
         ],
       ),

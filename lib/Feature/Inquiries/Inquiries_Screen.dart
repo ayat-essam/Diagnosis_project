@@ -15,6 +15,7 @@ import 'widgets/_StatusCard.dart';
 import 'widgets/_SupportAppBar.dart';
 import 'widgets/_TrackStatusSection.dart';
 import 'widgets/_support_status_row.dart';
+
 class Inquire extends StatelessWidget {
   const Inquire({super.key});
 
@@ -23,14 +24,12 @@ class Inquire extends StatelessWidget {
     final dio = Dio();
     final apiConsumer = DioConsumer(dio: dio);
 
-    final inquiryRemoteDataSource =
-    InquiryRemoteDataSourceImpl(apiConsumer);
+    final inquiryRemoteDataSource = InquiryRemoteDataSourceImpl(apiConsumer);
 
     final inquiryRepository =
         InquiryRepositoryImpl(inquiryRemoteDataSource: inquiryRemoteDataSource);
 
-    final createInquiryUseCase =
-        CreateInquiryUseCase(inquiryRepository);
+    final createInquiryUseCase = CreateInquiryUseCase(inquiryRepository);
 
     final getPatientInquiriesUseCase =
         GetPatientInquiriesUseCase(inquiryRepository);
@@ -41,16 +40,14 @@ class Inquire extends StatelessWidget {
           create: (_) => CreateInquiryCubit(createInquiryUseCase),
         ),
         BlocProvider(
-          create: (_) =>
-              PatientInquiriesCubit(getPatientInquiriesUseCase)
-                ..loadInquiries(1),
+          create: (_) => PatientInquiriesCubit(getPatientInquiriesUseCase)
+            ..loadInquiries(1),
         ),
       ],
       child: const InquiriesScreen(),
     );
   }
 }
-
 
 class InquiriesScreen extends StatelessWidget {
   const InquiriesScreen({super.key});
@@ -95,6 +92,18 @@ class _PreviousRepliesSection extends StatelessWidget {
               return CircularProgressIndicator();
             }
             if (state is PatientInquiriesLoaded) {
+              if (state.inquiries.isEmpty) {
+                return const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    'No inquiries yet',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16,
+                    ),
+                  ),
+                );
+              }
               return Column(
                 children: state.inquiries.map((inquiry) {
                   return StatusCard(

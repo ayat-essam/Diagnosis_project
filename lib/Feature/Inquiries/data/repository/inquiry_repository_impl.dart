@@ -6,6 +6,9 @@ import 'package:diagnosis_project/Feature/Inquiries/data/models/create_inquiry_r
 import 'package:diagnosis_project/Feature/Inquiries/domain/entities/inquiry_details_entity.dart';
 import 'package:diagnosis_project/Feature/Inquiries/domain/entities/inquiry_entity.dart';
 import 'package:diagnosis_project/Feature/Inquiries/domain/repository/inquiry_repository.dart';
+import 'package:injectable/injectable.dart';
+
+@LazySingleton(as: InquiryRepository)
 class InquiryRepositoryImpl implements InquiryRepository {
   final InquiryRemoteDataSource inquiryRemoteDataSource;
   InquiryRepositoryImpl({required this.inquiryRemoteDataSource});

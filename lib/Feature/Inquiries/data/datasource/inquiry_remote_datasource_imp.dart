@@ -5,6 +5,7 @@ import 'package:diagnosis_project/Feature/Inquiries/data/models/create_inquiry_r
 import 'package:diagnosis_project/Feature/Inquiries/data/models/inquiry_details_model.dart';
 import 'package:diagnosis_project/Feature/Inquiries/data/models/inquiry_model.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 class InquiryRemoteDataSourceImpl implements InquiryRemoteDataSource {
   final ApiConsumer apiConsumer;

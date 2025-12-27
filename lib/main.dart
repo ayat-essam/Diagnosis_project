@@ -7,10 +7,11 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'Core/DI/depancicy_injection.dart';
+import 'Feature/Inquiries/Inquiries_Screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies();
+   // configureDependencies();
 
   runApp(
     BlocProvider(
@@ -53,7 +54,7 @@ class MyApp extends StatelessWidget {
                 ],
                 supportedLocales: S.delegate.supportedLocales,
                 debugShowCheckedModeBanner: false,
-                home: PatientDashboard(), //DoctorsScreen(),
+                home: Inquire(), 
               );
             },
           );

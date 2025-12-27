@@ -1,11 +1,4 @@
 import 'package:diagnosis_project/Core/Routing/routes.dart';
-
-<<<<<<< Updated upstream
-=======
-
-
-
->>>>>>> Stashed changes
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';

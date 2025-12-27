@@ -1,12 +1,11 @@
-
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class PrimaryButton extends StatelessWidget {
   final String text;
   final bool isOutlined;
-
-  const PrimaryButton({required this.text, this.isOutlined = false});
+  final void Function()? onPressed;
+  const PrimaryButton({required this.text, this.isOutlined = false,required this.onPressed});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +21,10 @@ class PrimaryButton extends StatelessWidget {
             shape:
                 RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
           ),
-          onPressed: () {},
+          onPressed: onPressed,
           child: Text(text),
         ),
       ),
     );
   }
 }
-
-

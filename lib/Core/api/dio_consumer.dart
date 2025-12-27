@@ -2,9 +2,11 @@ import 'package:diagnosis_project/Core/api/api_interceptors.dart';
 import 'package:diagnosis_project/Core/constants/api_constant.dart';
 import 'package:diagnosis_project/Core/api/api_consumer.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 import '../error/exceptions.dart';
 
+@LazySingleton(as: ApiConsumer)
 class DioConsumer extends ApiConsumer {
   final Dio dio;
 
@@ -92,7 +94,7 @@ class DioConsumer extends ApiConsumer {
     try {
       final response = await dio.post(
         path,
-        data: isFormData ? FormData.fromMap(data) : data,
+        data: data ,//isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;

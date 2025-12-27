@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class ApiConsumer {
   Future<dynamic> get(

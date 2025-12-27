@@ -10,11 +10,13 @@ class StatusCard extends StatelessWidget {
   final String title;
   final String status;
   final String? description;
+   final VoidCallback onPressed;
   String textButton;
   StatusCard({
     required this.title,
     required this.status,
     this.description,
+    required this.onPressed,
     required this.textButton,
   });
 
@@ -95,7 +97,9 @@ class StatusCard extends StatelessWidget {
               ),
             ),
           const SizedBox(height: 12),
-          PrimaryButton(text: textButton, isOutlined: false),
+          PrimaryButton(text: textButton, isOutlined: false,
+          onPressed: onPressed ,
+          ),
         ],
       ),
     );

@@ -31,4 +31,21 @@ class CreateInquiryRequest {
             )
             .toList()
       };
+
+      
+  CreateInquiryRequest copyWith({
+    int? patientId,
+    int? doctorId,
+    String? symptoms,
+    String? notes,
+    List<File>? files,
+  }) {
+    return CreateInquiryRequest(
+      patientId: patientId ?? this.patientId,
+      doctorId: doctorId ?? this.doctorId,
+      symptoms: symptoms ?? this.symptoms,
+      notes: notes ?? this.notes,
+      files: files ?? this.files,
+    );
+  }
 }

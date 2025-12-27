@@ -20,6 +20,13 @@ class TrackStatusSection extends StatelessWidget {
           status: 'In progress',
           description: '# TKT-2024-1156',
           textButton: "View Details",
+          onPressed: () {
+            ScaffoldMessenger.of(context).showSnackBar(
+              const SnackBar(
+                content: Text('Inquiry details will be available soon'),
+              ),
+            );
+          },
         ),
       ],
     );

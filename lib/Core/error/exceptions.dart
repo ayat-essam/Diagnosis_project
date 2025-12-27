@@ -15,20 +15,19 @@ class LocalException extends AppException {
   const LocalException(super.message);
 }
 
-
-
 class ServerException implements Exception {
   final ErrorModel errorModel;
 
   ServerException({required this.errorModel});
 }
 
-
- 
-
-  void handelDioException(DioException e) {
+void handelDioException(DioException e) {
   final data = e.response?.data;
+  final message = extractMessage(data);
 
+  final errorModel = ErrorModel(
+    errorMessage: message,
+  );
   switch (e.type) {
     case DioExceptionType.connectionTimeout:
     case DioExceptionType.sendTimeout:
@@ -38,7 +37,7 @@ class ServerException implements Exception {
     case DioExceptionType.connectionError:
     case DioExceptionType.unknown:
       throw ServerException(
-        errorModel: ErrorModel.fromJson(data ?? {}),
+        errorModel: errorModel,
       );
 
     case DioExceptionType.badResponse:
@@ -52,8 +51,42 @@ class ServerException implements Exception {
         case 504:
         case 500:
           throw ServerException(
-            errorModel: ErrorModel.fromJson(data ?? {}),
+            errorModel: errorModel,
           );
       }
   }
+}
+
+String extractMessage(dynamic response) {
+  if (response is Map) {
+    if (response.containsKey('error')) {
+      return response['error'] is Map
+          ? response['error']['message'] ?? 'Unknown error'
+          : response['error'].toString();
+    }
+
+    if (response.containsKey('message')) {
+      return response['message'].toString();
+    }
+
+    if (response.containsKey('errors')) {
+      final errors = response['errors'];
+
+      if (errors is List && errors.isNotEmpty) {
+        return errors.first.toString();
+      } else if (errors is Map && errors.isNotEmpty) {
+        final firstKey = errors.keys.first;
+        final messages = errors[firstKey];
+        if (messages is List && messages.isNotEmpty) {
+          return messages.first.toString();
+        }
+      }
+    }
+  }
+
+  if (response is String) {
+    return response;
+  }
+
+  return 'Unknown error';
 }

@@ -62,21 +62,21 @@ class InquiriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xffF6F7FB),
-      appBar: const SupportAppBar(),
+    return const Scaffold(
+      backgroundColor: Color(0xffF6F7FB),
+      appBar: SupportAppBar(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
+          children: [
             SupportStatusRow(),
             SizedBox(height: 16),
             InquiryFormCard(),
             SizedBox(height: 24),
-            // TrackStatusSection(inquiryId: null, patientId: null,),
+            TrackStatusSection(),
             SizedBox(height: 16),
-            _PreviousRepliesSection(),
+            //_PreviousRepliesSection(),
           ],
         ),
       ),
@@ -136,7 +136,7 @@ class _PreviousRepliesSection extends StatelessWidget {
                 }).toList(),
               );
             }
-            if(state is PatientInquiriesError){
+            if (state is PatientInquiriesError) {
               return Text(state.error);
             }
             return SizedBox();

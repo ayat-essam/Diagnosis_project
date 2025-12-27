@@ -43,9 +43,23 @@ void handelDioException(DioException e) {
     case DioExceptionType.badResponse:
       switch (e.response?.statusCode) {
         case 400:
+          throw ServerException(
+            errorModel: ErrorModel(errorMessage: 'bad request'),
+          );
         case 401:
         case 403:
+          throw ServerException(
+            errorModel: ErrorModel(errorMessage: 'Unauthorized'),
+          );
         case 404:
+          throw ServerException(
+            errorModel:
+                ErrorModel(errorMessage: 'Requested resource not found'),
+          );
+        case 405:
+          throw ServerException(
+            errorModel: ErrorModel(errorMessage: 'method not allawed'),
+          );
         case 409:
         case 422:
         case 504:

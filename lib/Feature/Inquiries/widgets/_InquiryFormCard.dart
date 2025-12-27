@@ -1,6 +1,7 @@
 // ---------------- Inquiry Form ----------------
 import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
@@ -41,7 +42,15 @@ class InquiryFormCard extends StatelessWidget {
           const SizedBox(height: 12),
           const AttachmentBox(),
           const SizedBox(height: 16),
-          PrimaryButton(text: 'Select doctor', onPressed: () {}),
+          PrimaryButton(
+              text: 'Select doctor',
+              onPressed: () {
+                dialogProgress(
+                  context,
+                  patientId: 1,
+                  inquiryId: 1,
+                );
+              }),
         ],
       ),
     );

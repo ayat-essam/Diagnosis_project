@@ -1,7 +1,9 @@
 
 // ---------------- Status Row ----------------
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:flutter_svg/svg.dart';
 
 class SupportStatusRow extends StatelessWidget {
   const SupportStatusRow();
@@ -13,7 +15,7 @@ class SupportStatusRow extends StatelessWidget {
       children: [
         Row(
           children: [
-            Image.asset("assets/image/profile.png", width: 30),
+            SvgPicture.asset("assets/image_SVG/doctor_diagnosis.svg",color: AppColors.BluePrimary, width: 25),
             Text(
               "24/7 Medical-oriented",
               style: TextStyle(color: Color(0xff207EFF)),

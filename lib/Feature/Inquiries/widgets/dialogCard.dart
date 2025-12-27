@@ -31,7 +31,7 @@ Future<void> dialogProgress(BuildContext context) {
 
               child: Row(
                 children: [
-                  Image.asset("assets/images/group.png", width: 20),
+                  //Image.asset("assets/images/group.png", width: 20),
                   Text(
                     "In progress",
                     style: TextStyle(

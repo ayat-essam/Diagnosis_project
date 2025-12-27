@@ -50,6 +50,7 @@ class ServerException implements Exception {
         case 409:
         case 422:
         case 504:
+        case 500:
           throw ServerException(
             errorModel: ErrorModel.fromJson(data ?? {}),
           );

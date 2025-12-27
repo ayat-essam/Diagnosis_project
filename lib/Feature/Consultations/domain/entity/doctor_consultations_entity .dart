@@ -1,4 +1,4 @@
-abstract class ConsultationEntity {
+abstract class DoctorConsultationsEntity {
   final int? id;
   final String? patientName;
   final String? patientGender;
@@ -9,7 +9,7 @@ abstract class ConsultationEntity {
   final String? status;
   final String? requestDate;
 
-  const ConsultationEntity({
+  const DoctorConsultationsEntity({
     this.id,
     this.patientName,
     this.patientGender,

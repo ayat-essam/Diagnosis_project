@@ -1,6 +1,6 @@
-import 'package:diagnosis_project/Feature/Consultations/domain/entity/consultation_entity%20.dart';
+import 'package:diagnosis_project/Feature/Consultations/domain/entity/doctor_consultations_entity%20.dart';
 
-class ConsultationModel extends ConsultationEntity {
+class DoctorConsultationsModel extends DoctorConsultationsEntity {
   final int? id;
   final String? patientName;
   final String? patientGender;
@@ -13,7 +13,7 @@ class ConsultationModel extends ConsultationEntity {
   final bool? success;
   final dynamic errorMessage;
 
-  const ConsultationModel({
+  const DoctorConsultationsModel({
     this.id,
     this.patientName,
     this.patientGender,
@@ -27,8 +27,8 @@ class ConsultationModel extends ConsultationEntity {
     this.errorMessage,
   });
 
-  factory ConsultationModel.fromJson(Map<String, dynamic> json) {
-    return ConsultationModel(
+  factory DoctorConsultationsModel.fromJson(Map<String, dynamic> json) {
+    return DoctorConsultationsModel(
       id: json['id'] as int?,
       patientName: json['patientName'] as String?,
       patientGender: json['patientGender'] as String?,

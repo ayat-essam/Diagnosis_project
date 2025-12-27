@@ -22,15 +22,12 @@ class FinanceBarChart extends StatelessWidget {
   Widget build(BuildContext context) {
     return BarChart(
       BarChartData(
-
         maxY: 6000,
         barTouchData: BarTouchData(enabled: false),
         gridData: const FlGridData(show: false),
-
         borderData: FlBorderData(
           show: false,
         ),
-
         titlesData: FlTitlesData(
           rightTitles: const AxisTitles(
             sideTitles: SideTitles(showTitles: false),
@@ -38,7 +35,6 @@ class FinanceBarChart extends StatelessWidget {
           topTitles: const AxisTitles(
             sideTitles: SideTitles(showTitles: false),
           ),
-
           leftTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
@@ -48,7 +44,7 @@ class FinanceBarChart extends StatelessWidget {
                 return Text(
                   value.toInt().toString(),
                   style: const TextStyle(
-                    fontFamily:'Poppins',
+                    fontFamily: 'Poppins',
                     fontSize: 14,
                     color: AppColors.graySecondary,
                   ),
@@ -56,7 +52,6 @@ class FinanceBarChart extends StatelessWidget {
               },
             ),
           ),
-
           bottomTitles: AxisTitles(
             sideTitles: SideTitles(
               showTitles: true,
@@ -71,7 +66,7 @@ class FinanceBarChart extends StatelessWidget {
                   child: Text(
                     _types[index],
                     style: const TextStyle(
-                      fontFamily:'Poppins',
+                      fontFamily: 'Poppins',
                       fontSize: 10,
                       color: AppColors.graySecondary,
                     ),
@@ -81,17 +76,15 @@ class FinanceBarChart extends StatelessWidget {
             ),
           ),
         ),
-
         barGroups: List.generate(
           _values.length,
-              (index) => _barGroup(index, _values[index]),
+          (index) => _barGroup(index, _values[index]),
         ),
       ),
     );
-
   }
-  BarChartGroupData _barGroup(int x, double y) {
 
+  BarChartGroupData _barGroup(int x, double y) {
     return BarChartGroupData(
       x: x,
       barRods: [

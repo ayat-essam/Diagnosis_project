@@ -59,6 +59,7 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
+<<<<<<< HEAD
           return BlocBuilder<LocaleCubit, LocaleState>(
             builder: (context, state) {
               Locale locale = const Locale('en');
@@ -84,6 +85,12 @@ class MyApp extends StatelessWidget {
                   );
             },
           );
+=======
+          return MaterialApp(
+              debugShowCheckedModeBanner: false,
+              home: ConsultationsView() //DoctorsScreen(),
+              );
+>>>>>>> Consultations-features
         });
   }
 }

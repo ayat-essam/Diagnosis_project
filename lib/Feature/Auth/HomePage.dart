@@ -1,4 +1,3 @@
-
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../Core/Routing/routes.dart';
@@ -26,7 +25,8 @@ class Homepage extends StatelessWidget {
           // Content
           SafeArea(
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
+              padding:
+                  const EdgeInsets.symmetric(horizontal: 24.0, vertical: 16),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
@@ -60,7 +60,8 @@ class Homepage extends StatelessWidget {
                       CustomButton(
                           onTap: () {
                             Navigator.pushNamed(context, Routers.LoginScreen);
-                          }, text: "Doctor"),
+                          },
+                          text: "Doctor"),
                       Gap(20),
                       CustomButton(
                           onTap: () {
@@ -79,6 +80,4 @@ class Homepage extends StatelessWidget {
       ),
     );
   }
-
-
 }

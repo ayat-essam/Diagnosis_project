@@ -18,7 +18,11 @@ import '../../Feature/Help/presentation/screens/Help_Screen.dart';
 import '../../Feature/Inquiries/Inquiries_Screen.dart';
 import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';
+<<<<<<< HEAD
 import '../../Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
+=======
+import '../../Feature/physiotherapy/Physiotherapy_Screen.dart';
+>>>>>>> Consultations-features
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -35,7 +39,11 @@ class AppRouter {
         );
 
       case Routers.DashBoard:
+<<<<<<< HEAD
         return MaterialPageRoute(builder: (_) => const PatientDashboard());
+=======
+        return MaterialPageRoute(builder: (_) => DashBoard());
+>>>>>>> Consultations-features
 
       // Drawer Routers Items
       case Routers.diagnosisModule:

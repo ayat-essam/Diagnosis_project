@@ -96,6 +96,59 @@ class ResetPassword extends StatelessWidget {
                                 "Reset Password",
                                 style: StyleApp.font40whiteRegular,
                               ),
+<<<<<<< HEAD
+=======
+                              Gap(20.h),
+                              CustomTextFormField(
+                                filled: true,
+                                obscureText: true,
+                                keyboardType: TextInputType.visiblePassword,
+                                hint: "Create A new Password",
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "please Create A new Password";
+                                  }
+                                  if (value.length > 8) {
+                                    return 'please enter 8 numbers';
+                                  }
+                                  return null;
+                                },
+                                controller: createPassword,
+                              ),
+                              const Gap(20),
+                              CustomTextFormField(
+                                filled: true,
+                                obscureText: true,
+                                keyboardType: TextInputType.visiblePassword,
+                                hint: "confirm Password",
+                                validator: (value) {
+                                  if (value == null || value.isEmpty) {
+                                    return "please Write confirm Password";
+                                  }
+                                  if (value.length > 8) {
+                                    return 'please enter 8 numbers';
+                                  }
+                                  if (createPassword.text !=
+                                      confirmPassword.text) {
+                                    return "sorry, passwords don't match ";
+                                  }
+                                  return null;
+                                },
+                                controller: confirmPassword,
+                              ),
+                              Gap(43.h),
+                              CustomButton(
+                                text: "Confirm",
+                                onTap: () {
+                                  if (formKey.currentState!.validate()) {}
+                                  Navigator.pushReplacement(
+                                      context,
+                                      MaterialPageRoute(
+                                          builder: (context) =>
+                                              CheckPassword()));
+                                },
+                              ),
+>>>>>>> Consultations-features
                             ],
                           ),
                         ),

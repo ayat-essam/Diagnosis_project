@@ -53,6 +53,7 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+<<<<<<< HEAD
 
   /// `Clini`
   String get appTitle {
@@ -183,16 +184,22 @@ class S {
       args: [],
     );
   }
+=======
+>>>>>>> Consultations-features
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
+<<<<<<< HEAD
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
     ];
+=======
+    return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
+>>>>>>> Consultations-features
   }
 
   @override

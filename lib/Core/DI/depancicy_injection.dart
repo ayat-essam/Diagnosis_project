@@ -9,5 +9,9 @@ import '../api/api_consumer.dart';
 final getIt = GetIt.instance;
 
 @InjectableInit()
+<<<<<<< HEAD
 Future <void> configureDependencies() => getIt.init();
 
+=======
+Future<void> configureDependencies() => getIt.init();
+>>>>>>> Consultations-features

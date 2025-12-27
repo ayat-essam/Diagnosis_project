@@ -33,7 +33,10 @@ class DiagnocsisTempletContainer extends StatelessWidget {
                       borderRadius: BorderRadius.circular(30.r),
                     ),
                     child: Image.asset(
+
                       diagnosisTemplatesModel.imgPath,
+
+
                     ),
                   ),
                   Gap(12.h),
@@ -52,6 +55,17 @@ class DiagnocsisTempletContainer extends StatelessWidget {
               borderRedius: 8.r,
             )
           ],
+
+              Gap(12.h),
+              CustomAppButton(
+                onTap: () {},
+                text: 'Use template',
+                width: 180.w,
+                borderRedius: 25.r,
+              )
+            ],
+          ),
+
         ),
       ),
     );

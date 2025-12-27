@@ -1,6 +1,6 @@
 import 'dart:ui';
 
-class Fonts{
+class Fonts {
   static const FontWeight thin = FontWeight.w100;
   static const FontWeight extraLight = FontWeight.w200;
   static const FontWeight light = FontWeight.w300;
@@ -9,5 +9,4 @@ class Fonts{
   static const FontWeight semiBold = FontWeight.w600;
   static const FontWeight bold = FontWeight.w700;
   static const FontWeight extraBold = FontWeight.w800;
-
 }

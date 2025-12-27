@@ -19,10 +19,13 @@ class CustomAppButton extends StatelessWidget {
   final String text;
   final double borderRedius;
   final double width;
+<<<<<<< HEAD
   final Color backgroundColor;
   final Color borderColor;
   final double verticalPadding;
 
+=======
+>>>>>>> Consultations-features
   @override
   Widget build(BuildContext context) {
     return GestureDetector(

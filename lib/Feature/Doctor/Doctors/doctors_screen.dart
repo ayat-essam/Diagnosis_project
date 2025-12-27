@@ -16,7 +16,7 @@ class DoctorsScreen extends StatelessWidget {
         backgroundColor: Colors.white,
         elevation: 6,
         shadowColor: Colors.black.withOpacity(0.2),
-       // shadowColor: Colors.transparent,
+        // shadowColor: Colors.transparent,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(4.0),
           child: Container(
@@ -109,12 +109,12 @@ class DoctorsScreen extends StatelessWidget {
           )
         ],
       ),
-       bottomNavigationBar: CustomBottomNav(
-    currentIndex: 2,
-    onTap: (index) {
-     // setState(() => currentIndex = index);
-    },
-  ),
+      bottomNavigationBar: CustomBottomNav(
+        currentIndex: 2,
+        onTap: (index) {
+          // setState(() => currentIndex = index);
+        },
+      ),
     );
   }
 }

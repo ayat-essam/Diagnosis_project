@@ -1,8 +1,9 @@
-
 // ---------------- Inquiry Form ----------------
-import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
+
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
 
 class InquiryFormCard extends StatelessWidget {
   const InquiryFormCard();
@@ -12,21 +13,29 @@ class InquiryFormCard extends StatelessWidget {
     return CardWrapper(
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children: const [
+        children: [
           SectionTitle('Submit inquiries'),
-          SizedBox(height: 12),
-          _LabeledField(label: 'Inquire title *'),
-          SizedBox(height: 12),
-          _LabeledField(label: 'Category *'),
-          SizedBox(height: 12),
-          _LabeledField(label: 'Description', maxLines: 4),
-          SizedBox(height: 12),
-          Text("Attachments (Optional)",
-              style: const TextStyle(fontWeight: FontWeight.w500)),
-          SizedBox(height: 12),
-          _AttachmentBox(),
-          SizedBox(height: 16),
-          PrimaryButton(text: 'Send'),
+          const SizedBox(height: 12),
+          const _LabeledField(
+            label: 'Symptom ',
+            hintfeild: "e.g. pain, swelling, stiffness",
+          ),
+          const SizedBox(height: 12),
+          const _LabeledField(
+            label: 'Description',
+            hintfeild:
+                "Describe when it started, how severe it is, and what makes it better or worse",
+            maxLines: 4,
+          ),
+          const SizedBox(height: 12),
+          const Text(
+            "Attachments (Optional)",
+            style: const TextStyle(fontWeight: FontWeight.w500),
+          ),
+          const SizedBox(height: 12),
+          const AttachmentBox(),
+          const SizedBox(height: 16),
+          PrimaryButton(text: 'Select doctor', onPressed: () {}),
         ],
       ),
     );
@@ -36,19 +45,41 @@ class InquiryFormCard extends StatelessWidget {
 class _LabeledField extends StatelessWidget {
   final String label;
   final int maxLines;
-
-  const _LabeledField({required this.label, this.maxLines = 1});
+  final String hintfeild;
+  const _LabeledField({
+    required this.label,
+    required this.hintfeild,
+    this.maxLines = 1,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.w500)),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: label,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              TextSpan(
+                text: "*",
+                style: TextStyle(color: Colors.red),
+              ),
+            ],
+          ),
+        ),
         const SizedBox(height: 6),
         TextField(
           maxLines: maxLines,
           decoration: InputDecoration(
+            hintText: hintfeild,
+            hintStyle: TextStyle(color: Color(0xff7E7E7E), fontSize: 13),
             filled: true,
             fillColor: Colors.white,
             enabledBorder: OutlineInputBorder(
@@ -70,31 +101,40 @@ class _LabeledField extends StatelessWidget {
   }
 }
 
-class _AttachmentBox extends StatelessWidget {
-  const _AttachmentBox();
+class AttachmentBox extends StatelessWidget {
+  const AttachmentBox({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       height: 90,
       decoration: BoxDecoration(
-        border:
-            Border.all(color: Colors.grey.shade400, style: BorderStyle.solid),
+        border: Border.all(
+          color: Colors.grey.shade400,
+          style: BorderStyle.solid,
+        ),
         borderRadius: BorderRadius.circular(12),
       ),
-      child: const Center(
-        child: Column(
-          mainAxisSize: MainAxisSize.min,
-          children: [
-            Icon(Icons.upload_file, color: Colors.grey),
-            SizedBox(height: 4),
-            Text('Add files (Image or PDF)'),
-          ],
+      child: SizedBox(
+        width: 324,
+        height: 30,
+        child: DottedBorder(
+          dashPattern: [15, 5],
+          strokeWidth: 2,
+          padding: EdgeInsets.all(16),
+          child: const Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.file_upload_outlined, color: Colors.grey),
+              Text('Upload medical files'),
+            ],
+          ),
         ),
       ),
     );
   }
 }
+
 class CardWrapper extends StatelessWidget {
   final Widget child;
   const CardWrapper({required this.child});

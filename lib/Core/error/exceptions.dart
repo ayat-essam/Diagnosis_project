@@ -47,9 +47,15 @@ void handelDioException(DioException e) {
             errorModel: ErrorModel(errorMessage: 'bad request'),
           );
         case 401:
+          throw ServerException(
+            errorModel:
+                ErrorModel(errorMessage: 'Unauthorized, please login again'),
+          );
         case 403:
           throw ServerException(
-            errorModel: ErrorModel(errorMessage: 'Unauthorized'),
+            errorModel: ErrorModel(
+                errorMessage:
+                    'You do not have permission to access this resource'),
           );
         case 404:
           throw ServerException(

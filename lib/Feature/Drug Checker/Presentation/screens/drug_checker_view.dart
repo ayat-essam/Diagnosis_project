@@ -10,7 +10,7 @@ class DrugCheckerView extends StatefulWidget {
   DrugCheckerView({super.key});
 
   @override
-  State<DrugCheckerView> createState() => _DrugCheckerViewState();
+  State<DrugCheckerView> createState() => _DrugCheckerViewState();  
 }
 
 class _DrugCheckerViewState extends State<DrugCheckerView> {

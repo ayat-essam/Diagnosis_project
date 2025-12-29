@@ -76,7 +76,7 @@ class InquiriesScreen extends StatelessWidget {
             SizedBox(height: 24),
             TrackStatusSection(),
             SizedBox(height: 16),
-            //_PreviousRepliesSection(),
+           // _PreviousRepliesSection(),
           ],
         ),
       ),
@@ -125,12 +125,6 @@ class _PreviousRepliesSection extends StatelessWidget {
                         patientId: 1,
                         inquiryId: inquiry.inquiryId,
                       );
-                      // ScaffoldMessenger.of(context).showSnackBar(
-                      //   const SnackBar(
-                      //     content:
-                      //         Text('Inquiry details will be available soon'),
-                      //   ),
-                      // );
                     },
                   );
                 }).toList(),
@@ -143,13 +137,6 @@ class _PreviousRepliesSection extends StatelessWidget {
           },
         )
 
-        // StatusCard(
-        //   title: 'Long wait time at clinic',
-        //   status: 'Replied',
-        //   description: '# TKT-2024-1156',
-        //   // 'We appreciate your understanding. As a gesture of goodwill, we\'d like to offer you priority scheduling for your next visit.',
-        //   textButton: "View full conversation",
-        // ),
       ],
     );
   }

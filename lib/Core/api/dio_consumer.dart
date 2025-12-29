@@ -94,7 +94,7 @@ class DioConsumer extends ApiConsumer {
     try {
       final response = await dio.post(
         path,
-        data: data ,//isFormData ? FormData.fromMap(data) : data,
+        data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;

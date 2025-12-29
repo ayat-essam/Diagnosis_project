@@ -21,7 +21,7 @@ class InquiryRemoteDataSourceImpl implements InquiryRemoteDataSource {
       'notes': request.notes ?? '',
       'files': request.files != null ? filesToMultipart(request.files!) : [],
     });
-    await apiConsumer.post('/Inquiry', data: formData, isFormData: true);
+    await apiConsumer.post('/Inquiry', data: formData, isFormData: false);
   }
 
   @override

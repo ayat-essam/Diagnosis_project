@@ -13,8 +13,30 @@ import '../data/cubit/create_inquiry_state.dart';
 import '../data/models/create_inquiry_request.dart';
 import 'dart:io';
 
-class InquiryFormCard extends StatelessWidget {
+class InquiryFormCard extends StatefulWidget {
   const InquiryFormCard();
+
+  @override
+  State<InquiryFormCard> createState() => _InquiryFormCardState();
+}
+
+class _InquiryFormCardState extends State<InquiryFormCard> {
+  late TextEditingController symptomController;
+  late TextEditingController descriptionController;
+
+  @override
+  void initState() {
+    super.initState();
+    symptomController = TextEditingController();
+    descriptionController = TextEditingController();
+  }
+
+  @override
+  void dispose() {
+    symptomController.dispose();
+    descriptionController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -24,17 +46,24 @@ class InquiryFormCard extends StatelessWidget {
         children: [
           const SectionTitle('Submit inquiries'),
           const SizedBox(height: 12),
-          const _LabeledField(
-            label: 'Symptom ',
+          _LabeledField(
+            label: 'Symptom',
             hintfeild: "e.g. pain, swelling, stiffness",
+            controller: symptomController,
+            onChange: (value) {
+              context.read<CreateInquiryCubit>().setSymptoms(value);
+            },
           ),
           const SizedBox(height: 12),
-          const _LabeledField(
-            label: 'Description',
-            hintfeild:
-                "Describe when it started, how severe it is, and what makes it better or worse",
-            maxLines: 4,
-          ),
+          _LabeledField(
+              label: 'Description',
+              hintfeild:
+                  "Describe when it started, how severe it is, and what makes it better or worse",
+              maxLines: 4,
+              controller: descriptionController,
+              onChange: (value) {
+                context.read<CreateInquiryCubit>().setDescription(value);
+              }),
           const SizedBox(height: 12),
           const Text(
             "Attachments (Optional)",
@@ -44,14 +73,19 @@ class InquiryFormCard extends StatelessWidget {
           const AttachmentBox(),
           const SizedBox(height: 16),
           PrimaryButton(
-              text: 'Select doctor',
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                      builder: (context) => DirectoryScreen(),
-                    ));
-              }),
+            text: 'Select doctor',
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (_) => BlocProvider.value(
+                    value: context.read<CreateInquiryCubit>(),
+                    child: const DirectoryScreen(),
+                  ),
+                ),
+              );
+            },
+          ),
         ],
       ),
     );
@@ -62,11 +96,15 @@ class _LabeledField extends StatelessWidget {
   final String label;
   final int maxLines;
   final String hintfeild;
-  const _LabeledField({
-    required this.label,
-    required this.hintfeild,
-    this.maxLines = 1,
-  });
+  final TextEditingController controller;
+  final ValueChanged<String> onChange;
+
+  const _LabeledField(
+      {required this.label,
+      required this.hintfeild,
+      this.maxLines = 1,
+      required this.controller,
+      required this.onChange});
 
   @override
   Widget build(BuildContext context) {
@@ -92,6 +130,8 @@ class _LabeledField extends StatelessWidget {
         ),
         const SizedBox(height: 6),
         TextField(
+          controller: controller,
+          onChanged: onChange,
           maxLines: maxLines,
           decoration: InputDecoration(
             hintText: hintfeild,
@@ -118,37 +158,62 @@ class _LabeledField extends StatelessWidget {
 }
 
 class AttachmentBox extends StatelessWidget {
-  const AttachmentBox();
+  const AttachmentBox({super.key});
+
+  Future<void> _pickFiles(BuildContext context) async {
+    final result = await FilePicker.platform.pickFiles(
+      allowMultiple: true,
+      type: FileType.custom,
+      allowedExtensions: ['jpg', 'png', 'pdf'],
+    );
+
+    if (result != null) {
+      final files = result.paths.map((path) => File(path!)).toList();
+
+      context.read<CreateInquiryCubit>().setFiles(files);
+    }
+  }
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 90,
-      decoration: BoxDecoration(
-        border: Border.all(
-          color: Colors.grey.shade400,
-          style: BorderStyle.solid,
-        ),
-        borderRadius: BorderRadius.circular(12),
-      ),
-      child: const SizedBox(
-        width: 324,
-        height: 30,
-        child: DottedBorder(
-          options: RectDottedBorderOptions(
-            dashPattern: [15, 5],
-            strokeWidth: 2,
-            padding: EdgeInsets.all(16),
+    return BlocBuilder<CreateInquiryCubit, CreateInquiryState>(
+      builder: (context, state) {
+        int filesCount = 0;
+
+        if (state is CreateInquiryFilesSelected) {
+          filesCount = state.files.length;
+        }
+
+        return GestureDetector(
+          onTap: () => _pickFiles(context),
+          child: Container(
+            height: 90,
+            decoration: BoxDecoration(
+              border: Border.all(color: Colors.grey.shade400),
+              borderRadius: BorderRadius.circular(12),
+            ),
+            child: DottedBorder(
+              options: const RectDottedBorderOptions(
+                dashPattern: [15, 5],
+                strokeWidth: 2,
+                padding: EdgeInsets.all(16),
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.center,
+                children: [
+                  const Icon(Icons.file_upload_outlined, color: Colors.grey),
+                  const SizedBox(width: 8),
+                  Text(
+                    filesCount == 0
+                        ? 'Upload medical files'
+                        : '$filesCount file(s) selected',
+                  ),
+                ],
+              ),
+            ),
           ),
-          child: Row(
-            mainAxisAlignment: MainAxisAlignment.center,
-            children: [
-              Icon(Icons.file_upload_outlined, color: Colors.grey),
-              Text('Upload medical files'),
-            ],
-          ),
-        ),
-      ),
+        );
+      },
     );
   }
 }

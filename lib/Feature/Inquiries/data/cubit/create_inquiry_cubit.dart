@@ -11,25 +11,59 @@ class CreateInquiryCubit extends Cubit<CreateInquiryState> {
 
   CreateInquiryCubit(this.createInquiryUseCase)
       : super(CreateInquiryInitial());
-  List<File> _files = [];
 
+  String? symptoms;
+  String? description;
+  int? doctorId;
+  List<File> files = [];
 
-  void setFiles(List<File> files) {
-    _files = files;
-    emit(CreateInquiryFilesSelected(files));
+  void setSymptoms(String value) {
+    symptoms = value;
   }
 
- 
-  Future<void> submitInquiry(CreateInquiryRequest request) async {
-    emit(CreateInquiryLoading());
-    final updatedRequest = request.copyWith(files: _files);
-
-    final result =
-        await createInquiryUseCase(createInquiryRequest: updatedRequest);
-
-    result.fold(
-      (error) => emit(CreateInquiryError(error.errorMessage)),
-      (message) => emit(CreateInquirySuccess(message)),
-    );
+  void setDescription(String value) {
+    description = value;
   }
+
+  void setDoctorId(int id) {
+  doctorId = id;
+  emit(CreateInquiryDoctorSelected(id));
+}
+
+  void setFiles(List<File> selectedFiles) {
+    files = selectedFiles;
+    emit(CreateInquiryFilesSelected(selectedFiles));
+  }
+
+Future<void> submitInquiry() async {
+  if (doctorId == null) {
+    emit( CreateInquiryError('Please select a doctor'));
+    return;
+  }
+
+  if (symptoms == null || symptoms!.isEmpty) {
+    emit( CreateInquiryError('Symptoms is required'));
+    return;
+  }
+
+  emit(CreateInquiryLoading());
+
+  final request = CreateInquiryRequest(
+    patientId: 1,
+    doctorId: doctorId!,
+    symptoms: symptoms,
+    notes: description,
+    files: files,
+  );
+
+  final result =
+      await createInquiryUseCase(createInquiryRequest: request);
+
+  result.fold(
+    (error) => emit(CreateInquiryError(error.errorMessage)),
+    (message) => emit(CreateInquirySuccess(message)),
+  );
+}
+
+  
 }

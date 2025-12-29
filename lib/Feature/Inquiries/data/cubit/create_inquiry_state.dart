@@ -19,3 +19,8 @@ class CreateInquiryFilesSelected extends CreateInquiryState {
   final List<File> files;
   CreateInquiryFilesSelected(this.files);
 }
+
+class CreateInquiryDoctorSelected extends CreateInquiryState {
+  final int id;
+  CreateInquiryDoctorSelected(this.id);
+}

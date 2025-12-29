@@ -1,4 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Inquiries/Inquiries_Screen.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
@@ -130,7 +131,13 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemPatients(
         title: 'Inquiries',
         ImagePath: "assets/image_SVG/Inquiries.svg",
-        onTap: () {},
+        onTap: () {
+           Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Inquire(),
+              ));
+        },
       ),
       MenuItemPatients(
         title: 'Complaints',

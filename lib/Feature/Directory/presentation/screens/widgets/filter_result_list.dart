@@ -1,15 +1,19 @@
 import 'package:flutter/material.dart';
+import '../../../../Admin/doctors_management/data/models/doctor_model.dart';
 import 'filter_result_item.dart';
-
 class FilterResultList extends StatelessWidget {
   const FilterResultList({super.key});
 
   @override
   Widget build(BuildContext context) {
+    final doctors = DoctorModel.fakeDoctorsList;
+
     return ListView.builder(
-      itemCount: 5,
+      itemCount: doctors.length,
       itemBuilder: (context, index) {
-        return const FilterResultItem();
+        return FilterResultItem(
+          doctor: doctors[index],
+        );
       },
     );
   }

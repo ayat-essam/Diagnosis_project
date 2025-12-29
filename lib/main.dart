@@ -80,7 +80,7 @@ class MyApp extends StatelessWidget {
                 ],
                 supportedLocales: S.delegate.supportedLocales,
                 debugShowCheckedModeBanner: false,
-                home: const PatientDashboard()
+                home: const AdminDashboardScreen(),
                 //DoctorsScreen(),
               );
             },

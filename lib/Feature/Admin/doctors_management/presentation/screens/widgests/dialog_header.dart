@@ -12,7 +12,7 @@ class DialogHeader extends StatelessWidget {
       padding: const EdgeInsets.only(bottom: 8.0),
       child: Text(
         title,
-        // style: StyleApp.font18GrayDarkBold
+         style: StyleApp.font18GrayDarkBold
       ),
     );
   }

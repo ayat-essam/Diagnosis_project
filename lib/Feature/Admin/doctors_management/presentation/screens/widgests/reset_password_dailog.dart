@@ -1,14 +1,13 @@
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/text_form_field_and_title.dart';
 import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-
-import 'custom_text_form_field.dart';
 import 'two_button_row.dart';
 import 'dialog_header.dart';
 
-class ReplyToDoctorDialog extends StatelessWidget {
-  const ReplyToDoctorDialog({super.key});
+class RestPasswordDailog extends StatelessWidget {
+  const RestPasswordDailog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,29 +21,22 @@ class ReplyToDoctorDialog extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const DialogHeader(title: 'Subject'),
-              CustomTextFormFieldWidget(
-                hintText: 'subject',
-                height: 20.h,
-                maxLines: 1,
+              const DialogHeader(title: 'Reste Password'),
+              Gap(15.h),
+              const TextformFieldAndTitle(
+                title: "Current Password",
               ),
-              Gap(16.h),
-              const DialogHeader(title: 'Details'),
-              CustomTextFormFieldWidget(
-                hintText: 'Details',
-                height: 200.h,
-                maxLines: 6,
+              Gap(8.h),
+              const TextformFieldAndTitle(
+                title: "New Password",
               ),
-              Gap(16.h),
-              const DialogHeader(title: 'Reply'),
-              CustomTextFormFieldWidget(
-                hintText: 'Enter Your Reply',
-                height: 100.h,
-                maxLines: 3,
+              Gap(8.h),
+              const TextformFieldAndTitle(
+                title: "Confirm Password",
               ),
               Gap(24.h),
               TwoButtonRow(
-                primaryText: 'Send Reply',
+                primaryText: 'save',
                 onPrimaryTap: () {},
                 secondaryText: 'Cancel',
                 onSecondaryTap: () => Navigator.pop(context),

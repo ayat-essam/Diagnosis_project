@@ -1,14 +1,13 @@
+import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-
-import 'custom_text_form_field.dart';
 import 'two_button_row.dart';
 import 'dialog_header.dart';
 
-class ReplyToDoctorDialog extends StatelessWidget {
-  const ReplyToDoctorDialog({super.key});
+class DeactivateDialog extends StatelessWidget {
+  const DeactivateDialog({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -22,29 +21,16 @@ class ReplyToDoctorDialog extends StatelessWidget {
             mainAxisSize: MainAxisSize.min,
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              const DialogHeader(title: 'Subject'),
-              CustomTextFormFieldWidget(
-                hintText: 'subject',
-                height: 20.h,
-                maxLines: 1,
-              ),
-              Gap(16.h),
-              const DialogHeader(title: 'Details'),
-              CustomTextFormFieldWidget(
-                hintText: 'Details',
-                height: 200.h,
-                maxLines: 6,
-              ),
-              Gap(16.h),
-              const DialogHeader(title: 'Reply'),
-              CustomTextFormFieldWidget(
-                hintText: 'Enter Your Reply',
-                height: 100.h,
-                maxLines: 3,
+              const DialogHeader(title: 'Deactivate doctor?'),
+              Text(
+                """Are you sure you want to deactivate Sara Ali? This will prevent them from accessing the system.""",
+                style: StyleApp.font12BlackSemiBold
+                    .copyWith(color: AppColors.grayDark),
               ),
               Gap(24.h),
               TwoButtonRow(
-                primaryText: 'Send Reply',
+                primaryText: 'Deactivate',
+                backgroundColor: AppColors.RedError,
                 onPrimaryTap: () {},
                 secondaryText: 'Cancel',
                 onSecondaryTap: () => Navigator.pop(context),

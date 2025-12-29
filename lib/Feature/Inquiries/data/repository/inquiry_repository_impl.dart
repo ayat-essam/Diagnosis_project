@@ -37,11 +37,9 @@ class InquiryRepositoryImpl implements InquiryRepository {
   }
 
   @override
-  Future<Either<ErrorModel, List<InquiryEntity>>> getPatientInquiries(
-      {required int patientId}) async {
+  Future<Either<ErrorModel, List<InquiryEntity>>> getPatientInquiries() async {
     try {
-      final response = await inquiryRemoteDataSource.getPatientInquiries(
-          patientId: patientId);
+      final response = await inquiryRemoteDataSource.getPatientInquiries();
       return Right(response);
     } on ServerException catch (e) {
       return Left(e.errorModel);

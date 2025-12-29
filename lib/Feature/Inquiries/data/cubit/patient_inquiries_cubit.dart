@@ -10,10 +10,10 @@ class PatientInquiriesCubit extends Cubit<PatientInquiriesState> {
   PatientInquiriesCubit(this.useCase)
       : super(PatientInquiriesInitial());
 
-  void loadInquiries(int patientId) async {
+  void loadInquiries() async {
   emit(PatientInquiriesLoading());
 
-  final result = await useCase(patientId: patientId);
+  final result = await useCase();
 
   result.fold(
     (error) => emit(PatientInquiriesError(error.errorMessage)),

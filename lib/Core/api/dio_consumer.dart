@@ -23,13 +23,11 @@ class DioConsumer extends ApiConsumer {
     ));
   }
   @override
-  Future delete(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
+  Future delete(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
       final response = await dio.delete(
         path,
@@ -43,13 +41,11 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future get(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
+  Future get(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
       final response = await dio.get(
         path,
@@ -63,14 +59,11 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future patch(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
-
+  Future patch(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
       final response = await dio.patch(
         path,
@@ -84,17 +77,16 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future post(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
+  Future post(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
       final response = await dio.post(
         path,
-        data: isFormData ? FormData.fromMap(data) : data,
+        // FIX: Check if data is already FormData before trying to convert it
+        data: (isFormData && data is! FormData) ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;

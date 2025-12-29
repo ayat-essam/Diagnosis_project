@@ -5,7 +5,7 @@ import 'package:diagnosis_project/Feature/Inquiries/data/models/inquiry_model.da
 abstract class InquiryRemoteDataSource {
   Future<void> createInquiry({required CreateInquiryRequest request});
 
-  Future<List<InquiryModel>> getPatientInquiries({required int patientId});
+  Future<List<InquiryModel>> getPatientInquiries();
 
   Future<InquiryDetailsModel> getInquiryDetails({
     required int patientId,

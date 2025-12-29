@@ -55,7 +55,7 @@ class MyApp extends StatelessWidget {
                 ],
                 supportedLocales: S.delegate.supportedLocales,
                 debugShowCheckedModeBanner: false,
-                home: LoginScreen(), 
+                home: Inquire(), 
               );
             },
           );

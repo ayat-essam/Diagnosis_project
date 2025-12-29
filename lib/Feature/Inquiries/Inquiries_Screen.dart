@@ -46,7 +46,7 @@ class Inquire extends StatelessWidget {
         ),
         BlocProvider(
           create: (_) => PatientInquiriesCubit(getPatientInquiriesUseCase)
-            ..loadInquiries(1),
+            ..loadInquiries(),
         ),
         BlocProvider(
             create: (_) => InquiryDetailsCubit(

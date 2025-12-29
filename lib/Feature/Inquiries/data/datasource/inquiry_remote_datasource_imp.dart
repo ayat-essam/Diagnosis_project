@@ -21,7 +21,7 @@ class InquiryRemoteDataSourceImpl implements InquiryRemoteDataSource {
       'notes': request.notes ?? '',
       'files': request.files != null ? filesToMultipart(request.files!) : [],
     });
-    await apiConsumer.post('/Inquiry', data: formData, isFormData: false);
+    await apiConsumer.post('/Inquiry', data: formData, isFormData: true);
   }
 
   @override
@@ -38,9 +38,8 @@ class InquiryRemoteDataSourceImpl implements InquiryRemoteDataSource {
   }
 
   @override
-  Future<List<InquiryModel>> getPatientInquiries(
-      {required int patientId}) async {
-    final response = await apiConsumer.get('/Inquiry/inquiries/$patientId');
+  Future<List<InquiryModel>> getPatientInquiries() async {
+    final response = await apiConsumer.get('/Inquiry/inquiries/');
     return List<InquiryModel>.from(
         response.map((i) => InquiryModel.fromJson(i)));
   }

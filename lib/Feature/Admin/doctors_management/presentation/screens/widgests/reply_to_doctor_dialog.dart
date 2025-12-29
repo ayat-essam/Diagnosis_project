@@ -26,7 +26,7 @@ class ReplyToDoctorDialog extends StatelessWidget {
               CustomTextFormFieldWidget(
                 hintText: 'subject',
                 height: 30.h,
-                maxLines: 2,
+                maxLines: 2, 
               ),
               Gap(16.h),
               const DialogHeader(title: 'Details'),

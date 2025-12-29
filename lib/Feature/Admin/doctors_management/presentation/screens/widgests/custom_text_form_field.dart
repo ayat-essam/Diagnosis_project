@@ -6,8 +6,12 @@ class CustomTextFormFieldWidget extends StatelessWidget {
   final String hintText;
   final double height;
   final int maxLines;
-  const CustomTextFormFieldWidget(
-      {super.key, required this.hintText, this.height = 50, this.maxLines = 1});
+  const CustomTextFormFieldWidget({
+    super.key,
+    required this.hintText,
+    this.height = 50,
+    this.maxLines = 1,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -22,7 +26,8 @@ class CustomTextFormFieldWidget extends StatelessWidget {
           height: height,
           child: TextFormField(
             maxLines: maxLines,
-            style: StyleApp.font14GrayMedium.copyWith(color: AppColors.greyLight),
+            style:
+                StyleApp.font14GrayMedium.copyWith(color: AppColors.greyLight),
             decoration: InputDecoration(
                 border: InputBorder.none,
                 contentPadding: EdgeInsets.zero,

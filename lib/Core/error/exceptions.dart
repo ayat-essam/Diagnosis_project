@@ -78,6 +78,9 @@ void handelDioException(DioException e) {
 }
 
 String extractMessage(dynamic response) {
+  if (response.containsKey('title') && response['title'] != null) {
+    return response['title'].toString();
+  }
   if (response is Map) {
     if (response.containsKey('error')) {
       return response['error'] is Map

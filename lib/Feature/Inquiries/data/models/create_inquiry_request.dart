@@ -17,22 +17,6 @@ class CreateInquiryRequest {
     this.files,
   });
 
-  Map<String, dynamic> toJson() => {
-        'patientId': patientId,
-        'doctorId': doctorId,
-        'symptoms': symptoms,
-        'notes': notes,
-        'files': files!
-            .map(
-              (file) => MultipartFile.fromFileSync(
-                file.path,
-                filename: file.path.split('/').last,
-              ),
-            )
-            .toList()
-      };
-
-      
   CreateInquiryRequest copyWith({
     int? patientId,
     int? doctorId,

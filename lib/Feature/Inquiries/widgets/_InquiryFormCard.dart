@@ -1,6 +1,9 @@
 // ---------------- Inquiry Form ----------------
+import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -10,19 +13,8 @@ import '../data/cubit/create_inquiry_state.dart';
 import '../data/models/create_inquiry_request.dart';
 import 'dart:io';
 
-class InquiryFormCard extends StatefulWidget {
+class InquiryFormCard extends StatelessWidget {
   const InquiryFormCard();
-
-  @override
-  State<InquiryFormCard> createState() => _InquiryFormCardState();
-}
-
-class _InquiryFormCardState extends State<InquiryFormCard> {
-  final titleController = TextEditingController();
-  final descriptionController = TextEditingController();
-  List<File> selectedFiles = [];
-
-  final categoryController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
@@ -30,69 +22,36 @@ class _InquiryFormCardState extends State<InquiryFormCard> {
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          SectionTitle('Submit inquiries'),
-          SizedBox(height: 12),
-          _LabeledField(
-            label: 'Inquire title *',
-            controller: titleController,
+          const SectionTitle('Submit inquiries'),
+          const SizedBox(height: 12),
+          const _LabeledField(
+            label: 'Symptom ',
+            hintfeild: "e.g. pain, swelling, stiffness",
           ),
-          SizedBox(height: 12),
-          _LabeledField(
-            label: 'Category *',
-            controller: categoryController,
-          ),
-          SizedBox(height: 12),
-          _LabeledField(
+          const SizedBox(height: 12),
+          const _LabeledField(
             label: 'Description',
-            controller: descriptionController,
+            hintfeild:
+                "Describe when it started, how severe it is, and what makes it better or worse",
             maxLines: 4,
           ),
-          SizedBox(height: 12),
-          Text("Attachments (Optional)",
-              style: const TextStyle(fontWeight: FontWeight.w500)),
-          SizedBox(height: 12),
-          AttachmentBox(),
-          SizedBox(height: 16),
-          BlocConsumer<CreateInquiryCubit, CreateInquiryState>(
-            listener: (context, state) {
-              if (state is CreateInquirySuccess) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(state.message)),
-                );
-                print(state.message);
-                titleController.clear();
-                descriptionController.clear();
-                categoryController.clear();
-              }
-
-              if (state is CreateInquiryError) {
-                ScaffoldMessenger.of(context).showSnackBar(
-                  SnackBar(content: Text(state.error)),
-                );
-              }
-            },
-            builder: (context, state) {
-              return PrimaryButton(
-                text: state is CreateInquiryLoading ? 'Sending...' : 'Send',
-                onPressed: state is CreateInquiryLoading
-                    ? null
-                    : () {
-                        final request = CreateInquiryRequest(
-                          patientId: 1,
-                          doctorId: 2,
-                          symptoms: titleController.text,
-                          notes: descriptionController.text,
-                          files: selectedFiles,
-                        );
-
-                        context
-                            .read<CreateInquiryCubit>()
-                            .submitInquiry(request);
-                        print(request);
-                      },
-              );
-            },
+          const SizedBox(height: 12),
+          const Text(
+            "Attachments (Optional)",
+            style: const TextStyle(fontWeight: FontWeight.w500),
           ),
+          const SizedBox(height: 12),
+          const AttachmentBox(),
+          const SizedBox(height: 16),
+          PrimaryButton(
+              text: 'Select doctor',
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => DirectoryScreen(),
+                    ));
+              }),
         ],
       ),
     );
@@ -102,11 +61,10 @@ class _InquiryFormCardState extends State<InquiryFormCard> {
 class _LabeledField extends StatelessWidget {
   final String label;
   final int maxLines;
-  final TextEditingController controller;
-
+  final String hintfeild;
   const _LabeledField({
     required this.label,
-    required this.controller,
+    required this.hintfeild,
     this.maxLines = 1,
   });
 
@@ -115,21 +73,42 @@ class _LabeledField extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        Text(label, style: const TextStyle(fontWeight: FontWeight.w500)),
+        RichText(
+          text: TextSpan(
+            children: [
+              TextSpan(
+                text: label,
+                style: const TextStyle(
+                  color: Colors.black,
+                  fontWeight: FontWeight.w500,
+                ),
+              ),
+              TextSpan(
+                text: "*",
+                style: TextStyle(color: Colors.red),
+              ),
+            ],
+          ),
+        ),
         const SizedBox(height: 6),
         TextField(
-          controller: controller,
           maxLines: maxLines,
           decoration: InputDecoration(
+            hintText: hintfeild,
+            hintStyle: TextStyle(color: Color(0xff7E7E7E), fontSize: 13),
             filled: true,
             fillColor: Colors.white,
             enabledBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xff207EFF)),
+              borderSide: BorderSide(color: Color(0xff207EFF)),
             ),
             border: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),
-              borderSide: const BorderSide(color: Color(0xff207EFF)),
+              borderSide: BorderSide(color: Color(0xff207EFF)),
+            ),
+            focusedBorder: OutlineInputBorder(
+              borderRadius: BorderRadius.circular(12),
+              borderSide: BorderSide(color: Color(0xff207EFF)),
             ),
           ),
         ),
@@ -139,64 +118,37 @@ class _LabeledField extends StatelessWidget {
 }
 
 class AttachmentBox extends StatelessWidget {
-  const AttachmentBox({super.key});
+  const AttachmentBox();
 
   @override
   Widget build(BuildContext context) {
-    return BlocBuilder<CreateInquiryCubit, CreateInquiryState>(
-      builder: (context, state) {
-        final cubit = context.read<CreateInquiryCubit>();
-
-        List<File> files = [];
-        if (state is CreateInquiryFilesSelected) {
-          files = state.files;
-        }
-
-        return InkWell(
-          onTap: () async {
-            final result = await FilePicker.platform.pickFiles(
-              allowMultiple: true,
-              type: FileType.custom,
-              allowedExtensions: ['jpg', 'png', 'pdf'],
-            );
-
-            if (result != null) {
-              final selectedFiles = result.paths
-                  .where((e) => e != null)
-                  .map((e) => File(e!))
-                  .toList();
-
-              cubit.setFiles(selectedFiles);
-            }
-          },
-          child: Container(
-            height: 90,
-            decoration: BoxDecoration(
-              border: Border.all(color: Colors.grey.shade400),
-              borderRadius: BorderRadius.circular(12),
-            ),
-            child: Center(
-              child: files.isEmpty
-                  ? const Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        Icon(Icons.upload_file, color: Colors.grey),
-                        SizedBox(height: 4),
-                        Text('Add files (Image or PDF)'),
-                      ],
-                    )
-                  : Column(
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        const Icon(Icons.attach_file, color: Colors.green),
-                        const SizedBox(height: 4),
-                        Text('${files.length} file(s) selected'),
-                      ],
-                    ),
-            ),
+    return Container(
+      height: 90,
+      decoration: BoxDecoration(
+        border: Border.all(
+          color: Colors.grey.shade400,
+          style: BorderStyle.solid,
+        ),
+        borderRadius: BorderRadius.circular(12),
+      ),
+      child: const SizedBox(
+        width: 324,
+        height: 30,
+        child: DottedBorder(
+          options: RectDottedBorderOptions(
+            dashPattern: [15, 5],
+            strokeWidth: 2,
+            padding: EdgeInsets.all(16),
           ),
-        );
-      },
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              Icon(Icons.file_upload_outlined, color: Colors.grey),
+              Text('Upload medical files'),
+            ],
+          ),
+        ),
+      ),
     );
   }
 }

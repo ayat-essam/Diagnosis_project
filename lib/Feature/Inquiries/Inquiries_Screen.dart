@@ -1,4 +1,7 @@
+import 'package:diagnosis_project/Feature/Inquiries/data/cubit/inquiry_details_cubit.dart';
 import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/create_inquiry_usecase.dart';
+import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/get_inquiry_details_usecase.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,6 +18,7 @@ import 'widgets/_StatusCard.dart';
 import 'widgets/_SupportAppBar.dart';
 import 'widgets/_TrackStatusSection.dart';
 import 'widgets/_support_status_row.dart';
+
 class Inquire extends StatelessWidget {
   const Inquire({super.key});
 
@@ -23,17 +27,17 @@ class Inquire extends StatelessWidget {
     final dio = Dio();
     final apiConsumer = DioConsumer(dio: dio);
 
-    final inquiryRemoteDataSource =
-    InquiryRemoteDataSourceImpl(apiConsumer);
+    final inquiryRemoteDataSource = InquiryRemoteDataSourceImpl(apiConsumer);
 
     final inquiryRepository =
         InquiryRepositoryImpl(inquiryRemoteDataSource: inquiryRemoteDataSource);
 
-    final createInquiryUseCase =
-        CreateInquiryUseCase(inquiryRepository);
+    final createInquiryUseCase = CreateInquiryUseCase(inquiryRepository);
 
     final getPatientInquiriesUseCase =
         GetPatientInquiriesUseCase(inquiryRepository);
+    final getInquiryDetailsUseCase =
+        GetInquiryDetailsUseCase(inquiryRepository);
 
     return MultiBlocProvider(
       providers: [
@@ -41,37 +45,38 @@ class Inquire extends StatelessWidget {
           create: (_) => CreateInquiryCubit(createInquiryUseCase),
         ),
         BlocProvider(
-          create: (_) =>
-              PatientInquiriesCubit(getPatientInquiriesUseCase)
-                ..loadInquiries(1),
+          create: (_) => PatientInquiriesCubit(getPatientInquiriesUseCase)
+            ..loadInquiries(1),
         ),
+        BlocProvider(
+            create: (_) => InquiryDetailsCubit(
+                getInquiryDetailsUseCase: getInquiryDetailsUseCase)),
       ],
       child: const InquiriesScreen(),
     );
   }
 }
 
-
 class InquiriesScreen extends StatelessWidget {
   const InquiriesScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: const Color(0xffF6F7FB),
-      appBar: const SupportAppBar(),
+    return const Scaffold(
+      backgroundColor: Color(0xffF6F7FB),
+      appBar: SupportAppBar(),
       body: SingleChildScrollView(
-        padding: const EdgeInsets.all(16),
+        padding: EdgeInsets.all(16),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.stretch,
-          children: const [
+          children: [
             SupportStatusRow(),
             SizedBox(height: 16),
             InquiryFormCard(),
             SizedBox(height: 24),
             TrackStatusSection(),
             SizedBox(height: 16),
-            _PreviousRepliesSection(),
+            //_PreviousRepliesSection(),
           ],
         ),
       ),
@@ -95,6 +100,18 @@ class _PreviousRepliesSection extends StatelessWidget {
               return CircularProgressIndicator();
             }
             if (state is PatientInquiriesLoaded) {
+              if (state.inquiries.isEmpty) {
+                return const Padding(
+                  padding: EdgeInsets.all(16),
+                  child: Text(
+                    'No inquiries yet',
+                    style: TextStyle(
+                      color: Colors.grey,
+                      fontSize: 16,
+                    ),
+                  ),
+                );
+              }
               return Column(
                 children: state.inquiries.map((inquiry) {
                   return StatusCard(
@@ -103,24 +120,24 @@ class _PreviousRepliesSection extends StatelessWidget {
                     description: '# ${inquiry.inquiryId}',
                     textButton: 'View Details',
                     onPressed: () {
-                      ScaffoldMessenger.of(context).showSnackBar(
-                        const SnackBar(
-                          content:
-                              Text('Inquiry details will be available soon'),
-                        ),
+                      dialogProgress(
+                        context,
+                        patientId: 1,
+                        inquiryId: inquiry.inquiryId,
                       );
-                      // Navigator.push(
-                      //   context,
-                      //   MaterialPageRoute(
-                      //     builder: (_) => InquiryDetailsScreen(
-                      //       inquiryId: inquiry.inquiryId,
-                      //     ),
+                      // ScaffoldMessenger.of(context).showSnackBar(
+                      //   const SnackBar(
+                      //     content:
+                      //         Text('Inquiry details will be available soon'),
                       //   ),
                       // );
                     },
                   );
                 }).toList(),
               );
+            }
+            if (state is PatientInquiriesError) {
+              return Text(state.error);
             }
             return SizedBox();
           },

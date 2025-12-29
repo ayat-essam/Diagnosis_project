@@ -14,7 +14,10 @@ class SupportAppBar extends StatelessWidget implements PreferredSizeWidget {
       title: Text(
         'Good morning Ahmed',
         style: TextStyle(
-            color: Colors.black, fontWeight: FontWeight.w600, fontSize: 12.sp),
+          color: Colors.black,
+          fontWeight: FontWeight.w600,
+          fontSize: 12.sp,
+        ),
       ),
       leading: const Icon(Icons.menu, color: Colors.black),
       actions: [

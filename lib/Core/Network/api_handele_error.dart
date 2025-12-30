@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 
 import '../constants/api_constant.dart';
 import 'api_error.dart';
+import 'api_error_model.dart';
 
 
 

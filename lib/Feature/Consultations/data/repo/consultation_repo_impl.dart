@@ -1,4 +1,3 @@
-// lib/features/consultation/data/repositories/consultation_repository_impl.dart
 
 import 'package:dartz/dartz.dart';
 import 'package:diagnosis_project/Core/constants/api_constant.dart';
@@ -62,18 +61,5 @@ class ConsultationRepositoryImpl implements ConsultationRepository {
     }
   }
 
-  Failure _handleDioError(DioException e) {
-    switch (e.response?.statusCode) {
-      case 400:
-        return BadRequestFailure('Invalid request');
-      case 401:
-        return UnauthorizedFailure('Please login again');
-      case 404:
-        return NotFoundFailure('Consultation not found');
-      case 500:
-        return ServerFailure('Server error');
-      default:
-        return NetworkFailure('Network error: ${e.message}');
-    }
-  }
+
 }

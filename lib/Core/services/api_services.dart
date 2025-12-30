@@ -2,7 +2,7 @@ import 'package:diagnosis_project/Core/constants/api_constant.dart';
 import 'package:dio/dio.dart';
 
 class ApiServices {
-  final _baseUrl = APIConstants.baseURL;
+  final _baseUrl = ApiConstants.baseURL;
   final Dio _dio = Dio();
 
   Future<Map<String, dynamic>> post(

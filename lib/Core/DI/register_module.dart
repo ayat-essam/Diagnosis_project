@@ -8,7 +8,7 @@ import '../constants/api_constant.dart';
 abstract class RegisterModule {
   @singleton
   Dio get dio => Dio(BaseOptions(
-      baseUrl: APIConstants.baseURL, receiveDataWhenStatusError: true));
+      baseUrl: ApiConstants.baseURL, receiveDataWhenStatusError: true));
 
   @preResolve
   Future<SharedPreferences> getShardPref() => SharedPreferences.getInstance();

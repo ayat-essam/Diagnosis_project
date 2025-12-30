@@ -1,5 +1,8 @@
 import 'package:dio/dio.dart';
 
+import '../constants/api_constant.dart';
+import 'api_error.dart';
+
 
 
 
@@ -30,7 +33,6 @@ class ResponseCode {
   static const int NOT_FOUND = 404; // failure, not found
   static const int API_LOGIC_ERROR = 422; // API , lOGIC ERROR
 
-  // local status code
   static const int CONNECT_TIMEOUT = -1;
   static const int CANCEL = -2;
   static const int RECIEVE_TIMEOUT = -3;

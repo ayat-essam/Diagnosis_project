@@ -1,14 +1,14 @@
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/reply_button.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/stauts_new_or_replied.dart';
+import 'package:diagnosis_project/Feature/Admin/presention/Widgets/reply_button.dart';
+import 'package:diagnosis_project/Feature/Admin/presention/Widgets/stauts_new_or_replied.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/custom_table.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import '../../../data/models/request_model.dart';
+import '../../../data/models/help_request_model.dart';
 
 class HelpRequestsTable extends StatelessWidget {
-  final List<RequestModel> requests;
+  final List<HelpRequestModel> requests;
 
   const HelpRequestsTable({super.key, required this.requests});
 

@@ -1,6 +1,6 @@
-class RequestModel {
+class HelpRequestModel {
   final String name, experience, gender, subject, status, image;
-  RequestModel({
+  HelpRequestModel({
     required this.name,
     required this.experience,
     required this.gender,
@@ -9,8 +9,8 @@ class RequestModel {
     required this.image,
   });
 
-  static List<RequestModel> fakeRequests = [
-    RequestModel(
+  static List<HelpRequestModel> fakeRequests = [
+    HelpRequestModel(
       name: "Ali Maged",
       experience: "12 y",
       gender: "Male",
@@ -18,7 +18,7 @@ class RequestModel {
       status: "New",
       image: "assets/image/profile.png",
     ),
-    RequestModel(
+    HelpRequestModel(
       name: "Hany Adel",
       experience: "13 y",
       gender: "Male",
@@ -26,7 +26,7 @@ class RequestModel {
       status: "Replied",
       image: "assets/image/profile.png",
     ),
-    RequestModel(
+    HelpRequestModel(
       name: "Samy Ahmed",
       experience: "10 y",
       gender: "Male",
@@ -34,7 +34,7 @@ class RequestModel {
       status: "New",
       image: "assets/image/profile.png",
     ),
-    RequestModel(
+    HelpRequestModel(
       name: "Basel Mohamed",
       experience: "6 y",
       gender: "Male",
@@ -42,7 +42,7 @@ class RequestModel {
       status: "New",
       image: "assets/image/profile.png",
     ),
-    RequestModel(
+    HelpRequestModel(
       name: "Shady Bassem",
       experience: "5 y",
       gender: "Male",

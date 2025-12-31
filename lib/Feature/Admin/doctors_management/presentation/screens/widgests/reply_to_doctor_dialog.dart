@@ -3,8 +3,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import 'custom_text_form_field.dart';
-import 'two_button_row.dart';
+import 'add_doctors_widgets/custom_text_form_field.dart';
+import '../../../../presention/Widgets/two_button_row.dart';
 import 'dialog_header.dart';
 
 class ReplyToDoctorDialog extends StatelessWidget {

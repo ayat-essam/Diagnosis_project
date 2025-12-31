@@ -1,9 +1,11 @@
-import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/text_form_field_and_title.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/add_doctors_widgets/text_form_field_and_title.dart';
 import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'two_button_row.dart';
+import '../../../../presention/Widgets/two_button_row.dart';
 import 'dialog_header.dart';
 
 class RestPasswordDailog extends StatelessWidget {
@@ -23,16 +25,28 @@ class RestPasswordDailog extends StatelessWidget {
             children: [
               const DialogHeader(title: 'Reste Password'),
               Gap(15.h),
-              const TextformFieldAndTitle(
+               TextformFieldAndTitle(
                 title: "Current Password",
+                initialValue:'' ,
+                 onChanged: (value){
+
+                },
               ),
               Gap(8.h),
-              const TextformFieldAndTitle(
+               TextformFieldAndTitle(
                 title: "New Password",
+                initialValue:'' ,
+                onChanged: (value){
+
+                },
               ),
               Gap(8.h),
-              const TextformFieldAndTitle(
+               TextformFieldAndTitle(
                 title: "Confirm Password",
+                initialValue:'' ,
+                onChanged: (value){
+
+                },
               ),
               Gap(24.h),
               TwoButtonRow(

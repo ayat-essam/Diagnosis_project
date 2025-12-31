@@ -3,7 +3,7 @@ import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'two_button_row.dart';
+import '../../../../presention/Widgets/two_button_row.dart';
 import 'dialog_header.dart';
 
 class DeactivateDialog extends StatelessWidget {

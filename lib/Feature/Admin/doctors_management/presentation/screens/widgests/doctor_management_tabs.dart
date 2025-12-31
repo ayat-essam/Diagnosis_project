@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import 'table_tab_option.dart';
+import '../../../../presention/Widgets/table_tab_option.dart';
 
 class DoctorManagementTabs extends StatelessWidget {
   final bool isDoctorSelected;

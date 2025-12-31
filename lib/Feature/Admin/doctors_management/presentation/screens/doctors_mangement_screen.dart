@@ -1,6 +1,6 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/models/doctor_model.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/data/models/request_model.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/data/models/help_request_model.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/doctor_management_header.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/doctor_management_search_section.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/doctor_management_tabs.dart';
@@ -53,7 +53,7 @@ class _DoctorsMangementScreenState extends State<DoctorsMangementScreen> {
               Gap(20.h),
               isDoctorSelected
                   ? DoctorsTable(doctors: DoctorModel.faleDoctors)
-                  : HelpRequestsTable(requests: RequestModel.fakeRequests),
+                  : HelpRequestsTable(requests: HelpRequestModel.fakeRequests),
             ],
           ),
         ),

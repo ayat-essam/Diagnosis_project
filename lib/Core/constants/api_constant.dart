@@ -6,6 +6,7 @@ class APIConstants {
   static String changePasswordURL = '$baseURL/Auth/change-password';
   static const String login = '/Auth/Login';
   static const String register = 'Auth/register';
+  static const String addDoctorEndPoint = '/DoctorManagement/add-doctor';
 
 
 

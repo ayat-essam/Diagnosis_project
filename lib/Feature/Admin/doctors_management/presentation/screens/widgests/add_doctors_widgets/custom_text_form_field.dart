@@ -3,23 +3,30 @@ import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 
 class CustomTextFormFieldWidget extends StatelessWidget {
+  const CustomTextFormFieldWidget(
+      {super.key,
+      this.hintText,
+      this.height,
+      this.maxLines = 1,
+      this.borderRedius = 8,
+      this.onChanged,
+      this.initialValue = '',
+      this.keyboardType});
   final String? hintText;
   final double? height;
   final int maxLines;
   final double borderRedius;
-
-  const CustomTextFormFieldWidget({
-    super.key,
-    this.hintText,
-    this.height,
-    this.maxLines = 1,
-    this.borderRedius = 8,
-  });
+  final void Function(String)? onChanged;
+  final String initialValue;
+  final TextInputType? keyboardType;
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       maxLines: maxLines,
+      initialValue: initialValue,
+      keyboardType: keyboardType ?? TextInputType.text,
+      onChanged: onChanged,
       style: StyleApp.font14GrayMedium.copyWith(color: AppColors.gray74),
       decoration: InputDecoration(
         hintText: hintText,

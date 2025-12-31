@@ -2,7 +2,7 @@ import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/models/doctor_model.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/action_dialog.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/status_active_or_inactive.dart';
+import 'package:diagnosis_project/Feature/Admin/presention/Widgets/status_active_or_inactive.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/custom_table.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';

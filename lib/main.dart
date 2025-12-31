@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:diagnosis_project/Core/DI/get_it.dart';
 import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/presentation/screens/admin_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_doctor_profile/presentation/views/admin_doctor-profile.dart';
@@ -35,18 +36,20 @@ import 'Feature/Help/presentation/screens/Help_Screen.dart';
 import 'Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 import 'Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   configureDependencies();
-
+  await setupServiceLocator();
   runApp(
     BlocProvider(
       create: (_) => LocaleCubit(),
-      child: DevicePreview(
-        enabled: true,
-        builder: (context) => const MyApp(),
-      ),
+      child:
+          //  DevicePreview(
+          //   enabled: true,
+          // builder: (context) =>
+          const MyApp(),
     ),
+    // ),
   );
 }
 

@@ -75,7 +75,7 @@ class FilterResultItem extends StatelessWidget {
                                   style: StyleApp.font10blackSecondryMedium
                                       .copyWith(color: AppColors.BluePrimary),
                                 ),
-                                Gap(8.w),
+                                Gap(3.w),
                                 Text('Next Available : Fri, 8:00 PM',
                                     style: StyleApp.font10blackSecondryMedium),
                               ],

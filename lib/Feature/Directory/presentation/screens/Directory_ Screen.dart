@@ -65,7 +65,8 @@ class DirectoryScreen extends StatelessWidget {
                   if (state is CreateInquirySuccess) {
                     ScaffoldMessenger.of(context).showSnackBar(
                       const SnackBar(
-                          content: Text('Inquiry sent successfully')),
+                          content: Text('Inquiry sent successfully'),
+                          backgroundColor: Colors.green),
                     );
                   }
 

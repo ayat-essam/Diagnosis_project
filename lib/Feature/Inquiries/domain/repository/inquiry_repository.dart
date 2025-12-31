@@ -9,5 +9,5 @@ abstract class InquiryRepository {
       {required CreateInquiryRequest createInquiryRequest});
   Future<Either<ErrorModel, List<InquiryEntity>>> getPatientInquiries();
   Future<Either<ErrorModel, InquiryDetailsEntity>> getInquiryDetails(
-      {required int patientId, required int inquiryId});
+      {required int inquiryId});
 }

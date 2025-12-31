@@ -9,13 +9,11 @@ class InquiryDetailsCubit extends Cubit<InquiryDetailsState> {
       : super(InquiryDetailsInitial());
 
   Future<void> getInquiryDetails({
-    required int patientId,
     required int inquiryId,
   }) async {
     emit(InquiryDetailsLoading());
 
     final result = await getInquiryDetailsUseCase(
-      patientId: patientId,
       inquiryId: inquiryId,
     );
 

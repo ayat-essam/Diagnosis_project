@@ -8,7 +8,6 @@ abstract class InquiryRemoteDataSource {
   Future<List<InquiryModel>> getPatientInquiries();
 
   Future<InquiryDetailsModel> getInquiryDetails({
-    required int patientId,
     required int inquiryId,
   });
 }

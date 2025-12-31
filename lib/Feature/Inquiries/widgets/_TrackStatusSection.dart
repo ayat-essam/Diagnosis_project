@@ -1,4 +1,5 @@
 // ---------------- Track Status ----------------
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Inquiries/data/cubit/patient_inquiries_cubit.dart';
 import 'package:diagnosis_project/Feature/Inquiries/data/cubit/patient_inquiries_state.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
@@ -22,7 +23,10 @@ class TrackStatusSection extends StatelessWidget {
         BlocBuilder<PatientInquiriesCubit, PatientInquiriesState>(
           builder: (context, state) {
             if (state is PatientInquiriesLoading) {
-              return CircularProgressIndicator();
+              return const Center(
+                  child: CircularProgressIndicator(
+                color: AppColors.BluePrimary,
+              ));
             }
             if (state is PatientInquiriesLoaded) {
               if (state.inquiries.isEmpty) {
@@ -47,7 +51,6 @@ class TrackStatusSection extends StatelessWidget {
                     onPressed: () {
                       dialogProgress(
                         context,
-                        patientId: 1,
                         inquiryId: inquiry.inquiryId,
                       );
                     },

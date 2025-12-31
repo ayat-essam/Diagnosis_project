@@ -1,15 +1,23 @@
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
+import 'package:diagnosis_project/Core/api/dio_consumer.dart';
 import 'package:diagnosis_project/Feature/Inquiries/data/cubit/inquiry_details_cubit.dart';
 import 'package:diagnosis_project/Feature/Inquiries/data/cubit/inquiry_details_state.dart';
+import 'package:diagnosis_project/Feature/Inquiries/data/datasource/inquiry_remote_datasource_imp.dart';
+import 'package:diagnosis_project/Feature/Inquiries/data/repository/inquiry_repository_impl.dart';
+import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/get_inquiry_details_usecase.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/_InquiryFormCard.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/gradinetCard.dart';
+import 'package:dio/dio.dart';
+import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
 
 Future<void> dialogProgress(
   BuildContext context, {
-  required int patientId,
   required int inquiryId,
 }) {
   final formatted = DateFormat('MMMM d, y').format(DateTime.now());
@@ -17,12 +25,21 @@ Future<void> dialogProgress(
   return showDialog(
     context: context,
     builder: (dialogContext) {
+      final dio = Dio();
+      final apiConsumer = DioConsumer(dio: dio);
+
+      final inquiryRemoteDataSource = InquiryRemoteDataSourceImpl(apiConsumer);
+
+      final inquiryRepository = InquiryRepositoryImpl(
+          inquiryRemoteDataSource: inquiryRemoteDataSource);
+
+      final getInquiryDetailsUseCase =
+          GetInquiryDetailsUseCase(inquiryRepository);
+
       return BlocProvider(
-        create: (_) => context.read<InquiryDetailsCubit>()
-          ..getInquiryDetails(
-            patientId: patientId,
-            inquiryId: inquiryId,
-          ),
+        create: (_) => InquiryDetailsCubit(
+            getInquiryDetailsUseCase: getInquiryDetailsUseCase)
+          ..getInquiryDetails(inquiryId: inquiryId),
         child: AlertDialog(
           backgroundColor: Colors.white,
           content: BlocBuilder<InquiryDetailsCubit, InquiryDetailsState>(
@@ -120,7 +137,7 @@ Future<void> dialogProgress(
 
                       gradientCard(
                         child: Text(
-                          inquiry.description ?? '',
+                          inquiry.notes ?? '',
                           style: const TextStyle(
                             fontSize: 10,
                             fontWeight: FontWeight.w400,
@@ -131,7 +148,11 @@ Future<void> dialogProgress(
 
                       const SizedBox(height: 16),
                       const Text("Attachments"),
-                      AttachmentBox(),
+                      Gap(8.h),
+                      Attachmens(
+                        files: inquiry.files,
+                      ),
+                      //   AttachmentBox(),
 
                       const SizedBox(height: 16),
                       PrimaryButton(
@@ -152,86 +173,45 @@ Future<void> dialogProgress(
   );
 }
 
-//   return showDialog(
-//     context: context,
-//     builder: (BuildContext context) {
-//       return AlertDialog(
-//         backgroundColor: Colors.white,
-//         title: Row(
-//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
-//           children: [
-//             Text(
-//               "Knee pain after running",
-//               style: TextStyle(
-//                 fontWeight: FontWeight.w500,
-//                 fontSize: 15,
-//                 color: Color(0xff505050),
-//               ),
-//             ),
-//             Container(
-//               decoration: BoxDecoration(
-//                 borderRadius: BorderRadius.circular(8),
-//                 color: Color(0xffF3D39C),
-//               ),
+class Attachmens extends StatelessWidget {
+  final List<String>? files;
 
-//               child: Row(
-//                 children: [
-//                   //Image.asset("assets/images/group.png", width: 20),
-//                   Text(
-//                     "In progress",
-//                     style: TextStyle(
-//                       color: Color(0xffA97007),
-//                       fontSize: 8,
-//                       fontWeight: FontWeight.w600,
-//                     ),
-//                   ),
-//                 ],
-//               ),
-//             ),
-//           ],
-//         ),
-//         content: SingleChildScrollView(
-//           child: Column(
-//             crossAxisAlignment: CrossAxisAlignment.start,
-//             children: [
-//               Text(
-//                 "# TKT-2024-1156",
-//                 style: TextStyle(fontSize: 13, color: Color(0xff565656C2)),
-//               ),
-//               Row(
-//                 children: [
-//                   Icon(Icons.date_range, color: Color(0xff565656C2)),
-//                   Text(
-//                     formatted,
-//                     style: TextStyle(fontSize: 13, color: Color(0xff565656C2)),
-//                   ),
-//                 ],
-//               ),
-//           const     Text(
-//                 "Description",
-//                 style: TextStyle(fontSize: 14, fontWeight: FontWeight.w500),
-//               ),
-//               gradientCard(
-//                 child: Column(
-//                   children: [
-//                     Text(
-//                       "Pain after running\n Description: I booked an appointment \nfor tomorrow, but didn’t receive a confirmation\n message. Can you confirm if it’s scheduled?",
-//                       style: TextStyle(
-//                         fontSize: 10,
-//                         fontWeight: FontWeight.w400,
-//                         color: Color(0xff3562BC),
-//                       ),
-//                     ),
-//                   ],
-//                 ),
-//               ),
-//               Text("Attachments"),
-//               AttachmentBox(),
-//               PrimaryButton(text: "OK", onPressed: () {}),
-//             ],
-//           ),
-//         ),
-//       );
-//     },
-//   );
-// }
+  const Attachmens({super.key, this.files});
+
+  @override
+  Widget build(BuildContext context) {
+    if (files == null || files!.isEmpty) {
+      return const Text(
+        'No attachments',
+        style: TextStyle(color: Colors.grey),
+      );
+    }
+
+    return SizedBox(
+        height: 90,
+        child: DottedBorder(
+            options: const RectDottedBorderOptions(
+              dashPattern: [15, 5],
+              strokeWidth: 2,
+              color: AppColors.gray7A,
+              padding: EdgeInsets.all(16),
+            ),
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: files!.map((filePath) {
+                final fileName = filePath.split('/').last;
+
+                return Padding(
+                  padding: const EdgeInsets.symmetric(vertical: 6),
+                  child: Expanded(
+                    child: Text(
+                      fileName,
+                      style: StyleApp.font12gray7ARegular,
+                      overflow: TextOverflow.ellipsis,
+                    ),
+                  ),
+                );
+              }).toList(),
+            )));
+  }
+}

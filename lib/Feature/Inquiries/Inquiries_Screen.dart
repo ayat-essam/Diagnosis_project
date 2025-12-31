@@ -1,6 +1,4 @@
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/inquiry_details_cubit.dart';
 import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/create_inquiry_usecase.dart';
-import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/get_inquiry_details_usecase.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
@@ -36,8 +34,6 @@ class Inquire extends StatelessWidget {
 
     final getPatientInquiriesUseCase =
         GetPatientInquiriesUseCase(inquiryRepository);
-    final getInquiryDetailsUseCase =
-        GetInquiryDetailsUseCase(inquiryRepository);
 
     return MultiBlocProvider(
       providers: [
@@ -48,9 +44,6 @@ class Inquire extends StatelessWidget {
           create: (_) => PatientInquiriesCubit(getPatientInquiriesUseCase)
             ..loadInquiries(),
         ),
-        BlocProvider(
-            create: (_) => InquiryDetailsCubit(
-                getInquiryDetailsUseCase: getInquiryDetailsUseCase)),
       ],
       child: const InquiriesScreen(),
     );
@@ -76,7 +69,7 @@ class InquiriesScreen extends StatelessWidget {
             SizedBox(height: 24),
             TrackStatusSection(),
             SizedBox(height: 16),
-           // _PreviousRepliesSection(),
+            // _PreviousRepliesSection(),
           ],
         ),
       ),
@@ -122,7 +115,6 @@ class _PreviousRepliesSection extends StatelessWidget {
                     onPressed: () {
                       dialogProgress(
                         context,
-                        patientId: 1,
                         inquiryId: inquiry.inquiryId,
                       );
                     },
@@ -136,7 +128,6 @@ class _PreviousRepliesSection extends StatelessWidget {
             return SizedBox();
           },
         )
-
       ],
     );
   }

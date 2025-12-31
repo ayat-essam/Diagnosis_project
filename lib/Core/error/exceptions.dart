@@ -22,94 +22,80 @@ class ServerException implements Exception {
 }
 
 void handelDioException(DioException e) {
-  final data = e.response?.data;
-  final message = extractMessage(data);
-
-  final errorModel = ErrorModel(
-    errorMessage: message,
-  );
   switch (e.type) {
     case DioExceptionType.connectionTimeout:
+      throw ServerException(
+        errorModel: ErrorModel(errorMessage: 'connection Timeout'),
+      );
     case DioExceptionType.sendTimeout:
+      throw ServerException(
+        errorModel: ErrorModel(errorMessage: 'send Timeout'),
+      );
     case DioExceptionType.receiveTimeout:
+      throw ServerException(
+        errorModel: ErrorModel(errorMessage: 'receiveTimeout Timeout'),
+      );
     case DioExceptionType.badCertificate:
+      throw ServerException(
+        errorModel: ErrorModel(errorMessage: 'badCertificate'),
+      );
     case DioExceptionType.cancel:
+      throw ServerException(
+        errorModel: ErrorModel(errorMessage: 'request to server cancele'),
+      );
+
     case DioExceptionType.connectionError:
+      throw ServerException(
+        errorModel: ErrorModel(errorMessage: 'no internet connection'),
+      );
     case DioExceptionType.unknown:
       throw ServerException(
-        errorModel: errorModel,
+        errorModel: ErrorModel(errorMessage: 'something went wrong'),
       );
 
     case DioExceptionType.badResponse:
-      switch (e.response?.statusCode) {
-        case 400:
-          throw ServerException(
-            errorModel: ErrorModel(errorMessage: 'bad request'),
-          );
-        case 401:
-          throw ServerException(
-            errorModel:
-                ErrorModel(errorMessage: 'Unauthorized, please login again'),
-          );
-        case 403:
-          throw ServerException(
-            errorModel: ErrorModel(
-                errorMessage:
-                    'You do not have permission to access this resource'),
-          );
-        case 404:
-          throw ServerException(
-            errorModel:
-                ErrorModel(errorMessage: 'Requested resource not found'),
-          );
-        case 405:
-          throw ServerException(
-            errorModel: ErrorModel(errorMessage: 'method not allawed'),
-          );
-        case 409:
-        case 422:
-        case 504:
-        case 500:
-          throw ServerException(
-            errorModel: errorModel,
-          );
-      }
+      throw ServerException(
+        errorModel: _handelError(e.response),
+      );
   }
 }
 
-String extractMessage(dynamic response) {
-  if (response.containsKey('title') && response['title'] != null) {
-    return response['title'].toString();
-  }
-  if (response is Map) {
-    if (response.containsKey('error')) {
-      return response['error'] is Map
-          ? response['error']['message'] ?? 'Unknown error'
-          : response['error'].toString();
-    }
-
-    if (response.containsKey('message')) {
-      return response['message'].toString();
-    }
-
-    if (response.containsKey('errors')) {
-      final errors = response['errors'];
-
-      if (errors is List && errors.isNotEmpty) {
-        return errors.first.toString();
-      } else if (errors is Map && errors.isNotEmpty) {
-        final firstKey = errors.keys.first;
-        final messages = errors[firstKey];
-        if (messages is List && messages.isNotEmpty) {
-          return messages.first.toString();
-        }
-      }
-    }
+ErrorModel _handelError(dynamic response) {
+  if (response == null) {
+    return ErrorModel(errorMessage: "No response from server");
   }
 
-  if (response is String) {
-    return response;
+  final statusCode = response.statusCode ?? 0;
+  final data = response.data;
+
+  String message = "Unknown error occurred";
+
+  if (data != null && data is Map<String, dynamic> && data['message'] != null) {
+    message = data['message'];
+  } else {
+    switch (statusCode) {
+      case 400:
+        message = "Bad Request";
+        break;
+      case 401:
+        message = "Unauthorized, please login again";
+        break;
+      case 403:
+        message = "Forbidden";
+        break;
+      case 404:
+        message = "Not Found";
+        break;
+      case 500:
+        message = "Internal Server Error";
+        break;
+      default:
+        message = "Received invalid status code: $statusCode";
+    }
   }
 
-  return 'Unknown error';
+  return ErrorModel(
+    errorMessage: message,
+    errors: data is Map<String, dynamic> ? data['errors'] : null,
+  );
 }

@@ -15,7 +15,6 @@ class InquiryRemoteDataSourceImpl implements InquiryRemoteDataSource {
   @override
   Future<void> createInquiry({required CreateInquiryRequest request}) async {
     final formData = FormData.fromMap({
-      'patientId': request.patientId,
       'doctorId': request.doctorId,
       'symptoms': request.symptoms ?? '',
       'notes': request.notes ?? '',
@@ -26,13 +25,9 @@ class InquiryRemoteDataSourceImpl implements InquiryRemoteDataSource {
 
   @override
   Future<InquiryDetailsModel> getInquiryDetails(
-      {required int patientId, required int inquiryId}) async {
+      {required int inquiryId}) async {
     final response = await apiConsumer.get(
-      '/Inquiry',
-      queryParameters: {
-        'patientId': patientId,
-        'inquiryId': inquiryId,
-      },
+      '/Inquiry/$inquiryId',
     );
     return InquiryDetailsModel.fromJson(response);
   }

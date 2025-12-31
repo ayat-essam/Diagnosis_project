@@ -9,8 +9,7 @@ import '../models/create_inquiry_request.dart';
 class CreateInquiryCubit extends Cubit<CreateInquiryState> {
   final CreateInquiryUseCase createInquiryUseCase;
 
-  CreateInquiryCubit(this.createInquiryUseCase)
-      : super(CreateInquiryInitial());
+  CreateInquiryCubit(this.createInquiryUseCase) : super(CreateInquiryInitial());
 
   String? symptoms;
   String? description;
@@ -26,44 +25,40 @@ class CreateInquiryCubit extends Cubit<CreateInquiryState> {
   }
 
   void setDoctorId(int id) {
-  doctorId = id;
-  emit(CreateInquiryDoctorSelected(id));
-}
+    doctorId = id;
+    emit(CreateInquiryDoctorSelected(id));
+  }
 
   void setFiles(List<File> selectedFiles) {
     files = selectedFiles;
     emit(CreateInquiryFilesSelected(selectedFiles));
   }
 
-Future<void> submitInquiry() async {
-  if (doctorId == null) {
-    emit( CreateInquiryError('Please select a doctor'));
-    return;
+  Future<void> submitInquiry() async {
+    if (doctorId == null) {
+      emit(CreateInquiryError('Please select a doctor'));
+      return;
+    }
+
+    if (symptoms == null || symptoms!.isEmpty) {
+      emit(CreateInquiryError('Symptoms is required'));
+      return;
+    }
+
+    emit(CreateInquiryLoading());
+
+    final request = CreateInquiryRequest(
+      doctorId: doctorId!,
+      symptoms: symptoms,
+      notes: description,
+      files: files,
+    );
+
+    final result = await createInquiryUseCase(createInquiryRequest: request);
+
+    result.fold(
+      (error) => emit(CreateInquiryError(error.errorMessage)),
+      (message) => emit(CreateInquirySuccess(message)),
+    );
   }
-
-  if (symptoms == null || symptoms!.isEmpty) {
-    emit( CreateInquiryError('Symptoms is required'));
-    return;
-  }
-
-  emit(CreateInquiryLoading());
-
-  final request = CreateInquiryRequest(
-    patientId: 1,
-    doctorId: doctorId!,
-    symptoms: symptoms,
-    notes: description,
-    files: files,
-  );
-
-  final result =
-      await createInquiryUseCase(createInquiryRequest: request);
-
-  result.fold(
-    (error) => emit(CreateInquiryError(error.errorMessage)),
-    (message) => emit(CreateInquirySuccess(message)),
-  );
-}
-
-  
 }

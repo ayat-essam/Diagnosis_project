@@ -9,10 +9,8 @@ class GetInquiryDetailsUseCase {
   GetInquiryDetailsUseCase(this.repository);
 
   Future<Either<ErrorModel, InquiryDetailsEntity>> call({
-    required int patientId,
     required int inquiryId,
   }) {
-    return repository.getInquiryDetails(
-        patientId: patientId, inquiryId: inquiryId);
+    return repository.getInquiryDetails(inquiryId: inquiryId);
   }
 }

@@ -17,7 +17,11 @@ class FinanceDoctorScreen extends StatefulWidget {
 class _FinanceDoctorScreenState extends State<FinanceDoctorScreen> {
   @override
   Widget build(BuildContext context) {
+<<<<<<< HEAD
 
+=======
+// <<<<<<< HEAD
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
     return  const Scaffold(
       backgroundColor: AppColors.whiteBackground,
       body: SingleChildScrollView(
@@ -36,7 +40,30 @@ class _FinanceDoctorScreenState extends State<FinanceDoctorScreen> {
       )
 
     );
+<<<<<<< HEAD
 
    
+=======
+// =======
+//     return const Scaffold(
+//         backgroundColor: AppColors.whiteBackground,
+//         body: SingleChildScrollView(
+//           padding: EdgeInsets.all(16),
+//           child: Column(
+//             mainAxisAlignment: MainAxisAlignment.start,
+//             children: [
+//               ComplaintsCustomAppBar(
+//                 title: "Good morning Dr.Ahmed",
+//               ),
+//               FinanceHeader(),
+//               Gap(16),
+//               EarningCardWidget(),
+//               Gap(16),
+//               TransactionBarChartWidget(),
+//             ],
+//           ),
+//         ));
+// >>>>>>> Consultations-features
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
   }
 }

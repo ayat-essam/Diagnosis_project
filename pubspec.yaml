@@ -45,9 +45,13 @@ dependencies:
   dotted_border: ^2.1.0
 #  file_picker: ^10.3.7
   file_picker: ^8.3.7
+<<<<<<< HEAD
 
   dotted_border: ^3.1.0
   file_picker: ^10.3.7
+=======
+  
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
   fl_chart: ^0.66.2
 
   flutter:
@@ -63,6 +67,7 @@ dependencies:
   injectable: ^2.4.4
   shared_preferences: ^2.3.2
   smooth_page_indicator: ^1.2.0+3
+<<<<<<< HEAD
 
 #  fl_chart: ^0.71.0
   fl_chart: ^0.63.0
@@ -73,6 +78,12 @@ dependencies:
 
 
 
+=======
+  
+  url_launcher: 6.3.0
+
+  jwt_decoder: ^2.0.1
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
 dev_dependencies:
   build_runner: ^2.4.11
   flutter_lints: ^4.0.0
@@ -126,4 +137,7 @@ flutter_intl:
   #
   # For details regarding fonts from package dependencies,
   # see https://flutter.dev/to/font-from-package
+<<<<<<< HEAD
 
+=======
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004

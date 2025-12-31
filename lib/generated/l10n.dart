@@ -53,7 +53,11 @@ class S {
   static S? maybeOf(BuildContext context) {
     return Localizations.of<S>(context, S);
   }
+<<<<<<< HEAD
 
+=======
+// <<<<<<< HEAD
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
 
   /// `Clini`
   String get appTitle {
@@ -184,20 +188,35 @@ class S {
       args: [],
     );
   }
+<<<<<<< HEAD
 
+=======
+// =======
+// >>>>>>> Consultations-features
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
 }
 
 class AppLocalizationDelegate extends LocalizationsDelegate<S> {
   const AppLocalizationDelegate();
 
   List<Locale> get supportedLocales {
+<<<<<<< HEAD
 
+=======
+// <<<<<<< HEAD
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
     return const <Locale>[
       Locale.fromSubtags(languageCode: 'en'),
       Locale.fromSubtags(languageCode: 'ar'),
     ];
+<<<<<<< HEAD
 
   
+=======
+// =======
+//     return const <Locale>[Locale.fromSubtags(languageCode: 'en')];
+// >>>>>>> Consultations-features
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004
   }
 
   @override

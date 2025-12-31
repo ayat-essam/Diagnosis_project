@@ -103,7 +103,7 @@ class _LoginScreenState extends State<LoginScreen> {
                                 obscureText: true,
                               ),
                               const Gap(10),
-<<<<<<< HEAD
+// <<<<<<< HEAD
                              TextButton(
                              onPressed: () => Navigator.pushReplacement(
                               context,
@@ -113,20 +113,20 @@ class _LoginScreenState extends State<LoginScreen> {
                                  ,style: StyleApp.font16BlackRegular.copyWith(
                                        decoration: TextDecoration.underline),)),
                           
-=======
-                              TextButton(
-                                  onPressed: () => Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                ResetPassword()),
-                                      ),
-                                  child: Text(
-                                    "Forget your Password",
-                                    style: StyleApp.font16BlackRegular.copyWith(
-                                        decoration: TextDecoration.underline),
-                                  )),
->>>>>>> Consultations-features
+// =======
+//                               TextButton(
+//                                   onPressed: () => Navigator.pushReplacement(
+//                                         context,
+//                                         MaterialPageRoute(
+//                                             builder: (context) =>
+//                                                 ResetPassword()),
+//                                       ),
+//                                   child: Text(
+//                                     "Forget your Password",
+//                                     style: StyleApp.font16BlackRegular.copyWith(
+//                                         decoration: TextDecoration.underline),
+//                                   )),
+// >>>>>>> Consultations-features
                               const Gap(60),
                               CustomButton(
                                 onTap: () {

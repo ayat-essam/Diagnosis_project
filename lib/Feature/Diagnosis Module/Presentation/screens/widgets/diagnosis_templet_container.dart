@@ -53,21 +53,22 @@ class DiagnocsisTempletContainer extends StatelessWidget {
               text: 'Use Template',
               width: 140.w,
               borderRedius: 8.r,
+            ),
+            Gap(12.h),
+            CustomAppButton(
+              onTap: () {},
+              text: 'Use template',
+              width: 180.w,
+              borderRedius: 25.r,
             )
           ],
 
-              Gap(12.h),
-              CustomAppButton(
-                onTap: () {},
-                text: 'Use template',
-                width: 180.w,
-                borderRedius: 25.r,
-              )
-            ],
+
+
           ),
 
         ),
-      ),
-    );
+      );
+
   }
 }

@@ -1,9 +1,9 @@
-
-
 // ---------------- Track Status ----------------
-import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/_StatusCard.dart';
+
 import 'package:flutter/material.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/_StatusCard.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/progressFunction.dart';
 
 class TrackStatusSection extends StatelessWidget {
   const TrackStatusSection();
@@ -16,10 +16,13 @@ class TrackStatusSection extends StatelessWidget {
         SectionTitle('Track Status'),
         SizedBox(height: 8),
         StatusCard(
-          title: 'Appointment was cancelled without notice',
+          title: 'Knee pain after running',
           status: 'In progress',
           description: '# TKT-2024-1156',
           textButton: "View Details",
+          onPressed: () async {
+            dialogProgress(context);
+          },
         ),
       ],
     );

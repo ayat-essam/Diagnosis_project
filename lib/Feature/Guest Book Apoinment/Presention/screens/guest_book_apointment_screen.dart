@@ -15,10 +15,10 @@ class GuestBookApointmentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(75.h),
-        child: const BookApointmentAppBar(),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromHeight(75.h),
+      //   child: const BookApointmentAppBar(),
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 20.w),
@@ -60,4 +60,8 @@ class GuestBookApointmentScreen extends StatelessWidget {
     );
   }
 }
+<<<<<<< HEAD
 
+=======
+// >>>>>>> Consultations-features
+>>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004

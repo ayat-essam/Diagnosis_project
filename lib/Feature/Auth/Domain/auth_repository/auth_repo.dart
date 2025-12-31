@@ -6,8 +6,8 @@ import 'package:diagnosis_project/Feature/Auth/Domain/Entity/user_entity.dart';
 
 abstract class AuthRepo{
 
-  Future<Either<failure, UserEntity>> login (LoginRequest loginReq);
-
-  Future<Either<failure, UserEntity>> register (RegisterRequest registerReq);
+  // Future<Either<failure, UserEntity>> login (LoginRequest loginReq);
+  //
+  // Future<Either<failure, UserEntity>> register (RegisterRequest registerReq);
 
 }

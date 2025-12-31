@@ -33,6 +33,7 @@ import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen
 import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
 import 'Feature/Help/presentation/screens/Help_Screen.dart';
 import 'Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
+import 'Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
@@ -59,7 +60,6 @@ class MyApp extends StatelessWidget {
         minTextAdapt: true,
         splitScreenMode: true,
         builder: (context, child) {
-
           return BlocBuilder<LocaleCubit, LocaleState>(
             builder: (context, state) {
               Locale locale = const Locale('en');
@@ -80,11 +80,11 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
-                  home: const PatientDashboard() //DoctorsScreen(),
-
+                  home: const PatientDashboard()
+                  //DoctorsScreen(),
                   );
             },
           );
-  });
+        });
   }
 }

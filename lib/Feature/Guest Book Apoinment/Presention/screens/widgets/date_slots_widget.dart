@@ -1,5 +1,5 @@
-<<<<<<< HEAD
-=======
+// <<<<<<< HEAD
+// =======
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -71,4 +71,4 @@ class _DateSlotsWidgetState extends State<DateSlotsWidget> {
     );
   }
 }
->>>>>>> Consultations-features
+// >>>>>>> Consultations-features

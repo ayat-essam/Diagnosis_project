@@ -17,7 +17,7 @@ class FinanceDoctorScreen extends StatefulWidget {
 class _FinanceDoctorScreenState extends State<FinanceDoctorScreen> {
   @override
   Widget build(BuildContext context) {
-<<<<<<< HEAD
+
     return  const Scaffold(
       backgroundColor: AppColors.whiteBackground,
       body: SingleChildScrollView(
@@ -36,25 +36,7 @@ class _FinanceDoctorScreenState extends State<FinanceDoctorScreen> {
       )
 
     );
-=======
-    return const Scaffold(
-        backgroundColor: AppColors.whiteBackground,
-        body: SingleChildScrollView(
-          padding: EdgeInsets.all(16),
-          child: Column(
-            mainAxisAlignment: MainAxisAlignment.start,
-            children: [
-              ComplaintsCustomAppBar(
-                title: "Good morning Dr.Ahmed",
-              ),
-              FinanceHeader(),
-              Gap(16),
-              EarningCardWidget(),
-              Gap(16),
-              TransactionBarChartWidget(),
-            ],
-          ),
-        ));
->>>>>>> Consultations-features
+
+   
   }
 }

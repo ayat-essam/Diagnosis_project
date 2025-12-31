@@ -38,13 +38,13 @@ class _ComplaintsScreenState extends State<ComplaintsScreen> {
       backgroundColor: AppColors.whiteBackground,
       body: Column(
         children: [
-<<<<<<< HEAD
+
           const CustomAppBar(title: "Good morning Ahmed",),
-=======
+
           const ComplaintsCustomAppBar(
             title: "Good morning Ahmed",
           ),
->>>>>>> Consultations-features
+
           Expanded(
             child: SingleChildScrollView(
               padding: EdgeInsets.all(16.w),

@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
@@ -61,4 +60,4 @@ class GuestBookApointmentScreen extends StatelessWidget {
     );
   }
 }
->>>>>>> Consultations-features
+

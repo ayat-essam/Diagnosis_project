@@ -34,7 +34,7 @@ class InquiryRemoteDataSourceImpl implements InquiryRemoteDataSource {
 
   @override
   Future<List<InquiryModel>> getPatientInquiries() async {
-    final response = await apiConsumer.get('/Inquiry/inquiries/');
+    final response = await apiConsumer.get('/Inquiry/inquiries');
     return List<InquiryModel>.from(
         response.map((i) => InquiryModel.fromJson(i)));
   }

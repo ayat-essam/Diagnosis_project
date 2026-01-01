@@ -60,8 +60,4 @@ class GuestBookApointmentScreen extends StatelessWidget {
     );
   }
 }
-<<<<<<< HEAD
 
-=======
-// >>>>>>> Consultations-features
->>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004

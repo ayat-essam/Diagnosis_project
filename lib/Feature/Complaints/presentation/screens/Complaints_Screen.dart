@@ -1,5 +1,5 @@
-<<<<<<< HEAD
 import 'dart:io';
+import 'package:diagnosis_project/Core/reusable_widgets/complains_custom_app_bar.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -39,13 +39,12 @@ class _ComplaintsScreenState extends State<ComplaintsScreen> {
       backgroundColor: AppColors.whiteBackground,
       body: Column(
         children: [
-
-          const CustomAppBar(title: "Good morning Ahmed",),
-
+          const CustomAppBar(
+            title: "Good morning Ahmed",
+          ),
           const ComplaintsCustomAppBar(
             title: "Good morning Ahmed",
           ),
-
           Expanded(
             child: SingleChildScrollView(
               padding: EdgeInsets.all(16.w),
@@ -111,7 +110,7 @@ class _ComplaintsScreenState extends State<ComplaintsScreen> {
     );
   }
 }
-=======
+
 // import 'dart:io';
 // import 'package:file_picker/file_picker.dart';
 // import 'package:flutter/material.dart';
@@ -224,4 +223,3 @@ class _ComplaintsScreenState extends State<ComplaintsScreen> {
 //     );
 //   }
 // }
->>>>>>> 64181c1b4f1e9b40a6758fb23fc7ef82b03cf004

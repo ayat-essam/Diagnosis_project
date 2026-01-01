@@ -18,6 +18,9 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
       emit(state.copyWith(experienceYears: val));
   void onNationalIdChanged(String val) => emit(state.copyWith(nationalId: val));
   void onBirthDateChanged(String val) => emit(state.copyWith(birthDate: val));
+  void onGenderChanged(String gender) {
+    emit(state.copyWith(gender: gender));
+  }
 
   Future<void> addDoctor() async {
     emit(state.copyWith(isLoading: true));
@@ -32,6 +35,7 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
       experienceYears: int.tryParse(state.experienceYears),
       nationalId: state.nationalId,
       birthDate: state.birthDate ,
+      gender: state.gender,
       clientUri: "https://frontend-app.com/confirm-email",
     );
 

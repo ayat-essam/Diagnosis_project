@@ -10,6 +10,7 @@ class AddDoctorState {
   final String address;
   final String experienceYears;
   final String nationalId;
+  final String gender;
   final String birthDate;
 
   // Status Fields
@@ -27,6 +28,7 @@ class AddDoctorState {
     this.experienceYears = '',
     this.nationalId = '',
     this.birthDate='',
+    this.gender='Male',
     this.isLoading = false,
     this.errorModel,
     this.successMessage,
@@ -42,6 +44,7 @@ class AddDoctorState {
   String? experienceYears,
   String? nationalId,
   String? birthDate,
+  String? gender,
   bool? isLoading,
   ErrorModel? errorModel,
   String? successMessage,
@@ -56,6 +59,7 @@ class AddDoctorState {
     experienceYears: experienceYears ?? this.experienceYears,
     nationalId: nationalId ?? this.nationalId,
     birthDate: birthDate ?? this.birthDate,
+    gender: gender ?? this.gender,
     isLoading: isLoading ?? this.isLoading,
     errorModel: errorModel,
     successMessage: successMessage,

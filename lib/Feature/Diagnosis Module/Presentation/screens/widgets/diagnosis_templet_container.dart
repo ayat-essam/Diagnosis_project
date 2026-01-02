@@ -16,6 +16,17 @@ class DiagnocsisTempletContainer extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return CustomLinearGradiantContainer(
+<<<<<<< HEAD
+      child: FittedBox(
+        fit: BoxFit.scaleDown,
+        child: Padding(
+          padding: const EdgeInsets.all(8.0),
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.start,
+            spacing: 2.h,
+            children: [
+              Row(
+=======
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Column(
@@ -24,6 +35,7 @@ class DiagnocsisTempletContainer extends StatelessWidget {
             FittedBox(
               fit: BoxFit.scaleDown,
               child: Row(
+>>>>>>> Deveoplment
                 children: [
                   Container(
                     width: 45.w,

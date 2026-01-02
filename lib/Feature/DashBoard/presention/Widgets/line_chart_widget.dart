@@ -30,7 +30,7 @@ class LineChartWidget extends StatelessWidget {
                             getTitlesWidget: (value, meta) {
                               return FittedBox(
                                 fit: BoxFit.scaleDown,
-                                child: Row(
+                                child: Wrap(
                                   spacing: 3,
                                   children: [
                                     // الرقم نفسه

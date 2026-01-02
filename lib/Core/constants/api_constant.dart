@@ -1,12 +1,15 @@
 class ApiConstants {
   static const String baseURL = 'http://diagnosis.runasp.net';
-  static const String consultationDetails =  '/Consultation/details/{consultationId}';
-  static const String consultationAccept = '/Consultation/accept/{consultationId}';
-  static const String consultationRejected = '/Consultation/reject/{consultationId}';
-  static const String consultationModify = '/Consultation/modify/{consultationId}';
-
-
+  static const String consultationDetails =
+      '/Consultation/details/{consultationId}';
+  static const String consultationAccept =
+      '/Consultation/accept/{consultationId}';
+  static const String consultationRejected =
+      '/Consultation/reject/{consultationId}';
+  static const String consultationModify =
+      '/Consultation/modify/{consultationId}';
 }
+
 class CacheConstants {
   static const String tokenKey = 'token';
 }
@@ -28,4 +31,9 @@ class ApiErrors {
   static const String retryAgainMessage = "retry_again_message";
   static const String ok = "Ok";
 
+  // static String resetPasswordURL = '$baseURL/Auth/change-password';
+  // static String forgetPasswordURL = '$baseURL/Auth/forget-password';
+  // static String changePasswordURL = '$baseURL/Auth/change-password';
+  static const String login = '/Auth/Login';
+  static const String register = 'Auth/register';
 }

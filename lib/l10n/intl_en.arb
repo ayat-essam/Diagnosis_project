@@ -1,1 +1,30 @@
+<<<<<<< HEAD
+<<<<<<< HEAD
 {}
+=======
+{
+
+    "@@locale": "en",
+    "appTitle": "Clini",
+    "guestSettings": "Guest Settings",
+    "language": "Language",
+    "selectLanguage": "Select Language",
+    "notifications": "Notifications",
+    "privacyPolicy": "Privacy Policy",
+    "termsConditions": "Terms & Conditions",
+    "aboutUs": "About Us",
+    "contactUs": "Contact Us"
+    ,
+    "language_english": "English",
+    "language_arabic": "Arabic",
+    "Update_language": "Update ",
+    "My_settings": "My Settings",
+     "Policies": "Privacy Policy",
+    "terms_and_conditions": "Terms & Conditions",
+    "terms_and_conditions_content":"By using the Diagnosis application, you agree to these Terms and Conditions. Diagnosis is a digital medical platform that facilitates communication between users and healthcare providers, manages medical records, and allows appointment booking. The app also offers intelligent AI-powered consultations to help users gain an initial understanding of their health and support medical decision-making. Users should use the provided information responsibly and consult qualified professionals when needed to ensure optimal healthcare. We are committed to protecting user privacy and handling all personal and medical data in accordance with our Privacy Policy. Diagnosis reserves the right to modify or update these Terms and Conditions at any time, and continued use of the application constitutes acceptance of any changes.",
+    "aboutUs_content":"Diagnosis is a smart medical application created to simplify and enhance the healthcare experience for both patients and doctors. The app provides a secure and user-friendly platform that allows users to connect with qualified healthcare professionals, manage medical records, book appointments, and receive timely medical updates. Diagnosis also offers AI-powered medical consultation, helping users understand their symptoms at an initial level and guiding them toward the appropriate medical steps. By combining advanced technology with a user-centered design, Diagnosis aims to improve communication, support accurate diagnosis, and make healthcare services more accessible and efficient. Our mission is to deliver a reliable digital healthcare solution that contributes to better medical outcomes and a healthier community."
+}
+>>>>>>> 72d487c94b94ff286d1ed15eaee30e2a349c21bd
+=======
+{}
+>>>>>>> Consultations-features

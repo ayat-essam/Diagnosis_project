@@ -1,3 +1,4 @@
+
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
@@ -14,10 +15,10 @@ class GuestBookApointmentScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(75.h),
-        child: const BookApointmentAppBar(),
-      ),
+      // appBar: PreferredSize(
+      //   preferredSize: Size.fromHeight(75.h),
+      //   child: const BookApointmentAppBar(),
+      // ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.symmetric(vertical: 14.h, horizontal: 20.w),
@@ -59,3 +60,4 @@ class GuestBookApointmentScreen extends StatelessWidget {
     );
   }
 }
+

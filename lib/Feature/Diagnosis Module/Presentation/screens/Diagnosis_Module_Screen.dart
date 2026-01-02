@@ -1,13 +1,14 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_doctor_app_bar.dart';
-import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/clinical_findings_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/diagnosis_assistant_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/diagnosis_details_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/grid_view_diagnosis_templet.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+
+import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 
 class DiagnosisModuleScreen extends StatelessWidget {
   const DiagnosisModuleScreen({super.key});
@@ -16,14 +17,12 @@ class DiagnosisModuleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
+      drawer: const SliderBar(),
       body: CustomScrollView(
         slivers: [
-          /// App Bar
           const SliverToBoxAdapter(
             child: CustomDoctorAppBar(),
           ),
-
-          /// Content
           SliverPadding(
             padding: EdgeInsets.symmetric(horizontal: 12.w, vertical: 8.h),
             sliver: SliverToBoxAdapter(
@@ -41,16 +40,11 @@ class DiagnosisModuleScreen extends StatelessWidget {
                   Gap(15.h),
                   Text(
                     "Diagnosis Details",
-                    style: StyleApp.font20BlackMedium,
+                    style: StyleApp.font20BlackSemiBold
+                        .copyWith(color: AppColors.grayDark),
                   ),
-                  Text(
-                    "Type 2 Diabetes Mellitus",
-                    style: StyleApp.font14graySecondaryRegular,
-                  ),
-                  Gap(5.h),
+                  Gap(12.h),
                   const DiagnosisDetailsSection(),
-                  Gap(10.h),
-                  const ClinicalFindingsSection(),
                   Gap(16.h),
                   Text(
                     "Diagnosis Templates",

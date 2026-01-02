@@ -2,6 +2,7 @@ import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_button.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_text_form_field.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Register%20Screen/register_screen.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/forget_password.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -102,18 +103,30 @@ class _LoginScreenState extends State<LoginScreen> {
                                 obscureText: true,
                               ),
                               const Gap(10),
-                              TextButton(
-                                  onPressed: () => Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                ResetPassword()),
-                                      ),
-                                  child: Text(
-                                    "Forget your Password",
-                                    style: StyleApp.font16BlackRegular.copyWith(
-                                        decoration: TextDecoration.underline),
-                                  )),
+// <<<<<<< HEAD
+                             TextButton(
+                             onPressed: () => Navigator.pushReplacement(
+                              context,
+                               MaterialPageRoute(builder: (context) =>  ForgetPasswordPage()),
+                               ),
+                                 child: Text("Forget your Password"
+                                 ,style: StyleApp.font16BlackRegular.copyWith(
+                                       decoration: TextDecoration.underline),)),
+                          
+// =======
+//                               TextButton(
+//                                   onPressed: () => Navigator.pushReplacement(
+//                                         context,
+//                                         MaterialPageRoute(
+//                                             builder: (context) =>
+//                                                 ResetPassword()),
+//                                       ),
+//                                   child: Text(
+//                                     "Forget your Password",
+//                                     style: StyleApp.font16BlackRegular.copyWith(
+//                                         decoration: TextDecoration.underline),
+//                                   )),
+// >>>>>>> Consultations-features
                               const Gap(60),
                               CustomButton(
                                 onTap: () {

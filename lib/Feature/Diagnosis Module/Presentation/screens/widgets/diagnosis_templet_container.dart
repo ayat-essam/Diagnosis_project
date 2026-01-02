@@ -1,6 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
+import 'package:diagnosis_project/Feature/Diagnosis%20Module/data/models/diagnosis_templates_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -8,18 +9,14 @@ import 'package:gap/gap.dart';
 class DiagnocsisTempletContainer extends StatelessWidget {
   const DiagnocsisTempletContainer({
     super.key,
-    required this.title,
-    required this.backgroundImageColor,
-    required this.imgPath,
+    required this.diagnosisTemplatesModel,
   });
 
-  final String title;
-  final Color backgroundImageColor;
-  final String imgPath;
-
+  final DiagnosisTemplatesModel diagnosisTemplatesModel;
   @override
   Widget build(BuildContext context) {
     return CustomLinearGradiantContainer(
+<<<<<<< HEAD
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Padding(
@@ -29,30 +26,61 @@ class DiagnocsisTempletContainer extends StatelessWidget {
             spacing: 2.h,
             children: [
               Row(
+=======
+      child: Padding(
+        padding: const EdgeInsets.all(8.0),
+        child: Column(
+          children: [
+            Gap(20.h),
+            FittedBox(
+              fit: BoxFit.scaleDown,
+              child: Row(
+>>>>>>> Deveoplment
                 children: [
-                  CircleAvatar(
-                    radius: 30.r,
-                    backgroundColor: backgroundImageColor,
+                  Container(
+                    width: 45.w,
+                    height: 50.h,
+                    decoration: BoxDecoration(
+                      color: diagnosisTemplatesModel.backgroundImageColor,
+                      borderRadius: BorderRadius.circular(30.r),
+                    ),
                     child: Image.asset(
-                      imgPath,
+
+                      diagnosisTemplatesModel.imgPath,
+
+
                     ),
                   ),
                   Gap(12.h),
-                  Text(title, style: StyleApp.font12BlackSemiBold),
-                  Gap(4.h)
+                  Text(
+                    diagnosisTemplatesModel.title,
+                    style: StyleApp.font20BlackMedium,
+                  ),
                 ],
               ),
-              Gap(12.h),
-              CustomAppButton(
-                onTap: () {},
-                text: 'Use template',
-                width: 180.w,
-                borderRedius: 25.r,
-              )
-            ],
+            ),
+            Gap(12.h),
+            CustomAppButton(
+              onTap: () {},
+              text: 'Use Template',
+              width: 140.w,
+              borderRedius: 8.r,
+            ),
+            Gap(12.h),
+            CustomAppButton(
+              onTap: () {},
+              text: 'Use template',
+              width: 180.w,
+              borderRedius: 25.r,
+            )
+          ],
+
+
+
           ),
+
         ),
-      ),
-    );
+      );
+
   }
 }

@@ -1,5 +1,4 @@
-import 'package:diagnosis_project/Core/Routing/routes.dart';
-import 'package:diagnosis_project/Feature/DashBoard/presention/dash_board.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/patient_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -223,11 +222,15 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       );
                                       return;
                                     }
-                                    Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                          builder: (context) => DashBoard(),
-                                        ));
+// <<<<<<< HEAD
+                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PatientDashboard(),));
+// =======
+//                                     Navigator.pushReplacement(
+//                                         context,
+//                                         MaterialPageRoute(
+//                                           builder: (context) => DashBoard(),
+//                                         ));
+// >>>>>>> Consultations-features
                                   }
                                 },
                                 text: "Register",

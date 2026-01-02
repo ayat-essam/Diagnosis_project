@@ -38,15 +38,13 @@ class GridViewDiagnosisTemplet extends StatelessWidget {
           (context, index) {
             final card = infoCards[index];
             return DiagnocsisTempletContainer(
-              title: card.title,
-              backgroundImageColor: card.backgroundImageColor,
-              imgPath: card.imgPath,
+              diagnosisTemplatesModel: card,
             );
           },
           childCount: infoCards.length,
         ),
-        gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
-          crossAxisCount: 2,
+        gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
+          maxCrossAxisExtent: 200,
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
           childAspectRatio: 1,

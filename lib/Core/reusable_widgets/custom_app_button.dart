@@ -12,23 +12,40 @@ class CustomAppButton extends StatelessWidget {
     required this.text,
     this.borderRedius = 14,
     this.width = double.infinity,
+    this.backgroundColor = AppColors.BluePrimary,
+    this.verticalPadding = 6,
+    this.borderColor = AppColors.BluePrimary,
   });
   final String text;
   final double borderRedius;
   final double width;
+// <<<<<<< HEAD
+  final Color backgroundColor;
+  final Color borderColor;
+  final double verticalPadding;
+
+// =======
+// >>>>>>> Consultations-features
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
       onTap: onTap,
       child: Container(
         width: width,
-        padding: EdgeInsets.symmetric(vertical: 6.h),
+        padding: EdgeInsets.symmetric(vertical: verticalPadding.h),
         decoration: BoxDecoration(
-          color: AppColors.BluePrimary,
+          color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRedius),
+          border: Border.all(
+            color: borderColor,
+          ),
         ),
         child: Center(
-          child: Text(text, style: StyleApp.font20WhiteSemiBold),
+          child: Text(text,
+              style: backgroundColor == AppColors.BluePrimary
+                  ? StyleApp.font16BlueSemiBold
+                      .copyWith(color: AppColors.whiteBackground)
+                  : StyleApp.font16BlueSemiBold.copyWith(color: borderColor)),
         ),
       ),
     );

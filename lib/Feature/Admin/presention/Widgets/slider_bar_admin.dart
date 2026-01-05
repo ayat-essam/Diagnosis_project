@@ -1,4 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/screens/admin_setting_screen.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/presentation/screens/admin_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/doctors_mangement_screen.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/drawer_item_admin.dart';
@@ -129,7 +130,11 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
         title: 'System\n Settings',
         imagePath: "assets/image_SVG/systemSettingIcon.svg",
         imageColor: AppColors.gray,
-        onTap: () {},
+        onTap: () {
+           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
+              return const AdminSettingScreen();
+            }));
+        },
       ),
     ];
 
@@ -179,7 +184,8 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
           if (item.title == 'Log Out') {
             handleLogout(context);
           } else if (item.onTap != null) {
-            Navigator.pushNamed(context, item.onTap as String);
+            item.onTap?.call();
+           // Navigator.pushNamed(context, item.onTap as String);
           }
         },
       );

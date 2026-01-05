@@ -3,15 +3,15 @@ import 'package:diagnosis_project/Core/reusable_widgets/notification_appbar_widg
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-class PationDashBoardAppbar extends StatelessWidget {
-  const PationDashBoardAppbar({
+class CustomAppBarWidget extends StatelessWidget {
+  const CustomAppBarWidget({
     super.key,
   });
 
   @override
   Widget build(BuildContext context) {
     return AppBar(
-      scrolledUnderElevation: 5,//make it 5 to make ظل ثابت أثناء scroll
+      scrolledUnderElevation: 5,
       backgroundColor: AppColors.whiteBackground,
       surfaceTintColor: AppColors.whiteBackground,
       elevation: 5,

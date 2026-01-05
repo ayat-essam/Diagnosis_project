@@ -1,6 +1,9 @@
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/custom_setting_button.dart';
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/gradient_border.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/custom_setting_button.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/edit_profile_dialog.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:gap/gap.dart';
 
 class ProfileSettingCard extends StatelessWidget {
   const ProfileSettingCard({
@@ -29,9 +32,7 @@ class ProfileSettingCard extends StatelessWidget {
                   fit: BoxFit.cover,
                 ),
               ),
-              const SizedBox(
-                width: 38,
-              ),
+              Gap(20.w),
               const Text(
                 "Profile Settings",
                 style: TextStyle(
@@ -76,7 +77,12 @@ class ProfileSettingCard extends StatelessWidget {
               Center(
                 child: CustomSettingButton(
                   buttonText: 'Edit Profile',
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => const EditProfileDialog(),
+                    );
+                  },
                 ),
               ),
             ],

@@ -3,6 +3,7 @@ import 'package:diagnosis_project/Core/DI/get_it.dart';
 import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_screen.dart';
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/patient_dashboard.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/Setting_doctor_view.dart';
 import 'package:diagnosis_project/generated/l10n.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -57,7 +58,7 @@ class MyApp extends StatelessWidget {
                 ],
                 supportedLocales: S.delegate.supportedLocales,
                 debugShowCheckedModeBanner: false,
-                home: Inquire(),
+                home: SettingDoctorView(),
               );
             },
           );

@@ -1,6 +1,7 @@
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/custom_setting_button.dart';
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/gradient_border.dart';
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/switch_icon.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/change_password_dialog.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/custom_setting_button.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/switch_icon.dart';
 import 'package:flutter/material.dart';
 
 class SecurityCard extends StatelessWidget {
@@ -58,7 +59,12 @@ class SecurityCard extends StatelessWidget {
                 ),
                 CustomSettingButton(
                   buttonText: 'Change Password',
-                  onPressed: () {},
+                  onPressed: () {
+                    showDialog(
+                      context: context,
+                      builder: (context) => const ChangePasswordDialog(),
+                    );
+                  },
                   fontSize: 12,
                   horizontalPadding: 8,
                 ),

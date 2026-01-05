@@ -1,4 +1,4 @@
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/gradient_border.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:diagnosis_project/Feature/Patient/profile-patient/presentation/views/widgets/lab_test_Item.dart';
 import 'package:diagnosis_project/Feature/Patient/profile-patient/presentation/views/widgets/treatment_button.dart';
 import 'package:flutter/material.dart';

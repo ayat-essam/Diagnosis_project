@@ -4,8 +4,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 import 'add_doctors_widgets/custom_text_form_field.dart';
-import '../../../../presention/Widgets/two_button_row.dart';
-import 'dialog_header.dart';
+import '../../../../../../Core/reusable_widgets/two_button_row.dart';
+import '../../../../../../Core/reusable_widgets/dialog_header.dart';
 
 class ReplyToDoctorDialog extends StatelessWidget {
   const ReplyToDoctorDialog({super.key});

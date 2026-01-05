@@ -9,7 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../DashBoard Patient/presention/Widgets/patient_dash_board_appbar.dart';
+import '../../../../Core/reusable_widgets/custom_app_bar_widget.dart';
 import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 import '../../../Inquiries/data/cubit/create_inquiry_cubit.dart';
 import '../../../Inquiries/data/cubit/create_inquiry_state.dart';
@@ -23,7 +23,7 @@ class DirectoryScreen extends StatelessWidget {
       backgroundColor: AppColors.whiteBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.h),
-        child: const PationDashBoardAppbar(),
+        child: const CustomAppBarWidget(),
       ),
       drawer: const SliderBar(),
       body: Padding(

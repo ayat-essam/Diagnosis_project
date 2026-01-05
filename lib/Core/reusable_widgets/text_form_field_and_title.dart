@@ -26,9 +26,9 @@ class TextformFieldAndTitle extends StatelessWidget {
         Text(
           title,
           style:
-              StyleApp.font12BlackSemiBold.copyWith(color: AppColors.grayDark),
+              StyleApp.font16BlueSemiBold.copyWith(color: AppColors.gray6B),
         ),
-        Gap(4.h),
+        Gap(8.h),
         CustomTextFormFieldWidget(
           borderRedius: 14.r,
           onChanged: onChanged,

@@ -24,22 +24,20 @@ class TwoButtonRow extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       children: [
-        Expanded(
-          child: CustomAppButton(
-            onTap: onPrimaryTap,
-            text: primaryText,
-            width: 140.w,
-            borderRedius: 8.r,
-            verticalPadding: 8.h,
-            backgroundColor: backgroundColor,
-          ),
+        CustomAppButton(
+          onTap: onPrimaryTap,
+          text: primaryText,
+          width: 145.w,
+          borderRedius: 8.r,
+          verticalPadding: 8.h,
+          backgroundColor: backgroundColor,
         ),
-        Gap(10.w),
+        Gap(8.w),
         Expanded(
           child: CustomAppButton(
             onTap: onSecondaryTap,
             text: secondaryText,
-            width: 140.w,
+            width: 145.w,
             borderRedius: 8.r,
             backgroundColor: AppColors.greyLight,
             borderColor: AppColors.gray74,

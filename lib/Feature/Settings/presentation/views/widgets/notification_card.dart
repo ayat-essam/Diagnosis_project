@@ -1,6 +1,6 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/gradient_border.dart';
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/switch_icon.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/switch_icon.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 

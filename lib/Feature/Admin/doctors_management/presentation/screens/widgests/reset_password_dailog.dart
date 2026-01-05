@@ -1,12 +1,12 @@
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_cubit.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/add_doctors_widgets/text_form_field_and_title.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/text_form_field_and_title.dart';
 import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
-import '../../../../presention/Widgets/two_button_row.dart';
-import 'dialog_header.dart';
+import '../../../../../../Core/reusable_widgets/two_button_row.dart';
+import '../../../../../../Core/reusable_widgets/dialog_header.dart';
 
 class RestPasswordDailog extends StatelessWidget {
   const RestPasswordDailog({super.key});

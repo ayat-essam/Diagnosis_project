@@ -1,6 +1,10 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/Consultations_view.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/doctor_dashboard_screen.dart';
+import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/My%20Patient/Presention/my_patient_screen.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/Setting_doctor_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../../../Core/Theme App/styleApp.dart';
@@ -94,33 +98,43 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
       MenuItemDoctors(
         title: 'DashBoard',
         ImagePath: "assets/image_SVG/dashBoardIcon.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => const DoctorDashboardScreen(),));
+        },
       ),
       MenuItemDoctors(
         title: 'My Patients',
         ImagePath: "assets/image_SVG/myPatientIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => MyPatientsScreen(),));
+              context, MaterialPageRoute(builder: (context) => const MyPatientsScreen(),));
         },
       ),
       MenuItemDoctors(
         title: 'Consultations',
         ImagePath: "assets/image_SVG/consultaionIcon.svg",
-        onTap: () {
-
+         onTap: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => const ConsultationsView(),));
         },
       ),
       MenuItemDoctors(
         title: 'Diagnoses',
         ImagePath: "assets/image_SVG/DiagnosisIcon.svg",
-        onTap: () {},
+         onTap: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => const DiagnosisModuleScreen(),));
+        },
       ),
 
       MenuItemDoctors(
         title: 'Finance',
         ImagePath: "assets/image_SVG/financeIcon.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => const FinanceDoctorScreen(),));
+        },
       ),
     ];
 
@@ -135,7 +149,7 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
           });
 
           Navigator.pop(context);
-          item.onTap?.call();
+          item.onTap.call();
           // if (item.onTap != null) {
           //   Navigator.pushNamed(context, item.onTap as String);
           // }
@@ -149,7 +163,13 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
       MenuItemDoctors(
         title: 'Settings',
         ImagePath: "assets/image_SVG/settingIcon.svg",
-        onTap: () {},
+        onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => const SettingDoctorView(),
+              ));
+        },
       ),
       MenuItemDoctors(
         title: 'Help',
@@ -176,7 +196,8 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
           if (item.title == 'Log Out') {
             handleLogout(context);
           } else if (item.onTap != null) {
-            Navigator.pushNamed(context, item.onTap as String);
+             item.onTap.call();
+           // Navigator.pushNamed(context, item.onTap as String);
           }
         },
       );

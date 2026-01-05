@@ -1,6 +1,7 @@
+import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 
-import '../../../../../../Core/Theme App/styleApp.dart';
+import '../Theme App/styleApp.dart';
 
 class DialogHeader extends StatelessWidget {
   final String title;
@@ -10,10 +11,8 @@ class DialogHeader extends StatelessWidget {
   Widget build(BuildContext context) {
     return Padding(
       padding: const EdgeInsets.only(bottom: 8.0),
-      child: Text(
-        title,
-         style: StyleApp.font18GrayDarkBold
-      ),
+      child: Text(title,
+          style: StyleApp.font24BlackBold.copyWith(color: AppColors.grayDark)),
     );
   }
 }

@@ -62,9 +62,9 @@ class CustomAppButton extends StatelessWidget {
               Text(
                 text,
                 style: backgroundColor != AppColors.greyLight
-                    ? StyleApp.font16BlueSemiBold
+                    ? StyleApp.font14BlueSemiBold
                         .copyWith(color: AppColors.whiteBackground)
-                    : StyleApp.font16BlueSemiBold.copyWith(color: borderColor),
+                    : StyleApp.font14BlueSemiBold.copyWith(color: borderColor),
               ),
             ],
           ),

@@ -1,5 +1,5 @@
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/general_dropdown.dart';
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/widgets/gradient_border.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/general_dropdown.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
 
 class GeneralCard extends StatelessWidget {

@@ -1,6 +1,7 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/consultations_section.dart';
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/custom_appBar_Consultations.dart';
+import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/slider_bar_doctor.dart';
 import 'package:flutter/material.dart';
 
 class ConsultationsView extends StatelessWidget {
@@ -13,6 +14,7 @@ class ConsultationsView extends StatelessWidget {
       appBar: const PreferredSize(
           preferredSize: Size.fromHeight(65),
           child: CustomAppBarConsultations()),
+      drawer: const SliderBarDoctor(),
       body: SafeArea(
         child: SingleChildScrollView(
             child: Column(

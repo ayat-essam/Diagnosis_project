@@ -12,18 +12,7 @@ class CustomAppBarSetting extends StatelessWidget {
     return AppBar(
       backgroundColor: AppColors.whiteBackground,
       elevation: 0,
-      title: Row(
-        children: [
-          const Icon(
-            Icons.menu,
-            size: 24,
-          ),
-          const SizedBox(
-            width: 6,
-          ),
-          Image.asset('assets/image/logotwo.png'),
-        ],
-      ),
+      title: Image.asset('assets/image/logotwo.png'),
       actions: [
         Stack(clipBehavior: Clip.none, children: [
           Positioned(

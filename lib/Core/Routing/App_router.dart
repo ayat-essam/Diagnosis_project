@@ -10,14 +10,19 @@ import '../../Feature/Complaints/presentation/screens/Complaints_Screen.dart';
 import '../../Feature/DashBoard Patient/presention/Widgets/slider_bar.dart';
 import '../../Feature/DashBoard Patient/presention/patient_dashboard.dart';
 import '../../Feature/Directory/presentation/screens/Directory_ Screen.dart';
-import '../../Feature/Drug Checker/Drug_Checker_Screen.dart';
 
+
+import '../../Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 import '../../Feature/Help/presentation/screens/Help_Screen.dart';
 
 import '../../Feature/Inquiries/Inquiries_Screen.dart';
 import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';
+// <<<<<<< HEAD
 import '../../Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
+// =======
+// import '../../Feature/physiotherapy/Physiotherapy_Screen.dart';
+// >>>>>>> Consultations-features
 
 class AppRouter {
   Route? generateRoute(RouteSettings settings) {
@@ -34,7 +39,11 @@ class AppRouter {
         );
 
       case Routers.DashBoard:
+// <<<<<<< HEAD
         return MaterialPageRoute(builder: (_) => const PatientDashboard());
+// =======
+//         return MaterialPageRoute(builder: (_) => DashBoard());
+// >>>>>>> Consultations-features
 
       // Drawer Routers Items
       case Routers.diagnosisModule:
@@ -47,8 +56,8 @@ class AppRouter {
         return MaterialPageRoute(builder: (_) => PhysiotherapyScreen());
       case Routers.inquiries:
         return MaterialPageRoute(builder: (_) => InquiriesScreen());
-      case Routers.complaints:
-        return MaterialPageRoute(builder: (_) => ComplaintsScreen());
+      // case Routers.complaints:
+      //   // return MaterialPageRoute(builder: (_) => ComplaintsScreen());
       case Routers.directory:
         return MaterialPageRoute(builder: (_) => DirectoryScreen());
       case Routers.medicalFiles:

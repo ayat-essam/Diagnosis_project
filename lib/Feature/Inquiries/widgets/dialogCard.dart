@@ -20,8 +20,6 @@ Future<void> dialogProgress(
   BuildContext context, {
   required int inquiryId,
 }) {
-  final formatted = DateFormat('MMMM d, y').format(DateTime.now());
-
   return showDialog(
     context: context,
     builder: (dialogContext) {
@@ -66,6 +64,7 @@ Future<void> dialogProgress(
               }
               if (state is InquiryDetailsSuccess) {
                 final inquiry = state.inquiryDetails;
+                final formatted = DateFormat('MMMM d, y').format(inquiry.date);
 
                 return SingleChildScrollView(
                   child: Column(
@@ -105,7 +104,7 @@ Future<void> dialogProgress(
 
                       /// Ticket + Date
                       Text(
-                        '# ${inquiry.date}',
+                        '# $inquiryId',
                         style: const TextStyle(
                           fontSize: 13,
                           color: Color(0xff565656C2),

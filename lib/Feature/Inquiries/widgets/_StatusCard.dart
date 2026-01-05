@@ -1,5 +1,5 @@
-
 // ---------------- Shared Widgets ----------------
+
 import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/StatusBadge.dart';
 import 'package:diagnosis_project/Feature/Inquiries/widgets/_InquiryFormCard.dart';

@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:diagnosis_project/Core/DI/get_it.dart';
 import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_screen.dart';
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/patient_dashboard.dart';
@@ -12,7 +13,8 @@ import 'Feature/Inquiries/Inquiries_Screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-   // configureDependencies();
+  // configureDependencies();
+  await setupServiceLocator();
 
   runApp(
     BlocProvider(
@@ -55,7 +57,7 @@ class MyApp extends StatelessWidget {
                 ],
                 supportedLocales: S.delegate.supportedLocales,
                 debugShowCheckedModeBanner: false,
-                home: Inquire(), 
+                home: Inquire(),
               );
             },
           );

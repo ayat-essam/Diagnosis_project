@@ -22,6 +22,7 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
 
+
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
         "My_settings": MessageLookupByLibrary.simpleMessage("My Settings"),
         "Policies": MessageLookupByLibrary.simpleMessage("Privacy Policy"),
@@ -50,4 +51,7 @@ class MessageLookup extends MessageLookupByLibrary {
           "By using the Diagnosis application, you agree to these Terms and Conditions. Diagnosis is a digital medical platform that facilitates communication between users and healthcare providers, manages medical records, and allows appointment booking. The app also offers intelligent AI-powered consultations to help users gain an initial understanding of their health and support medical decision-making. Users should use the provided information responsibly and consult qualified professionals when needed to ensure optimal healthcare. We are committed to protecting user privacy and handling all personal and medical data in accordance with our Privacy Policy. Diagnosis reserves the right to modify or update these Terms and Conditions at any time, and continued use of the application constitutes acceptance of any changes.",
         ),
       };
+
+  // static Map<String, Function> _notInlinedMessages(_) => <String, Function>{};
+
 }

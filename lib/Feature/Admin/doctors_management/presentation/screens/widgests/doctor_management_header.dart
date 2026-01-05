@@ -1,6 +1,7 @@
+import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/add_doctors_widgets/add_doctor_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:gap/gap.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 
 class DoctorManagementHeader extends StatelessWidget {
@@ -8,21 +9,34 @@ class DoctorManagementHeader extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Column(
-      crossAxisAlignment: CrossAxisAlignment.start,
+    return Row(
       children: [
-        Text(
-          "Doctor Management",
-          style: StyleApp.font25grayDarkMedium,
-        ),
-        SizedBox(
-          width: 250.w,
-          child: Text(
-            "Manage doctor accounts and monitor activity",
-            style: StyleApp.font16graySecondaryRegular,
+        Expanded(
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Text(
+                "Doctor Management",
+                style: StyleApp.font25grayDarkMedium,
+              ),
+              Text(
+                "Manage doctor accounts and monitor activity",
+                style: StyleApp.font16graySecondaryRegular,
+              ),
+            ],
           ),
         ),
-        Gap(20.h),
+        CustomAppButton(
+          onTap: () {
+            showDialog(
+              context: context,
+              builder: (context) => const AddDoctorDialog(),
+            );
+          },
+          text: 'Add doctor',
+          width: 145.w,
+          prefixIcon: Icons.add,
+        )
       ],
     );
   }

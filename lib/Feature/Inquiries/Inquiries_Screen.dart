@@ -1,21 +1,20 @@
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/Widgets/slider_bar.dart';
 import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/create_inquiry_usecase.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../Core/api/dio_consumer.dart';
 import 'data/cubit/create_inquiry_cubit.dart';
 import 'data/cubit/patient_inquiries_cubit.dart';
-import 'data/cubit/patient_inquiries_state.dart';
 import 'data/datasource/inquiry_remote_datasource_imp.dart';
 import 'data/repository/inquiry_repository_impl.dart';
 import 'domain/usecases/get_patient_inquiries_usecase.dart';
-import 'widgets/SectionTitle.dart';
 import 'widgets/_InquiryFormCard.dart';
 import 'widgets/_StatusCard.dart';
 import 'widgets/_SupportAppBar.dart';
 import 'widgets/_TrackStatusSection.dart';
 import 'widgets/_support_status_row.dart';
+import 'package:diagnosis_project/Feature/Inquiries/widgets/SubmitFunction.dart';
 
 class Inquire extends StatelessWidget {
   const Inquire({super.key});
@@ -58,6 +57,7 @@ class InquiriesScreen extends StatelessWidget {
     return const Scaffold(
       backgroundColor: Color(0xffF6F7FB),
       appBar: SupportAppBar(),
+      drawer: SliderBar(),
       body: SingleChildScrollView(
         padding: EdgeInsets.all(16),
         child: Column(
@@ -85,49 +85,15 @@ class _PreviousRepliesSection extends StatelessWidget {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
-        SectionTitle('Previous Replies'),
-        SizedBox(height: 8),
-        BlocBuilder<PatientInquiriesCubit, PatientInquiriesState>(
-          builder: (context, state) {
-            if (state is PatientInquiriesLoading) {
-              return CircularProgressIndicator();
-            }
-            if (state is PatientInquiriesLoaded) {
-              if (state.inquiries.isEmpty) {
-                return const Padding(
-                  padding: EdgeInsets.all(16),
-                  child: Text(
-                    'No inquiries yet',
-                    style: TextStyle(
-                      color: Colors.grey,
-                      fontSize: 16,
-                    ),
-                  ),
-                );
-              }
-              return Column(
-                children: state.inquiries.map((inquiry) {
-                  return StatusCard(
-                    title: inquiry.symptoms ?? '',
-                    status: inquiry.status ?? '',
-                    description: '# ${inquiry.inquiryId}',
-                    textButton: 'View Details',
-                    onPressed: () {
-                      dialogProgress(
-                        context,
-                        inquiryId: inquiry.inquiryId,
-                      );
-                    },
-                  );
-                }).toList(),
-              );
-            }
-            if (state is PatientInquiriesError) {
-              return Text(state.error);
-            }
-            return SizedBox();
+        StatusCard(
+          title: 'Persistent wrist pain',
+          status: 'Replied',
+          description: '# TKT-2024-1156',
+          textButton: "View details",
+          onPressed: () {
+            submitDialog(context);
           },
-        )
+        ),
       ],
     );
   }

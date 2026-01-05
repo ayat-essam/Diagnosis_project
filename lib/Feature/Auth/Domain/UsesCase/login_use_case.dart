@@ -9,6 +9,5 @@ class LoginUseCase {
   final AuthRepo _authRepo;
   LoginUseCase(this._authRepo);
 
-  Future<Either<failure, UserEntity>> call(LoginRequest loginReq) =>
-      _authRepo.login(loginReq);
+  // Future<Either<failure, UserEntity>> call(LoginRequest loginReq) => _authRepo.login(loginReq);
 }

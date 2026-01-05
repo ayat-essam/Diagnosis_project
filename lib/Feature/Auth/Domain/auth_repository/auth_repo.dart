@@ -7,8 +7,8 @@ import 'package:injectable/injectable.dart';
 
 abstract class AuthRepo{
 
-  Future<Either<failure, UserEntity>> login (LoginRequest loginReq);
-
-  Future<Either<failure, UserEntity>> register (RegisterRequest registerReq);
+  // Future<Either<failure, UserEntity>> login (LoginRequest loginReq);
+  //
+  // Future<Either<failure, UserEntity>> register (RegisterRequest registerReq);
 
 }

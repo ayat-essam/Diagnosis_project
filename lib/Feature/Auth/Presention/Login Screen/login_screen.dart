@@ -95,6 +95,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   if ((value == null || value.isEmpty)) {
                                     return "Please enter Your Password";
                                   }
+                                  if (value.length > 8) {
+                                    return "please enter 8 numbers";
+                                  }
                                   // if (value.length > 8) {
                                   //   return "please enter 8 numbers";
                                   // }
@@ -104,27 +107,36 @@ class _LoginScreenState extends State<LoginScreen> {
                                 obscureText: true,
                               ),
                               const Gap(10),
-                              TextButton(
-                                  onPressed: () => Navigator.pushReplacement(
-                                        context,
-                                        MaterialPageRoute(
-                                            builder: (context) =>
-                                                ForgetPasswordPage()),
-                                      ),
-                                  child: Text(
-                                    "Forget your Password",
-                                    style: StyleApp.font16BlackRegular.copyWith(
-                                        decoration: TextDecoration.underline),
-                                  )),
+// <<<<<<< HEAD
+                             TextButton(
+                             onPressed: () => Navigator.pushReplacement(
+                              context,
+                               MaterialPageRoute(builder: (context) =>  ForgetPasswordPage()),
+                               ),
+                                 child: Text("Forget your Password"
+                                 ,style: StyleApp.font16BlackRegular.copyWith(
+                                       decoration: TextDecoration.underline),)),
+                          
+// =======
+//                               TextButton(
+//                                   onPressed: () => Navigator.pushReplacement(
+//                                         context,
+//                                         MaterialPageRoute(
+//                                             builder: (context) =>
+//                                                 ResetPassword()),
+//                                       ),
+//                                   child: Text(
+//                                     "Forget your Password",
+//                                     style: StyleApp.font16BlackRegular.copyWith(
+//                                         decoration: TextDecoration.underline),
+//                                   )),
+// >>>>>>> Consultations-features
                               const Gap(60),
                               CustomButton(
                                 onTap: () {
                                   if (formKey.currentState!.validate()) {
-                                    // Navigator.of(context)
-                                    //     .pushNamed(Routers.DashBoard);
-                                    Navigator.push(context, MaterialPageRoute(builder: (context){
-                                      return PatientDashboard();
-                                    }));
+                                    Navigator.of(context)
+                                        .pushNamed(Routers.DashBoard);
                                   }
                                 },
                                 text: "Sign In",

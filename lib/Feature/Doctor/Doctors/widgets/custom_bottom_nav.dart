@@ -35,6 +35,7 @@ class CustomBottomNav extends StatelessWidget {
         height: 70.h,
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
+// <<<<<<< HEAD
           color:  AppColors.BluePrimary,
           borderRadius: BorderRadius.circular(40.r),
           boxShadow: [
@@ -42,6 +43,34 @@ class CustomBottomNav extends StatelessWidget {
               color: AppColors.black.withOpacity(0.15),
               blurRadius: 10,
               offset: const Offset(0, 6),
+// =======
+//           color: const Color(0xFF4A8CFF),
+//           borderRadius: BorderRadius.circular(40),
+//         ),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             _navItem(
+//               index: 0,
+//               icon: Icons.home_outlined,
+//               label: "Home",
+//             ),
+//             _navItem(
+//               index: 1,
+//               icon: Icons.hub_outlined,
+//               label: "Explore",
+//             ),
+//             _navItem(
+//               index: 2,
+//               icon: Icons.medical_services_outlined,
+//               label: "Doctors",
+//               isCenter: true,
+//             ),
+//             _navItem(
+//               index: 3,
+//               icon: Icons.settings_outlined,
+//               label: "Settings",
+// >>>>>>> Consultations-features
             ),
           ],
         ),

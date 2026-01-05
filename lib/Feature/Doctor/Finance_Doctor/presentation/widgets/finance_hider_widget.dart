@@ -27,7 +27,6 @@ class FinanceHeader extends StatelessWidget {
         Align(
           alignment: Alignment.topRight,
           child: ElevatedButton(
-
             style: ElevatedButton.styleFrom(
               backgroundColor: AppColors.BluePrimary,
               shape: RoundedRectangleBorder(
@@ -36,7 +35,8 @@ class FinanceHeader extends StatelessWidget {
               padding: EdgeInsets.symmetric(horizontal: 10.w, vertical: 13.h),
             ),
             onPressed: () {},
-            child: const Text('Request withdrawal',
+            child: const Text(
+              'Request withdrawal',
               style: TextStyle(
                   color: AppColors.whiteBackground,
                   fontFamily: 'Poppins',

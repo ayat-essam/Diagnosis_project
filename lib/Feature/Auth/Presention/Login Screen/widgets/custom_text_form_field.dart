@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 
 import '../../../../../Core/Theme App/colors.dart';
 
-
 class CustomTextFormField extends StatelessWidget {
   String? hint;
 
@@ -25,17 +24,17 @@ class CustomTextFormField extends StatelessWidget {
     this.onChanged,
     this.controller,
     this.keyboardType,
-    this.validator, required bool filled,  required bool obscureText,
+    this.validator,
+    required bool filled,
+    required bool obscureText,
   });
 
   @override
   Widget build(BuildContext context) {
     return TextFormField(
       decoration: InputDecoration(
-       hoverColor: AppColors.gray,
-        hintStyle: TextStyle(
-          color: AppColors.BluePrimary
-        ),
+        hoverColor: AppColors.gray,
+        hintStyle: TextStyle(color: AppColors.BluePrimary),
         focusedBorder: OutlineInputBorder(
           borderRadius: BorderRadius.circular(20),
           borderSide: const BorderSide(color: AppColors.BluePrimary),
@@ -68,7 +67,7 @@ class CustomTextFormField extends StatelessWidget {
           ),
         ),
       ),
-      style:StyleApp.font15GrayRegular.copyWith(color: AppColors.BluePrimary),
+      style: StyleApp.font15GrayRegular.copyWith(color: AppColors.BluePrimary),
       onTap: onTap,
       onChanged: onChanged,
       controller: controller,

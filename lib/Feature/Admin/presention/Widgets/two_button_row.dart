@@ -4,8 +4,21 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-class DialogActions extends StatelessWidget {
-  const DialogActions({super.key});
+class TwoButtonRow extends StatelessWidget {
+  final String primaryText;
+  final VoidCallback onPrimaryTap;
+  final String secondaryText;
+  final VoidCallback onSecondaryTap;
+  final Color backgroundColor;
+
+  const TwoButtonRow({
+    super.key,
+    required this.primaryText,
+    required this.onPrimaryTap,
+    required this.secondaryText,
+    required this.onSecondaryTap,
+    this.backgroundColor=AppColors.BluePrimary,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -13,28 +26,27 @@ class DialogActions extends StatelessWidget {
       children: [
         Expanded(
           child: CustomAppButton(
-            onTap: () {},
-            text: 'Send Reply',
+            onTap: onPrimaryTap,
+            text: primaryText,
             width: 140.w,
             borderRedius: 8.r,
-            verticalPadding: 12,
+            verticalPadding: 8.h,
+            backgroundColor: backgroundColor,
           ),
         ),
         Gap(10.w),
         Expanded(
           child: CustomAppButton(
-            onTap: () {
-              Navigator.pop(context);
-            },
-            text: 'Cancel',
+            onTap: onSecondaryTap,
+            text: secondaryText,
             width: 140.w,
             borderRedius: 8.r,
-            verticalPadding: 12,
             backgroundColor: AppColors.greyLight,
             borderColor: AppColors.gray74,
+            verticalPadding: 8.h,
           ),
         ),
-    ]
+      ],
     );
   }
 }

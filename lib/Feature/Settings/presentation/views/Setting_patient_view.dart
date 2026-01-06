@@ -30,7 +30,7 @@ class SettingPatientView extends StatelessWidget {
           //   color: Colors.grey[300],
           // ),
           Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 14),
+            padding: const EdgeInsets.symmetric(horizontal: 14,vertical: 16),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: [

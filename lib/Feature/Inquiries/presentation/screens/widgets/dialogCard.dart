@@ -1,13 +1,13 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/api/dio_consumer.dart';
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/inquiry_details_cubit.dart';
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/inquiry_details_state.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/cubit/inquiry_details_cubit.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/cubit/inquiry_details_state.dart';
 import 'package:diagnosis_project/Feature/Inquiries/data/datasource/inquiry_remote_datasource_imp.dart';
 import 'package:diagnosis_project/Feature/Inquiries/data/repository/inquiry_repository_impl.dart';
 import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/get_inquiry_details_usecase.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/gradinetCard.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/PrimaryButton.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/gradinetCard.dart';
 import 'package:dio/dio.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:flutter/material.dart';
@@ -198,7 +198,7 @@ class Attachmens extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: files!.map((filePath) {
-                final fileName = filePath.split('/').last;
+                 final fileName = getCleanFileName(filePath);
 
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 6),
@@ -213,4 +213,11 @@ class Attachmens extends StatelessWidget {
               }).toList(),
             )));
   }
+}
+
+String getCleanFileName(String filePath) {
+  final fileName = filePath.split('/').last;
+  final parts = fileName.split('_');
+
+  return parts.length > 1 ? parts.sublist(1).join('_') : fileName;
 }

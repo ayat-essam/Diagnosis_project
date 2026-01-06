@@ -11,8 +11,8 @@ import 'package:gap/gap.dart';
 
 import '../../../../Core/reusable_widgets/custom_app_bar_widget.dart';
 import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
-import '../../../Inquiries/data/cubit/create_inquiry_cubit.dart';
-import '../../../Inquiries/data/cubit/create_inquiry_state.dart';
+import '../../../Inquiries/presentation/cubit/create_inquiry_cubit.dart';
+import '../../../Inquiries/presentation/cubit/create_inquiry_state.dart';
 
 class DirectoryScreen extends StatelessWidget {
   const DirectoryScreen({super.key});

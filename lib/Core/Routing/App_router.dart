@@ -1,5 +1,6 @@
 import 'package:diagnosis_project/Core/Routing/routes.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/Inquiries_Screen.dart';
 import 'package:flutter/material.dart';
 import '../../Feature/Ai Diagnosis Result/Ai_Diagnosis_Result_Screen.dart';
 
@@ -15,7 +16,6 @@ import '../../Feature/Directory/presentation/screens/Directory_ Screen.dart';
 import '../../Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 import '../../Feature/Help/presentation/screens/Help_Screen.dart';
 
-import '../../Feature/Inquiries/Inquiries_Screen.dart';
 import '../../Feature/Medical Files/Medical_Files_Screen.dart';
 import '../../Feature/Settings/Settings_Screen.dart';
 // <<<<<<< HEAD

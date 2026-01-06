@@ -1,4 +1,4 @@
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/patient_inquiries_state.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/cubit/patient_inquiries_state.dart';
 import 'package:diagnosis_project/generated/intl/messages_ar.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';

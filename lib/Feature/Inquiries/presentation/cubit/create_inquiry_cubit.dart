@@ -1,10 +1,10 @@
 import 'dart:io' show File;
 
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/create_inquiry_state.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/cubit/create_inquiry_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../domain/usecases/create_inquiry_usecase.dart';
-import '../models/create_inquiry_request.dart';
+import '../../data/models/create_inquiry_request.dart';
 
 class CreateInquiryCubit extends Cubit<CreateInquiryState> {
   final CreateInquiryUseCase createInquiryUseCase;

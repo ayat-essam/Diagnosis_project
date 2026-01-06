@@ -3,18 +3,18 @@ import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/create_inqui
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
-import '../../Core/api/dio_consumer.dart';
-import 'data/cubit/create_inquiry_cubit.dart';
-import 'data/cubit/patient_inquiries_cubit.dart';
-import 'data/datasource/inquiry_remote_datasource_imp.dart';
-import 'data/repository/inquiry_repository_impl.dart';
-import 'domain/usecases/get_patient_inquiries_usecase.dart';
+import '../../../../Core/api/dio_consumer.dart';
+import '../cubit/create_inquiry_cubit.dart';
+import '../cubit/patient_inquiries_cubit.dart';
+import '../../data/datasource/inquiry_remote_datasource_imp.dart';
+import '../../data/repository/inquiry_repository_impl.dart';
+import '../../domain/usecases/get_patient_inquiries_usecase.dart';
 import 'widgets/_InquiryFormCard.dart';
 import 'widgets/_StatusCard.dart';
 import 'widgets/_SupportAppBar.dart';
 import 'widgets/_TrackStatusSection.dart';
 import 'widgets/_support_status_row.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/SubmitFunction.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/SubmitFunction.dart';
 
 class Inquire extends StatelessWidget {
   const Inquire({super.key});

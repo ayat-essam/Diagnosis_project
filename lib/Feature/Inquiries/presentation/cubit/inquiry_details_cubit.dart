@@ -1,4 +1,4 @@
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/inquiry_details_state.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/cubit/inquiry_details_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:diagnosis_project/Feature/Inquiries/domain/usecases/get_inquiry_details_usecase.dart';
 

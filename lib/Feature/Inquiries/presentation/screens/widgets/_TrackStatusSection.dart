@@ -1,10 +1,10 @@
 // ---------------- Track Status ----------------
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/patient_inquiries_cubit.dart';
-import 'package:diagnosis_project/Feature/Inquiries/data/cubit/patient_inquiries_state.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/_StatusCard.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/cubit/patient_inquiries_cubit.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/cubit/patient_inquiries_state.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/SectionTitle.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/_StatusCard.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/dialogCard.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

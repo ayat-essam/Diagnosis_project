@@ -1,25 +1,23 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
 
-class SwitchIcon extends StatefulWidget {
-  const SwitchIcon({super.key});
+class SwitchIcon extends StatelessWidget {
+  final bool value;
+  final ValueChanged<bool> onChanged;
+  final bool isDisabled;
 
-  @override
-  State<SwitchIcon> createState() => _SwitchIconState();
-}
-
-class _SwitchIconState extends State<SwitchIcon> {
-  bool isOn = true;
+  const SwitchIcon({
+    super.key,
+    required this.value,
+    required this.onChanged,
+    this.isDisabled = false,
+  });
 
   @override
   Widget build(BuildContext context) {
     return Switch(
-      value: isOn,
-      onChanged: (value) {
-        setState(() {
-          isOn = value;
-        });
-      },
+      value: value,
+      onChanged: isDisabled ? null : onChanged,
       thumbColor: WidgetStateProperty.all(Colors.white),
       materialTapTargetSize: MaterialTapTargetSize.shrinkWrap,
       trackOutlineColor: WidgetStateProperty.all(Colors.transparent),

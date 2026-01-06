@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Inquiries/Inquiries_Screen.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/Inquiries_Screen.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/Setting_patient_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';

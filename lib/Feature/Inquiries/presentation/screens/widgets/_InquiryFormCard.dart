@@ -1,16 +1,16 @@
 // ---------------- Inquiry Form ----------------
 import 'package:diagnosis_project/Feature/Directory/presentation/screens/Directory_%20Screen.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/SectionTitle.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/dialogCard.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/PrimaryButton.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/SectionTitle.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/dialogCard.dart';
 import 'package:dotted_border/dotted_border.dart';
 import 'package:file_picker/file_picker.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
-import '../data/cubit/create_inquiry_cubit.dart';
-import '../data/cubit/create_inquiry_state.dart';
-import '../data/models/create_inquiry_request.dart';
+import '../../cubit/create_inquiry_cubit.dart';
+import '../../cubit/create_inquiry_state.dart';
+import '../../../data/models/create_inquiry_request.dart';
 import 'dart:io';
 
 class InquiryFormCard extends StatefulWidget {

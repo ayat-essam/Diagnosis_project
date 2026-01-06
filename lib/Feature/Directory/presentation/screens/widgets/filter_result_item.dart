@@ -8,8 +8,8 @@ import 'package:gap/gap.dart';
 
 // import '../../../../Guest/Guest Home/Models/doctors_model.dart';
 import '../../../../Admin/doctors_management/data/models/doctor_model.dart';
-import '../../../../Inquiries/data/cubit/create_inquiry_cubit.dart';
-import '../../../../Inquiries/data/cubit/create_inquiry_state.dart';
+import '../../../../Inquiries/presentation/cubit/create_inquiry_cubit.dart';
+import '../../../../Inquiries/presentation/cubit/create_inquiry_state.dart';
 
 class FilterResultItem extends StatelessWidget {
   const FilterResultItem({

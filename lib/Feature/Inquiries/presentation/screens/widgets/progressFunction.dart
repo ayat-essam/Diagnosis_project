@@ -1,8 +1,8 @@
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/PrimaryButton.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/gradinetCard.dart';
 import 'package:flutter/material.dart';
 import 'package:intl/intl.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/PrimaryButton.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/gradinetCard.dart';
-import 'package:diagnosis_project/Feature/Inquiries/widgets/_InquiryFormCard.dart';
+import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/widgets/_InquiryFormCard.dart';
 
 Future<void> dialogProgress(BuildContext context) {
   final formatted = DateFormat(' MMMM d, y').format(DateTime.now());

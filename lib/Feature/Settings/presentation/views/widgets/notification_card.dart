@@ -62,7 +62,6 @@ class NotificationCard extends StatelessWidget {
                   ),
                   trailing: SwitchIcon(
                     value: state.receiveEmailNotifications,
-                    isDisabled: state.isLoading,
                     onChanged: (value) {
                       cubit.changeReceiveEmailNotifications(value);
                     },
@@ -86,7 +85,6 @@ class NotificationCard extends StatelessWidget {
                   trailing: SwitchIcon(
                     value: false,
                     onChanged: (_) {},
-                    isDisabled: true,
                   ),
                 ),
               ],

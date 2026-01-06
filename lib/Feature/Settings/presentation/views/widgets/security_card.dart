@@ -115,7 +115,6 @@ class SecurityCard extends StatelessWidget {
                 ),
                 trailing: SwitchIcon(
                   value: state.twoFactorEnabled,
-                  isDisabled: state.isLoading,
                   onChanged: (value) {
                     cubit.changeTwoFactorEnabled(value);
                   },

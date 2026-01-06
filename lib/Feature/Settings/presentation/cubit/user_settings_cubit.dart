@@ -14,7 +14,7 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
   }) : super(const UserSettingsState());
 
   Future<void> getUserSettings() async {
-    emit(state.copyWith(isLoading: true, errorModel: null));
+    emit(state.copyWith(isLoading: true,));
 
     final result = await getUserSettingsUseCase();
 
@@ -36,7 +36,7 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
   }
 
   Future<void> updateUserSettings() async {
-    emit(state.copyWith(isLoading: true, isUpdated: false, errorModel: null));
+    emit(state.copyWith(isLoading: true,));
 
     final result = await updateUserSettingsUseCase(
       userSettingsModel: UserSettingsModel(
@@ -46,28 +46,20 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
     );
 
     result.fold(
-      (error) => emit(
-        state.copyWith(
-          isLoading: false,
-          errorModel: error,
-        ),
-      ),
-      (_) => emit(
-        state.copyWith(
-          isLoading: false,
-          isUpdated: true,
-        ),
-      ),
+      (error) => emit(state.copyWith(isLoading: false, errorModel: error)),
+      (_) => emit(state.copyWith(isLoading: false, isUpdated: true)),
     );
   }
 
-  void changeReceiveEmailNotifications(bool value) {
-    emit(state.copyWith(receiveEmailNotifications: value, isUpdated: false));
-    updateUserSettings();
+  void changeReceiveEmailNotifications(bool value)async {
+    emit(state.copyWith(receiveEmailNotifications: value));
+
+   await updateUserSettings();
   }
 
-  void changeTwoFactorEnabled(bool value) {
-    emit(state.copyWith(twoFactorEnabled: value, isUpdated: false));
-    updateUserSettings();
+  void changeTwoFactorEnabled(bool value)async {
+    emit(state.copyWith(twoFactorEnabled: value));
+
+   await updateUserSettings();
   }
 }

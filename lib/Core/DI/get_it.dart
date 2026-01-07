@@ -1,3 +1,16 @@
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/data/datasources/system_settings_remote_data_source.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/data/datasources/system_settings_remote_data_source_imp.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/data/repositories/system_settings_repository_impl.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/repositories/system_settings_repository.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/add_admin_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/get_reply_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/send_message_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/send_reply_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/set_ai_rate_limit_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/set_doctor_limit_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/set_doctor_work_hour_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/toggle_ai_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/add_admin_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/datasource/doctor_management_remote_data_source.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/datasource/doctor_management_remote_data_source_imp.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/repositories/doctors_management_repo_imp.dart';
@@ -77,4 +90,49 @@ Future<void> setupServiceLocator() async {
       updateUserSettingsUseCase: sl(),
     ),
   );
+
+  // ---------------- Data Layer (SystemSettings Data Source) ----------------
+  sl.registerLazySingleton<SystemSettingsDataSource>(
+    () => SystemSettingsDataSourceImpl(apiConsumer: sl()),
+  );
+
+  // ---------------- Data Layer (SystemSettings Repository) ----------------
+  sl.registerLazySingleton<SystemSettingsRepository>(
+    () => SystemSettingsRepositoryImpl(systemSettingsDataSource: sl()),
+  );
+
+  // ---------------- Domain Layer (SystemSettings Use Cases) ----------------
+  sl.registerLazySingleton(
+    () => AddAdminUseCase(repository: sl()),
+  );
+
+  sl.registerLazySingleton(
+    () => SetAiRateLimitUseCase(repository: sl()),
+  );
+
+  sl.registerLazySingleton(
+    () => SetDoctorRateLimitUseCase(repository: sl()),
+  );
+
+  sl.registerLazySingleton(
+    () => SetDoctorWorkHourUseCase(repository: sl()),
+  );
+
+  sl.registerLazySingleton(
+    () => ToggleAiUseCase(repository: sl()),
+  );
+
+  sl.registerLazySingleton(
+    () => SendMessageUseCase(repository: sl()),
+  );
+
+  sl.registerLazySingleton(
+    () => SendReplyUseCase(repository: sl()),
+  );
+
+  sl.registerLazySingleton(
+    () => GetReplyUseCase(repository: sl()),
+  );
+  
+  sl.registerFactory(() => AddAdminCubit(sl()));
 }

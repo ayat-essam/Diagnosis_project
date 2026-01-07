@@ -24,7 +24,7 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
       emit(ChangePasswordLoading());
 
       final response = await apiConsumer.post(
-        APIConstants.changePasswordURL,
+        ApiConstants.changePasswordURL,
         data: {
           "currentPassword": currentPasswordController.text.trim(),
           "newPassword": newPasswordController.text.trim(),

@@ -11,7 +11,7 @@ class DioConsumer extends ApiConsumer {
   final Dio dio;
 
   DioConsumer({required this.dio}) {
-    dio.options.baseUrl = APIConstants.baseURL;
+    dio.options.baseUrl = ApiConstants.baseURL;
     dio.interceptors.add(ApiInterceptors());
     dio.interceptors.add(LogInterceptor(
       request: true,

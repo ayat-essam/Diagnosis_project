@@ -13,6 +13,7 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
     required this.updateUserSettingsUseCase,
   }) : super(const UserSettingsState());
 
+
   Future<void> getUserSettings() async {
     emit(state.copyWith(isLoading: true,));
 

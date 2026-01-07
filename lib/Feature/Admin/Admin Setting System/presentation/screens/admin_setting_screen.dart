@@ -1,4 +1,6 @@
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/add_admin_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -37,12 +39,28 @@ class _AdminSettingScreenState extends State<AdminSettingScreen> {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                'System Settings',
-                style: TextStyle(
-                  fontSize: 22.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+              Row(
+                children: [
+                  Text(
+                    'System Settings',
+                    style: TextStyle(
+                      fontSize: 22.sp,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Spacer(),
+                  CustomAppButton(
+                    onTap: () {
+                      showDialog(
+                        context: context,
+                        builder: (context) => const AddAdminDialog(),
+                      );
+                    },
+                    text: 'Add doctor',
+                    width: 145.w,
+                    prefixIcon: Icons.add,
+                  )
+                ],
               ),
               Gap(4.h),
               Text(

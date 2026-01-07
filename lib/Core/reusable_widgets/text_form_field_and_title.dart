@@ -10,12 +10,11 @@ class TextformFieldAndTitle extends StatelessWidget {
     super.key,
     required this.title,
     required this.onChanged,
-    required this.initialValue,
+    this.initialValue,
     this.keyboardType,
-
   });
   final String title;
-  final String initialValue;
+  final String? initialValue;
   final void Function(String)? onChanged;
   final TextInputType? keyboardType;
   @override
@@ -25,15 +24,14 @@ class TextformFieldAndTitle extends StatelessWidget {
       children: [
         Text(
           title,
-          style:
-              StyleApp.font16BlueSemiBold.copyWith(color: AppColors.gray6B),
+          style: StyleApp.font16BlueSemiBold.copyWith(color: AppColors.gray6B),
         ),
         Gap(8.h),
         CustomTextFormFieldWidget(
           borderRedius: 14.r,
           onChanged: onChanged,
           keyboardType: keyboardType,
-          initialValue: initialValue,
+          initialValue: initialValue??'',
         ),
       ],
     );

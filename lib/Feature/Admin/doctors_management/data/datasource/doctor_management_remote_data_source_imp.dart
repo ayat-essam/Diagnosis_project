@@ -10,7 +10,7 @@ class DoctorManagementRemoteDataSourceImp
   DoctorManagementRemoteDataSourceImp(this.apiConsumer);
   @override
   Future<String> addDoctor({required AddDoctorRequest addDoctorRequest}) async {
-    final response = await apiConsumer.post(APIConstants.addDoctorEndPoint,
+    final response = await apiConsumer.post(ApiConstants.addDoctorEndPoint,
         data: addDoctorRequest.toJson());
     return response['message'];
   }

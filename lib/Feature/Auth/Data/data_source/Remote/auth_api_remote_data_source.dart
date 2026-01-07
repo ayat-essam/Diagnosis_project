@@ -20,7 +20,7 @@ class AuthApiRemoteDataSource extends AuthRemoteDataSource {
   Future<LoginResponse> login(LoginRequest loginReq) async {
     try {
       final response =
-      await dio.post(APIConstants.login,
+      await dio.post(ApiConstants.login,
           data: loginReq.toJson());
       print(response.data);
 
@@ -38,7 +38,7 @@ class AuthApiRemoteDataSource extends AuthRemoteDataSource {
   @override
   Future<RegisterResponse> register(RegisterRequest registerReq) async {
     try {
-      final response = await dio.post(APIConstants.register,
+      final response = await dio.post(ApiConstants.register,
           data: registerReq.toJson());
       print(response.data);
       return RegisterResponse.fromJson(response.data());

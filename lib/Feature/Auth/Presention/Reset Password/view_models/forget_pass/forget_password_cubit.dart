@@ -18,7 +18,7 @@ class ForgetPasswordCubit extends Cubit<ForgetPasswordState> {
       emit(ForgetPasswordLoading());
 
       final response = await apiConsumer.post(
-        APIConstants.forgetPasswordURL,
+        ApiConstants.forgetPasswordURL,
         data: {
           "email": emailController.text.trim(),
           "clientUri": "https://diagnosisapp.com/reset-password",

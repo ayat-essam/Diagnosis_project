@@ -1,14 +1,13 @@
-class GetOutsideResponse {
-final String fullName;
-  final String email;
-  final String message;
-  final String status;
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/entities/get_out_side_entity.dart';
+
+class GetOutsideResponse extends GetOutSideEntity {
   GetOutsideResponse({
-    required this.fullName,
-    required this.email,
-    required this.message,
-    required this.status,
+    required super.fullName,
+    required super.email,
+    required super.message,
+    required super.status,
   });
+
   factory GetOutsideResponse.fromJson(Map<String, dynamic> json) {
     return GetOutsideResponse(
       fullName: json['fullName'],

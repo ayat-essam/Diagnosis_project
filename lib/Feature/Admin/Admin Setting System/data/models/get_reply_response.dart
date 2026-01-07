@@ -1,11 +1,10 @@
-class GetReplyResponse {
-  final int requestId;
-  final String reply;
-  final int status;
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/entities/get_reply_entity.dart';
+
+class GetReplyResponse extends GetReplyEntity {
   GetReplyResponse({
-    required this.requestId,
-    required this.reply,
-    required this.status,
+    required super.requestId,
+    required super.reply,
+    required super.status,
   });
   factory GetReplyResponse.fromJson(Map<String, dynamic> json) {
     return GetReplyResponse(

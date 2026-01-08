@@ -1,4 +1,3 @@
-
 // ---------------- Status Row ----------------
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -8,14 +7,27 @@ class SupportStatusRow extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Wrap(
-      spacing: 8,
-      runSpacing: 8,
-      children: const [
-        _StatusChip(text: '24/7 Support Available'),
-        SizedBox(width: 8),
-        _StatusChip(
-            text: 'Average Response: 24–48 hours', icon: Icons.info_outline),
+    return Row(
+      mainAxisAlignment: MainAxisAlignment.spaceBetween,
+      children: [
+        Row(
+          children: [
+            Image.asset("assets/images/doctor.png", width: 40),
+            const Text(
+              "24/7 Medical-oriented",
+              style: TextStyle(color: Color(0xff207EFF)),
+            ),
+          ],
+        ),
+        const Row(
+          children: [
+            Icon(Icons.info_outline, color: Color(0xff207EFF)),
+            Text(
+              "Average Response:\n 24–48 hours",
+              style: TextStyle(color: Color(0xff207EFF)),
+            ),
+          ],
+        ),
       ],
     );
   }
@@ -47,11 +59,12 @@ class _StatusChip extends StatelessWidget {
             maxLines: 2,
             softWrap: true,
             style: TextStyle(
-                fontSize: icon != null ? 13.sp : 11.sp,
-                color: Colors.blue,
-                fontWeight: FontWeight.w400,
-                overflow: TextOverflow.ellipsis,
-                height: 2),
+              fontSize: icon != null ? 13.sp : 11.sp,
+              color: Colors.blue,
+              fontWeight: FontWeight.w400,
+              overflow: TextOverflow.ellipsis,
+              height: 2,
+            ),
           ),
         ],
       ),

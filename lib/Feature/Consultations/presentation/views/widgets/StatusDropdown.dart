@@ -13,9 +13,9 @@ class _StatusDropdownState extends State<StatusDropdown> {
 
   final List<String> items = [
     'All statuses',
-    'Active',
-    'Inactive',
-    'Pending',
+    'New',
+    'Rejected',
+    'Accepted',
   ];
 
   @override

@@ -35,15 +35,41 @@ class CustomBottomNav extends StatelessWidget {
         height: 70.h,
         padding: EdgeInsets.symmetric(horizontal: 20.w),
         decoration: BoxDecoration(
-// <<<<<<< HEAD
-          color:  AppColors.BluePrimary,
+          color: AppColors.BluePrimary,
+
           borderRadius: BorderRadius.circular(40.r),
           boxShadow: [
             BoxShadow(
               color: AppColors.black.withOpacity(0.15),
               blurRadius: 10,
               offset: const Offset(0, 6),
-// =======
+            )
+          ],
+        ),
+        // child: Row(
+        //   mainAxisAlignment: MainAxisAlignment.spaceBetween,
+        //   children: [
+        //     _navItem(
+        //       index: 0,
+        //       icon: Icons.home_outlined,
+        //       label: "Home",
+        //     ),
+        //     _navItem(
+        //       index: 1,
+        //       icon: Icons.hub_outlined,
+        //       label: "Explore",
+        //     ),
+        //     _navItem(
+        //       index: 2,
+        //       icon: Icons.medical_services_outlined,
+        //       label: "Doctors",
+        //       isCenter: true,
+        //     ),
+        //     _navItem(
+        //       index: 3,
+        //       icon: Icons.settings_outlined,
+        //       label: "Settings",
+
 //           color: const Color(0xFF4A8CFF),
 //           borderRadius: BorderRadius.circular(40),
 //         ),
@@ -70,7 +96,70 @@ class CustomBottomNav extends StatelessWidget {
 //               index: 3,
 //               icon: Icons.settings_outlined,
 //               label: "Settings",
-// >>>>>>> Consultations-features
+        //     ),
+        //   ],
+        // ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: List.generate(_items.length, (index) {
+            final isActive = index == currentIndex;
+
+
+
+          color: const Color(0xFF4A8CFF),
+          borderRadius: BorderRadius.circular(40),
+        ),
+        child: Row(
+          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+          children: [
+            _navItem(
+              index: 0,
+              icon: Icons.home_outlined,
+              label: "Home",
+            ),
+            _navItem(
+              index: 1,
+              icon: Icons.hub_outlined,
+              label: "Explore",
+            ),
+            _navItem(
+              index: 2,
+              icon: Icons.medical_services_outlined,
+              label: "Doctors",
+              isCenter: true,
+            ),
+            _navItem(
+              index: 3,
+              icon: Icons.settings_outlined,
+              label: "Settings",
+
+
+//           color: const Color(0xFF4A8CFF),
+//           borderRadius: BorderRadius.circular(40),
+//         ),
+//         child: Row(
+//           mainAxisAlignment: MainAxisAlignment.spaceBetween,
+//           children: [
+//             _navItem(
+//               index: 0,
+//               icon: Icons.home_outlined,
+//               label: "Home",
+//             ),
+//             _navItem(
+//               index: 1,
+//               icon: Icons.hub_outlined,
+//               label: "Explore",
+//             ),
+//             _navItem(
+//               index: 2,
+//               icon: Icons.medical_services_outlined,
+//               label: "Doctors",
+//               isCenter: true,
+//             ),
+//             _navItem(
+//               index: 3,
+//               icon: Icons.settings_outlined,
+//               label: "Settings",
             ),
           ],
         ),
@@ -88,14 +177,17 @@ class CustomBottomNav extends StatelessWidget {
                   vertical: 8.h,
                 ),
                 decoration: BoxDecoration(
-                  color: isActive ?  AppColors.whiteBackground : Colors.transparent,
+                  color:
+                      isActive ? AppColors.whiteBackground : Colors.transparent,
                   borderRadius: BorderRadius.circular(30.r),
                 ),
                 child: Row(
                   children: [
                     Icon(
                       _items[index],
-                      color: isActive ?AppColors.BluePrimary: AppColors.whiteBackground,
+                      color: isActive
+                          ? AppColors.BluePrimary
+                          : AppColors.whiteBackground,
                     ),
                     if (isActive) ...[
                       SizedBox(width: 6.w),
@@ -115,6 +207,9 @@ class CustomBottomNav extends StatelessWidget {
           }),
         ),
       ),
+    ),
+    ),
+    ),
     );
   }
 }

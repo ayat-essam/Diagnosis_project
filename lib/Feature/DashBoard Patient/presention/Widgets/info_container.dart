@@ -32,8 +32,8 @@ class InfoContainer extends StatelessWidget {
       child: FittedBox(
         child: Padding(
           padding: const EdgeInsets.all(12.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
+          child: Wrap(
+            crossAxisAlignment: WrapCrossAlignment.start,
             spacing: 2.h,
             children: [
               CircleAvatar(

@@ -1,10 +1,17 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/Consultation_form.dart';
+<<<<<<< HEAD
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/DataTypesList.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/DiagnosisCard.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/StatusDropdown.dart';
+=======
 
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/StatusDropdown.dart';
 
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/consultation_item.dart';
+>>>>>>> Deveoplment
 import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/custom_search_consultations.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/diagnosis_card.dart';
+import 'package:diagnosis_project/Feature/Consultations/presentation/views/widgets/types_data_list.dart';
 import 'package:flutter/material.dart';
 
 class ConsultationsSection extends StatelessWidget {
@@ -70,11 +77,17 @@ class ConsultationsSection extends StatelessWidget {
                   SizedBox(
                     height: 21,
                   ),
-                  ConsultationForm(),
+                  // ConsultationForm(),
+                  DiagnosisCard(),
+<<<<<<< HEAD
+=======
                   SizedBox(
                     height: 43,
                   ),
-                  ConsultationItem()
+
+                  // ConsultationItem()
+                  DataTypesList(),
+>>>>>>> Deveoplment
                 ],
               ))),
     );

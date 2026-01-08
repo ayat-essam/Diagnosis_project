@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
-import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/Widgets/patient_dash_board_appbar.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar_widget.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/buttons_taps.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/common_diagnosis_chart.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/new_vs_returning_chart.dart';
@@ -19,7 +19,7 @@ class DoctorDashboardScreen extends StatelessWidget {
       backgroundColor: AppColors.whiteBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.h),
-        child: const PationDashBoardAppbar(),
+        child: const CustomAppBarWidget(),
       ),
       drawer: const SliderBarDoctor(),
       body: SingleChildScrollView(

@@ -3,6 +3,7 @@ import 'package:diagnosis_project/Core/error/failure.dart';
 import 'package:diagnosis_project/Feature/Auth/Data/models/login_request.dart';
 import 'package:diagnosis_project/Feature/Auth/Data/models/register_request.dart';
 import 'package:diagnosis_project/Feature/Auth/Domain/Entity/user_entity.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class AuthRepo{
 

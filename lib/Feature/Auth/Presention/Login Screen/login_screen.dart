@@ -3,6 +3,7 @@ import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/widgets/custom_text_form_field.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Register%20Screen/register_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/forget_password.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/patient_dashboard.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 
@@ -97,6 +98,9 @@ class _LoginScreenState extends State<LoginScreen> {
                                   if (value.length > 8) {
                                     return "please enter 8 numbers";
                                   }
+                                  // if (value.length > 8) {
+                                  //   return "please enter 8 numbers";
+                                  // }
                                   return null;
                                 },
                                 filled: true,

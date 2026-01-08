@@ -3,9 +3,9 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import 'custom_text_form_field.dart';
-import 'dialog_actions.dart';
-import 'dialog_header.dart';
+import 'add_doctors_widgets/custom_text_form_field.dart';
+import '../../../../../../Core/reusable_widgets/two_button_row.dart';
+import '../../../../../../Core/reusable_widgets/dialog_header.dart';
 
 class ReplyToDoctorDialog extends StatelessWidget {
   const ReplyToDoctorDialog({super.key});
@@ -25,8 +25,8 @@ class ReplyToDoctorDialog extends StatelessWidget {
               const DialogHeader(title: 'Subject'),
               CustomTextFormFieldWidget(
                 hintText: 'subject',
-                height: 30.h,
-                maxLines: 2,
+                height: 20.h,
+                maxLines: 1,
               ),
               Gap(16.h),
               const DialogHeader(title: 'Details'),
@@ -43,7 +43,12 @@ class ReplyToDoctorDialog extends StatelessWidget {
                 maxLines: 3,
               ),
               Gap(24.h),
-              const DialogActions(),
+              TwoButtonRow(
+                primaryText: 'Send Reply',
+                onPrimaryTap: () {},
+                secondaryText: 'Cancel',
+                onSecondaryTap: () => Navigator.pop(context),
+              ),
             ],
           ),
         ),

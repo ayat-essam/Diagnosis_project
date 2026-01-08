@@ -9,7 +9,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../../DashBoard Patient/presention/Widgets/patient_dash_board_appbar.dart';
+import '../../../../../Core/reusable_widgets/custom_app_bar_widget.dart';
 
 class AdminDashboardScreen extends StatelessWidget {
   const AdminDashboardScreen({super.key});
@@ -20,7 +20,7 @@ class AdminDashboardScreen extends StatelessWidget {
       backgroundColor: AppColors.whiteBackground,
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(70.h),
-        child: const PationDashBoardAppbar(),
+        child: const CustomAppBarWidget(),
       ),
       drawer: const SliderBarAdmin(),
       body: SingleChildScrollView(

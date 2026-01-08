@@ -1,3 +1,6 @@
+
+import 'dart:developer';
+
 // lib/features/consultation/data/repositories/consultation_repository_impl.dart
 
 import 'package:dartz/dartz.dart';

@@ -1,4 +1,5 @@
 import 'package:device_preview/device_preview.dart';
+import 'package:diagnosis_project/Core/DI/get_it.dart';
 import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/presentation/screens/admin_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_doctor_profile/presentation/views/admin_doctor-profile.dart';
@@ -12,7 +13,6 @@ import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screen
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/doctor_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctors/doctors_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/screens/recent_transactions_screen.dart';
-import 'package:diagnosis_project/Feature/Doctor/SettingDoctor/presentation/views/Setting_doctor_view.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
 
 import 'package:diagnosis_project/Feature/notifications/presentation/views/notification_screen.dart';
@@ -35,10 +35,10 @@ import 'Feature/Help/presentation/screens/Help_Screen.dart';
 import 'Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 import 'Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 
-void main() {
+void main() async {
   WidgetsFlutterBinding.ensureInitialized();
-  configureDependencies();
-
+  // configureDependencies();
+  await setupServiceLocator();
   runApp(
     BlocProvider(
       create: (_) => LocaleCubit(),
@@ -80,7 +80,11 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
+
+                  home: const AdminSettingScreen()
+
                   home: const ConsultationsView()
+
                   //DoctorsScreen(),
                   );
             },

@@ -6,6 +6,7 @@ import 'colors.dart';
 class StyleApp {
   static TextStyle font24BlackBold = TextStyle(
     fontSize: 24.sp,
+    fontFamily: 'Poppins',
     fontWeight: Fonts.bold,
     color: AppColors.blackSecondary,
   );
@@ -125,6 +126,7 @@ class StyleApp {
 
   static TextStyle font16WhiteMedium = TextStyle(
     fontSize: 16.sp,
+    fontFamily: 'Poppins',
     fontWeight: Fonts.medium,
     color: Colors.white,
   );
@@ -217,7 +219,6 @@ class StyleApp {
     color: AppColors.blackSecondary,
     fontFamily: 'Poppins',
   );
-
   static TextStyle font18GrayDarkBold = TextStyle(
     fontSize: 18.sp,
     fontWeight: Fonts.bold,

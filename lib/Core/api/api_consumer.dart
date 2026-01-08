@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 abstract class ApiConsumer {
   Future<dynamic> get(
@@ -16,7 +17,7 @@ abstract class ApiConsumer {
     bool isFormData = false,
      Options? options
   });
-  Future<dynamic> patch(
+  Future<dynamic> put(
     String path, {
     Object? data,
     Map<String, dynamic>? queryParameters,

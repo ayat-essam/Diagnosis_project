@@ -23,4 +23,6 @@ class AppColors {
   static const Color gratext = Color(0xff777777);
   static const Color gray7A = Color(0xff7A7A7A);
   static const Color gray74 = Color(0xff747474);
+  static const Color stepIndicatorGrey = Color(0xff9D9D9D);
+  static const Color gray6B = Color(0xff6B6B6B);
 }

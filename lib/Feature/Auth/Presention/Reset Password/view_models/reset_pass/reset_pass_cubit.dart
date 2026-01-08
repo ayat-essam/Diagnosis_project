@@ -31,7 +31,7 @@ Future<void> resetPassword({
       emit(ResetPasswordLoading());
 
       final response = await apiConsumer.post(
-        APIConstants.resetPasswordURL,
+        ApiConstants.resetPasswordURL,
         data: {
           "password": passwordController.text.trim(),
           "passwordConfirmation":

@@ -2,14 +2,16 @@ import 'package:diagnosis_project/Core/api/api_interceptors.dart';
 import 'package:diagnosis_project/Core/constants/api_constant.dart';
 import 'package:diagnosis_project/Core/api/api_consumer.dart';
 import 'package:dio/dio.dart';
+import 'package:injectable/injectable.dart';
 
 import '../error/exceptions.dart';
 
+@LazySingleton(as: ApiConsumer)
 class DioConsumer extends ApiConsumer {
   final Dio dio;
 
   DioConsumer({required this.dio}) {
-    dio.options.baseUrl = APIConstants.baseURL;
+    dio.options.baseUrl = ApiConstants.baseURL;
     dio.interceptors.add(ApiInterceptors());
     dio.interceptors.add(LogInterceptor(
       request: true,
@@ -21,13 +23,11 @@ class DioConsumer extends ApiConsumer {
     ));
   }
   @override
-  Future delete(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
+  Future delete(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
       final response = await dio.delete(
         path,
@@ -41,13 +41,11 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future get(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
+  Future get(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
       final response = await dio.get(
         path,
@@ -61,16 +59,13 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future patch(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
-
+  Future put(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
-      final response = await dio.patch(
+      final response = await dio.put(
         path,
         data: isFormData ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
@@ -82,17 +77,16 @@ class DioConsumer extends ApiConsumer {
   }
 
   @override
-  Future post(
-    String path, {
-    dynamic data,
-    Map<String, dynamic>? queryParameters,
-    bool isFormData = false,
-     Options? options
-  }) async {
+  Future post(String path,
+      {dynamic data,
+      Map<String, dynamic>? queryParameters,
+      bool isFormData = false,
+      Options? options}) async {
     try {
       final response = await dio.post(
         path,
-        data: isFormData ? FormData.fromMap(data) : data,
+        // FIX: Check if data is already FormData before trying to convert it
+        data: (isFormData && data is! FormData) ? FormData.fromMap(data) : data,
         queryParameters: queryParameters,
       );
       return response.data;

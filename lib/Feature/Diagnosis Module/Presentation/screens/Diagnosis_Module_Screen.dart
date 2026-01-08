@@ -4,11 +4,11 @@ import 'package:diagnosis_project/Core/reusable_widgets/custom_doctor_app_bar.da
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/diagnosis_assistant_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/diagnosis_details_section.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/widgets/grid_view_diagnosis_templet.dart';
+import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/slider_bar_doctor.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
 
 class DiagnosisModuleScreen extends StatelessWidget {
   const DiagnosisModuleScreen({super.key});
@@ -17,7 +17,7 @@ class DiagnosisModuleScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: AppColors.whiteBackground,
-      drawer: const SliderBar(),
+      drawer: const SliderBarDoctor(),
       body: CustomScrollView(
         slivers: [
           const SliverToBoxAdapter(

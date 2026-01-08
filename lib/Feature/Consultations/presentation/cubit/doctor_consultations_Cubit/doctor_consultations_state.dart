@@ -8,9 +8,9 @@ final class DoctorConsultationsInitial extends DoctorConsultationsState {}
 final class DoctorConsultationsLoading extends DoctorConsultationsState {}
 
 final class DoctorConsultationsFailure extends DoctorConsultationsState {
-  final String errmessage;
+  final String errorMessage;
 
-  DoctorConsultationsFailure({required this.errmessage});
+  DoctorConsultationsFailure({required this.errorMessage});
 }
 
 final class DoctorConsultationsSuccess extends DoctorConsultationsState {

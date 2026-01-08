@@ -1,6 +1,12 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+
 import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/Inquiries_Screen.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/Setting_patient_view.dart';
+
+import 'package:diagnosis_project/Feature/Complaints/presentation/screens/Complaints_Screen.dart';
+import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/menu_Item.dart';
+import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_page.dart';
+
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/styleApp.dart';
@@ -95,6 +101,9 @@ class _SliderBarState extends State<SliderBar> {
     final menuItems = [
       MenuItemPatients(
         title: 'DashBoard',
+
+        iconPath: "assets/image_SVG/aiMessage.svg",
+
         ImagePath: "assets/image_SVG/dashBoardIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
@@ -106,6 +115,10 @@ class _SliderBarState extends State<SliderBar> {
       ),
       MenuItemPatients(
         title: 'Diagnosis Module',
+
+
+        iconPath: "assets/image_SVG/aiMessage.svg",
+
         ImagePath: "assets/image_SVG/DiagnosisModuleIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
@@ -116,39 +129,107 @@ class _SliderBarState extends State<SliderBar> {
         },
       ),
       MenuItemPatients(
+        onTap: () {},
         title: 'Ai Diagnosis Result',
         ImagePath: "assets/image_SVG/aiMessage.svg",
+
+        iconPath: "assets/image_SVG/aiMessage.svg",
+      ),
+      MenuItemPatients(
+        title: 'Ai Diagnosis Result',
+        ImagePath: "assets/image_SVG/aiMessage.svg",
+        iconPath: "assets/image_SVG/aiMessage.svg",
+
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Drug Checker',
         ImagePath: "assets/image_SVG/Vector.svg",
+
+        iconPath: "assets/image_SVG/Vector.svg",
+
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Physiotherapy',
         ImagePath: "assets/image_SVG/Physiotherapy.svg",
+
+        iconPath: "assets/image_SVG/Physiotherapy.svg",
+
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Inquiries',
         ImagePath: "assets/image_SVG/Inquiries.svg",
+
+        iconPath: "assets/image_SVG/Inquiries.svg",
+
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Complaints',
+        iconPath: "assets/image_SVG/aiMessage.svg",
         ImagePath: "assets/image_SVG/Diagnosis.svg",
+
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Directory',
+
+        onTap: () {
+          // Navigator.pushReplacement(
+          //     context,
+          //     MaterialPageRoute(
+          //       builder: (context) => ComplaintsScreen(),
+          //     ));
+
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => ComplaintsScreen(),
+              ));
+
+//           Navigator.pushReplacement(
+//               context,
+//               MaterialPageRoute(
+//                 builder: (context) => ComplaintsScreen(),
+//               ));
+        },
+      ),
+      MenuItemPatients(
+        title: 'Directory',
+        iconPath: "assets/image_SVG/opppointIcon.svg",
+
         ImagePath: "assets/image_SVG/DirectoryIcon.svg",
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Medical Files',
         ImagePath: "assets/image_SVG/Medical FilesIcon.svg",
+
         onTap: () {},
+
+        iconPath: "assets/image_SVG/DirectoryIcon.svg",
+        onTap: () {},
+      ),
+      MenuItemData(
+        title: 'Appointments',
+        iconPath: "assets/image_SVG/opppointIcon.svg",
+        onTap: () {
+          Navigator.pushReplacement(
+              context,
+              MaterialPageRoute(
+                builder: (context) => Appointments(),
+              ));
+        },
+      ),
+      MenuItemData(
+        title: 'Medical Files',
+        iconPath: "assets/image_SVG/Medical FilesIcon.svg",
+//         iconPath: "assets/image_SVG/DirectoryIcon.svg",
+//         onTap: () {},
+//       ),
+
 //       MenuItemData(
 //         title: 'Appointments',
 //         iconPath: "assets/image_SVG/opppointIcon.svg",
@@ -160,6 +241,12 @@ class _SliderBarState extends State<SliderBar> {
 //               ));
 //         },
 //       ),
+
+//       MenuItemData(
+//         title: 'Medical Files',
+//         iconPath: "assets/image_SVG/Medical FilesIcon.svg",
+        onTap: () {},
+
       ),
     ];
 
@@ -185,6 +272,7 @@ class _SliderBarState extends State<SliderBar> {
       MenuItemPatients(
         title: 'Settings',
         ImagePath: "assets/image_SVG/settingIcon.svg",
+
         onTap: () {
           Navigator.pushReplacement(
               context,
@@ -192,15 +280,25 @@ class _SliderBarState extends State<SliderBar> {
                 builder: (context) => const SettingPatientView(),
               ));
         },
+
+        iconPath: "assets/image_SVG/settingIcon.svg",
+        onTap: () {},
+
       ),
       MenuItemPatients(
         title: 'Help',
         ImagePath: "assets/image_SVG/helpIcon.svg",
+
+        iconPath: "assets/image_SVG/helpIcon.svg",
+
         onTap: () {},
       ),
       MenuItemPatients(
         title: 'Log Out',
         ImagePath: 'assets/image_SVG/logOutIcon.svg',
+
+        iconPath: 'assets/image_SVG/logOutIcon.svg',
+
         onTap: () {},
       ),
     ];

@@ -14,7 +14,7 @@ class DoctorConsultationsCubit extends Cubit<DoctorConsultationsState> {
     var result =
         await consultationRepo.getDoctorConsultations(doctorId: doctorId);
     result.fold((failure) {
-      emit(DoctorConsultationsFailure(errmessage: failure.errMessge));
+      emit(DoctorConsultationsFailure(errorMessage: failure.errMessge));
     }, (consultationList) {
       emit(DoctorConsultationsSuccess(
           doctorConsultationsList: consultationList));

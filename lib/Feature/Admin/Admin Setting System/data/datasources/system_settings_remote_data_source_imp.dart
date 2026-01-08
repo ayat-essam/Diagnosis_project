@@ -46,7 +46,7 @@ class SystemSettingsDataSourceImpl implements SystemSettingsDataSource {
 
   @override
   Future<String> setAiRateLimit({required int maxRequestsPerDay}) async {
-    final response = await apiConsumer.post(
+    final response = await apiConsumer.put(
       ApiConstants.aiRateLimit,
       data: {'maxRequestsPerDay': maxRequestsPerDay},
     );
@@ -73,7 +73,7 @@ class SystemSettingsDataSourceImpl implements SystemSettingsDataSource {
 
   @override
   Future<String> toggleAi({required bool enabled}) async {
-    final response = await apiConsumer.post(
+    final response = await apiConsumer.put(
       ApiConstants.aiToggle,
       data: {'enabled': enabled},
     );

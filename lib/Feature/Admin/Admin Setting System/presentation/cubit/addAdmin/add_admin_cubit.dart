@@ -1,6 +1,6 @@
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/data/models/add_admin_request.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/add_admin_usecase.dart';
-import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/add_admin_state.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/addAdmin/add_admin_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class AddAdminCubit extends Cubit<AddAdminState> {

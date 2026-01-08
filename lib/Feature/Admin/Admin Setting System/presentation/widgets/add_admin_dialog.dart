@@ -3,7 +3,7 @@ import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/dialog_header.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/text_form_field_and_title.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/two_button_row.dart';
-import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/add_admin_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/addAdmin/add_admin_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/add_admin_bloc_listener.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

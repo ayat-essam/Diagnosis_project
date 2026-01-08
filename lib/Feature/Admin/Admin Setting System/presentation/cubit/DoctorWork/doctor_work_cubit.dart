@@ -8,7 +8,9 @@ import 'package:meta/meta.dart';
 part 'doctor_work_state.dart';
 
 class DoctorWorkCubit extends Cubit<DoctorWorkState> {
-  DoctorWorkCubit(this.setDoctorRateLimitUseCase, this.setDoctorWorkHourUseCase)
+  DoctorWorkCubit(
+      {required this.setDoctorRateLimitUseCase,
+      required this.setDoctorWorkHourUseCase})
       : super(DoctorWorkInitial());
   final SetDoctorRateLimitUseCase setDoctorRateLimitUseCase;
   final SetDoctorWorkHourUseCase setDoctorWorkHourUseCase;
@@ -36,6 +38,27 @@ class DoctorWorkCubit extends Cubit<DoctorWorkState> {
     result.fold(
       (l) => emit(SetDoctorRateLimitFailure(errorModel: l)),
       (r) => emit(SetDoctorRateLimitSuccess()),
+    );
+  }
+
+  Future<void> setDoctorWorkHour() async {
+    final value2 = int.tryParse(controller2.text.trim());
+
+    if (value2 == null) {
+      emit(
+        SetDoctorWorkHourFailure(
+          errorModel: ErrorModel(errorMessage: 'Please enter a valid number'),
+        ),
+      );
+      return;
+    }
+
+    emit(SetDoctorWorkHourLoading());
+
+    var result = await setDoctorWorkHourUseCase(hours: value2);
+    result.fold(
+      (l) => emit(SetDoctorWorkHourFailure(errorModel: l)),
+      (r) => emit(SetDoctorWorkHourSuccess()),
     );
   }
 }

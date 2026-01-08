@@ -11,6 +11,7 @@ import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/set_doctor_work_hour_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/domain/usecases/toggle_ai_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/AI_Diagnosis_cubit/ai_diagnosis_settings_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/DoctorWork/doctor_work_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/addAdmin/add_admin_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/datasource/doctor_management_remote_data_source.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/datasource/doctor_management_remote_data_source_imp.dart';
@@ -139,5 +140,9 @@ Future<void> setupServiceLocator() async {
   sl.registerFactory(
     () => AiDiagnosisSettingsCubit(
         setAiRateLimitUseCase: sl(), toggleAiUseCase: sl()),
+  );
+  sl.registerFactory(
+    () => DoctorWorkCubit(
+        setDoctorRateLimitUseCase: sl(), setDoctorWorkHourUseCase: sl()),
   );
 }

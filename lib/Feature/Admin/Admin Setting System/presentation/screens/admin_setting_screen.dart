@@ -2,6 +2,7 @@ import 'package:diagnosis_project/Core/DI/get_it.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/AI_Diagnosis_cubit/ai_diagnosis_settings_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/DoctorWork/doctor_work_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/add_admin_dialog.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -28,6 +29,9 @@ class _AdminSettingScreenState extends State<AdminSettingScreen> {
       providers: [
         BlocProvider(
           create: (context) => sl<AiDiagnosisSettingsCubit>(),
+        ),
+        BlocProvider(
+          create: (context) => sl<DoctorWorkCubit>(),
         ),
       ],
       child: Scaffold(

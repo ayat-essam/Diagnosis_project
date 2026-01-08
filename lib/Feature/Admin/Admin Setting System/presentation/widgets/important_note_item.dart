@@ -1,5 +1,6 @@
 import 'package:diagnosis_project/Core/reusable_widgets/custom_button.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/AI_Diagnosis_cubit/ai_diagnosis_settings_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/DoctorWork/doctor_work_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/setting_confirm_settings.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -15,12 +16,17 @@ class ImportantNoteCard extends StatelessWidget {
 
   void showConfirmDialog(BuildContext context) {
     final cubit = context.read<AiDiagnosisSettingsCubit>();
+
+    final cubit2 = context.read<DoctorWorkCubit>();
     showDialog(
       context: context,
       barrierDismissible: true,
       builder: (_) => ConfirmDialog(
         onConfirm: () async {
           await cubit.setAiRateLimit();
+          await cubit2.setDoctorWorkHour();
+          await cubit2.setDoctorRateLimit();
+
           print('succes');
           Navigator.pop(context);
         },

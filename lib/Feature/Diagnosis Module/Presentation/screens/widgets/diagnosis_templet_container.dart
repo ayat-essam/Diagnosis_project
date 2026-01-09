@@ -1,3 +1,4 @@
+
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
@@ -13,10 +14,10 @@ class DiagnocsisTempletContainer extends StatelessWidget {
   });
 
   final DiagnosisTemplatesModel diagnosisTemplatesModel;
+
   @override
   Widget build(BuildContext context) {
     return CustomLinearGradiantContainer(
-<<<<<<< HEAD
       child: FittedBox(
         fit: BoxFit.scaleDown,
         child: Padding(
@@ -26,16 +27,6 @@ class DiagnocsisTempletContainer extends StatelessWidget {
             spacing: 2.h,
             children: [
               Row(
-=======
-      child: Padding(
-        padding: const EdgeInsets.all(8.0),
-        child: Column(
-          children: [
-            Gap(20.h),
-            FittedBox(
-              fit: BoxFit.scaleDown,
-              child: Row(
->>>>>>> Deveoplment
                 children: [
                   Container(
                     width: 45.w,
@@ -55,15 +46,15 @@ class DiagnocsisTempletContainer extends StatelessWidget {
                   ),
                 ],
               ),
-            ),
-            Gap(12.h),
-            CustomAppButton(
-              onTap: () {},
-              text: 'Use Template',
-              width: 140.w,
-              borderRedius: 8.r,
-            ),
-          ],
+              Gap(12.h),
+              CustomAppButton(
+                onTap: () {},
+                text: 'Use Template',
+                width: 140.w,
+                borderRedius: 8.r,
+              ),
+            ],
+          ),
         ),
       ),
     );

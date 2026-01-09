@@ -83,7 +83,7 @@ class MyApp extends StatelessWidget {
 
                   home: const AdminSettingScreen()
 
-                  home: const ConsultationsView()
+                  // home: const ConsultationsView()
 
                   //DoctorsScreen(),
                   );

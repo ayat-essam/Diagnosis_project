@@ -23,7 +23,7 @@ class DetailsStep extends StatelessWidget {
   Widget build(BuildContext context) {
     final cubit = context.read<AddDoctorCubit>();
     return Column(
-    crossAxisAlignment: CrossAxisAlignment.start,
+      crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         TextformFieldAndTitle(
             title: "Years of experience",
@@ -48,27 +48,35 @@ class DetailsStep extends StatelessWidget {
           style:
               StyleApp.font12BlackSemiBold.copyWith(color: AppColors.grayDark),
         ),
-       BlocBuilder<AddDoctorCubit, AddDoctorState>(
-          builder: (context, state) {
-            return RadioGroup<String>(
-              groupValue: cubit.state.gender,
-              onChanged: (value) {
-                if (value != null) {
-                  cubit.onGenderChanged(value);
-                }
-              },
-              child: Row(
-                children: [
-                  const Radio<String>(value: 'Male',activeColor: AppColors.BluePrimary),
-                  Text('Male', style:StyleApp.font12BlackSemiBold.copyWith(color: AppColors.grayDark)),
-                  Gap(8.w),
-                  const Radio<String>(value: 'Female',activeColor: AppColors.BluePrimary),
-                  Text('Female', style: StyleApp.font12BlackSemiBold.copyWith(color: AppColors.grayDark),),
-                ],
-              ),
-            );
-          },
-        ),
+        // BlocBuilder<AddDoctorCubit, AddDoctorState>(
+        //   builder: (context, state) {
+        //     return RadioGroup<String>(
+        //       groupValue: cubit.state.gender,
+        //       onChanged: (value) {
+        //         if (value != null) {
+        //           cubit.onGenderChanged(value);
+        //         }
+        //       },
+        //       child: Row(
+        //         children: [
+        //           const Radio<String>(
+        //               value: 'Male', activeColor: AppColors.BluePrimary),
+        //           Text('Male',
+        //               style: StyleApp.font12BlackSemiBold
+        //                   .copyWith(color: AppColors.grayDark)),
+        //           Gap(8.w),
+        //           const Radio<String>(
+        //               value: 'Female', activeColor: AppColors.BluePrimary),
+        //           Text(
+        //             'Female',
+        //             style: StyleApp.font12BlackSemiBold
+        //                 .copyWith(color: AppColors.grayDark),
+        //           ),
+        //         ],
+        //       ),
+        //     );
+        //   },
+        // ),
         Gap(8.h),
         TwoButtonRow(
           primaryText: 'Save',

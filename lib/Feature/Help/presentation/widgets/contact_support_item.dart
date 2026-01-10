@@ -39,32 +39,32 @@ class ContactSupportItem extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 16),
-          SizedBox(
-            width: double.infinity,
-           child:  ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: AppColors.BluePrimary,
-              ),
-              onPressed: () {
-                showDialog(
-                  context: context,
-                  barrierDismissible: true,
-                  builder: (_) => const StartChatDialog(),
-                );
-              },
-              child: const Text(
-                "Start chat",
-                style: TextStyle(
-                  color: AppColors.whiteBackground,
-                  fontFamily: 'Poppins',
-                  fontWeight: Fonts.medium,
-                  fontSize: 14,
-                ),
-              ),
-            ),
-
-          ),
-          const SizedBox(height: 8),
+          // SizedBox(
+          //   width: double.infinity,
+          //  child:  ElevatedButton(
+          //     style: ElevatedButton.styleFrom(
+          //       backgroundColor: AppColors.BluePrimary,
+          //     ),
+          //     onPressed: () {
+          //       showDialog(
+          //         context: context,
+          //         barrierDismissible: true,
+          //         builder: (_) => const StartChatDialog(),
+          //       );
+          //     },
+          //     child: const Text(
+          //       "Start chat",
+          //       style: TextStyle(
+          //         color: AppColors.whiteBackground,
+          //         fontFamily: 'Poppins',
+          //         fontWeight: Fonts.medium,
+          //         fontSize: 14,
+          //       ),
+          //     ),
+          //   ),
+          //
+          // ),
+          // const SizedBox(height: 8),
           SizedBox(
               width: double.infinity,
               child:  OutlinedButton(

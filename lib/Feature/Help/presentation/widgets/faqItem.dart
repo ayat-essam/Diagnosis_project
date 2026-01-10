@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import '../../../../Core/Theme App/Fonts.dart';
 import '../../../../Core/Theme App/colors.dart';
-import '../../Data/faq_data.dart';
+import 'faq_data_item.dart';
 
 class FaqExpansionList extends StatefulWidget {
   const FaqExpansionList({super.key});
@@ -11,13 +11,14 @@ class FaqExpansionList extends StatefulWidget {
 }
 
 class _FaqExpansionListState extends State<FaqExpansionList> {
-  int? expandedId;
+  int? expandedIndex;
 
   @override
   Widget build(BuildContext context) {
     return Column(
-      children: faqs.map((faq) {
-        final isExpanded = faq.id == expandedId;
+      children: List.generate(staticFaqs.length, (index) {
+        final faq = staticFaqs[index];
+        final isExpanded = expandedIndex == index;
 
         return Container(
           margin: const EdgeInsets.only(bottom: 12),
@@ -30,10 +31,10 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
               GestureDetector(
                 onTap: () {
                   setState(() {
-                    expandedId = isExpanded ? null : faq.id;
+                    expandedIndex = isExpanded ? null : index;
                   });
                 },
-                child: Container(
+                child: Padding(
                   padding:
                   const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   child: Row(
@@ -64,15 +65,9 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
               ),
               AnimatedCrossFade(
                 firstChild: const SizedBox.shrink(),
-                secondChild: Container(
-                  width: double.infinity,
+                secondChild: Padding(
                   padding: const EdgeInsets.symmetric(
                       horizontal: 16, vertical: 12),
-                  decoration: const BoxDecoration(
-                    // border: Border(
-                    //   top: BorderSide(color: AppColors.BluePrimary),
-                    // ),
-                  ),
                   child: Text(
                     faq.answer,
                     style: const TextStyle(
@@ -91,7 +86,7 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
             ],
           ),
         );
-      }).toList(),
+      }),
     );
   }
 }

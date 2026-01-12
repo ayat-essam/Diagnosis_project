@@ -1,4 +1,5 @@
 import 'package:dio/dio.dart';
+import '../../../../Core/api/api_consumer.dart';
 import '../models/faq_model.dart';
 
 abstract class HelpRemoteDataSource {
@@ -10,38 +11,46 @@ abstract class HelpRemoteDataSource {
 }
 
 class HelpRemoteDataSourceImpl implements HelpRemoteDataSource {
-  final Dio dio;
+  final ApiConsumer api;
 
-  HelpRemoteDataSourceImpl(this.dio);
+  HelpRemoteDataSourceImpl(this.api);
 
   @override
   Future<List<FaqModel>> getFaqs(String type) async {
-    final response = await dio.get('/Help/faqs', queryParameters: {
-      'Type': type,
-    });
+    final response = await api.get(
+      '/Help/faqs',
+      queryParameters: {'Type': type},
+    );
 
-    return (response.data as List)
-        .map((e) => FaqModel.fromJson(e))
-        .toList();
+    return (response as List).map((e) => FaqModel.fromJson(e)).toList();
   }
 
   @override
   Future<void> createTicket(Map<String, dynamic> body) async {
-    await dio.post('/SupportTicket/create', data: body);
+    await api.post(
+      '/SupportTicket/create',
+      data: {
+        "subject": "test",
+        "details": "test",
+      },
+      isFormData: false,
+    );
+
+    // await api.post('/SupportTicket/create', data: body, isFormData: false);
   }
 
   @override
   Future<void> getAllTickets() async {
-    await dio.get('/SupportTicket/all');
+    await api.get('/SupportTicket/all');
   }
 
   @override
   Future<void> replyTicket(Map<String, dynamic> body) async {
-    await dio.post('/SupportTicket/reply', data: body);
+    await api.post('/SupportTicket/reply', data: body);
   }
 
   @override
   Future<void> getTicketContent(int ticketId) async {
-    await dio.get('/SupportTicket/content/$ticketId');
+    await api.get('/SupportTicket/content/$ticketId');
   }
 }

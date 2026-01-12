@@ -7,6 +7,7 @@ import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/
 import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/screens/widgests/get_patients_bloc_builder.dart';
 import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/screens/widgests/patient_management_header.dart';
 import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/screens/widgests/patient_management_tabs.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/screens/widgests/patients_management_search_section.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/slider_bar_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -53,7 +54,7 @@ class _PatientsMangementScreenState extends State<PatientsMangementScreen> {
                   },
                 ),
                 Gap(10.h),
-                const DoctorManagementSearchSection(),
+                const PatientsManagementSearchSection(),
                 Gap(20.h),
                 isPatientSelected
                     ? const GetPatientsBlocBuilder()

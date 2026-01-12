@@ -36,7 +36,7 @@ class _PatientsManagementSearchSectionState
                 setState(() {
                   context.read<PatientsMangementCubit>().getpatients(
                         search: value,
-                        isActive: selectedStatus == 'Active',
+                        status: selectedStatus ,
                       );
                 });
               },
@@ -50,7 +50,7 @@ class _PatientsManagementSearchSectionState
                   selectedStatus = value!;
                   context.read<PatientsMangementCubit>().getpatients(
                         search: searchText,
-                        isActive: selectedStatus == 'Active',
+                        status: selectedStatus ,
                       );
                 });
               },

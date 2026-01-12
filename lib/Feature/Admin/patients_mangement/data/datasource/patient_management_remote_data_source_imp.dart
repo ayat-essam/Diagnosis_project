@@ -26,8 +26,14 @@ class PatientManagementRemoteDataSourceImp
 
   @override
   Future<List<PatientModel>> getPatients(
-      {required String search, required bool isActive}) async {
-    final response = await apiConsumer.get(ApiConstants.getPatientsEndPoint);
+      {required String search, required String status}) async {
+    final response = await apiConsumer.get(
+      ApiConstants.getPatientsEndPoint,
+      queryParameters: {
+        'search': search,
+        'status': status,
+      },
+    );
     return List<PatientModel>.from(
         (response as List).map((e) => PatientModel.fromJson(e)));
   }

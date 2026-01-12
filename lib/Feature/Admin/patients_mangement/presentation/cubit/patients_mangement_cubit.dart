@@ -14,7 +14,7 @@ class PatientsMangementCubit extends Cubit<PatientsManagementState> {
 
   Timer? _debounce;
 
-  void getpatients({String? search, bool? isActive}) {
+  void getpatients({String? search, String? status}) {
     _debounce?.cancel();
 
     _debounce = Timer(const Duration(milliseconds: 500), () async {
@@ -22,7 +22,7 @@ class PatientsMangementCubit extends Cubit<PatientsManagementState> {
 
       final result = await getPatientsUsecase(
         search: search ?? '',
-        isActive: isActive ?? true,
+        status: status ?? "All",
       );
 
       result.fold(

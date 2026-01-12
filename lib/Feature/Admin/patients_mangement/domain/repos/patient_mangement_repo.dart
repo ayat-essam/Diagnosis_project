@@ -6,7 +6,7 @@ import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/entiti
 abstract class PatientMangementRepo {
   Future<Either<ErrorModel, List<PatientEntity>>> getPatients({
     required String search,
-    required bool isActive,
+    required String status,
   });
   Future<Either<ErrorModel, PatientProfileEntity>> getPatientProfile({
     required int id,

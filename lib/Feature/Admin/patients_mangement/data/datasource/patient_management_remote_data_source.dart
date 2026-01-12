@@ -5,7 +5,7 @@ abstract class PatientManagementRemoteDataSource {
   
   Future<List<PatientModel>> getPatients({
     required String search,
-    required bool isActive,
+    required String status,
   });
   Future<PatientProfileModel> getPatientProfile({
     required int id,

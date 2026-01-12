@@ -10,11 +10,11 @@ class GetPatientsUsecase {
 
   Future<Either<ErrorModel, List<PatientEntity>>> call({
     required String search,
-    required bool isActive,
+    required String status,
   }) async {
     return await repository.getPatients(
       search: search,
-      isActive: isActive,
+      status: status,
     );
   }
 }

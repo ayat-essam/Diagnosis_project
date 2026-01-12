@@ -33,10 +33,10 @@ class PatientsManagementRepoImp extends PatientMangementRepo {
 
   @override
   Future<Either<ErrorModel, List<PatientEntity>>> getPatients(
-      {required String search, required bool isActive}) async {
+      {required String search, required String status}) async {
     try {
       final res =
-          await dataSource.getPatients(search: search, isActive: isActive);
+          await dataSource.getPatients(search: search, status: status);
       return Right(res);
     } on ServerException catch (e) {
       return Left(e.errorModel);

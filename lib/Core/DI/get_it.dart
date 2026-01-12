@@ -19,6 +19,9 @@ import 'package:diagnosis_project/Feature/Admin/doctors_management/data/reposito
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/add_doctor_use_case.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/doctors_mangement_repo.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_cubit.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/data/repo/dashboard_repo_impl.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/domain/repo/dashboard_repo.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/manager/cubit/dash_patient_cubit.dart';
 import 'package:diagnosis_project/Feature/Settings/data/datasource/profile_remote_data_source.dart';
 import 'package:diagnosis_project/Feature/Settings/data/datasource/user_settings_data_source.dart';
 import 'package:diagnosis_project/Feature/Settings/data/repositories/pofile_repository_imp.dart';
@@ -144,5 +147,11 @@ Future<void> setupServiceLocator() async {
   sl.registerFactory(
     () => DoctorWorkCubit(
         setDoctorRateLimitUseCase: sl(), setDoctorWorkHourUseCase: sl()),
+  );
+  sl.registerLazySingleton<DashboardRepo>(
+    () => DashboardRepoImpl(apiConsumer: sl()),
+  );
+  sl.registerFactory(
+    () => DashPatientCubit(sl()),
   );
 }

@@ -3,6 +3,7 @@ import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
 import 'package:fl_chart/fl_chart.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -116,7 +117,7 @@ class CommonDiagnosisChart extends StatelessWidget {
 
   List<BarChartGroupData> _generateBarGroups() {
     final diagnosisData =
-        CommonDiagnosisChartData.diagnosisData.values.toList();
+    CommonDiagnosisChartData.diagnosisData.values.toList();
 
     return List.generate(diagnosisData.length, (i) {
       return BarChartGroupData(

@@ -3,6 +3,7 @@ import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/widgets/row_new_vs_returning_leganed.dart';
 import 'package:fl_chart/fl_chart.dart';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -40,7 +41,7 @@ class NewVsReturningChart extends StatelessWidget {
                     BarChartData(
                       alignment: BarChartAlignment.spaceBetween,
                       maxY: 70,
-                      barTouchData:  BarTouchData(enabled: false),
+                      barTouchData: BarTouchData(enabled: false),
                       titlesData: FlTitlesData(
                         topTitles: const AxisTitles(
                           sideTitles: SideTitles(showTitles: false),

@@ -11,3 +11,4 @@ class InfoAdminDashBoardModel {
     required this.imgPath,
   });
 }
+

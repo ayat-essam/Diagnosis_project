@@ -1,6 +1,5 @@
 class ApiConstants {
-  static const String baseURL = 'http://diagnosis.runasp.net';
-
+  static String baseURL = 'http://diagnosis.runasp.net';
 
   static String resetPasswordURL = '$baseURL/Auth/change-password';
   static String forgetPasswordURL = '$baseURL/Auth/forget-password';
@@ -12,7 +11,8 @@ class ApiConstants {
   static const String addAdmin = '$systemSettingsBase/add-admin';
   static const String aiRateLimit = '$systemSettingsBase/ai/rate-limit';
   static const String doctorRateLimit = '$systemSettingsBase/doctor/rate-limit';
-  static const String doctorWorkHours = '$systemSettingsBase//doctor/work-hours';
+  static const String doctorWorkHours =
+      '$systemSettingsBase//doctor/work-hours';
   static const String aiToggle = '$systemSettingsBase/ai/toggle';
   static const String sendMessage = '$systemSettingsBase/send-message';
   static const String outsideRequests = '$systemSettingsBase/outside-requests';

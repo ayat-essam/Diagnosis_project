@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/models/add_doctor_request.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/add_doctor_use_case.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/add_doctor_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
 class CustomTable extends StatelessWidget {
   final List<String> columnTitles;
@@ -34,10 +35,12 @@ class CustomTable extends StatelessWidget {
                   columns: columnTitles
                       .map((title) => DataColumn(
                             label: Expanded(
-                              child: Text(
-                                title,
-                                style: const TextStyle(
-                                    fontWeight: FontWeight.bold),
+                              child: Skeleton.keep(
+                                child: Text(
+                                  title,
+                                  style: const TextStyle(
+                                      fontWeight: FontWeight.bold),
+                                ),
                               ),
                             ),
                           ))

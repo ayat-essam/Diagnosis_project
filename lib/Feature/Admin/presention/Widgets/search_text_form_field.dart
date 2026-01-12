@@ -6,7 +6,9 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 class SearchTextFormField extends StatelessWidget {
   const SearchTextFormField({
     super.key,
+    this.onChanged,
   });
+  final void Function(String)? onChanged;
 
   @override
   Widget build(BuildContext context) {
@@ -15,6 +17,7 @@ class SearchTextFormField extends StatelessWidget {
       height: 38.h,
       color: AppColors.greyLight,
       child: TextFormField(
+        onChanged: onChanged,
         decoration: InputDecoration(
           focusedBorder: OutlineInputBorder(
               borderRadius: BorderRadius.circular(12),

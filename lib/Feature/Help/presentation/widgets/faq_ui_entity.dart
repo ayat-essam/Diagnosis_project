@@ -1,10 +1,8 @@
-class FaqModel {
-  final int id;
+class StaticFaqEntity {
   final String question;
   final String answer;
 
-  FaqModel({
-    required this.id,
+  const StaticFaqEntity({
     required this.question,
     required this.answer,
   });

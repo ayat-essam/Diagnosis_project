@@ -45,11 +45,11 @@ Future<void> setupServiceLocator() async {
   sl.registerLazySingleton(() => Dio());
   sl.registerLazySingleton<ApiConsumer>(() => DioConsumer(dio: sl()));
 
-  // ---------------- Data Layer (DoctorManagement Data Sources) ----------------
+  // ---------------- data Layer (DoctorManagement data Sources) ----------------
   sl.registerLazySingleton<DoctorManagementRemoteDataSource>(
     () => DoctorManagementRemoteDataSourceImp(sl()),
   );
-  // ---------------- Data Layer (DoctorManagement Repositories) ----------------
+  // ---------------- data Layer (DoctorManagement Repositories) ----------------
   sl.registerLazySingleton<DoctorsManagementRepo>(
     () => DoctorsManagementRepoImp(dataSource: sl()),
   );
@@ -58,11 +58,11 @@ Future<void> setupServiceLocator() async {
 
   sl.registerFactory(() => AddDoctorCubit(sl()));
 
-// ---------------- Data Layer ( Profile Data Source) ----------------
+// ---------------- data Layer ( Profile data Source) ----------------
   sl.registerLazySingleton<ProfileRemoteDataSource>(
     () => ProfileRemoteDataSourceImp(sl()),
   );
-  // ---------------- Data Layer (Profile Repositories) ----------------
+  // ---------------- data Layer (Profile Repositories) ----------------
   sl.registerLazySingleton<ProfileRepository>(
     () => PofileRepositoryImp(profileRemoteDataSource: sl()),
   );
@@ -75,11 +75,11 @@ Future<void> setupServiceLocator() async {
         updateProfileUseCase: sl(),
       ));
 
-  // ---------------- Data Layer ( user settings Data Source) ----------------
+  // ---------------- data Layer ( user settings data Source) ----------------
   sl.registerLazySingleton<UserSettingsDataSource>(
     () => UserSettingsDataSourceImp(sl()),
   );
-  // ---------------- Data Layer (user settings Repositories) ----------------
+  // ---------------- data Layer (user settings Repositories) ----------------
   sl.registerLazySingleton<UserSettingsRepository>(
     () => UserSettingsRepositoryImp(userSettingsDataSource: sl()),
   );
@@ -96,12 +96,12 @@ Future<void> setupServiceLocator() async {
     ),
   );
 
-  // ---------------- Data Layer (SystemSettings Data Source) ----------------
+  // ---------------- data Layer (SystemSettings data Source) ----------------
   sl.registerLazySingleton<SystemSettingsDataSource>(
     () => SystemSettingsDataSourceImpl(apiConsumer: sl()),
   );
 
-  // ---------------- Data Layer (SystemSettings Repository) ----------------
+  // ---------------- data Layer (SystemSettings Repository) ----------------
   sl.registerLazySingleton<SystemSettingsRepository>(
     () => SystemSettingsRepositoryImpl(systemSettingsDataSource: sl()),
   );

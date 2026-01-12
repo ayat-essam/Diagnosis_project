@@ -13,13 +13,13 @@
 // import 'package:diagnosis_project/Core/api/dio_consumer.dart' as _i825;
 // import 'package:diagnosis_project/Core/DI/depancicy_injection.dart' as _i828;
 // import 'package:diagnosis_project/Core/DI/register_module.dart' as _i143;
-// import 'package:diagnosis_project/Feature/Auth/Data/data_source/api_auth_data_source.dart'
+// import 'package:diagnosis_project/Feature/Auth/data/data_source/api_auth_data_source.dart'
 //     as _i221;
-// import 'package:diagnosis_project/Feature/Auth/Data/data_source/auth_data_source.dart'
+// import 'package:diagnosis_project/Feature/Auth/data/data_source/auth_data_source.dart'
 //     as _i711;
-// import 'package:diagnosis_project/Feature/Auth/Data/data_source/Remote/auth_api_remote_data_source.dart'
+// import 'package:diagnosis_project/Feature/Auth/data/data_source/Remote/auth_api_remote_data_source.dart'
 //     as _i257;
-// import 'package:diagnosis_project/Feature/Auth/Data/data_source/Remote/auth_remote_data_sourse.dart'
+// import 'package:diagnosis_project/Feature/Auth/data/data_source/Remote/auth_remote_data_sourse.dart'
 //     as _i901;
 // import 'package:diagnosis_project/Feature/Auth/Domain/auth_repository/auth_repo.dart'
 //     as _i125;

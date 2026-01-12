@@ -23,7 +23,7 @@ class ServerFailure extends Failure {
       case DioExceptionType.badResponse:
         print('🔴 Error at ${dioException.requestOptions.path}');
         print('🔴 Status Code: ${dioException.response?.statusCode}');
-        print('🔴 Response Data: ${dioException.response?.data}');
+        print('🔴 Response data: ${dioException.response?.data}');
         return ServerFailure.fromResponse(
           dioException.response!.statusCode!,
           dioException.response!.data,

@@ -2,8 +2,8 @@
 // import 'package:flutter_bloc/flutter_bloc.dart';
 // import 'package:injectable/injectable.dart';
 //
-// import '../../Data/models/login_request.dart';
-// import '../../Data/models/register_request.dart';
+// import '../../data/models/login_request.dart';
+// import '../../data/models/register_request.dart';
 // import '../../Domain/UsesCase/login_use_case.dart';
 // import '../../Domain/UsesCase/register_use_case.dart';
 //

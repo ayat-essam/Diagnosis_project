@@ -7,6 +7,14 @@
 // import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/menu_Item.dart';
 // import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_page.dart';
 
+//
+// import 'package:diagnosis_project/Feature/Inquiries/presentation/screens/Inquiries_Screen.dart';
+// import 'package:diagnosis_project/Feature/Settings/presentation/views/Setting_patient_view.dart';
+//
+// import 'package:diagnosis_project/Feature/Complaints/presentation/screens/Complaints_Screen.dart';
+// import 'package:diagnosis_project/Feature/DashBoard/presention/Widgets/menu_Item.dart';
+// import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_page.dart';
+//
 // import 'package:flutter/material.dart';
 // import 'package:gap/gap.dart';
 // import '../../../../Core/Theme App/styleApp.dart';
@@ -26,6 +34,19 @@
 //   String? selectedMenuItem;
 //   String? selectedGeneralItem;
 
+
+//
+// class SliderBar extends StatefulWidget {
+//   const SliderBar({super.key});
+//
+//   @override
+//   State<SliderBar> createState() => _SliderBarState();
+// }
+//
+// class _SliderBarState extends State<SliderBar> {
+//   String? selectedMenuItem;
+//   String? selectedGeneralItem;
+//
 //   @override
 //   Widget build(BuildContext context) {
 //     return Drawer(
@@ -97,6 +118,7 @@
 //     );
 //   }
 
+//
 //   List<Widget> buildMenuItems() {
 //     final menuItems = [
 //       MenuItemPatients(
@@ -104,6 +126,9 @@
 
 //         iconPath: "assets/image_SVG/aiMessage.svg",
 
+//
+//         iconPath: "assets/image_SVG/aiMessage.svg",
+//
 //         ImagePath: "assets/image_SVG/dashBoardIcon.svg",
 //         onTap: () {
 //           Navigator.pushReplacement(
@@ -118,6 +143,10 @@
 
 //         iconPath: "assets/image_SVG/aiMessage.svg",
 
+//
+//
+//         iconPath: "assets/image_SVG/aiMessage.svg",
+//
 //         ImagePath: "assets/image_SVG/DiagnosisModuleIcon.svg",
 //         onTap: () {
 //           Navigator.pushReplacement(
@@ -132,6 +161,8 @@
 //         title: 'Ai Diagnosis Result',
 //         ImagePath: "assets/image_SVG/aiMessage.svg",
 
+
+
 //         iconPath: "assets/image_SVG/aiMessage.svg",
 //       ),
 //       MenuItemPatients(
@@ -139,13 +170,21 @@
 //         ImagePath: "assets/image_SVG/aiMessage.svg",
 //         iconPath: "assets/image_SVG/aiMessage.svg",
 
+//
+
 //         onTap: () {},
 //       ),
 //       MenuItemPatients(
 //         title: 'Drug Checker',
 //         ImagePath: "assets/image_SVG/Vector.svg",
 
+
 //         iconPath: "assets/image_SVG/Vector.svg",
+
+
+//
+//         iconPath: "assets/image_SVG/Vector.svg",
+//
 
 //         onTap: () {},
 //       ),
@@ -153,13 +192,20 @@
 //         title: 'Physiotherapy',
 //         ImagePath: "assets/image_SVG/Physiotherapy.svg",
 
+
 //         iconPath: "assets/image_SVG/Physiotherapy.svg",
+
+
+//
+//         iconPath: "assets/image_SVG/Physiotherapy.svg",
+//
 
 //         onTap: () {},
 //       ),
 //       MenuItemPatients(
 //         title: 'Inquiries',
 //         ImagePath: "assets/image_SVG/Inquiries.svg",
+
 
 //         iconPath: "assets/image_SVG/Inquiries.svg",
 
@@ -175,6 +221,16 @@
 //       MenuItemPatients(
 //         title: 'Directory',
 
+//
+//         iconPath: "assets/image_SVG/Inquiries.svg",
+//
+//         onTap: () {},
+//       ),
+//
+//       MenuItemPatients(
+//         title: 'Directory',
+//
+
 //         onTap: () {
 //           // Navigator.pushReplacement(
 //           //     context,
@@ -182,11 +238,14 @@
 //           //       builder: (context) => ComplaintsScreen(),
 //           //     ));
 
+
 //           Navigator.pushReplacement(
 //               context,
 //               MaterialPageRoute(
 //                 builder: (context) => ComplaintsScreen(),
 //               ));
+
+//
 
 // //           Navigator.pushReplacement(
 // //               context,
@@ -194,10 +253,16 @@
 // //                 builder: (context) => ComplaintsScreen(),
 // //               ));
 //         },
+//         }, ImagePath: '',
+//         iconPath: '',
 //       ),
 //       MenuItemPatients(
 //         title: 'Directory',
 //         iconPath: "assets/image_SVG/opppointIcon.svg",
+
+
+
+//
 
 //         ImagePath: "assets/image_SVG/DirectoryIcon.svg",
 //         onTap: () {},
@@ -206,10 +271,18 @@
 //         title: 'Medical Files',
 //         ImagePath: "assets/image_SVG/Medical FilesIcon.svg",
 
+
 //         onTap: () {},
 
 //         iconPath: "assets/image_SVG/DirectoryIcon.svg",
 //         onTap: () {},
+
+//
+//         onTap: () {},
+//
+//         iconPath: "assets/image_SVG/DirectoryIcon.svg",
+//
+
 //       ),
 //       MenuItemData(
 //         title: 'Appointments',
@@ -229,6 +302,8 @@
 // //         onTap: () {},
 // //       ),
 
+
+
 // //       MenuItemData(
 // //         title: 'Appointments',
 // //         iconPath: "assets/image_SVG/opppointIcon.svg",
@@ -241,13 +316,20 @@
 // //         },
 // //       ),
 
+
 // //       MenuItemData(
 // //         title: 'Medical Files',
 // //         iconPath: "assets/image_SVG/Medical FilesIcon.svg",
 //         onTap: () {},
 
+
 //       ),
 //     ];
+
+//
+//       ),
+//     ];
+//
 
 //     return menuItems.map<Widget>((item) {
 //       return DrawerItem(
@@ -263,8 +345,13 @@
 //           item.onTap.call();
 //         },
 //       );
+
 //     }).toList();
 //   }
+//     }
+//     ).toList();
+//   }
+//
 
 //   List<Widget> buildGeneralItems() {
 //     final generalItems = [
@@ -272,6 +359,7 @@
 //         title: 'Settings',
 //         ImagePath: "assets/image_SVG/settingIcon.svg",
 
+//
 //         onTap: () {
 //           Navigator.pushReplacement(
 //               context,
@@ -280,8 +368,14 @@
 //               ));
 //         },
 
+
 //         iconPath: "assets/image_SVG/settingIcon.svg",
 //         onTap: () {},
+
+//
+//         iconPath: "assets/image_SVG/settingIcon.svg",
+//
+//
 
 //       ),
 //       MenuItemPatients(
@@ -290,11 +384,16 @@
 
 //         iconPath: "assets/image_SVG/helpIcon.svg",
 
+//
+//         iconPath: "assets/image_SVG/helpIcon.svg",
+//
+
 //         onTap: () {},
 //       ),
 //       MenuItemPatients(
 //         title: 'Log Out',
 //         ImagePath: 'assets/image_SVG/logOutIcon.svg',
+
 
 //         iconPath: 'assets/image_SVG/logOutIcon.svg',
 
@@ -302,6 +401,14 @@
 //       ),
 //     ];
 
+
+//
+//         iconPath: 'assets/image_SVG/logOutIcon.svg',
+//
+//         onTap: () {},
+//       ),
+//     ];
+//
 //     return generalItems.map<Widget>((item) {
 //       return DrawerItem(
 //         title: item.title,
@@ -351,3 +458,227 @@
 //     );
 //   }
 // }
+
+
+import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import '../../../../Core/Theme App/colors.dart';
+import '../../../../Core/Theme App/styleApp.dart';
+import 'drawer_item.dart';
+import '../patient_dashboard.dart';
+import '../../../Diagnosis Module/Presentation/screens/Diagnosis_Module_Screen.dart';
+import 'menu_item_patient.dart';
+import 'package:diagnosis_project/Feature/Complaints/presentation/screens/Complaints_Screen.dart';
+import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_page.dart';
+import 'package:diagnosis_project/Feature/Settings/presentation/views/Setting_patient_view.dart';
+
+class SliderBar extends StatefulWidget {
+  const SliderBar({super.key});
+
+  @override
+  State<SliderBar> createState() => _SliderBarState();
+}
+
+class _SliderBarState extends State<SliderBar> {
+  String? selectedMenuItem;
+  String? selectedGeneralItem;
+
+  @override
+  Widget build(BuildContext context) {
+    return Drawer(
+      backgroundColor: AppColors.whiteBackground,
+      child: SingleChildScrollView(
+        child: Column(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(20),
+              child: Row(
+                children: [
+                  Image.asset('assets/image/logo2.png'),
+                  const SizedBox(width: 10),
+                  const Text(
+                    "Diagnosis",
+                    style: TextStyle(
+                      fontFamily: 'Poppins',
+                      color: AppColors.BluePrimary,
+                      fontSize: 24,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  )
+                ],
+              ),
+            ),
+            const Gap(10),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'MENU',
+                    style: StyleApp.font14GrayMedium.copyWith(
+                      color: Colors.grey[600],
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Gap(10),
+                  ...buildMenuItems(),
+                ],
+              ),
+            ),
+            const Divider(height: 30, thickness: 1),
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 20.0),
+              child: Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  Text(
+                    'GENERAL',
+                    style: StyleApp.font14BlueSemiBold.copyWith(
+                      color: Colors.grey[600],
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                  const Gap(10),
+                  ...buildGeneralItems(),
+                ],
+              ),
+            ),
+            const Gap(10),
+          ],
+        ),
+      ),
+    );
+  }
+
+  List<Widget> buildMenuItems() {
+    final menuItems = <MenuItemPatients>[
+      MenuItemPatients(
+        title: 'DashBoard',
+        ImagePath: "assets/image_SVG/dashBoardIcon.svg",
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const PatientDashboard()),
+          );
+        }, iconPath: '',
+      ),
+      MenuItemPatients(
+        title: 'Diagnosis Module',
+        ImagePath: "assets/image_SVG/DiagnosisModuleIcon.svg",
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const DiagnosisModuleScreen()),
+          );
+        }, iconPath: '',
+      ),
+      MenuItemPatients(
+        title: 'Appointments',
+        ImagePath: "assets/image_SVG/opppointIcon.svg",
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => Appointments()),
+          );
+        }, iconPath: '',
+      ),
+      MenuItemPatients(
+        title: 'Medical Files',
+        ImagePath: "assets/image_SVG/Medical FilesIcon.svg",
+        onTap: () {}, iconPath: '',
+      ),
+      MenuItemPatients(
+        title: 'Complaints',
+        ImagePath: "assets/image_SVG/DirectoryIcon.svg",
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => ComplaintsScreen()),
+          );
+        }, iconPath: '',
+      ),
+    ];
+
+    return menuItems.map((item) {
+      return DrawerItem(
+        title: item.title,
+        iconPath: item.ImagePath,
+        isActive: selectedMenuItem == item.title,
+        onTap: () {
+          setState(() => selectedMenuItem = item.title);
+          Navigator.pop(context);
+          item.onTap.call();
+        },
+      );
+    }).toList();
+  }
+
+  List<Widget> buildGeneralItems() {
+    final generalItems = <MenuItemPatients>[
+      MenuItemPatients(
+        title: 'Settings',
+        ImagePath: "assets/image_SVG/settingIcon.svg",
+        onTap: () {
+          Navigator.pushReplacement(
+            context,
+            MaterialPageRoute(builder: (context) => const SettingPatientView()),
+          );
+        }, iconPath: '',
+      ),
+      MenuItemPatients(
+        title: 'Help',
+        ImagePath: "assets/image_SVG/helpIcon.svg",
+        onTap: () {}, iconPath: '',
+      ),
+      MenuItemPatients(
+        title: 'Log Out',
+        ImagePath: 'assets/image_SVG/logOutIcon.svg',
+        onTap: () {
+          handleLogout(context);
+        }, iconPath: '',
+      ),
+    ];
+
+    return generalItems.map((item) {
+      return DrawerItem(
+        title: item.title,
+        iconPath: item.ImagePath,
+        isActive: selectedGeneralItem == item.title,
+        onTap: () {
+          setState(() => selectedGeneralItem = item.title);
+          Navigator.pop(context);
+          item.onTap.call();
+        },
+      );
+    }).toList();
+  }
+
+  void handleLogout(BuildContext context) {
+    showDialog(
+      context: context,
+      builder: (context) => AlertDialog(
+        title: const Text('LogOut'),
+        content: const Text('Are You Sure you want Exit ?'),
+        actions: [
+          TextButton(
+            onPressed: () => Navigator.pop(context),
+            child: const Text('Cancel'),
+          ),
+          TextButton(
+            onPressed: () {
+              Navigator.pop(context);
+              Navigator.pushNamedAndRemoveUntil(
+                context,
+                '/login',
+                    (route) => false,
+              );
+            },
+            child: const Text('Log Out', style: TextStyle(color: Colors.red)),
+          ),
+        ],
+      ),
+    );
+  }
+}
+

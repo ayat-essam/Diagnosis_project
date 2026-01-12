@@ -111,14 +111,14 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
               context, MaterialPageRoute(builder: (context) => const MyPatientsScreen(),));
         },
       ),
-      MenuItemDoctors(
-        title: 'Consultations',
-        ImagePath: "assets/image_SVG/consultaionIcon.svg",
-         onTap: () {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => const ConsultationsView(),));
-        },
-      ),
+      // MenuItemDoctors(
+      //   title: 'Consultations',
+      //   ImagePath: "assets/image_SVG/consultaionIcon.svg",
+      //    onTap: () {
+      //     Navigator.pushReplacement(
+      //         context, MaterialPageRoute(builder: (context) => const ConsultationsView(),));
+      //   },
+      // ),
       MenuItemDoctors(
         title: 'Diagnoses',
         ImagePath: "assets/image_SVG/DiagnosisIcon.svg",

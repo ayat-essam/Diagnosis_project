@@ -9,6 +9,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import '../../../../../Core/Theme App/colors.dart';
+import '../../../../../Core/reusable_widgets/custom_button.dart';
 import '../widgets/ai_diagnosis_setting_item.dart';
 import '../widgets/doctor_work_setting_item.dart';
 import '../widgets/important_note_item.dart';
@@ -62,6 +63,11 @@ class _AdminSettingScreenState extends State<AdminSettingScreen> {
                       ),
                     ),
                     const Spacer(),
+
+
+
+
+
                     CustomAppButton(
                       onTap: () {
                         showDialog(

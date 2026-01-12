@@ -5,7 +5,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-import '../../../data/models/doctor_dash_board_container_model.dart';
+import 'doctor_dash_board_container_model.dart';
 import 'custom_linear_gradiant_circle.dart';
 
 class InfoConatinerDoctorDashBoard extends StatelessWidget {

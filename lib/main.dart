@@ -32,6 +32,7 @@ import 'Feature/Admin/Admin Setting System/presentation/screens/admin_setting_sc
 import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
 import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
 import 'Feature/Help/presentation/screens/Help_Screen.dart';
+import 'Feature/SuggestedTreatment/presentation/view/suggested_treatment.dart';
 import 'Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
 import 'Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 
@@ -80,7 +81,7 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
-                  home: const AdminSettingScreen()
+                  home: const DoctorDashboardScreen(),
 
 
                   //DoctorsScreen(),

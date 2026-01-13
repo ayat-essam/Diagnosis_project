@@ -18,6 +18,7 @@ import 'package:diagnosis_project/Feature/Admin/doctors_management/data/datasour
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/repositories/doctors_management_repo_imp.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/add_doctor_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/repos/doctors_mangement_repo.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/deactivate_doctor_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/get_doctor_profile_use_case.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/get_doctors_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_cubit.dart';
@@ -65,10 +66,12 @@ Future<void> setupServiceLocator() async {
   sl.registerLazySingleton(() => AddDoctorUseCase(sl()));
   sl.registerLazySingleton(() => GetDoctorsUseCase(sl()));
   sl.registerLazySingleton(() => GetDoctorProfileUseCase(sl()));
+  sl.registerLazySingleton(() => DeactivateDoctorUsecase(sl()));
 
   sl.registerFactory(() => AddDoctorCubit(sl()));
   sl.registerFactory(() => DoctorsManagementCubit(
-      getDoctorProfileUseCase: sl(), getDoctorsUseCase: sl()));
+      getDoctorProfileUseCase: sl(), getDoctorsUseCase: sl(),
+      deactivateDoctorUsecase: sl()));
   // ---------------- Data Layer (Patientmangement Data Sources) ----------------
   sl.registerLazySingleton<PatientManagementRemoteDataSource>(
     () => PatientManagementRemoteDataSourceImp(sl()),

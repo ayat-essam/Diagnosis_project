@@ -17,14 +17,23 @@ class GetDoctorsError extends DoctorsManagementState {
   GetDoctorsError(this.message);
 }
 
-
-class GetDoctorProfileInitial extends DoctorsManagementState {}
 class GetDoctorProfileLoading extends DoctorsManagementState {}
+
 class GetDoctorProfileSuccess extends DoctorsManagementState {
   final DoctorProfileEntity doctorProfileEntity;
   GetDoctorProfileSuccess(this.doctorProfileEntity);
 }
+
 class GetDoctorProfileError extends DoctorsManagementState {
   final String message;
   GetDoctorProfileError(this.message);
+}
+
+class DeactivateDoctorLoading extends DoctorsManagementState {}
+
+class DeactivateDoctorSuccess extends DoctorsManagementState {}
+
+class DeactivateDoctorError extends DoctorsManagementState {
+  final String message;
+  DeactivateDoctorError(this.message);
 }

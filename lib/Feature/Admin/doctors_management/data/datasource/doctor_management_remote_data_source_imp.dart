@@ -37,4 +37,10 @@ class DoctorManagementRemoteDataSourceImp
         .get(ApiConstants.getDoctorProfileEndPoint + id.toString());
     return DoctorProfileModel.fromJson(response);
   }
+  
+  @override
+  Future<void> deactivateDoctor({required int id})async {
+    await apiConsumer
+        .patch(ApiConstants.deactivateDoctorEndPoint + id.toString());
+  }
 }

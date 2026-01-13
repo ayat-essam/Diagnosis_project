@@ -11,4 +11,6 @@ abstract class DoctorManagementRemoteDataSource {
   Future<DoctorProfileModel> getDoctorProfile({
     required int id,
   });
+
+  Future<void> deactivateDoctor({required int id});
 }

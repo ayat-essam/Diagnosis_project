@@ -14,4 +14,7 @@ abstract class DoctorsManagementRepo {
   Future<Either<ErrorModel, DoctorProfileEntity>> getDoctorProfile({
     required int id,
   });
+  Future<Either<ErrorModel, void>> deactivateDoctor({
+    required int id,
+  });
 }

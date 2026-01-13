@@ -9,6 +9,7 @@ class ApiConstants {
   static const String addDoctorEndPoint = '/DoctorManagement/add-doctor';
   static const String getDoctorsEndPoint = '/DoctorManagement';
   static const String getDoctorProfileEndPoint = '/DoctorManagement/';
+  static const String deactivateDoctorEndPoint = '/DoctorManagement//status/';
   static const String getPatientsEndPoint = '/PatientManagement';
   static const String getPatientProfileEndPoint = '/PatientManagement/';
   static const String deletePatientEndPoint = '/PatientManagement//status/';

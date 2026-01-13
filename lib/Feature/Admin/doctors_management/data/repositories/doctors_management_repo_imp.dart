@@ -46,4 +46,14 @@ class DoctorsManagementRepoImp extends DoctorsManagementRepo {
       return Left(e.errorModel);
     }
   }
+
+  @override
+  Future<Either<ErrorModel, void>> deactivateDoctor({required int id}) async {
+    try {
+      await dataSource.deactivateDoctor(id: id);
+      return const Right(null);
+    } on ServerException catch (e) {
+      return Left(e.errorModel);
+    }
+  }
 }

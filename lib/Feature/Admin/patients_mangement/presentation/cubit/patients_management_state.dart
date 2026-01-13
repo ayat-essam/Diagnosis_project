@@ -31,9 +31,7 @@ class GetPatientProfileError extends PatientsManagementState {
 
 class DeletePatientsLoading extends PatientsManagementState {}
 
-class DeletePatientSuccess extends PatientsManagementState {
-  DeletePatientSuccess();
-}
+class DeletePatientSuccess extends PatientsManagementState {}
 
 class DeletePatientError extends PatientsManagementState {
   final String message;

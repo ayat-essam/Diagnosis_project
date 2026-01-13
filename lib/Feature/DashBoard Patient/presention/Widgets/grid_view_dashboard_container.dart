@@ -108,7 +108,8 @@ class _GridViewDashboardContainerState
                     subtitle: state.topsysmptomModel.symptom ?? '—',
                   );
                 } else if (state is TopSymptomFailure) {
-                  updatedCard = card.copyWith(subtitle: 'Error');
+                  print(state.errMessage);
+                  updatedCard = card.copyWith(subtitle: "Error");
                 }
 
                 return GestureDetector(

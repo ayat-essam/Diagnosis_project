@@ -63,7 +63,10 @@ class DashboardRepoImpl implements DashboardRepo {
     try {
       final response =
           await apiConsumer.get('$baseUrl/Consultation/top-symptoms-this-week');
-      return right(response);
+
+      final model = TopsysmptomModel.fromJson(response);
+
+      return Right(model);
     } on DioException catch (e) {
       return Left(ServerFailure(e.toString()));
     } catch (e) {

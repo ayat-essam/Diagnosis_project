@@ -27,14 +27,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_localizations/flutter_localizations.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'Core/DI/depancicy_injection.dart';
-import 'Core/Theme App/colors.dart';
-import 'Feature/Admin/Admin Setting System/presentation/screens/admin_setting_screen.dart';
-import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
-import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
-import 'Feature/Help/presentation/screens/Help_Screen.dart';
-import 'Feature/physiotherapy/presentation/screens/Physiotherapy_Screen.dart';
-import 'Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();

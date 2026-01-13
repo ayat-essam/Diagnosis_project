@@ -1,10 +1,10 @@
 import 'package:diagnosis_project/Core/reusable_widgets/custom_text.dart';
+import 'package:diagnosis_project/Feature/Help/presentation/cubit/help_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/colors.dart';
 import '../../../../Core/Theme App/Fonts.dart';
-import '../../data/cubit/help_cubit.dart';
 
 class SubmitTicketDialog extends StatefulWidget {
   const SubmitTicketDialog({super.key});

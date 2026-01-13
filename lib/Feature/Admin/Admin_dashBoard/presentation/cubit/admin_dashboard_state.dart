@@ -1,0 +1,19 @@
+part of 'admin_dashboard_cubit.dart';
+
+abstract class AdminDashboardState {}
+
+class AdminDashboardInitial extends AdminDashboardState {}
+
+class AdminDashboardLoading extends AdminDashboardState {}
+
+class AdminDashboardSuccess extends AdminDashboardState {
+  final AdminDashboardEntity data;
+
+  AdminDashboardSuccess(this.data);
+}
+
+class AdminDashboardError extends AdminDashboardState {
+  final String message;
+
+  AdminDashboardError(this.message);
+}

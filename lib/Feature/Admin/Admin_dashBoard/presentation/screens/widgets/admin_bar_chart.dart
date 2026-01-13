@@ -2,74 +2,31 @@ import 'package:diagnosis_project/Core/reusable_widgets/bar_chart_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:fl_chart/fl_chart.dart';
 
+import '../../../domain/entities/admin_dashboard_entity.dart';
+
 class AdminBarChart extends StatelessWidget {
-  const AdminBarChart({
-    super.key,
-  });
+  final List<TopDoctor> topDoctors;
+
+  const AdminBarChart({super.key, required this.topDoctors});
 
   @override
   Widget build(BuildContext context) {
     return BarChartWidget(
-      bottomLabels: const [
-        'Dr.Ahmed',
-        'Dr.Nada',
-        'Dr.Aya',
-        'Dr.Alaa',
-        'Dr.Ali',
-        'Dr.Anwer',
-        'Dr.Taha'
-      ],
-      barGroups: [
-        BarChartGroupData(x: 0, barRods: [
-          BarChartRodData(
-              toY: 10,
-              color: Colors.blue,
-              borderRadius: BorderRadius.zero,
-              width: 20)
-        ]),
-        BarChartGroupData(x: 1, barRods: [
-          BarChartRodData(
-              toY: 10,
-              color: Colors.blue,
-              borderRadius: BorderRadius.zero,
-              width: 20)
-        ]),
-        BarChartGroupData(x: 2, barRods: [
-          BarChartRodData(
-              toY: 7,
-              color: Colors.blue,
-              borderRadius: BorderRadius.zero,
-              width: 20)
-        ]),
-        BarChartGroupData(x: 3, barRods: [
-          BarChartRodData(
-              toY: 10,
-              color: Colors.blue,
-              borderRadius: BorderRadius.zero,
-              width: 20)
-        ]),
-        BarChartGroupData(x: 4, barRods: [
-          BarChartRodData(
-              toY: 10,
-              color: Colors.blue,
-              borderRadius: BorderRadius.zero,
-              width: 20)
-        ]),
-        BarChartGroupData(x: 5, barRods: [
-          BarChartRodData(
-              toY: 6,
-              color: Colors.blue,
-              borderRadius: BorderRadius.zero,
-              width: 20)
-        ]),
-        BarChartGroupData(x: 6, barRods: [
-          BarChartRodData(
-              toY: 10,
+      bottomLabels: topDoctors.map((e) => e.doctorName).toList(),
+      barGroups: List.generate(topDoctors.length, (index) {
+        return BarChartGroupData(
+          x: index,
+          barRods: [
+            BarChartRodData(
+              toY: topDoctors[index].diagnosisCount.toDouble(),
               color: Colors.blue,
               width: 20,
-              borderRadius: BorderRadius.zero),
-        ]),
-      ],
+              borderRadius: BorderRadius.zero,
+            ),
+            
+          ],
+        );
+      }),
     );
   }
 }

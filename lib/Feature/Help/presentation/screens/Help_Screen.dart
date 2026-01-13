@@ -1,3 +1,4 @@
+import 'package:diagnosis_project/Feature/Help/presentation/cubit/help_cubit.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -6,7 +7,6 @@ import '../../../../Core/api/dio_consumer.dart';
 import '../../../../Core/reusable_widgets/custom_app_bar.dart';
 import '../../../../Core/reusable_widgets/search_bar_widget.dart';
 import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
-import '../../data/cubit/help_cubit.dart';
 import '../../data/datasource/help_remote_data_source.dart';
 import '../../data/repository/help_repo_impl.dart';
 import '../../domain/usecases/create_ticket_usecase.dart';

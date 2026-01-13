@@ -1,8 +1,8 @@
+import 'package:diagnosis_project/Feature/Help/presentation/cubit/help_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../Core/Theme App/Fonts.dart';
 import '../../../../Core/Theme App/colors.dart';
-import '../../data/cubit/help_cubit.dart';
 
 class FaqExpansionList extends StatefulWidget {
   const FaqExpansionList({super.key});

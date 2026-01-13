@@ -3,8 +3,15 @@ import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/presentation/scr
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
+import '../../../domain/entities/admin_dashboard_entity.dart';
+
 class ListViewAdminDashboardInfoContainer extends StatefulWidget {
-  const ListViewAdminDashboardInfoContainer({super.key});
+  final AdminDashboardEntity data;
+
+  const ListViewAdminDashboardInfoContainer({
+    super.key,
+    required this.data,
+  });
 
   @override
   State<ListViewAdminDashboardInfoContainer> createState() =>
@@ -13,32 +20,34 @@ class ListViewAdminDashboardInfoContainer extends StatefulWidget {
 
 class _ListViewAdminDashboardInfoContainerState
     extends State<ListViewAdminDashboardInfoContainer> {
+      
   int selectedIndex = 0;
   @override
   Widget build(BuildContext context) {
+    final data = widget.data;
     List<InfoAdminDashBoardModel> infoCards = [
-      InfoAdminDashBoardModel(
+       InfoAdminDashBoardModel(
         title: 'Total Doctors',
-        subtitle: '156',
-        description: '↑ 12% vs last months',
+        subtitle: data.totalDoctors.toString(),
+        description: data.totalDoctorsChange,
         imgPath: 'assets/image_SVG/doctorBagIcon.svg',
       ),
       InfoAdminDashBoardModel(
         title: 'Active Doctors',
-        subtitle: '142',
-        description: '↑ 8% vs last months',
+        subtitle: data.activeDoctors.toString(),
+        description: data.activeDoctorsChange,
         imgPath: 'assets/image_SVG/active_doctors.svg',
       ),
       InfoAdminDashBoardModel(
         title: 'Total Patients',
-        subtitle: '3,421',
-        description: '↑ 12% vs last months',
+        subtitle: data.totalPatients.toString(),
+        description: data.totalPatientsChange,
         imgPath: 'assets/image_SVG/total_patient.svg',
       ),
       InfoAdminDashBoardModel(
-        title: 'Peak Useage Time',
-        subtitle: '2:00 PM - 4:00 PM',
-        description: 'Highiest system activity window',
+        title: 'Peak Usage Time',
+        subtitle: data.peakUsageTime,
+        description: 'Highest system activity window',
         imgPath: 'assets/image_SVG/peak_useage_time.svg',
       ),
       InfoAdminDashBoardModel(

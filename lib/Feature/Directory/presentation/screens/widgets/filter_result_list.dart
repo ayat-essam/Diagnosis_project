@@ -7,7 +7,16 @@ class FilterResultList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final doctors = DoctorModel.fakeDoctorsList;
+    final doctors = [
+      DoctorModel(
+        id: 1,
+        fullName: 'Dr. John Doe',
+        experienceYears: 5,
+        gender: 'Male',
+        profileImageUrl: 'assets/images/doctor1.png',
+        consultationsCount: 120,    
+        status: 'Active',
+    )];
 
     return ListView.builder(
       itemCount: doctors.length,

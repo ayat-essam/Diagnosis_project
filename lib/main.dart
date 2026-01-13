@@ -4,6 +4,7 @@ import 'package:diagnosis_project/Core/localization/cubit/locale_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_dashBoard/presentation/screens/admin_dashboard_screen.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_doctor_profile/presentation/views/admin_doctor-profile.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin_patient-profile/presentation/views/admin_patient_profile.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/doctors_mangement_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Login%20Screen/login_screen.dart';
 import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/cheack_password.dart';
 
@@ -80,8 +81,9 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
-                  home: const PatientDashboard()
+                  home: const DoctorsMangementScreen()
 
+                  // home: const ConsultationsView()
 
                   //DoctorsScreen(),
                   );

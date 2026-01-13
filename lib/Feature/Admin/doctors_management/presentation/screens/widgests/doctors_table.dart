@@ -1,15 +1,18 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/data/models/doctor_model.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/entities/doctor_entity.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/doctors_mangement_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/action_dialog.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/status_active_or_inactive.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/custom_table.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
+import 'package:intl/intl.dart';
 
 class DoctorsTable extends StatelessWidget {
-  final List<DoctorModel> doctors;
+  final List<DoctorEntity> doctors;
 
   const DoctorsTable({super.key, required this.doctors});
 
@@ -32,17 +35,18 @@ class DoctorsTable extends StatelessWidget {
           cells: [
             DataCell(Row(
               children: [
-                CircleAvatar(
-                    backgroundImage: AssetImage(doctor.image), radius: 15),
+                const CircleAvatar(
+                    backgroundImage: AssetImage("assets/image/profile.png"),
+                    radius: 15),
                 Gap(10.w),
                 SizedBox(
                   width: 45.w,
-                  child: Text(doctor.name, style: textStyle),
+                  child: Text(doctor.fullName, style: textStyle),
                 ),
               ],
             )),
-            DataCell(Text(doctor.experience, style: textStyle)),
-            DataCell(Text(doctor.gender, style: textStyle)),
+            DataCell(Text(doctor.experienceYears.toString(), style: textStyle)),
+            DataCell(Text(doctor.gender ?? "Male", style: textStyle)),
             DataCell(Row(
               children: [
                 Image.asset(
@@ -67,7 +71,10 @@ class DoctorsTable extends StatelessWidget {
                   width: 20.w,
                 ),
                 Text(
-                  doctor.lastConsultationDate,
+                  doctor.lastConsultationDate == null
+                      ? '-'
+                      : DateFormat('MMM dd, yyyy')
+                          .format(DateTime.parse(doctor.lastConsultationDate!)),
                   style: textStyle,
                 ),
               ],
@@ -75,9 +82,15 @@ class DoctorsTable extends StatelessWidget {
             DataCell(StatusActiveOrInactive(status: doctor.status)),
             DataCell(IconButton(
               onPressed: () {
+                // Capture the cubit from the current context
+                final doctorCubit = context.read<DoctorsManagementCubit>();
+
                 showDialog(
-                    context: context,
-                    builder: (context) => const ActionDialog());
+                  context: context,
+                  builder: (context) => BlocProvider.value(
+                      value: doctorCubit, // Provide the existing cubit instance
+                      child: ActionDialog(doctorEntity: doctor)),
+                );
               },
               icon: const Icon(
                 Icons.more_vert,

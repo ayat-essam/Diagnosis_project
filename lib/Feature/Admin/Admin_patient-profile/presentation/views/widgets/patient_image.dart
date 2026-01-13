@@ -1,10 +1,11 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/entities/patient_profile_entity.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
 
 class PatientImage extends StatelessWidget {
-  const PatientImage({super.key});
-
+  const PatientImage({super.key, required this.patientProfileEntity});
+  final PatientProfileEntity patientProfileEntity;
   @override
   Widget build(BuildContext context) {
     return GradientBorder(
@@ -14,8 +15,8 @@ class PatientImage extends StatelessWidget {
               borderRadius: BorderRadius.circular(16),
               color: const Color(0xffF7F7F7),
             ),
-            child: const Column(children: [
-              CircleAvatar(
+            child: Column(children: [
+              const CircleAvatar(
                 radius: 36,
                 child: CircleAvatar(
                   radius: 36,
@@ -25,10 +26,10 @@ class PatientImage extends StatelessWidget {
               ),
               const SizedBox(height: 5),
 
-              // Name
-              const Text(
-                'Emily Williams',
-                style: TextStyle(
+              //first  Name
+              Text(
+                "${patientProfileEntity.firstName} ${patientProfileEntity.lastName}",
+                style: const TextStyle(
                   fontSize: 12,
                   fontWeight: FontWeight.w500,
                   fontFamily: 'Poppins',
@@ -37,10 +38,10 @@ class PatientImage extends StatelessWidget {
               ),
               const SizedBox(height: 5),
 
-              // Name
-              const Text(
-                '123patient@email.com',
-                style: TextStyle(
+              // email
+              Text(
+                patientProfileEntity.email,
+                style: const TextStyle(
                   fontSize: 10,
                   fontWeight: FontWeight.w400,
                   fontFamily: 'Poppins',

@@ -24,13 +24,14 @@ class AccountStep extends StatelessWidget {
         TextformFieldAndTitle(
           title: "Password",
           initialValue: cubit.state.password,
-          onChanged: cubit.onPasswordChanged,
+           onChanged: (val) => cubit.onPasswordChanged(val),
+
         ),
         Gap(8.h),
         TextformFieldAndTitle(
           title: "Confirm Password",
-          initialValue: cubit.state.confirmPassword,
-          onChanged: cubit.onConfirmPasswordChanged,
+         initialValue: cubit.state.confirmPassword ,
+         onChanged: (val) => cubit.onConfirmPasswordChanged(val),
         ),
         Gap(15.h),
         TwoButtonRow(

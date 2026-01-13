@@ -24,7 +24,19 @@ class InfoStep extends StatelessWidget {
         TextformFieldAndTitle(
           title: "Name",
           initialValue: cubit.state.userName,
-          onChanged: cubit.onNameChanged,
+          onChanged: (val) => cubit.onNameChanged(val),
+        ),
+        Gap(8.h),
+        TextformFieldAndTitle(
+          title: "First Name",
+          initialValue: cubit.state.userName,
+          onChanged: (val) => cubit.onFNameChanged(val),
+        ),
+        Gap(8.h),
+        TextformFieldAndTitle(
+          title: "Last Name",
+          initialValue: cubit.state.userName,
+          onChanged: (val) => cubit.onLNameChanged(val),
         ),
         Gap(8.h),
         TextformFieldAndTitle(
@@ -36,14 +48,14 @@ class InfoStep extends StatelessWidget {
         TextformFieldAndTitle(
           title: "Phone Number",
           initialValue: cubit.state.phoneNumber,
-          onChanged: cubit.onPhoneChanged,
+           onChanged: (val) => cubit.onPhoneChanged(val),
         ),
         Gap(8.h),
         TextformFieldAndTitle(
           title: "Address",
           keyboardType: TextInputType.streetAddress,
           initialValue: cubit.state.address,
-          onChanged: cubit.onAddressChanged,
+          onChanged: (val) => cubit.onAddressChanged(val),
         ),
         Gap(15.h),
         TwoButtonRow(

@@ -1,5 +1,5 @@
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/models/add_doctor_request.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/add_doctor_use_case.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/add_doctor_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -8,6 +8,8 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
   AddDoctorCubit(this.addDoctorUseCase) : super(AddDoctorState());
 
   void onNameChanged(String val) => emit(state.copyWith(userName: val));
+  void onFNameChanged(String val) => emit(state.copyWith(fName: val));
+  void onLNameChanged(String val) => emit(state.copyWith(lName: val));
   void onEmailChanged(String val) => emit(state.copyWith(email: val));
   void onPasswordChanged(String val) => emit(state.copyWith(password: val));
   void onConfirmPasswordChanged(String val) =>
@@ -27,6 +29,8 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
 
     final request = AddDoctorRequest(
       userName: state.userName,
+      fName: state.fName,
+      lName: state.lName,
       email: state.email,
       password: state.password,
       confirmPassword: state.confirmPassword,

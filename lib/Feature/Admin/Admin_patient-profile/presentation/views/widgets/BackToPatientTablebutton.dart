@@ -17,7 +17,9 @@ class BackToPatientTableButton extends StatelessWidget {
             ),
             padding: const EdgeInsets.symmetric(vertical: 4, horizontal: 6),
           ),
-          onPressed: () {},
+          onPressed: () {
+            Navigator.pop(context);
+          },
           child: const Row(
             children: [
               Icon(Icons.arrow_back_ios, color: Colors.white, size: 8),

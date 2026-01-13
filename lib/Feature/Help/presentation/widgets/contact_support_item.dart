@@ -39,8 +39,7 @@ class ContactSupportItem extends StatelessWidget {
                 fontFamily: 'Poppins'),
           ),
           const SizedBox(height: 16),
-<<<<<<< HEAD
-          SizedBox(
+    SizedBox(
             width: double.infinity,
             child: ElevatedButton(
               style: ElevatedButton.styleFrom(
@@ -65,7 +64,7 @@ class ContactSupportItem extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 8),
-=======
+
           // SizedBox(
           //   width: double.infinity,
           //  child:  ElevatedButton(
@@ -92,8 +91,7 @@ class ContactSupportItem extends StatelessWidget {
           //
           // ),
           // const SizedBox(height: 8),
->>>>>>> b59bc0e0c30810bbf52f75671c3352d782c29bc0
-          SizedBox(
+        SizedBox(
               width: double.infinity,
               child: OutlinedButton(
                 style: OutlinedButton.styleFrom(

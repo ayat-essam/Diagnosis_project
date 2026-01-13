@@ -22,6 +22,36 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
           return const Center(child: CircularProgressIndicator());
         }
 
+<<<<<<< HEAD
+        return Container(
+          margin: const EdgeInsets.only(bottom: 12),
+          decoration: BoxDecoration(
+            border: Border.all(color: AppColors.BluePrimary),
+            borderRadius: BorderRadius.circular(12),
+          ),
+          child: Column(
+            children: [
+              GestureDetector(
+                onTap: () {
+                  setState(() {
+                    expandedId = isExpanded ? null : faq.id;
+                  });
+                },
+                child: Container(
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    children: [
+                      Expanded(
+                        child: Text(
+                          faq.question,
+                          style: const TextStyle(
+                            color: AppColors.graySecondary,
+                            fontFamily: 'Poppins',
+                            fontWeight: Fonts.semiBold,
+                            fontSize: 13,
+=======
         if (state is FaqsLoaded) {
           final faqs = state.faqs;
 
@@ -92,6 +122,7 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
                               fontWeight: Fonts.regular,
                               fontSize: 11,
                             ),
+>>>>>>> b59bc0e0c30810bbf52f75671c3352d782c29bc0
                           ),
                         ),
                         crossFadeState: isExpanded
@@ -101,6 +132,39 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
                       ),
                   ],
                 ),
+<<<<<<< HEAD
+              ),
+              AnimatedCrossFade(
+                firstChild: const SizedBox.shrink(),
+                secondChild: Container(
+                  width: double.infinity,
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                  decoration: const BoxDecoration(
+                      // border: Border(
+                      //   top: BorderSide(color: AppColors.BluePrimary),
+                      // ),
+                      ),
+                  child: Text(
+                    faq.answer,
+                    style: const TextStyle(
+                      color: AppColors.graySecondary,
+                      fontFamily: 'Poppins',
+                      fontWeight: Fonts.regular,
+                      fontSize: 11,
+                    ),
+                  ),
+                ),
+                crossFadeState: isExpanded
+                    ? CrossFadeState.showSecond
+                    : CrossFadeState.showFirst,
+                duration: const Duration(milliseconds: 250),
+              ),
+            ],
+          ),
+        );
+      }).toList(),
+=======
               );
             }),
           );
@@ -112,6 +176,7 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
 
         return const SizedBox.shrink();
       },
+>>>>>>> b59bc0e0c30810bbf52f75671c3352d782c29bc0
     );
   }
 }

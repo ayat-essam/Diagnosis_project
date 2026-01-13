@@ -10,8 +10,8 @@ SearchBar searchbarwidget(String searchTitle) {
       TextStyle(color: Color(0xff4682fa)),
     ),
     shape: WidgetStateProperty.resolveWith<OutlinedBorder?>((
-        Set<WidgetState> states,
-        ) {
+      Set<WidgetState> states,
+    ) {
       return RoundedRectangleBorder(
         borderRadius: BorderRadius.circular(12),
         side: const BorderSide(color: Colors.blue, width: 1.5),

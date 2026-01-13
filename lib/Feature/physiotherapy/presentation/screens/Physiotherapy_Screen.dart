@@ -68,21 +68,20 @@ class _PhysiotherapyScreenState extends State<PhysiotherapyScreen> {
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
                   const PhysioHeader(),
-                  const SearchBarWidget(hintText: 'Search in Exercise Library....',),
-
+                  const SearchBarWidget(
+                    hintText: 'Search in Exercise Library....',
+                  ),
                   CustomText(
                       text: "Exercise Library",
                       fontSize: 16.sp,
                       color: AppColors.graySecondary,
                       fontWeight: Fonts.bold),
-               Gap(16.h),
-
+                  Gap(16.h),
                   ListView.separated(
                     shrinkWrap: true,
                     physics: const NeverScrollableScrollPhysics(),
                     itemCount: exercises.length,
-                    separatorBuilder: (_, __) =>
-                        Gap(16.h),
+                    separatorBuilder: (_, __) => Gap(16.h),
                     itemBuilder: (context, index) {
                       return ExerciseCard(exercise: exercises[index]);
                     },

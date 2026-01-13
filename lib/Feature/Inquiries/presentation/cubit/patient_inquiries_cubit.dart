@@ -4,21 +4,20 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:injectable/injectable.dart';
 
 import '../../domain/usecases/get_patient_inquiries_usecase.dart';
+
 class PatientInquiriesCubit extends Cubit<PatientInquiriesState> {
   final GetPatientInquiriesUseCase useCase;
 
-  PatientInquiriesCubit(this.useCase)
-      : super(PatientInquiriesInitial());
+  PatientInquiriesCubit(this.useCase) : super(PatientInquiriesInitial());
 
   void loadInquiries() async {
-  emit(PatientInquiriesLoading());
+    emit(PatientInquiriesLoading());
 
-  final result = await useCase();
+    final result = await useCase();
 
-  result.fold(
-    (error) => emit(PatientInquiriesError(error.errorMessage)),
-    (data) => emit(PatientInquiriesLoaded(data)),
-  );
-}
-
+    result.fold(
+      (error) => emit(PatientInquiriesError(error.errorMessage)),
+      (data) => emit(PatientInquiriesLoaded(data)),
+    );
+  }
 }

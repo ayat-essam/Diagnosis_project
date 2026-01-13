@@ -35,6 +35,7 @@ class StepIndicator extends StatelessWidget {
     );
   }
 }
+
 class CircleItem extends StatelessWidget {
   const CircleItem({super.key, required this.index, required this.isActive});
 

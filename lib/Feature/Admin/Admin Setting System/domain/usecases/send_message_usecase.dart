@@ -8,7 +8,8 @@ class SendMessageUseCase {
 
   SendMessageUseCase({required this.repository});
 
-  Future<Either<ErrorModel, void>> call({required SendMessageRequest sendMessageRequest}) async {
+  Future<Either<ErrorModel, void>> call(
+      {required SendMessageRequest sendMessageRequest}) async {
     return await repository.sendMessage(sendMessageRequest: sendMessageRequest);
   }
 }

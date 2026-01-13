@@ -11,12 +11,10 @@ class EffectBar extends StatelessWidget {
     return Row(
       mainAxisAlignment: MainAxisAlignment.start,
       children: [
-                    const Icon(Icons.warning_amber, color: Colors.red, size: 18),
-       
-               const SizedBox(width: 6),
-
+        const Icon(Icons.warning_amber, color: Colors.red, size: 18),
+        const SizedBox(width: 6),
         Text(label),
-         SizedBox(width: 30.w),
+        SizedBox(width: 30.w),
         Expanded(
           child: LinearProgressIndicator(
             value: 0.7,

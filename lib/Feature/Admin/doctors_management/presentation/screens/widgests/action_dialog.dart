@@ -31,7 +31,7 @@ class ActionDialog extends StatelessWidget {
                 title: 'Deactivate doctor',
                 image: 'assets/image/deactivate.png',
                 onTap: () {
-                   showDialog(
+                  showDialog(
                       context: context,
                       builder: (context) => const DeactivateDialog());
                 },

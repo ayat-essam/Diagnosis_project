@@ -9,7 +9,7 @@ class DoctorModel {
   final String status;
 
   DoctorModel({
-   required this.id,
+    required this.id,
     required this.image,
     required this.name,
     required this.experience,

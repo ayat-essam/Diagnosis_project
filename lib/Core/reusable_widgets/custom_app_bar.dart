@@ -40,7 +40,6 @@ class CustomAppBar extends StatelessWidget {
   final String? logoPath;
   final String? appName;
 
-
   @override
   Widget build(BuildContext context) {
     return Material(
@@ -53,7 +52,6 @@ class CustomAppBar extends StatelessWidget {
           child: Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: [
-
               Row(
                 children: [
                   if (showMenu)
@@ -61,15 +59,12 @@ class CustomAppBar extends StatelessWidget {
                       onTap: onMenuTap,
                       child: const Icon(Icons.menu, size: 26),
                     ),
-
                   if (showBack)
                     GestureDetector(
                       onTap: onBackTap ?? () => Navigator.pop(context),
                       child: const Icon(Icons.arrow_back_ios, size: 22),
                     ),
-
                   if (showMenu || showBack || showLogo) SizedBox(width: 10.w),
-
                   if (showLogo && logoPath != null && appName != null)
                     Row(
                       children: [
@@ -90,21 +85,18 @@ class CustomAppBar extends StatelessWidget {
                         ),
                       ],
                     )
-
-                  else
-                    if (title != null)
-                      Text(
-                        title!,
-                        style: TextStyle(
-                          fontSize: 12.sp,
-                          fontWeight: Fonts.semiBold,
-                          fontFamily: 'Poppins',
-                          color: AppColors.black,
-                        ),
+                  else if (title != null)
+                    Text(
+                      title!,
+                      style: TextStyle(
+                        fontSize: 12.sp,
+                        fontWeight: Fonts.semiBold,
+                        fontFamily: 'Poppins',
+                        color: AppColors.black,
                       ),
+                    ),
                 ],
               ),
-
               Row(
                 children: [
                   if (rightWidget != null) rightWidget!,
@@ -157,5 +149,4 @@ class CustomAppBar extends StatelessWidget {
       ),
     );
   }
-
 }

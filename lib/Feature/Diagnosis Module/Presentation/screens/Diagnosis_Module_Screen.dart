@@ -9,7 +9,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-
 class DiagnosisModuleScreen extends StatelessWidget {
   const DiagnosisModuleScreen({super.key});
 

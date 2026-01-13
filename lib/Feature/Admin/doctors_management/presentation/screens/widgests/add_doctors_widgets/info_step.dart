@@ -21,25 +21,25 @@ class InfoStep extends StatelessWidget {
     final cubit = context.read<AddDoctorCubit>();
     return Column(
       children: [
-         TextformFieldAndTitle(
+        TextformFieldAndTitle(
           title: "Name",
           initialValue: cubit.state.userName,
           onChanged: cubit.onNameChanged,
         ),
         Gap(8.h),
-         TextformFieldAndTitle(
+        TextformFieldAndTitle(
           title: "Email",
           initialValue: cubit.state.email,
-      onChanged: (val) => cubit.onEmailChanged(val),
+          onChanged: (val) => cubit.onEmailChanged(val),
         ),
         Gap(8.h),
-         TextformFieldAndTitle(
+        TextformFieldAndTitle(
           title: "Phone Number",
           initialValue: cubit.state.phoneNumber,
           onChanged: cubit.onPhoneChanged,
         ),
         Gap(8.h),
-         TextformFieldAndTitle(
+        TextformFieldAndTitle(
           title: "Address",
           keyboardType: TextInputType.streetAddress,
           initialValue: cubit.state.address,

@@ -18,16 +18,21 @@ class GuestHomeContent extends StatelessWidget {
         child: Column(
           mainAxisAlignment: MainAxisAlignment.start,
           crossAxisAlignment: CrossAxisAlignment.start,
-          children:  [
-            const SearchBarWidget(hintText: 'Search...',),
+          children: [
+            const SearchBarWidget(
+              hintText: 'Search...',
+            ),
             GuestCarouselWidget(),
             const Gap(20),
-            const Text("Services",style: TextStyle(
-              color: AppColors.blackSecondary,
-              fontFamily: 'Poppins',
-              fontSize: 20,
-              fontWeight: FontWeight.bold,
-            ),),
+            const Text(
+              "Services",
+              style: TextStyle(
+                color: AppColors.blackSecondary,
+                fontFamily: 'Poppins',
+                fontSize: 20,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
             const Gap(12),
             const ServicesWidget(),
             const Gap(20),
@@ -62,7 +67,6 @@ class GuestHomeContent extends StatelessWidget {
             ),
             const Gap(12),
             const DoctorsWidget(),
-
           ],
         ),
       ),

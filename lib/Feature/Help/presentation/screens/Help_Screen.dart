@@ -70,7 +70,9 @@ class _HelpScreenState extends State<HelpScreen> {
         child: SingleChildScrollView(
           child: Column(
             children: [
-              SearchBarWidget(hintText: 'Search...',),
+              SearchBarWidget(
+                hintText: 'Search...',
+              ),
               FaqExpansionList(),
               ContactSupportItem(),
             ],

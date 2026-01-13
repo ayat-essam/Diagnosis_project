@@ -55,7 +55,7 @@ class _AIPerformanceScreenState extends State<AIPerformanceScreen> {
                 color: AppColors.whiteBackground,
                 borderRadius: BorderRadius.circular(20.r)),
             child: Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 10,vertical: 30),
+              padding: const EdgeInsets.symmetric(horizontal: 10, vertical: 30),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [

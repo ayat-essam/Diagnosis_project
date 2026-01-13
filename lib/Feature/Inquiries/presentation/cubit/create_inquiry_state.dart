@@ -15,6 +15,7 @@ class CreateInquiryError extends CreateInquiryState {
   final String error;
   CreateInquiryError(this.error);
 }
+
 class CreateInquiryFilesSelected extends CreateInquiryState {
   final List<File> files;
   CreateInquiryFilesSelected(this.files);

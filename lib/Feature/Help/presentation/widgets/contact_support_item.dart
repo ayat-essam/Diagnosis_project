@@ -39,6 +39,33 @@ class ContactSupportItem extends StatelessWidget {
                 fontFamily: 'Poppins'),
           ),
           const SizedBox(height: 16),
+<<<<<<< HEAD
+          SizedBox(
+            width: double.infinity,
+            child: ElevatedButton(
+              style: ElevatedButton.styleFrom(
+                backgroundColor: AppColors.BluePrimary,
+              ),
+              onPressed: () {
+                showDialog(
+                  context: context,
+                  barrierDismissible: true,
+                  builder: (_) => const StartChatDialog(),
+                );
+              },
+              child: const Text(
+                "Start chat",
+                style: TextStyle(
+                  color: AppColors.whiteBackground,
+                  fontFamily: 'Poppins',
+                  fontWeight: Fonts.medium,
+                  fontSize: 14,
+                ),
+              ),
+            ),
+          ),
+          const SizedBox(height: 8),
+=======
           // SizedBox(
           //   width: double.infinity,
           //  child:  ElevatedButton(
@@ -65,6 +92,7 @@ class ContactSupportItem extends StatelessWidget {
           //
           // ),
           // const SizedBox(height: 8),
+>>>>>>> b59bc0e0c30810bbf52f75671c3352d782c29bc0
           SizedBox(
               width: double.infinity,
               child: OutlinedButton(

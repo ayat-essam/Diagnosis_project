@@ -108,15 +108,19 @@ class _LoginScreenState extends State<LoginScreen> {
                               ),
                               const Gap(10),
 // <<<<<<< HEAD
-                             TextButton(
-                             onPressed: () => Navigator.pushReplacement(
-                              context,
-                               MaterialPageRoute(builder: (context) =>  ForgetPasswordPage()),
-                               ),
-                                 child: Text("Forget your Password"
-                                 ,style: StyleApp.font16BlackRegular.copyWith(
-                                       decoration: TextDecoration.underline),)),
-                          
+                              TextButton(
+                                  onPressed: () => Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                            builder: (context) =>
+                                                ForgetPasswordPage()),
+                                      ),
+                                  child: Text(
+                                    "Forget your Password",
+                                    style: StyleApp.font16BlackRegular.copyWith(
+                                        decoration: TextDecoration.underline),
+                                  )),
+
 // =======
 //                               TextButton(
 //                                   onPressed: () => Navigator.pushReplacement(

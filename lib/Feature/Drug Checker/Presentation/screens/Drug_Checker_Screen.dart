@@ -18,8 +18,6 @@ class _DrugCheckerScreenState extends State<DrugCheckerScreen> {
   final now = DateTime.now();
   late final formatted = DateFormat('EEEE, MMMM d, y').format(now);
 
-  
-
   @override
   Widget build(BuildContext context) {
     return BlocProvider(

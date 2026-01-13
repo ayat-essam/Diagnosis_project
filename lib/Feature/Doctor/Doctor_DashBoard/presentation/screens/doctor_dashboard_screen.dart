@@ -80,7 +80,6 @@ class _DoctorDashboardView extends StatelessWidget {
                     ),
 
                     Gap(16.h),
-
                     NewVsReturningChart(
                       data: data.newVsReturningPatients,
                     ),

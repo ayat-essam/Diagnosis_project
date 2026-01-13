@@ -9,10 +9,12 @@ class DoctorManagementSearchSection extends StatefulWidget {
   const DoctorManagementSearchSection({super.key});
 
   @override
-  State<DoctorManagementSearchSection> createState() => _DoctorManagementSearchSectionState();
+  State<DoctorManagementSearchSection> createState() =>
+      _DoctorManagementSearchSectionState();
 }
 
-class _DoctorManagementSearchSectionState extends State<DoctorManagementSearchSection> {
+class _DoctorManagementSearchSectionState
+    extends State<DoctorManagementSearchSection> {
   String? selectedValue = 'All Status';
 
   @override

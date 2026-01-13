@@ -13,18 +13,18 @@ abstract class ApiServices {
 
   @POST(ApiConstants.consultationAccept)
   Future<AcceptResponse> acceptConsultation(
-      @Path('consultationId') int consultationId,
-      @Body() RejectedResponse body,
-      );
+    @Path('consultationId') int consultationId,
+    @Body() RejectedResponse body,
+  );
 
   @POST(ApiConstants.consultationRejected)
   Future<RejectedResponse> rejectConsultation(
-      @Path('consultationId') int consultationId,
-      @Body() RejectedResponse body,
-      );
+    @Path('consultationId') int consultationId,
+    @Body() RejectedResponse body,
+  );
 
   Future<ModifyResponse> ModifeyConsultarion(
-      @Path("consultationId") int consultationId,
-      @Body() RejectedResponse body,
-      );
+    @Path("consultationId") int consultationId,
+    @Body() RejectedResponse body,
+  );
 }

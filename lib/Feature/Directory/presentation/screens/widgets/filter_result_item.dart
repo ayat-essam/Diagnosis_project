@@ -47,8 +47,7 @@ class FilterResultItem extends StatelessWidget {
                     children: [
                       CircleAvatar(
                         radius: 28.r,
-                        backgroundImage:
-                             AssetImage(doctor.image),
+                        backgroundImage: AssetImage(doctor.image),
                       ),
                       Gap(10.w),
                       Column(
@@ -57,12 +56,12 @@ class FilterResultItem extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                   doctor.name,
+                                  doctor.name,
                                   style: StyleApp.font10blackSecondryMedium,
                                 ),
                                 Gap(8.w),
                                 Text(
-                                 '${doctor.experience} experience',
+                                  '${doctor.experience} experience',
                                   style: StyleApp.font10blackSecondryMedium,
                                 ),
                               ],
@@ -71,7 +70,7 @@ class FilterResultItem extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                 'Physiotherapy',
+                                  'Physiotherapy',
                                   style: StyleApp.font10blackSecondryMedium
                                       .copyWith(color: AppColors.BluePrimary),
                                 ),

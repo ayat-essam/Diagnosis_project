@@ -15,9 +15,9 @@ class GetrecentinquiriesFailure extends DashPatientState {
 }
 
 class GetrecentinquiriesSuccess extends DashPatientState {
-  final List recentinquiriesList;
+  final List<RecentInguiriesModel> recentInguirieList;
 
-  GetrecentinquiriesSuccess({required this.recentinquiriesList});
+  GetrecentinquiriesSuccess({required this.recentInguirieList});
 }
 
 //Get pending inquiries count
@@ -30,9 +30,9 @@ class GetpendinginquiriescountFailure extends DashPatientState {
 }
 
 class GetpendinginquiriescountSuccess extends DashPatientState {
-  final List recentinquiriesList;
+  final PendingInquiriesModel pendingInquiriesModel;
 
-  GetpendinginquiriescountSuccess({required this.recentinquiriesList});
+  GetpendinginquiriescountSuccess(this.pendingInquiriesModel);
 }
 
 //symptoms severity
@@ -45,9 +45,9 @@ class SymptomsSeverityFailure extends DashPatientState {
 }
 
 class SymptomsSeveritySuccess extends DashPatientState {
-  final List recentinquiriesList;
+  final SymptomSeverityModel symptomSeverityModel;
 
-  SymptomsSeveritySuccess({required this.recentinquiriesList});
+  SymptomsSeveritySuccess({required this.symptomSeverityModel});
 }
 
 //top symptom
@@ -60,7 +60,7 @@ class TopSymptomFailure extends DashPatientState {
 }
 
 class TopSymptomSuccess extends DashPatientState {
-  final List recentinquiriesList;
+  final TopsysmptomModel topsysmptomModel;
 
-  TopSymptomSuccess({required this.recentinquiriesList});
+  TopSymptomSuccess({required this.topsysmptomModel});
 }

@@ -223,7 +223,12 @@ class _RegisterScreenState extends State<RegisterScreen> {
                                       return;
                                     }
 // <<<<<<< HEAD
-                                    Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) => PatientDashboard(),));
+                                    Navigator.pushReplacement(
+                                        context,
+                                        MaterialPageRoute(
+                                          builder: (context) =>
+                                              PatientDashboard(),
+                                        ));
 // =======
 //                                     Navigator.pushReplacement(
 //                                         context,

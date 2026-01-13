@@ -183,7 +183,6 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
               style: StyleApp.font10blackSecondryMedium,
             ),
             const Gap(40),
-
             TextField(
               controller: _searchController,
               decoration: InputDecoration(
@@ -192,11 +191,11 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
                 border: OutlineInputBorder(
                   borderRadius: BorderRadius.circular(12),
                 ),
-                contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
+                contentPadding:
+                    const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
               ),
             ),
             const Gap(12),
-
             Container(
               padding: const EdgeInsets.symmetric(vertical: 12, horizontal: 16),
               decoration: BoxDecoration(
@@ -215,11 +214,9 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
               ),
             ),
             const Gap(8),
-
             Expanded(
               child: _buildPatientsList(),
             ),
-
             _buildPaginationFooter(),
           ],
         ),
@@ -265,7 +262,8 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
   Widget _buildPaginationFooter() {
     final startItem = ((_currentPage - 1) * _itemsPerPage) + 1;
     final endItem = _currentPage * _itemsPerPage;
-    final actualEndItem = endItem > _filteredPatients.length ? _filteredPatients.length : endItem;
+    final actualEndItem =
+        endItem > _filteredPatients.length ? _filteredPatients.length : endItem;
     final hasPrevious = _currentPage > 1;
     final hasNext = _currentPage * _itemsPerPage < _filteredPatients.length;
 
@@ -286,9 +284,11 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
               _buildPaginationButton(
                 text: 'Previous',
                 isEnabled: hasPrevious,
-                onPressed: hasPrevious ? () {
-                  setState(() => _currentPage--);
-                } : null,
+                onPressed: hasPrevious
+                    ? () {
+                        setState(() => _currentPage--);
+                      }
+                    : null,
               ),
               const SizedBox(width: 16),
               Container(
@@ -308,9 +308,11 @@ class _MyPatientsScreenState extends State<MyPatientsScreen> {
               _buildPaginationButton(
                 text: 'Next >',
                 isEnabled: hasNext,
-                onPressed: hasNext ? () {
-                  setState(() => _currentPage++);
-                } : null,
+                onPressed: hasNext
+                    ? () {
+                        setState(() => _currentPage++);
+                      }
+                    : null,
               ),
             ],
           ),

@@ -15,10 +15,8 @@ class HeaderCell extends StatelessWidget {
   Widget build(BuildContext context) {
     return Expanded(
       flex: flex,
-      child: Text(
-        text,
-        style:  StyleApp.font12WhiteRegular.copyWith(color: AppColors.black)
-      ),
+      child: Text(text,
+          style: StyleApp.font12WhiteRegular.copyWith(color: AppColors.black)),
     );
   }
 }

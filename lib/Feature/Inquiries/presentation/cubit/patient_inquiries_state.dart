@@ -1,9 +1,9 @@
-
 import '../../domain/entities/inquiry_entity.dart';
 
 abstract class PatientInquiriesState {}
 
 class PatientInquiriesInitial extends PatientInquiriesState {}
+
 class PatientInquiriesLoading extends PatientInquiriesState {}
 
 class PatientInquiriesLoaded extends PatientInquiriesState {

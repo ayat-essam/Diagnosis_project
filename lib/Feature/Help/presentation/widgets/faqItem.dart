@@ -35,7 +35,7 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
                 },
                 child: Container(
                   padding:
-                  const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 14),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.spaceBetween,
                     children: [
@@ -66,13 +66,13 @@ class _FaqExpansionListState extends State<FaqExpansionList> {
                 firstChild: const SizedBox.shrink(),
                 secondChild: Container(
                   width: double.infinity,
-                  padding: const EdgeInsets.symmetric(
-                      horizontal: 16, vertical: 12),
+                  padding:
+                      const EdgeInsets.symmetric(horizontal: 16, vertical: 12),
                   decoration: const BoxDecoration(
-                    // border: Border(
-                    //   top: BorderSide(color: AppColors.BluePrimary),
-                    // ),
-                  ),
+                      // border: Border(
+                      //   top: BorderSide(color: AppColors.BluePrimary),
+                      // ),
+                      ),
                   child: Text(
                     faq.answer,
                     style: const TextStyle(

@@ -22,24 +22,25 @@ class MessageLookup extends MessageLookupByLibrary {
 
   final messages = _notInlinedMessages(_notInlinedMessages);
   static Map<String, Function> _notInlinedMessages(_) => <String, Function>{
-    "My_settings": MessageLookupByLibrary.simpleMessage("إعداداتي"),
-    "Policies": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
-    "Update_language": MessageLookupByLibrary.simpleMessage("تحديث "),
-    "aboutUs": MessageLookupByLibrary.simpleMessage("من نحن"),
-    "aboutUs_content": MessageLookupByLibrary.simpleMessage(
-      "التشخيص هو تطبيق طبي ذكي مصمم لتبسيط وتحسين تجربة الرعاية الصحية لكل من المرضى والأطباء. يوفر التطبيق منصة آمنة وسهلة الاستخدام تتيح للمستخدمين التواصل مع متخصصين مؤهلين في الرعاية الصحية، وإدارة سجلاتهم الطبية، وحجز المواعيد، وتلقي التحديثات الطبية في الوقت المناسب. كما يقدم التشخيص استشارات طبية مدعومة بالذكاء الاصطناعي، مما يساعد المستخدمين على فهم أعراضهم مبدئيًا وتوجيههم نحو الخطوات الطبية المناسبة. من خلال الجمع بين التكنولوجيا المتقدمة والتصميم الذي يركز على المستخدم، يهدف التشخيص إلى تحسين التواصل، ودعم التشخيص الدقيق، وجعل خدمات الرعاية الصحية أكثر سهولة وكفاءة. مهمتنا هي تقديم حل رقمي موثوق للرعاية الصحية يساهم في تحسين النتائج الطبية وبناء مجتمع أكثر صحة.",
-    ),
-    "contactUs": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
-    "language": MessageLookupByLibrary.simpleMessage("اللغة"),
-    "language_arabic": MessageLookupByLibrary.simpleMessage("العربية"),
-    "language_english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
-    "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
-    "termsConditions": MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
-    "terms_and_conditions": MessageLookupByLibrary.simpleMessage(
-      "الشروط والأحكام",
-    ),
-    "terms_and_conditions_content": MessageLookupByLibrary.simpleMessage(
-      "باستخدام تطبيق التشخيص، فإنك توافق على هذه الشروط والأحكام. التشخيص منصة طبية رقمية تُسهّل التواصل بين المستخدمين ومقدمي الرعاية الصحية، وتُدير السجلات الطبية، وتتيح حجز المواعيد. كما يُقدّم التطبيق استشارات ذكية مدعومة بالذكاء الاصطناعي لمساعدة المستخدمين على فهم حالتهم الصحية مبدئيًا ودعم اتخاذ القرارات الطبية. يجب على المستخدمين استخدام المعلومات المُقدّمة بمسؤولية واستشارة متخصصين مؤهلين عند الحاجة لضمان الحصول على أفضل رعاية صحية. نحن ملتزمون بحماية خصوصية المستخدمين والتعامل مع جميع البيانات الشخصية والطبية وفقًا لسياسة الخصوصية الخاصة بنا. يحتفظ تطبيق التشخيص بالحق في تعديل أو تحديث هذه الشروط والأحكام في أي وقت، ويُعدّ استمرار استخدام التطبيق قبولًا لأي تغييرات.",
-    ),
-  };
+        "My_settings": MessageLookupByLibrary.simpleMessage("إعداداتي"),
+        "Policies": MessageLookupByLibrary.simpleMessage("سياسة الخصوصية"),
+        "Update_language": MessageLookupByLibrary.simpleMessage("تحديث "),
+        "aboutUs": MessageLookupByLibrary.simpleMessage("من نحن"),
+        "aboutUs_content": MessageLookupByLibrary.simpleMessage(
+          "التشخيص هو تطبيق طبي ذكي مصمم لتبسيط وتحسين تجربة الرعاية الصحية لكل من المرضى والأطباء. يوفر التطبيق منصة آمنة وسهلة الاستخدام تتيح للمستخدمين التواصل مع متخصصين مؤهلين في الرعاية الصحية، وإدارة سجلاتهم الطبية، وحجز المواعيد، وتلقي التحديثات الطبية في الوقت المناسب. كما يقدم التشخيص استشارات طبية مدعومة بالذكاء الاصطناعي، مما يساعد المستخدمين على فهم أعراضهم مبدئيًا وتوجيههم نحو الخطوات الطبية المناسبة. من خلال الجمع بين التكنولوجيا المتقدمة والتصميم الذي يركز على المستخدم، يهدف التشخيص إلى تحسين التواصل، ودعم التشخيص الدقيق، وجعل خدمات الرعاية الصحية أكثر سهولة وكفاءة. مهمتنا هي تقديم حل رقمي موثوق للرعاية الصحية يساهم في تحسين النتائج الطبية وبناء مجتمع أكثر صحة.",
+        ),
+        "contactUs": MessageLookupByLibrary.simpleMessage("اتصل بنا"),
+        "language": MessageLookupByLibrary.simpleMessage("اللغة"),
+        "language_arabic": MessageLookupByLibrary.simpleMessage("العربية"),
+        "language_english": MessageLookupByLibrary.simpleMessage("الإنجليزية"),
+        "notifications": MessageLookupByLibrary.simpleMessage("الإشعارات"),
+        "termsConditions":
+            MessageLookupByLibrary.simpleMessage("الشروط والأحكام"),
+        "terms_and_conditions": MessageLookupByLibrary.simpleMessage(
+          "الشروط والأحكام",
+        ),
+        "terms_and_conditions_content": MessageLookupByLibrary.simpleMessage(
+          "باستخدام تطبيق التشخيص، فإنك توافق على هذه الشروط والأحكام. التشخيص منصة طبية رقمية تُسهّل التواصل بين المستخدمين ومقدمي الرعاية الصحية، وتُدير السجلات الطبية، وتتيح حجز المواعيد. كما يُقدّم التطبيق استشارات ذكية مدعومة بالذكاء الاصطناعي لمساعدة المستخدمين على فهم حالتهم الصحية مبدئيًا ودعم اتخاذ القرارات الطبية. يجب على المستخدمين استخدام المعلومات المُقدّمة بمسؤولية واستشارة متخصصين مؤهلين عند الحاجة لضمان الحصول على أفضل رعاية صحية. نحن ملتزمون بحماية خصوصية المستخدمين والتعامل مع جميع البيانات الشخصية والطبية وفقًا لسياسة الخصوصية الخاصة بنا. يحتفظ تطبيق التشخيص بالحق في تعديل أو تحديث هذه الشروط والأحكام في أي وقت، ويُعدّ استمرار استخدام التطبيق قبولًا لأي تغييرات.",
+        ),
+      };
 }

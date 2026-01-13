@@ -6,27 +6,19 @@ import '../../../../../../Core/constants/api_constant.dart';
 import '../../../../../../Core/api/api_consumer.dart';
 import '../../../../../../Core/error/exceptions.dart';
 
-
 class ResetPasswordCubit extends Cubit<ResetPasswordState> {
-  ResetPasswordCubit(this.apiConsumer)
-  
-      : super(ResetPasswordInitial());
+  ResetPasswordCubit(this.apiConsumer) : super(ResetPasswordInitial());
 
   final ApiConsumer apiConsumer;
 
-  final TextEditingController passwordController =
-      TextEditingController();
+  final TextEditingController passwordController = TextEditingController();
   final TextEditingController confirmPasswordController =
       TextEditingController();
 
-
-
-Future<void> resetPassword({
-  required String token,
-  required String email,
-}) async {
-
- 
+  Future<void> resetPassword({
+    required String token,
+    required String email,
+  }) async {
     try {
       emit(ResetPasswordLoading());
 
@@ -34,8 +26,7 @@ Future<void> resetPassword({
         ApiConstants.resetPasswordURL,
         data: {
           "password": passwordController.text.trim(),
-          "passwordConfirmation":
-              confirmPasswordController.text.trim(),
+          "passwordConfirmation": confirmPasswordController.text.trim(),
           "email": email,
           "token": token,
         },
@@ -43,15 +34,14 @@ Future<void> resetPassword({
 
       emit(
         ResetPasswordSuccess(
-          message: response["message"] ??
-              "Password has been reset successfully",
+          message:
+              response["message"] ?? "Password has been reset successfully",
         ),
       );
     } on ServerException catch (e) {
       emit(
         ResetPasswordFailure(
-          errorMessage: e.errorModel.errorMessage ??
-              "Invalid or expired token",
+          errorMessage: e.errorModel.errorMessage ?? "Invalid or expired token",
         ),
       );
     }

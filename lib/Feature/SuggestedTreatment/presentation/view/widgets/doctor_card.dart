@@ -14,10 +14,13 @@ class DosageCard extends StatelessWidget {
       ),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
-        children:  [
+        children: [
           CircleAvatar(
-            backgroundColor: Colors.white,
-            child: Image.asset("assets/icons/Frame.png",width: 200.w,)),
+              backgroundColor: Colors.white,
+              child: Image.asset(
+                "assets/icons/Frame.png",
+                width: 200.w,
+              )),
           Spacer(),
           Text(
             'Dosage',
@@ -32,17 +35,15 @@ class DosageCard extends StatelessWidget {
               fontWeight: FontWeight.bold,
             ),
           ),
-         Expanded(child: SizedBox()),
-
-Align(
-  alignment: Alignment.bottomCenter,
-  child: Image.asset(
-    "assets/icons/Vector (1).png",
-    height: 40.h,
-    fit: BoxFit.contain,
-  ),
-),
-
+          Expanded(child: SizedBox()),
+          Align(
+            alignment: Alignment.bottomCenter,
+            child: Image.asset(
+              "assets/icons/Vector (1).png",
+              height: 40.h,
+              fit: BoxFit.contain,
+            ),
+          ),
         ],
       ),
     );

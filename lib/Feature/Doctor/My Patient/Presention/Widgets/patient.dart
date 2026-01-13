@@ -1,4 +1,4 @@
-class Patient{
+class Patient {
   final String name;
   final String id;
   final String lastVisit;

@@ -34,7 +34,7 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
       address: state.address,
       experienceYears: int.tryParse(state.experienceYears),
       nationalId: state.nationalId,
-      birthDate: state.birthDate ,
+      birthDate: state.birthDate,
       gender: state.gender,
       clientUri: "https://frontend-app.com/confirm-email",
     );
@@ -42,8 +42,7 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
     final result = await addDoctorUseCase(addDoctorRequest: request);
 
     result.fold(
-      (failure) => emit(
-          state.copyWith(isLoading: false, errorModel: failure)),
+      (failure) => emit(state.copyWith(isLoading: false, errorModel: failure)),
       (successMsg) =>
           emit(state.copyWith(isLoading: false, successMessage: successMsg)),
     );

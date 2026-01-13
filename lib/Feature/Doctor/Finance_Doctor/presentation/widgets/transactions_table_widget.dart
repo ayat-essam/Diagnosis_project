@@ -70,7 +70,6 @@ class TransactionsTableContainer extends StatelessWidget {
                 mainAxisSize: MainAxisSize.min,
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-
                   Row(
                     children: const [
                       TransactionsTableHeaderCell(text: 'Transaction ID'),
@@ -84,10 +83,7 @@ class TransactionsTableContainer extends StatelessWidget {
                         )
                         .toList(),
                   ),
-
                   const Divider(height: 1),
-
-
                   ...transactions.map(
                     (tx) => Row(
                       children: [

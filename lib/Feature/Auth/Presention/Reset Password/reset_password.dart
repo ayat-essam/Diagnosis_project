@@ -13,8 +13,6 @@ import 'cheack_password.dart';
 import 'view_models/reset_pass/reset_pass_cubit.dart';
 import 'view_models/reset_pass/resete_pass_state.dart';
 
-
-
 class ResetPasswordPage extends StatelessWidget {
   const ResetPasswordPage({super.key});
 
@@ -26,11 +24,12 @@ class ResetPasswordPage extends StatelessWidget {
         create: (context) => ResetPasswordCubit(
           context.read<ApiConsumer>(),
         ),
-        child:  ResetPassword(),
+        child: ResetPassword(),
       ),
     );
   }
 }
+
 class ResetPassword extends StatelessWidget {
   ResetPassword({super.key});
 

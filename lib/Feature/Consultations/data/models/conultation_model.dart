@@ -1,7 +1,6 @@
 import 'package:json_annotation/json_annotation.dart';
 part 'conultation_model.g.dart';
 
-
 @JsonSerializable()
 class ConsultationModel {
   final int id;

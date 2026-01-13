@@ -17,7 +17,7 @@ class TwoButtonRow extends StatelessWidget {
     required this.onPrimaryTap,
     required this.secondaryText,
     required this.onSecondaryTap,
-    this.backgroundColor=AppColors.BluePrimary,
+    this.backgroundColor = AppColors.BluePrimary,
   });
 
   @override

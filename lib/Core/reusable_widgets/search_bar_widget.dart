@@ -4,7 +4,7 @@ import '../Theme App/colors.dart';
 
 class SearchBarWidget extends StatelessWidget {
   const SearchBarWidget({super.key, required this.hintText});
-final String hintText;
+  final String hintText;
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -21,7 +21,6 @@ final String hintText;
           prefixIcon: const Icon(
             Icons.search,
             color: AppColors.grayE2,
-
           ),
           isDense: true,
           contentPadding: const EdgeInsets.symmetric(

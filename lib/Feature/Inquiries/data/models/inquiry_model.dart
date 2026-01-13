@@ -1,4 +1,5 @@
 import 'package:diagnosis_project/Feature/Inquiries/domain/entities/inquiry_entity.dart';
+
 class InquiryModel extends InquiryEntity {
   InquiryModel({
     required super.inquiryId,

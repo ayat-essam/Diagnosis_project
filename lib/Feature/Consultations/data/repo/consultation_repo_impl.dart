@@ -1,4 +1,3 @@
-
 import 'dart:developer';
 
 // lib/features/consultation/data/repositories/consultation_repository_impl.dart
@@ -25,7 +24,7 @@ class ConsultationRepositoryImpl implements ConsultationRepository {
   Future<Either<Failure, Consultation>> getConsultationDetails(int id) async {
     try {
       final response = await dio.get(
-       ApiConstants.consultationDetails,
+        ApiConstants.consultationDetails,
       );
 
       final model = ConsultationModel.fromJson(response.data);
@@ -35,7 +34,8 @@ class ConsultationRepositoryImpl implements ConsultationRepository {
       if (consultation.success) {
         return Right(consultation);
       } else {
-        return Left(ServerFailure(consultation.errorMessage ?? 'API returned success: false'));
+        return Left(ServerFailure(
+            consultation.errorMessage ?? 'API returned success: false'));
       }
     } on DioException catch (e) {
       return Left(_handleDioError(e));
@@ -51,9 +51,8 @@ class ConsultationRepositoryImpl implements ConsultationRepository {
 
       // Assuming response.data is a List
       final List<dynamic> data = response.data;
-      final models = data
-          .map((json) => ConsultationModel.fromJson(json))
-          .toList();
+      final models =
+          data.map((json) => ConsultationModel.fromJson(json)).toList();
 
       final consultations = models.toEntities;
 

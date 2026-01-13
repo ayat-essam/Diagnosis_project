@@ -24,14 +24,11 @@ class ForgetPasswordPage extends StatelessWidget {
         create: (context) => ForgetPasswordCubit(
           context.read<ApiConsumer>(),
         ),
-        child:  ForgetPassword(),
+        child: ForgetPassword(),
       ),
     );
   }
 }
-
-
-
 
 class ForgetPassword extends StatelessWidget {
   ForgetPassword({super.key});
@@ -133,7 +130,7 @@ class ForgetPassword extends StatelessWidget {
                                           //   MaterialPageRoute(
                                           //     builder: (context) =>
                                           //         ResetPasswordPage(
-                                                
+
                                           //     ),
                                           //   ),
                                           // );

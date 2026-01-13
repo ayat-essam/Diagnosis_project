@@ -26,7 +26,8 @@ class FrequencyCard extends StatelessWidget {
           Spacer(),
           Align(
             alignment: Alignment.bottomCenter,
-            child: Icon(Icons.medical_services, size: 32, color: Color(0xff4C84F7)),
+            child: Icon(Icons.medical_services,
+                size: 32, color: Color(0xff4C84F7)),
           ),
         ],
       ),

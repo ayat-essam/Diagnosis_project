@@ -24,7 +24,7 @@ class StatusCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding:  EdgeInsets.only(bottom: 30.h),
+      padding: EdgeInsets.only(bottom: 30.h),
       child: CardWrapper(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -81,7 +81,6 @@ class StatusCard extends StatelessWidget {
                 ),
               ],
             ),
-      
             SizedBox(height: 12.h),
             if (title == "Appointment was cancelled without notice")
               Text(
@@ -94,7 +93,8 @@ class StatusCard extends StatelessWidget {
               ),
             if (title == "Long wait time at clinic")
               Container(
-                padding: const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
+                padding:
+                    const EdgeInsets.symmetric(horizontal: 15, vertical: 8),
                 decoration: BoxDecoration(
                   color: Color(0xffE0F0FF),
                   borderRadius: BorderRadius.circular(12),
@@ -128,7 +128,6 @@ class StatusCard extends StatelessWidget {
             PrimaryButton(
               text: textButton,
               onPressed: onPressed,
-      
               isOutlined: false,
             ),
           ],

@@ -76,7 +76,8 @@ class ExerciseCard extends StatelessWidget {
           Align(
             alignment: Alignment.centerLeft,
             child: CustomText(
-                text: "${exercise.level} • ${exercise.duration} • ${exercise.bodyPart}",
+                text:
+                    "${exercise.level} • ${exercise.duration} • ${exercise.bodyPart}",
                 fontSize: 12.sp,
                 color: Colors.grey,
                 fontWeight: Fonts.medium),

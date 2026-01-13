@@ -27,43 +27,42 @@ class AddDoctorState {
     this.address = '',
     this.experienceYears = '',
     this.nationalId = '',
-    this.birthDate='',
-    this.gender='Male',
+    this.birthDate = '',
+    this.gender = 'Male',
     this.isLoading = false,
     this.errorModel,
     this.successMessage,
   });
 
- AddDoctorState copyWith({
-  String? userName,
-  String? email,
-  String? password,
-  String? confirmPassword,
-  String? phoneNumber,
-  String? address,
-  String? experienceYears,
-  String? nationalId,
-  String? birthDate,
-  String? gender,
-  bool? isLoading,
-  ErrorModel? errorModel,
-  String? successMessage,
-}) {
-  return AddDoctorState(
-    userName: userName ?? this.userName,
-    email: email ?? this.email,
-    password: password ?? this.password,
-    confirmPassword: confirmPassword ?? this.confirmPassword,
-    phoneNumber: phoneNumber ?? this.phoneNumber,
-    address: address ?? this.address,
-    experienceYears: experienceYears ?? this.experienceYears,
-    nationalId: nationalId ?? this.nationalId,
-    birthDate: birthDate ?? this.birthDate,
-    gender: gender ?? this.gender,
-    isLoading: isLoading ?? this.isLoading,
-    errorModel: errorModel,
-    successMessage: successMessage,
-  );
-}
-
+  AddDoctorState copyWith({
+    String? userName,
+    String? email,
+    String? password,
+    String? confirmPassword,
+    String? phoneNumber,
+    String? address,
+    String? experienceYears,
+    String? nationalId,
+    String? birthDate,
+    String? gender,
+    bool? isLoading,
+    ErrorModel? errorModel,
+    String? successMessage,
+  }) {
+    return AddDoctorState(
+      userName: userName ?? this.userName,
+      email: email ?? this.email,
+      password: password ?? this.password,
+      confirmPassword: confirmPassword ?? this.confirmPassword,
+      phoneNumber: phoneNumber ?? this.phoneNumber,
+      address: address ?? this.address,
+      experienceYears: experienceYears ?? this.experienceYears,
+      nationalId: nationalId ?? this.nationalId,
+      birthDate: birthDate ?? this.birthDate,
+      gender: gender ?? this.gender,
+      isLoading: isLoading ?? this.isLoading,
+      errorModel: errorModel,
+      successMessage: successMessage,
+    );
+  }
 }

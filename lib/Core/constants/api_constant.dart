@@ -11,7 +11,7 @@ class ApiConstants {
   static const String getDoctorProfileEndPoint = '/DoctorManagement/';
   static const String getPatientsEndPoint = '/PatientManagement';
   static const String getPatientProfileEndPoint = '/PatientManagement/';
-  static const String deletePatientEndPoint = '/PatientManagement/';
+  static const String deletePatientEndPoint = '/PatientManagement//status/';
   static const String systemSettingsBase = '/SystemSettings';
   static const String addAdmin = '$systemSettingsBase/add-admin';
   static const String aiRateLimit = '$systemSettingsBase/ai/rate-limit';

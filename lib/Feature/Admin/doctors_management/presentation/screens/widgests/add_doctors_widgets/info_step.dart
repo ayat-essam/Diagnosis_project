@@ -28,6 +28,18 @@ class InfoStep extends StatelessWidget {
         ),
         Gap(8.h),
         TextformFieldAndTitle(
+          title: "First Name",
+          initialValue: cubit.state.userName,
+          onChanged: (val) => cubit.onFNameChanged(val),
+        ),
+        Gap(8.h),
+        TextformFieldAndTitle(
+          title: "Last Name",
+          initialValue: cubit.state.userName,
+          onChanged: (val) => cubit.onLNameChanged(val),
+        ),
+        Gap(8.h),
+        TextformFieldAndTitle(
           title: "Email",
           initialValue: cubit.state.email,
           onChanged: (val) => cubit.onEmailChanged(val),

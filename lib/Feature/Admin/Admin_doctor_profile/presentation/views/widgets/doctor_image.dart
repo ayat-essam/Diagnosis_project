@@ -1,11 +1,12 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/entities/doctor_profile_entity.dart';
+import 'package:diagnosis_project/Feature/Admin/presention/Widgets/status_active_or_inactive.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
 
 class DoctorImage extends StatelessWidget {
   const DoctorImage({super.key, required this.doctorProfileEntity});
-final DoctorProfileEntity doctorProfileEntity;  
+  final DoctorProfileEntity doctorProfileEntity;
   @override
   Widget build(BuildContext context) {
     return GradientBorder(
@@ -15,7 +16,14 @@ final DoctorProfileEntity doctorProfileEntity;
               borderRadius: BorderRadius.circular(16),
               color: const Color(0xffF7F7F7),
             ),
-            child:  Column(children: [
+            child: Column(children: [
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                StatusActiveOrInactive(
+                    status:
+                        doctorProfileEntity.isActive ? 'Active' : 'Inactive'),
+              ]),
               const CircleAvatar(
                 radius: 36,
                 child: CircleAvatar(
@@ -27,7 +35,7 @@ final DoctorProfileEntity doctorProfileEntity;
               const SizedBox(height: 5),
 
               // Name
-               Text(
+              Text(
                 doctorProfileEntity.fullName,
                 style: const TextStyle(
                   fontSize: 12,
@@ -39,7 +47,7 @@ final DoctorProfileEntity doctorProfileEntity;
               const SizedBox(height: 5),
 
               // email
-               Text(
+              Text(
                 doctorProfileEntity.email,
                 style: const TextStyle(
                   fontSize: 10,

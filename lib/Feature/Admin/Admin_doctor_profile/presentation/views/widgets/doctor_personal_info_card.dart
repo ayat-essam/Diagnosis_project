@@ -1,7 +1,7 @@
 import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/entities/doctor_profile_entity.dart';
-import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/entities/patient_profile_entity.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
+import 'package:intl/intl.dart';
 import 'package:skeletonizer/skeletonizer.dart';
 
 class DoctorPersonalInfoCard extends StatelessWidget {
@@ -9,6 +9,10 @@ class DoctorPersonalInfoCard extends StatelessWidget {
   final DoctorProfileEntity doctorProfileEntity;
   @override
   Widget build(BuildContext context) {
+    final birthDateFrmatted = doctorProfileEntity.dateOfBirth == null
+        ? '-'
+        : DateFormat('MMM dd, yyyy')
+            .format(DateTime.parse(doctorProfileEntity.dateOfBirth!));
     return GradientBorder(
       child: Container(
         padding:
@@ -32,11 +36,16 @@ class DoctorPersonalInfoCard extends StatelessWidget {
               ),
             ),
             const SizedBox(height: 15),
-            infoRow("Full Name", doctorProfileEntity.fullName),
+            infoRow(
+                "Phone number", doctorProfileEntity.phoneNumber ?? "not found"),
             const SizedBox(height: 25),
-            infoRow("Email", doctorProfileEntity.email),
+            infoRow("Gender", doctorProfileEntity.gender ?? "unkown"),
             const SizedBox(height: 25),
-            infoRow("Gender", doctorProfileEntity.gender??"unkown"),
+            infoRow("Nayional ID", doctorProfileEntity.nationalId ?? "unkown"),
+            const SizedBox(height: 25),
+            infoRow("Date of birth", birthDateFrmatted),
+            const SizedBox(height: 25),
+            infoRow("Address", doctorProfileEntity.address ?? "unkown"),
           ],
         ),
       ),

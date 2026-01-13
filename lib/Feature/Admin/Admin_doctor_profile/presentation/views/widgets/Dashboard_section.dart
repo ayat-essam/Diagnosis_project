@@ -1,10 +1,11 @@
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/entities/doctor_profile_entity.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DashboardSection extends StatelessWidget {
-  const DashboardSection({super.key});
-
+  const DashboardSection({super.key, required this.doctorProfileEntity});
+  final DoctorProfileEntity doctorProfileEntity;
   @override
   Widget build(BuildContext context) {
     return GradientBorder(
@@ -20,25 +21,25 @@ class DashboardSection extends StatelessWidget {
           crossAxisSpacing: 16,
           mainAxisSpacing: 16,
           childAspectRatio: 1.3,
-          children: const [
+          children: [
             StatCard(
               title: 'Total Consultations',
-              value: '124',
+              value: doctorProfileEntity.totalConsultations.toString(),
               image: 'assets/image/TotalConsultations.png',
             ),
             StatCard(
               title: 'AI-Assisted Consultations',
-              value: '120',
+              value: doctorProfileEntity.consultationsCount.toString(),
               image: 'assets/image/AI-AssistedConsultations.png',
             ),
-            StatCard(
+            const StatCard(
               title: 'Doctor-Verified Diagnoses',
-              value: '4',
+              value: '0',
               image: 'assets/image/Doctor-VerifiedDiagnoses.png',
             ),
             StatCard(
               title: 'Active Patients',
-              value: '124',
+              value: doctorProfileEntity.activePatients.toString(),
               image: 'assets/image/ActivePatients.png',
             ),
           ],
@@ -63,7 +64,7 @@ class StatCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return AspectRatio(
-      aspectRatio: 144 / 103,
+      aspectRatio: 144 / 108,
       child: Container(
         padding: const EdgeInsets.all(8),
         decoration: BoxDecoration(
@@ -75,7 +76,7 @@ class StatCard extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
             Image.asset(image),
-            const SizedBox(height: 24),
+            const SizedBox(height: 12),
             Text(title,
                 style: TextStyle(
                     fontSize: 10.h,

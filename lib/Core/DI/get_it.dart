@@ -83,7 +83,8 @@ Future<void> setupServiceLocator() async {
   sl.registerLazySingleton(() => GetPatientProfileUseCase(sl()));
 
   sl.registerFactory(() => PatientsMangementCubit(
-      getPatientsUsecase: sl(), getPatientProfileUseCase: sl()));
+      getPatientsUsecase: sl(), getPatientProfileUseCase: sl(),
+      deletePatientUsecase: sl()));
 
 // ---------------- Data Layer ( Profile Data Source) ----------------
   sl.registerLazySingleton<ProfileRemoteDataSource>(

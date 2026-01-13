@@ -31,18 +31,30 @@ class ConsultationHistory extends StatelessWidget {
             ),
           ),
           const SizedBox(height: 29),
-          ListView.builder(
-            itemCount: consultations.length,
-            shrinkWrap: true,
-            physics: const NeverScrollableScrollPhysics(),
-            itemBuilder: (context, index) {
-              final consultation = consultations[index];
+          consultations.isEmpty
+              ? const Center(
+                  child: Text(
+                    'No consultations yet',
+                    style: TextStyle(
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                      color: Color(0xff8A8A8A),
+                      fontFamily: 'Poppins',
+                    ),
+                  ),
+                )
+              : ListView.builder(
+                  itemCount: consultations.length,
+                  shrinkWrap: true,
+                  physics: const NeverScrollableScrollPhysics(),
+                  itemBuilder: (context, index) {
+                    final consultation = consultations[index];
 
-              return ConsultationCard(
-                consultationHistoryEntity: consultation,
-              );
-            },
-          ),
+                    return ConsultationCard(
+                      consultationHistoryEntity: consultation,
+                    );
+                  },
+                ),
         ],
       ),
     ));

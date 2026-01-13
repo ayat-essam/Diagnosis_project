@@ -32,6 +32,7 @@ class _PatientsManagementSearchSectionState
           mainAxisAlignment: MainAxisAlignment.center,
           children: [
             SearchTextFormField(
+              hintText: 'Search Patient',
               onChanged: (value) {
                 setState(() {
                   context.read<PatientsMangementCubit>().getpatients(

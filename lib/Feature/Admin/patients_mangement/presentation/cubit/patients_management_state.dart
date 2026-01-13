@@ -17,15 +17,25 @@ class GetPatientsError extends PatientsManagementState {
   GetPatientsError(this.message);
 }
 
-
-class GetPatientsProfileInitial extends PatientsManagementState {}
 class GetPatientsProfileLoading extends PatientsManagementState {}
+
 class GetPatientProfileSuccess extends PatientsManagementState {
   final PatientProfileEntity patientEntity;
-  GetPatientProfileSuccess(this.patientEntity
-  );
+  GetPatientProfileSuccess(this.patientEntity);
 }
+
 class GetPatientProfileError extends PatientsManagementState {
   final String message;
   GetPatientProfileError(this.message);
+}
+
+class DeletePatientsLoading extends PatientsManagementState {}
+
+class DeletePatientSuccess extends PatientsManagementState {
+  DeletePatientSuccess();
+}
+
+class DeletePatientError extends PatientsManagementState {
+  final String message;
+  DeletePatientError(this.message);
 }

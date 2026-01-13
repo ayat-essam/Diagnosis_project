@@ -64,7 +64,7 @@ class _AdminSettingScreenState extends State<AdminSettingScreen> {
                           builder: (context) => const AddAdminDialog(),
                         );
                       },
-                      text: 'Add doctor',
+                      text: 'Add Admin',
                       width: 145.w,
                       prefixIcon: Icons.add,
                     )

@@ -3,6 +3,8 @@ import 'package:diagnosis_project/Core/error/error_model.dart';
 class AddDoctorState {
   // Form Fields
   final String userName;
+  final String fName;
+  final String lName;
   final String email;
   final String password;
   final String confirmPassword;
@@ -20,6 +22,8 @@ class AddDoctorState {
 
   AddDoctorState({
     this.userName = '',
+    this.fName = '',
+    this.lName = '',
     this.email = '',
     this.password = '',
     this.confirmPassword = '',
@@ -36,6 +40,8 @@ class AddDoctorState {
 
  AddDoctorState copyWith({
   String? userName,
+  String? fName,
+  String? lName,
   String? email,
   String? password,
   String? confirmPassword,
@@ -51,6 +57,8 @@ class AddDoctorState {
 }) {
   return AddDoctorState(
     userName: userName ?? this.userName,
+    fName: fName ?? this.fName,
+    lName: lName ?? this.lName,
     email: email ?? this.email,
     password: password ?? this.password,
     confirmPassword: confirmPassword ?? this.confirmPassword,

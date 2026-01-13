@@ -1,10 +1,12 @@
 import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/Theme%20App/styleApp.dart';
 import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/entities/patient_entity.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/cubit/patients_mangement_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/screens/widgests/action_patient_dialog.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/status_active_or_inactive.dart';
 import 'package:diagnosis_project/Feature/Admin/presention/Widgets/custom_table.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 import 'package:intl/intl.dart';
@@ -79,9 +81,16 @@ class PatientsTable extends StatelessWidget {
             DataCell(StatusActiveOrInactive(status: patient.status)),
             DataCell(IconButton(
               onPressed: () {
+                // Capture the cubit from the current context
+                final patientsCubit = context.read<PatientsMangementCubit>();
+
                 showDialog(
-                    context: context,
-                    builder: (context) => ActionPatientDialog(id: patient.id));
+                  context: context,
+                  builder: (context) => BlocProvider.value(
+                    value: patientsCubit, // Provide the existing cubit instance
+                    child: ActionPatientDialog(patientEntity: patient),
+                  ),
+                );
               },
               icon: const Icon(
                 Icons.more_vert,

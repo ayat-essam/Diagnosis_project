@@ -8,6 +8,8 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
   AddDoctorCubit(this.addDoctorUseCase) : super(AddDoctorState());
 
   void onNameChanged(String val) => emit(state.copyWith(userName: val));
+  void onFNameChanged(String val) => emit(state.copyWith(fName: val));
+  void onLNameChanged(String val) => emit(state.copyWith(lName: val));
   void onEmailChanged(String val) => emit(state.copyWith(email: val));
   void onPasswordChanged(String val) => emit(state.copyWith(password: val));
   void onConfirmPasswordChanged(String val) =>
@@ -27,6 +29,8 @@ class AddDoctorCubit extends Cubit<AddDoctorState> {
 
     final request = AddDoctorRequest(
       userName: state.userName,
+      fName: state.fName,
+      lName: state.lName,
       email: state.email,
       password: state.password,
       confirmPassword: state.confirmPassword,

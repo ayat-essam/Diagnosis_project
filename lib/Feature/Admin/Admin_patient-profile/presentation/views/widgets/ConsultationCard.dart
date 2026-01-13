@@ -42,59 +42,31 @@ class ConsultationCard extends StatelessWidget {
           const SizedBox(
             height: 21,
           ),
-        //  if (isInquire)
-            Row(
-              children: [
-                Container(
-                  margin: const EdgeInsets.only(top: 8.0),
-                  padding:
-                      const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
-                  decoration: BoxDecoration(
-                    border: consultationHistoryEntity.consultationType == 'AI' ? Border.all(color: AppColors.BluePrimary) : Border.all(color: const Color(0xff009947)),
-                    color: const Color.fromARGB(255, 178, 219, 178),
-                    borderRadius: BorderRadius.circular(8),
-                  ),
-                  child: Text(
-                    consultationHistoryEntity.consultationType,
-                    style: TextStyle(color: Colors.white),
-                  ),
+          Row(
+            children: [
+              Container(
+                margin: const EdgeInsets.only(top: 8.0),
+                padding:
+                    const EdgeInsets.symmetric(vertical: 4, horizontal: 12),
+                decoration: BoxDecoration(
+                  border: consultationHistoryEntity.consultationType == 'AI'
+                      ? Border.all(color: AppColors.BluePrimary)
+                      : Border.all(color: const Color(0xff009947)),
+                  color: const Color.fromARGB(255, 178, 219, 178),
+                  borderRadius: BorderRadius.circular(8),
                 ),
-                const Spacer(),
-                Text(
-                  DateFormat('MMM dd, yyyy').format(DateTime.parse(
-                      consultationHistoryEntity.consultationDate)),
+                child: Text(
+                  consultationHistoryEntity.consultationType,
+                  style: TextStyle(color: Colors.white),
                 ),
-              ],
-            ),
-          // if (isAI)
-          //   Row(
-          //     children: [
-          //       Container(
-          //         margin: const EdgeInsets.only(top: 8.0),
-          //         padding:
-          //             const EdgeInsets.symmetric(vertical: 5, horizontal: 12),
-          //         decoration: BoxDecoration(
-          //           border: Border.all(color: AppColors.BluePrimary),
-          //           color: const Color(0xffC6D8FD),
-          //           borderRadius: BorderRadius.circular(8),
-          //         ),
-          //         child: const Text(
-          //           'AI',
-          //           style: TextStyle(color: Colors.white),
-          //         ),
-          //       ),
-          //       const Spacer(),
-          //       Text(
-          //         date,
-          //         style: const TextStyle(
-          //             fontWeight: FontWeight.w400,
-          //             color: Color(0xff6B6B6B),
-          //             fontSize: 9,
-          //             fontFamily: 'Poppins'),
-          //       ),
-          //     ],
-          //   )
-       
+              ),
+              const Spacer(),
+              Text(
+                DateFormat('MMM dd, yyyy').format(
+                    DateTime.parse(consultationHistoryEntity.consultationDate)),
+              ),
+            ],
+          ),
         ],
       ),
     );

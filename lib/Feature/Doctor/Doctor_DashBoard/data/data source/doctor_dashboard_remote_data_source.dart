@@ -16,7 +16,7 @@ class DoctorDashboardRemoteDataSourceImpl
 
   @override
   Future<DoctorDashboardModel> getDoctorDashboard() async {
-    final response = await apiConsumer.get('/doctor/dashboard');
+    final response = await apiConsumer.get('/DoctorDashboard');
     return DoctorDashboardModel.fromJson(response);
   }
 }

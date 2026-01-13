@@ -6,10 +6,37 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
+import '../../../domain/entities/doctor_dashboard_entity.dart';
 import 'custom_linear_gradiant_circle.dart';
+// class RatingChart extends StatelessWidget {
+//   final List<RatingStatEntity> data;
+
+//   const RatingChart({super.key, required this.data});
+
+//   @override
+//   Widget build(BuildContext context) {
+//     return LineChart(
+//       LineChartData(
+//         lineBarsData: [
+//           LineChartBarData(
+//             spots: data.asMap().entries.map((e) {
+//               return FlSpot(
+//                 e.key.toDouble(),
+//                 e.value.averageRating,
+//               );
+//             }).toList(),
+//             isCurved: true,
+//           ),
+//         ],
+//       ),
+//     );
+//   }
+// }
 
 class RatingChart extends StatelessWidget {
-  const RatingChart({super.key});
+  final List<RatingStatEntity> data;
+
+  const RatingChart({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
@@ -71,7 +98,12 @@ class RatingChart extends StatelessWidget {
                 /// LINE
                 lineBarsData: [
                   LineChartBarData(
-                    spots: RatingChartData.spots,
+                    spots: data.asMap().entries.map((e) {
+                      return FlSpot(
+                        e.key.toDouble(),
+                        e.value.averageRating,
+                      );
+                    }).toList(),
                     isCurved: true,
                     barWidth: 0,
                     dotData: const FlDotData(show: false),

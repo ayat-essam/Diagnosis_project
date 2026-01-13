@@ -117,19 +117,6 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
               ));
         },
       ),
-<<<<<<< HEAD
-      MenuItemDoctors(
-        title: 'Consultations',
-        ImagePath: "assets/image_SVG/consultaionIcon.svg",
-        onTap: () {
-          Navigator.pushReplacement(
-              context,
-              MaterialPageRoute(
-                builder: (context) => const ConsultationsView(),
-              ));
-        },
-      ),
-=======
       // MenuItemDoctors(
       //   title: 'Consultations',
       //   ImagePath: "assets/image_SVG/consultaionIcon.svg",
@@ -138,7 +125,6 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
       //         context, MaterialPageRoute(builder: (context) => const ConsultationsView(),));
       //   },
       // ),
->>>>>>> b59bc0e0c30810bbf52f75671c3352d782c29bc0
       MenuItemDoctors(
         title: 'Diagnoses',
         ImagePath: "assets/image_SVG/DiagnosisIcon.svg",

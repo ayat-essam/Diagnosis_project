@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
@@ -118,7 +117,7 @@ class StartChatDialog extends StatelessWidget {
     );
   }
 }
-=======
+
 // import 'package:flutter/material.dart';
 // import 'package:flutter_screenutil/flutter_screenutil.dart';
 // import 'package:gap/gap.dart';
@@ -240,4 +239,3 @@ class StartChatDialog extends StatelessWidget {
 //     );
 //   }
 // }
->>>>>>> b59bc0e0c30810bbf52f75671c3352d782c29bc0

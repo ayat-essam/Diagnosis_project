@@ -73,7 +73,7 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
-                  home: const DoctorsMangementScreen()
+                  home: const PatientDashboard()
 
                   // home: const ConsultationsView()
 

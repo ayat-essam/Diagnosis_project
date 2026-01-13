@@ -2,7 +2,6 @@ import 'package:diagnosis_project/Core/Theme%20App/colors.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/error_dialog.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_state.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/doctors_mangement_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
@@ -23,9 +22,8 @@ class AddDoctorblocListener extends StatelessWidget {
         }
 
         if (state.successMessage != null) {
-          Navigator.pop(context);
-          Navigator.pop(context);
-          context.read<DoctorsManagementCubit>().getDoctors();
+          Navigator.of(context, rootNavigator: true).pop(true);
+
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
                 content: Text(state.successMessage!),

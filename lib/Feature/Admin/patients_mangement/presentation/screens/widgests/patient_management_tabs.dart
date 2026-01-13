@@ -21,8 +21,8 @@ class PatientManagementTabs extends StatelessWidget {
         GestureDetector(
           onTap: () => onTabChanged(true),
           child: TableTapOption(
-            image: 'assets/image_SVG/doctor_diagnosis.svg',
-            text: "Doctors Table",
+            image: 'assets/image_SVG/myPatientIcon.svg',
+            text: "Patients Table",
             isActive: isPatientSelected,
           ),
         ),

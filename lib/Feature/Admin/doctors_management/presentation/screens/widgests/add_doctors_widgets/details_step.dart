@@ -48,6 +48,7 @@ class DetailsStep extends StatelessWidget {
           style:
               StyleApp.font12BlackSemiBold.copyWith(color: AppColors.grayDark),
         ),
+<<<<<<< HEAD
         BlocBuilder<AddDoctorCubit, AddDoctorState>(
           builder: (context, state) {
             return RadioGroup<String>(
@@ -77,6 +78,37 @@ class DetailsStep extends StatelessWidget {
             );
           },
         ),
+=======
+        // BlocBuilder<AddDoctorCubit, AddDoctorState>(
+        //   builder: (context, state) {
+        //     return RadioGroup<String>(
+        //       groupValue: cubit.state.gender,
+        //       onChanged: (value) {
+        //         if (value != null) {
+        //           cubit.onGenderChanged(value);
+        //         }
+        //       },
+        //       child: Row(
+        //         children: [
+        //           const Radio<String>(
+        //               value: 'Male', activeColor: AppColors.BluePrimary),
+        //           Text('Male',
+        //               style: StyleApp.font12BlackSemiBold
+        //                   .copyWith(color: AppColors.grayDark)),
+        //           Gap(8.w),
+        //           const Radio<String>(
+        //               value: 'Female', activeColor: AppColors.BluePrimary),
+        //           Text(
+        //             'Female',
+        //             style: StyleApp.font12BlackSemiBold
+        //                 .copyWith(color: AppColors.grayDark),
+        //           ),
+        //         ],
+        //       ),
+        //     );
+        //   },
+        // ),
+>>>>>>> b59bc0e0c30810bbf52f75671c3352d782c29bc0
         Gap(8.h),
         TwoButtonRow(
           primaryText: 'Save',

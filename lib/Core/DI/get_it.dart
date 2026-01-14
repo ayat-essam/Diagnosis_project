@@ -39,6 +39,13 @@ import 'package:dio/dio.dart';
 import 'package:diagnosis_project/Core/api/api_consumer.dart';
 import 'package:diagnosis_project/Core/api/dio_consumer.dart';
 
+import '../../Feature/physiotherapy/data/data_source/base_physiotherapy_remote_data_source.dart';
+import '../../Feature/physiotherapy/data/data_source/physiotherapy_remote_data_source.dart';
+import '../../Feature/physiotherapy/data/repository/physiotherapy_repository_impl.dart';
+import '../../Feature/physiotherapy/domain/repository/physiotherapy_repository.dart';
+import '../../Feature/physiotherapy/domain/usecase/submit_video_usecase.dart';
+import '../../Feature/physiotherapy/presentation/cubit/physio_cubit.dart';
+
 final sl = GetIt.instance;
 
 Future<void> setupServiceLocator() async {
@@ -154,4 +161,30 @@ Future<void> setupServiceLocator() async {
   sl.registerFactory(
     () => DashPatientCubit(sl()),
   );
+  // =================== Physiotherapy Feature ===================
+
+  // 1. Register Base Interface with Implementation
+  sl.registerLazySingleton<BasePhysiotherapyRemoteDataSource>(
+        () => PhysiotherapyRemoteDataSourceImpl(sl<ApiConsumer>()),
+  );
+
+  // 2. Register Repository
+  sl.registerLazySingleton<PhysiotherapyRepository>(
+        () => PhysiotherapyRepositoryImpl(
+      sl<BasePhysiotherapyRemoteDataSource>(), // ✅ استخدم Base هنا
+    ),
+  );
+
+  // 3. Register Use Case
+  sl.registerLazySingleton(
+        () => SubmitVideoUseCase(sl<PhysiotherapyRepository>()),
+  );
+
+  // استخدم registerFactory بدلاً من registerSingleton للكيبوت
+  sl.registerFactory(
+        () => PhysiotherapyCubit(
+      submitVideoUseCase: sl<SubmitVideoUseCase>(),
+    ),
+  );
+
 }

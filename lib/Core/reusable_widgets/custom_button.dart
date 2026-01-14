@@ -3,13 +3,14 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../Theme App/Fonts.dart';
 import 'custom_text.dart';
 
+
 class CustomButton extends StatelessWidget {
   final String text;
-  final VoidCallback onPressed;
-  final double width;
-  final double height;
-  final Color backgroundColor;
-  final Color textColor;
+  final VoidCallback? onPressed;  // nullable
+  final double? width;            // optional
+  final double? height;           // optional
+  final Color? backgroundColor;   // optional
+  final Color? textColor;         // optional
   final double fontSize;
   final FontWeight fontWeight;
   final double borderRadius;
@@ -17,25 +18,21 @@ class CustomButton extends StatelessWidget {
   const CustomButton({
     super.key,
     required this.text,
-    required this.onPressed,
-    // this.width = 120,
-    required this.width,
-    // this.height = 40,
-    required this.height,
-    required this.backgroundColor,
-    required this.textColor,
+    this.onPressed,           // optional
+    this.width,
+    this.height,
+    this.backgroundColor,
+    this.textColor,
     this.fontSize = 15,
-    // required this.fontSize,
     this.fontWeight = Fonts.bold,
     this.borderRadius = 8,
-    // required this.borderRadius,
   });
 
   @override
   Widget build(BuildContext context) {
     return SizedBox(
-      width: width.w,
-      height: height.h,
+      width: width?.w,
+      height: height?.h,
       child: ElevatedButton(
         onPressed: onPressed,
         style: ElevatedButton.styleFrom(

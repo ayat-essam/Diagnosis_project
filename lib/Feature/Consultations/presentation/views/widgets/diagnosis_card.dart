@@ -30,7 +30,7 @@ class DiagnosisCard extends StatelessWidget {
             ),
             const SizedBox(height: 6),
             Text(
-              "Model: RespNet v1.2 • Inputs: symptoms + CXR",
+              "model: RespNet v1.2 • Inputs: symptoms + CXR",
               style: TextStyle(color: Colors.grey.shade700, fontSize: 12),
             ),
 

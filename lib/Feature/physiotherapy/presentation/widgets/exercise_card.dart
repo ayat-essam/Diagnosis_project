@@ -8,10 +8,10 @@ import 'package:gap/gap.dart';
 import '../../../../Core/Theme App/Fonts.dart';
 import '../../../../Core/Theme App/colors.dart';
 import '../../../../Core/utils/youtube_utils.dart';
-import '../../Model/exercise_model.dart';
+import 'exercise_data_model.dart';
 
 class ExerciseCard extends StatelessWidget {
-  final ExerciseModel exercise;
+  final ExerciseDataModel exercise;
 
   const ExerciseCard({
     super.key,

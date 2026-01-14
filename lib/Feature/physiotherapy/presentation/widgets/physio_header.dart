@@ -1,4 +1,5 @@
 import 'package:diagnosis_project/Core/reusable_widgets/custom_text.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -20,30 +21,34 @@ class PhysioHeader extends StatefulWidget {
 }
 
 class _PhysioHeaderState extends State<PhysioHeader> {
-  // في _showUploadDialog في physio_header.dart
+
   void _showUploadDialog() {
     if (widget.selectedExercise == null) {
       ScaffoldMessenger.of(context).showSnackBar(
-        SnackBar(
-          content: Text("Please select an exercise first"),
-          backgroundColor: Colors.orange,
-          duration: const Duration(seconds: 2),
+        const SnackBar(
+          content: Text("Please select an exercise name first"),
+          backgroundColor: AppColors.OrangeWarning,
+          duration: Duration(seconds: 2),
         ),
       );
       return;
     }
 
+    final physioCubit = context.read<PhysiotherapyCubit>();
     showDialog(
       context: context,
-      builder: (context) => BlocProvider.value(
-        value: BlocProvider.of<PhysiotherapyCubit>(context), // ✅ هذا مهم
+      builder: (_) => BlocProvider.value(
+        value: physioCubit,
         child: UploadVideoDialog(
+          selectedExercise: widget.selectedExercise,
           onVideoSelected: (file) {
             if (file != null) {
-              print("Video selected: ${file.name}");
+              if (kDebugMode) {
+                print("Video selected: ${file.name}");
+              }
             }
           },
-          selectedExercise: widget.selectedExercise,
+
         ),
       ),
     );

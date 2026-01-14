@@ -34,9 +34,10 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
     if (_isUploading) return;
 
     final result = await FilePicker.platform.pickFiles(
-      type: FileType.video,
+      type: FileType.custom,
       allowedExtensions: ['mp4'],
     );
+
 
     if (result != null && result.files.isNotEmpty) {
       final file = result.files.first;
@@ -100,7 +101,7 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
               content: Text(state.message),
-              backgroundColor: Colors.red,
+              backgroundColor: AppColors.RedError,
             ),
           );
         }
@@ -132,7 +133,6 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
             child: Column(
               mainAxisSize: MainAxisSize.min,
               children: [
-                /// Upload icon / loader
                 Container(
                   width: 72.w,
                   height: 72.w,
@@ -152,7 +152,6 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
                   ),
                 ),
                 Gap(12.h),
-
                 CustomText(
                   text: "Upload your Video here",
                   fontSize: 16.sp,
@@ -160,14 +159,12 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
                   color: AppColors.grayTextChart,
                 ),
                 Gap(6.h),
-
                 CustomText(
                   text: "Drag and drop your Video here,\n or click to browse",
                   fontSize: 12.sp,
                   color: AppColors.grayDark,
                 ),
                 Gap(6.h),
-
                 CustomText(
                   text: "Supported formats: MP4, Maximum size: 10 MB",
                   fontSize: 10.sp,
@@ -175,38 +172,34 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
                 ),
                 Gap(16.h),
 
-                /// Selected exercise
-                if (widget.selectedExercise != null)
-                  Container(
-                    padding: EdgeInsets.all(8.w),
-                    decoration: BoxDecoration(
-                      color: AppColors.BluePrimary.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(8.r),
-                      border: Border.all(color: AppColors.BluePrimary),
-                    ),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Icon(
-                          Icons.fitness_center,
-                          size: 16.sp,
-                          color: AppColors.BluePrimary,
-                        ),
-                        Gap(8.w),
-                        CustomText(
-                          text:
-                          "Selected Exercise: ${widget.selectedExercise}",
-                          fontSize: 12.sp,
-                          color: AppColors.BluePrimary,
-                          fontWeight: Fonts.bold,
-                        ),
-                      ],
-                    ),
-                  ),
 
-                if (widget.selectedExercise != null) Gap(12.h),
+                // if (widget.selectedExercise != null)
+                  // Container(
+                  //   padding: EdgeInsets.all(8.w),
+                  //   decoration: BoxDecoration(
+                  //     color: AppColors.BluePrimary.withOpacity(0.1),
+                  //     borderRadius: BorderRadius.circular(8.r),
+                  //     border: Border.all(color: AppColors.BluePrimary),
+                  //   ),
+                  //   child: const Row(
+                  //     mainAxisAlignment: MainAxisAlignment.center,
+                  //     children: [
+                  //
+                  //       // Gap(8.w),
+                  //       // CustomText(
+                  //       //   text:
+                  //       //   "Selected Exercise: ${widget.selectedExercise}",
+                  //       //   fontSize: 12.sp,
+                  //       //   color: AppColors.BluePrimary,
+                  //       //   fontWeight: Fonts.bold,
+                  //       // ),
+                  //     ],
+                  //   ),
+                  // ),
 
-                /// Pick video
+                // if (widget.selectedExercise != null) Gap(12.h),
+
+
                 GestureDetector(
                   onTap: _isUploading ? null : _pickVideo,
                   child: Container(
@@ -265,7 +258,7 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
                 ),
                 Gap(20.h),
 
-                /// Send button
+
                 BlocBuilder<PhysiotherapyCubit, PhysiotherapyState>(
                   builder: (context, state) {
                     final isEnabled =
@@ -275,7 +268,7 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
 
                     return CustomButton(
                       text: state is PhysiotherapyLoading
-                          ? "Uploading..."
+                          ? "Analyzing..."
                           : "Send",
                       backgroundColor: isEnabled
                           ? AppColors.BluePrimary
@@ -292,8 +285,7 @@ class _UploadVideoDialogState extends State<UploadVideoDialog> {
                           exerciseName:
                           widget.selectedExercise!,
                         );
-                      }
-                          : null,
+                      }: null,
                     );
                   },
                 ),

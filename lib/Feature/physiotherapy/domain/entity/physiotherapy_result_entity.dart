@@ -1,6 +1,6 @@
 class PhysiotherapyResultEntity {
   final String exerciseName;
-  final List<String> errors;
+  final double errors;
   final String feedback;
 
   PhysiotherapyResultEntity({

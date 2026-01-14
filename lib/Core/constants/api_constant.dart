@@ -1,5 +1,5 @@
 class ApiConstants {
-  static String baseURL = 'http://diagnosis.runasp.net';
+  static String baseURL = 'http://diagnosis.runasp.net/';
 
   static String resetPasswordURL = '$baseURL/Auth/change-password';
   static String forgetPasswordURL = '$baseURL/Auth/forget-password';

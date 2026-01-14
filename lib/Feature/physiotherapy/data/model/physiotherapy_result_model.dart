@@ -1,4 +1,3 @@
-
 import '../../domain/entity/physiotherapy_result_entity.dart';
 
 class PhysiotherapyResultModel extends PhysiotherapyResultEntity {
@@ -9,17 +8,18 @@ class PhysiotherapyResultModel extends PhysiotherapyResultEntity {
   });
 
   factory PhysiotherapyResultModel.fromJson(Map<String, dynamic> json) {
+    final message = json['message'] ?? {};
     return PhysiotherapyResultModel(
-      exerciseName: json['exerciseName'] ?? '',
-      errors: List<String>.from(json['errors'] ?? []),
-      feedback: json['feedback'] ?? '',
+      exerciseName: message['exercise'] ?? '',
+      errors: (message['error'] != null) ? (message['error'] as num).toDouble() : 0.0,
+      feedback: message['feedback'] ?? '',
     );
   }
 
   Map<String, dynamic> toJson() {
     return {
-      'exerciseName': exerciseName,
-      'errors': errors,
+      'exercise': exerciseName,
+      'error': errors,
       'feedback': feedback,
     };
   }

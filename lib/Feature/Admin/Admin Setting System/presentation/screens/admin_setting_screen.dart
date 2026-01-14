@@ -63,11 +63,6 @@ class _AdminSettingScreenState extends State<AdminSettingScreen> {
                       ),
                     ),
                     const Spacer(),
-
-
-
-
-
                     CustomAppButton(
                       onTap: () {
                         showDialog(

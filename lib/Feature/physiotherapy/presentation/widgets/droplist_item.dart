@@ -54,8 +54,8 @@ class _CustomBodyPartDropdownState extends State<CustomBodyPartDropdown> {
                   text: exercise,
                   fontSize: 14.sp,
                   color: selectedValue == exercise
-                      ? AppColors.BluePrimary // 👈 المختار
-                      : Colors.black,         // 👈 الباقي
+                      ? AppColors.BluePrimary
+                      : Colors.black,
                 ),
 
               );

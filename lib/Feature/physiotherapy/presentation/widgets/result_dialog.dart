@@ -41,25 +41,19 @@ class ResultDialog extends StatelessWidget {
             ),
           ],
         ),
-        child: SingleChildScrollView(
+
           child: Padding(
             padding: EdgeInsets.all(24.w),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               mainAxisSize: MainAxisSize.min,
               children: [
-                /// 🏆 العنوان
                 Row(
                   children: [
-                    Icon(
-                      Icons.analytics_outlined,
-                      color: AppColors.BluePrimary,
-                      size: 24.sp,
-                    ),
                     Gap(8.w),
-                    Expanded(
+                    const Expanded(
                       child: CustomText(
-                        text: "AI Analysis Results",
+                        text: "AI Results",
                         fontWeight: Fonts.bold,
                         color: AppColors.grayDark,
                         fontSize: 20,
@@ -68,82 +62,23 @@ class ResultDialog extends StatelessWidget {
                   ],
                 ),
                 Gap(16.h),
-
-                /// 🏋️ Exercise Name
                 _buildResultItem(
                   title: "Exercise Name:",
                   value: result.exerciseName,
-                  icon: Icons.fitness_center,
                 ),
                 Gap(12.h),
-
-                /// ⚠️ Errors
                 _buildResultItem(
-                  title: "Detected Errors:",
-                  value: result.errors.isNotEmpty
-                      ? result.errors.join("\n• ")
+                  title: "Errors:",
+                  value: result.errors > 0
+                      ? result.errors.toString()
                       : "✅ No errors detected",
-                  icon: Icons.warning_amber,
-                  valueColor: result.errors.isNotEmpty
-                      ? Colors.orange
-                      : Colors.green,
                 ),
                 Gap(12.h),
-
-                /// 💡 Feedback
                 _buildResultItem(
-                  title: "AI Feedback:",
+                  title: "Feedback:",
                   value: result.feedback,
-                  icon: Icons.lightbulb_outline,
-                  valueColor: AppColors.BluePrimary,
                 ),
                 Gap(20.h),
-
-                /// 📊 Score (إذا كان متوفراً في المستقبل)
-                Container(
-                  padding: EdgeInsets.all(12.w),
-                  decoration: BoxDecoration(
-                    color: AppColors.BluePrimary.withOpacity(0.1),
-                    borderRadius: BorderRadius.circular(12.r),
-                    border: Border.all(color: AppColors.BluePrimary),
-                  ),
-                  child: Row(
-                    children: [
-                      Icon(
-                        Icons.score_outlined,
-                        color: AppColors.BluePrimary,
-                        size: 20.sp,
-                      ),
-                      Gap(8.w),
-                      Expanded(
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            CustomText(
-                              text: "Analysis Summary",
-                              fontSize: 14.sp,
-                              color: AppColors.grayDark,
-                            ),
-                            Gap(4.h),
-                            CustomText(
-                              text: result.errors.isEmpty
-                                  ? "Excellent form! Keep it up! 💪"
-                                  : "Focus on improving the detected areas",
-                              fontSize: 12.sp,
-                              color: result.errors.isEmpty
-                                  ? Colors.green
-                                  : Colors.orange,
-                              fontWeight: Fonts.medium,
-                            ),
-                          ],
-                        ),
-                      ),
-                    ],
-                  ),
-                ),
-                Gap(24.h),
-
-                /// ✅ Done Button
                 CustomButton(
                   text: "Done",
                   onPressed: onClose,
@@ -155,7 +90,7 @@ class ResultDialog extends StatelessWidget {
               ],
             ),
           ),
-        ),
+
       ),
     );
   }
@@ -163,19 +98,13 @@ class ResultDialog extends StatelessWidget {
   Widget _buildResultItem({
     required String title,
     required String value,
-    required IconData icon,
-    Color valueColor = AppColors.grayDark,
+    Color valueColor = AppColors.BluePrimary,
   }) {
     return Column(
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         Row(
           children: [
-            Icon(
-              icon,
-              size: 16.sp,
-              color: AppColors.grayDark,
-            ),
             Gap(8.w),
             Expanded(
               child: CustomText(
@@ -194,7 +123,7 @@ class ResultDialog extends StatelessWidget {
             text: value,
             color: valueColor,
             fontSize: 14.sp,
-            fontWeight: Fonts.medium,
+            fontWeight: Fonts.bold,
           ),
         ),
       ],

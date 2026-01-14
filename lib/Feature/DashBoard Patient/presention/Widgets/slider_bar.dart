@@ -468,7 +468,6 @@ import 'drawer_item.dart';
 import '../patient_dashboard.dart';
 import '../../../Diagnosis Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'menu_item_patient.dart';
-import 'package:diagnosis_project/Feature/Complaints/presentation/screens/Complaints_Screen.dart';
 import 'package:diagnosis_project/Feature/Patient/Appointments/Presention/pages/appointments_page.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/Setting_patient_view.dart';
 
@@ -588,16 +587,7 @@ class _SliderBarState extends State<SliderBar> {
         ImagePath: "assets/image_SVG/Medical FilesIcon.svg",
         onTap: () {}, iconPath: '',
       ),
-      MenuItemPatients(
-        title: 'Complaints',
-        ImagePath: "assets/image_SVG/DirectoryIcon.svg",
-        onTap: () {
-          Navigator.pushReplacement(
-            context,
-            MaterialPageRoute(builder: (context) => ComplaintsScreen()),
-          );
-        }, iconPath: '',
-      ),
+
     ];
 
     return menuItems.map((item) {

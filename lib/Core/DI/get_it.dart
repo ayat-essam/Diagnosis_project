@@ -70,7 +70,8 @@ Future<void> setupServiceLocator() async {
 
   sl.registerFactory(() => AddDoctorCubit(sl()));
   sl.registerFactory(() => DoctorsManagementCubit(
-      getDoctorProfileUseCase: sl(), getDoctorsUseCase: sl(),
+      getDoctorProfileUseCase: sl(),
+      getDoctorsUseCase: sl(),
       deactivateDoctorUsecase: sl()));
   // ---------------- Data Layer (Patientmangement Data Sources) ----------------
   sl.registerLazySingleton<PatientManagementRemoteDataSource>(
@@ -86,7 +87,8 @@ Future<void> setupServiceLocator() async {
   sl.registerLazySingleton(() => GetPatientProfileUseCase(sl()));
 
   sl.registerFactory(() => PatientsMangementCubit(
-      getPatientsUsecase: sl(), getPatientProfileUseCase: sl(),
+      getPatientsUsecase: sl(),
+      getPatientProfileUseCase: sl(),
       deletePatientUsecase: sl()));
 
 // ---------------- Data Layer ( Profile Data Source) ----------------
@@ -179,4 +181,7 @@ Future<void> setupServiceLocator() async {
     () => DoctorWorkCubit(
         setDoctorRateLimitUseCase: sl(), setDoctorWorkHourUseCase: sl()),
   );
+
+  //--------------Domain Layer(Treatment-get patient)--------------------///
+
 }

@@ -15,7 +15,7 @@
 //             itemCount: 5,
 //             itemBuilder: (BuildContext context, index) {
 //               return Text(
-//                 'Data',
+//                 'data',
 //                 style: TextStyle(
 //                     fontSize: 12,
 //                     fontWeight: FontWeight.w700,

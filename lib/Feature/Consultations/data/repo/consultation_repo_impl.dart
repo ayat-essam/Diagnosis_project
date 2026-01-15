@@ -5,7 +5,7 @@
 //
 // import 'package:dartz/dartz.dart';
 // import 'package:diagnosis_project/Core/constants/api_constant.dart';
-// import 'package:diagnosis_project/Feature/Consultations/Data/Mapper/consultation_mapper.dart';
+// import 'package:diagnosis_project/Feature/Consultations/data/Mapper/consultation_mapper.dart';
 // import 'package:dio/dio.dart';
 // import '../../../../Core/error/failure.dart';
 // import '../../Domain/entity/consultation.dart';

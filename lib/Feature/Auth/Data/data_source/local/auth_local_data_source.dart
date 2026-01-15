@@ -1,5 +1,5 @@
-abstract class AuthLocalDataSource{
+abstract class AuthLocalDataSource {
   Future<void> saveToken(String token);
 
-  Future <String> getToken();
+  Future<String> getToken();
 }

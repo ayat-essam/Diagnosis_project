@@ -12,6 +12,4 @@ class LoginResponse {
     errorMessage = json['errorMessage'];
     expiresAt = json['expiresAt'];
   }
-
-
 }

@@ -31,7 +31,7 @@ class TextformFieldAndTitle extends StatelessWidget {
           borderRedius: 14.r,
           onChanged: onChanged,
           keyboardType: keyboardType,
-          initialValue: initialValue??'',
+          initialValue: initialValue ?? '',
         ),
       ],
     );

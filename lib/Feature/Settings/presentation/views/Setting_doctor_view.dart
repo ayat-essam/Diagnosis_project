@@ -39,7 +39,7 @@ class SettingDoctorView extends StatelessWidget {
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                 Text(
+                  Text(
                     "Settings",
                     style: StyleApp.font25blackbold
                         .copyWith(color: AppColors.grayDark),

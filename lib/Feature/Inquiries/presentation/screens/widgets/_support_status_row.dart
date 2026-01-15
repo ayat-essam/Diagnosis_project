@@ -14,14 +14,14 @@ class SupportStatusRow extends StatelessWidget {
       children: [
         Row(
           children: [
-            SvgPicture.asset("assets/image_SVG/doctor_diagnosis.svg",color: AppColors.BluePrimary, width: 25),
+            SvgPicture.asset("assets/image_SVG/doctor_diagnosis.svg",
+                color: AppColors.BluePrimary, width: 25),
             Text(
               "24/7 Medical-oriented",
               style: TextStyle(color: Color(0xff207EFF)),
             ),
           ],
         ),
-
         Row(
           children: [
             Icon(Icons.info_outline, color: Color(0xff207EFF)),

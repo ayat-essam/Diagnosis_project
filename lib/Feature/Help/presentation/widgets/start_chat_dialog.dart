@@ -26,11 +26,10 @@ class StartChatDialog extends StatelessWidget {
                 const Text(
                   'Support Chat',
                   style: TextStyle(
-                    fontSize: 20,
-                    fontWeight: Fonts.bold,
-                    color: AppColors.blackSecondary,
-                    fontFamily: 'Poppins'
-                  ),
+                      fontSize: 20,
+                      fontWeight: Fonts.bold,
+                      color: AppColors.blackSecondary,
+                      fontFamily: 'Poppins'),
                 ),
                 GestureDetector(
                   onTap: () => Navigator.pop(context),
@@ -75,7 +74,6 @@ class StartChatDialog extends StatelessWidget {
                     children: [
                       Expanded(
                         child: TextField(
-
                           decoration: InputDecoration(
                             hintText: 'Type your message...',
                             hintStyle: const TextStyle(

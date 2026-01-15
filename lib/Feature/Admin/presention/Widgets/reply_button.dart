@@ -11,7 +11,8 @@ class ReplyButton extends StatelessWidget {
     return OutlinedButton.icon(
       onPressed: () {
         showDialog(
-            context: context, builder: (context) => const ReplyToDoctorDialog());
+            context: context,
+            builder: (context) => const ReplyToDoctorDialog());
       },
       icon: const Icon(Icons.reply, size: 16),
       label: const Text("Reply"),

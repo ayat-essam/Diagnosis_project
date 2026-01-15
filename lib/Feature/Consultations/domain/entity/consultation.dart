@@ -27,7 +27,8 @@ class Consultation extends Equatable {
     this.errorMessage,
   });
 
-  int get patientAge => DateTime.now().difference(patientBirthDate).inDays ~/ 365;
+  int get patientAge =>
+      DateTime.now().difference(patientBirthDate).inDays ~/ 365;
 
   bool get isMale => patientGender.toLowerCase() == 'male';
   bool get isFemale => patientGender.toLowerCase() == 'female';
@@ -47,18 +48,18 @@ class Consultation extends Equatable {
 
   @override
   List<Object?> get props => [
-    id,
-    patientName,
-    patientBirthDate,
-    patientGender,
-    symptoms,
-    response,
-    requestDate,
-    notes,
-    attachments,
-    success,
-    errorMessage,
-  ];
+        id,
+        patientName,
+        patientBirthDate,
+        patientGender,
+        symptoms,
+        response,
+        requestDate,
+        notes,
+        attachments,
+        success,
+        errorMessage,
+      ];
 
   @override
   String toString() {

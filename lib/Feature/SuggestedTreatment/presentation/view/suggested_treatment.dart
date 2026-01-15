@@ -221,7 +221,6 @@ class SuggestedTreatmentScreen extends StatelessWidget {
 
             /// Buttons
             WhiteCard(child: ButtonWidget()),
-           
           ],
         ),
       ),
@@ -247,30 +246,38 @@ class ButtonWidget extends StatelessWidget {
               borderRadius: BorderRadius.circular(14),
             ),
           ),
-          child: const Text('Check Interactions',style: TextStyle(color: Colors.white),),
+          child: const Text(
+            'Check Interactions',
+            style: TextStyle(color: Colors.white),
+          ),
         ),
-         const SizedBox(height: 12),
-            OutlinedButton(
-              onPressed: () {},
-              style: OutlinedButton.styleFrom(
-                
-                minimumSize: const Size(double.infinity, 52),
-                shape: RoundedRectangleBorder(
-                
-                  borderRadius: BorderRadius.circular(14),
-                ),
-              ),
-              child: const Text('Print Treatment Plan',style: TextStyle(color: Colors.blue),),
+        const SizedBox(height: 12),
+        OutlinedButton(
+          onPressed: () {},
+          style: OutlinedButton.styleFrom(
+            minimumSize: const Size(double.infinity, 52),
+            shape: RoundedRectangleBorder(
+              borderRadius: BorderRadius.circular(14),
             ),
-
-            SizedBox(height: 10.h,),
-            Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                Text("Any Questions?"),
-                Text(" Contact team.",style: TextStyle(color: Colors.blue),),
-              ],
-            )
+          ),
+          child: const Text(
+            'Print Treatment Plan',
+            style: TextStyle(color: Colors.blue),
+          ),
+        ),
+        SizedBox(
+          height: 10.h,
+        ),
+        Row(
+          mainAxisAlignment: MainAxisAlignment.center,
+          children: [
+            Text("Any Questions?"),
+            Text(
+              " Contact team.",
+              style: TextStyle(color: Colors.blue),
+            ),
+          ],
+        )
       ],
     );
   }

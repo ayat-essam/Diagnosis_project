@@ -6,7 +6,7 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
-// import '../../../../Guest/Guest Home/Models/doctors_model.dart';
+// import '../../../../Guest/Guest Home/models/doctors_model.dart';
 import '../../../../Admin/doctors_management/data/models/doctor_model.dart';
 import '../../../../Inquiries/presentation/cubit/create_inquiry_cubit.dart';
 import '../../../../Inquiries/presentation/cubit/create_inquiry_state.dart';
@@ -71,7 +71,7 @@ class FilterResultItem extends StatelessWidget {
                             Row(
                               children: [
                                 Text(
-                                 'Physiotherapy',
+                                  'Physiotherapy',
                                   style: StyleApp.font10blackSecondryMedium
                                       .copyWith(color: AppColors.BluePrimary),
                                 ),

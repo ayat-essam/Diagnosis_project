@@ -1,3 +1,1 @@
-abstract class AuthDataSource{
-
-}
+abstract class AuthDataSource {}

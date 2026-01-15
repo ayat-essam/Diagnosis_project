@@ -136,9 +136,10 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
         imagePath: "assets/image_SVG/systemSettingIcon.svg",
         imageColor: AppColors.gray,
         onTap: () {
-           Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) {
-              return const AdminSettingScreen();
-            }));
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) {
+            return const AdminSettingScreen();
+          }));
         },
       ),
     ];
@@ -190,7 +191,7 @@ class _SliderBarAdminState extends State<SliderBarAdmin> {
             handleLogout(context);
           } else if (item.onTap != null) {
             item.onTap?.call();
-           // Navigator.pushNamed(context, item.onTap as String);
+            // Navigator.pushNamed(context, item.onTap as String);
           }
         },
       );

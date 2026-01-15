@@ -48,7 +48,10 @@ class GuestBookApointmentScreen extends StatelessWidget {
               SizedBox(
                 height: 29.h,
               ),
-              CustomAppButton(onTap: () {}, text: 'Book Now',),
+              CustomAppButton(
+                onTap: () {},
+                text: 'Book Now',
+              ),
             ],
           ),
         ),

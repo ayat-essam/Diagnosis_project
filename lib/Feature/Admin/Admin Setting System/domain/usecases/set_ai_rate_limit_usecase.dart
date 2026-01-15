@@ -7,7 +7,9 @@ class SetAiRateLimitUseCase {
 
   SetAiRateLimitUseCase({required this.repository});
 
-  Future<Either<ErrorModel, String>> call({required int maxRequestsPerDay}) async {
-    return await repository.setAiRateLimit(maxRequestsPerDay: maxRequestsPerDay);
+  Future<Either<ErrorModel, String>> call(
+      {required int maxRequestsPerDay}) async {
+    return await repository.setAiRateLimit(
+        maxRequestsPerDay: maxRequestsPerDay);
   }
 }

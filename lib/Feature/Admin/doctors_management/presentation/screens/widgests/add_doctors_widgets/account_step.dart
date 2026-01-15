@@ -18,17 +18,17 @@ class AccountStep extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final cubit=context.read<AddDoctorCubit>();
+    final cubit = context.read<AddDoctorCubit>();
     return Column(
       children: [
-         TextformFieldAndTitle(
+        TextformFieldAndTitle(
           title: "Password",
           initialValue: cubit.state.password,
            onChanged: (val) => cubit.onPasswordChanged(val),
 
         ),
         Gap(8.h),
-         TextformFieldAndTitle(
+        TextformFieldAndTitle(
           title: "Confirm Password",
          initialValue: cubit.state.confirmPassword ,
          onChanged: (val) => cubit.onConfirmPasswordChanged(val),

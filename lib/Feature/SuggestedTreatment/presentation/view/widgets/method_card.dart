@@ -17,10 +17,8 @@ class MethodCard extends StatelessWidget {
           const Spacer(),
           const Text(
             'Method',
-            style: TextStyle(color: Color(0xff505050),
-            fontWeight: FontWeight.w700
-            
-            ),
+            style: TextStyle(
+                color: Color(0xff505050), fontWeight: FontWeight.w700),
           ),
           const SizedBox(height: 6),
           Row(
@@ -41,7 +39,11 @@ class MethodCard extends StatelessWidget {
           Expanded(
             child: Align(
               alignment: Alignment.bottomCenter,
-              child: Image.asset("assets/icons/Vector.png",width: 200.w,height: 100.h,),
+              child: Image.asset(
+                "assets/icons/Vector.png",
+                width: 200.w,
+                height: 100.h,
+              ),
             ),
           ),
         ],
@@ -58,7 +60,6 @@ class WhiteCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      
       padding: const EdgeInsets.all(1.5),
       decoration: BoxDecoration(
         gradient: LinearGradient(

@@ -21,4 +21,3 @@ class TreatmentCubit extends Cubit<TreatmentState> {
     );
   }
 }
-

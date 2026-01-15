@@ -206,8 +206,8 @@ Future<void> setupServiceLocator() async {
       () => PrescriptionRemoteDataSourceImpl(sl()));
 
   ///-------------Data layer(treatment-plan) ///
-  sl.registerLazySingleton(() => TreatmentUseCase(sl()));
-  sl.registerFactory(() => TreatmentCubit(sl()));
+  sl.registerLazySingleton<TreatmentUseCase>(() => TreatmentUseCase(sl()));
+  sl.registerFactory<TreatmentCubit>(() => TreatmentCubit(sl()));
   sl.registerLazySingleton<TreatmentRepository>(
       () => TreatmentRepositoryImpl(sl()));
   sl.registerLazySingleton<TreatmentRemoteDataSource>(

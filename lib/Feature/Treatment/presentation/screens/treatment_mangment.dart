@@ -2,9 +2,8 @@ import 'package:diagnosis_project/Core/DI/get_it.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar_widget.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
 import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/cubit/patients_mangement_cubit.dart';
-import 'package:diagnosis_project/Feature/SuggestedTreatment/presentation/view/suggested_treatment.dart';
 import 'package:diagnosis_project/Feature/Treatment/presentation/screens/add_prescription.dart';
-import 'package:diagnosis_project/Feature/Treatment/presentation/screens/suggested_treatment_plan.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/screens/treatment_plan.dart';
 import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/patient_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -42,7 +41,12 @@ class TreatmentMangment extends StatelessWidget {
                       leading: Image.asset("assets/image/Hand With a Pill.png"),
                       trailing: IconButton(
                         icon: const Icon(Icons.arrow_forward_ios),
-                        onPressed: () {},
+                        onPressed: () {
+                          Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                  builder: (context) => TreatmentPlanScreen()));
+                        },
                       ),
                     ),
                   ),

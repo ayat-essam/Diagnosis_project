@@ -3,6 +3,8 @@ import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar_widget.da
 import 'package:diagnosis_project/Core/reusable_widgets/custom_linear_gradiant_container.dart';
 import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/cubit/patients_mangement_cubit.dart';
 import 'package:diagnosis_project/Feature/SuggestedTreatment/presentation/view/suggested_treatment.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/screens/add_prescription.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/screens/suggested_treatment_plan.dart';
 import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/patient_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -27,7 +29,7 @@ class TreatmentMangment extends StatelessWidget {
               style: TextStyle(fontSize: 20, fontWeight: FontWeight.w600),
             ),
             SizedBox(
-              height: 20.h,
+              height: 30.h,
             ),
             patientData(),
             SizedBox(
@@ -36,10 +38,10 @@ class TreatmentMangment extends StatelessWidget {
                 child: CustomLinearGradiantContainer(
                   child: Center(
                     child: ListTile(
-                      title: Text("Send Treatment Plan"),
+                      title: const Text("Send Treatment Plan"),
                       leading: Image.asset("assets/image/Hand With a Pill.png"),
                       trailing: IconButton(
-                        icon: Icon(Icons.arrow_forward_ios),
+                        icon: const Icon(Icons.arrow_forward_ios),
                         onPressed: () {},
                       ),
                     ),
@@ -54,16 +56,15 @@ class TreatmentMangment extends StatelessWidget {
               child: CustomLinearGradiantContainer(
                   child: Center(
                 child: ListTile(
-                  title: Text("Add Prescription"),
+                  title: const Text("Add Prescription"),
                   leading: Image.asset("assets/image/Treatment List.png"),
                   trailing: IconButton(
-                    icon: Icon(Icons.arrow_forward_ios),
+                    icon: const Icon(Icons.arrow_forward_ios),
                     onPressed: () {
-                      // Navigator.push(
-                      //     context,
-                      //     MaterialPageRoute(
-                      //         builder: (context) =>
-                      //             SuggestedTreatmentScreen()));
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => AddPrescription()));
                     },
                   ),
                 ),

@@ -43,6 +43,18 @@ import 'package:diagnosis_project/Feature/Settings/domain/usecases/update_profil
 import 'package:diagnosis_project/Feature/Settings/domain/usecases/update_user_settings_use_case.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/cubit/profile_cubit.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/cubit/user_settings_cubit.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/datasources/prescription_remote_datasource.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/datasources/treatment_remote_datasource.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/prescriprion_remotesource_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/prescription_repository_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/treatment_remotesource_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/treatment_repository_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/repositories/Treatment_repository.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/repositories/prescription_repository.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/usecase/add_prescription_usecase.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/usecase/treatment_usecase.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/cubit/prescription/prescription_cubit.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/cubit/treatment_plan/treatment_plan_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:diagnosis_project/Core/api/api_consumer.dart';
@@ -183,5 +195,21 @@ Future<void> setupServiceLocator() async {
   );
 
   //--------------Domain Layer(Treatment-get patient)--------------------///
+  sl.registerLazySingleton(() => AddPrescriptionUseCase(sl()));
+  sl.registerFactory(() => AddPrescriptionCubit(sl()));
+  //--------------Data Layer(Treatment-get patient)--------------------///
+  sl.registerLazySingleton<PrescriptionRepository>(
+      () => PrescriptionRepositoryImpl(sl()));
 
+  //------------Data Layer(Treatment-get patient)//
+  sl.registerLazySingleton<PrescriptionRemoteDataSource>(
+      () => PrescriptionRemoteDataSourceImpl(sl()));
+
+  ///-------------Data layer(treatment-plan) ///
+  sl.registerLazySingleton(() => TreatmentUseCase(sl()));
+  sl.registerFactory(() => TreatmentCubit(sl()));
+  sl.registerLazySingleton<TreatmentRepository>(
+      () => TreatmentRepositoryImpl(sl()));
+  sl.registerLazySingleton<TreatmentRemoteDataSource>(
+      () => TreatmentRemoteDataSourceImpl(sl()));
 }

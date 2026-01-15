@@ -15,7 +15,7 @@ import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/s
 import 'package:diagnosis_project/Feature/Doctor/Doctors/doctors_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/screens/recent_transactions_screen.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
-import 'package:diagnosis_project/Feature/Treatment/treatment_mangment.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/screens/treatment_mangment.dart';
 
 import 'package:diagnosis_project/Feature/notifications/presentation/views/notification_screen.dart';
 import 'package:diagnosis_project/Feature/services/presentation/views/services_view.dart';

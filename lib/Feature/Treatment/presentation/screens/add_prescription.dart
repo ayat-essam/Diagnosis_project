@@ -6,7 +6,7 @@ import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/dosageI
 import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/dropButton.dart';
 import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/fastumCard.dart';
 import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/patient_data.dart';
-import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/sendButton.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/SubmitPrescriptionButton.dart';
 import 'package:diagnosis_project/Feature/Treatment/presentation/widgets/varibles.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';

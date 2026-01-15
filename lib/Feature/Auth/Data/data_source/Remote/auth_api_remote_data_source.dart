@@ -1,4 +1,3 @@
-
 import 'package:dio/dio.dart';
 import 'package:injectable/injectable.dart';
 
@@ -10,8 +9,6 @@ import '../../models/register_request.dart';
 import '../../models/register_response.dart';
 import 'auth_remote_data_sourse.dart';
 
-
-
 @Singleton(as: AuthRemoteDataSource)
 class AuthApiRemoteDataSource extends AuthRemoteDataSource {
   final Dio dio;
@@ -20,8 +17,7 @@ class AuthApiRemoteDataSource extends AuthRemoteDataSource {
   Future<LoginResponse> login(LoginRequest loginReq) async {
     try {
       final response =
-      await dio.post(ApiConstants.login,
-          data: loginReq.toJson());
+          await dio.post(ApiConstants.login, data: loginReq.toJson());
       print(response.data);
 
       return LoginResponse.fromJson(response.data);
@@ -34,12 +30,11 @@ class AuthApiRemoteDataSource extends AuthRemoteDataSource {
     }
   }
 
-
   @override
   Future<RegisterResponse> register(RegisterRequest registerReq) async {
     try {
-      final response = await dio.post(ApiConstants.register,
-          data: registerReq.toJson());
+      final response =
+          await dio.post(ApiConstants.register, data: registerReq.toJson());
       print(response.data);
       return RegisterResponse.fromJson(response.data());
     } catch (exception) {

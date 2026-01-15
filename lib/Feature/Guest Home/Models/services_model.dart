@@ -1,4 +1,3 @@
-
 class ServiceModel {
   final String title;
   final String subtitle;

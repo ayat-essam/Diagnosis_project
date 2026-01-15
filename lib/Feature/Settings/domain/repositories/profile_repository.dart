@@ -5,5 +5,6 @@ import 'package:diagnosis_project/Feature/Settings/domain/entities/profle_entity
 
 abstract class ProfileRepository {
   Future<Either<ErrorModel, ProfileEntity>> getProfile();
-  Future<Either<ErrorModel, void>> updateProfile({required ProfileModel updateProfileRequest});
+  Future<Either<ErrorModel, void>> updateProfile(
+      {required ProfileModel updateProfileRequest});
 }

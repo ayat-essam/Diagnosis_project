@@ -7,7 +7,6 @@ abstract class DrugRemoteDataSource {
   Future<List<DrugSuggestionModel>> getSuggestions(String keyword);
 }
 
-
 class DrugRemoteDataSourceImpl extends DrugRemoteDataSource {
   final ApiConsumer api;
 

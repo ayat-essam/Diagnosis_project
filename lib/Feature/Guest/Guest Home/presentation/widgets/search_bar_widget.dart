@@ -8,7 +8,7 @@ class SearchBarWidget extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      margin: const EdgeInsets.symmetric( vertical: 20),
+      margin: const EdgeInsets.symmetric(vertical: 20),
       // padding: const EdgeInsets.symmetric(horizontal: 12),
       decoration: BoxDecoration(
         border: Border.all(color: AppColors.BluePrimary),
@@ -18,7 +18,7 @@ class SearchBarWidget extends StatelessWidget {
         decoration: InputDecoration(
           border: InputBorder.none,
           hintText: 'Search ....',
-          prefixIcon: Icon(Icons.search, color:AppColors.grayE2),
+          prefixIcon: Icon(Icons.search, color: AppColors.grayE2),
         ),
       ),
     );

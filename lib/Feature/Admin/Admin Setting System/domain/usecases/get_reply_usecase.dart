@@ -8,7 +8,8 @@ class GetReplyUseCase {
 
   GetReplyUseCase({required this.repository});
 
-  Future<Either<ErrorModel, GetReplyEntity>> call({required int requestId}) async {
+  Future<Either<ErrorModel, GetReplyEntity>> call(
+      {required int requestId}) async {
     return await repository.getReply(requestId: requestId);
   }
 }

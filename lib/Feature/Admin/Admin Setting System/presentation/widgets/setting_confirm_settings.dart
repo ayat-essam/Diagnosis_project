@@ -108,18 +108,17 @@ class ConfirmDialog extends StatelessWidget {
                       backgroundColor: AppColors.BluePrimary,
                       textColor: AppColors.whiteBackground,
                     ),
-
                   ),
                   const Gap(10),
                   Expanded(
                     child: CustomButton(
-                        text: 'Cancel',
-                        onPressed: onCancel,
-                        width: 120.w,
-                        height: 40.h,
-                        backgroundColor: AppColors.whiteBackground,
-                      textColor: AppColors.BluePrimary,),
-
+                      text: 'Cancel',
+                      onPressed: onCancel,
+                      width: 120.w,
+                      height: 40.h,
+                      backgroundColor: AppColors.whiteBackground,
+                      textColor: AppColors.BluePrimary,
+                    ),
                   ),
                 ],
               ),

@@ -11,7 +11,6 @@ import '../../../../../../Core/Theme App/styleApp.dart';
 import '../../../../../DashBoard Patient/presention/Widgets/drawer_item.dart';
 import 'menu_Item_doctors.dart';
 
-
 class SliderBarDoctor extends StatefulWidget {
   const SliderBarDoctor({super.key});
 
@@ -35,16 +34,17 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
                 children: [
-
                   Row(
                     children: [
                       Image.asset('assets/image/logo2.png'),
-                      const Text("Diagnosis",style: TextStyle(
-                          fontFamily: 'Poppins',
-                          color: AppColors.BluePrimary,
-                          fontSize: 24,
-                          fontWeight: FontWeight.bold
-                      ),)
+                      const Text(
+                        "Diagnosis",
+                        style: TextStyle(
+                            fontFamily: 'Poppins',
+                            color: AppColors.BluePrimary,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold),
+                      )
                     ],
                   ),
                 ],
@@ -100,7 +100,10 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
         ImagePath: "assets/image_SVG/dashBoardIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => const DoctorDashboardScreen(),));
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DoctorDashboardScreen(),
+              ));
         },
       ),
       MenuItemDoctors(
@@ -108,9 +111,25 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
         ImagePath: "assets/image_SVG/myPatientIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => const MyPatientsScreen(),));
+              context,
+              MaterialPageRoute(
+                builder: (context) => const MyPatientsScreen(),
+              ));
         },
       ),
+
+      // MenuItemDoctors(
+      //   title: 'Consultations',
+      //   ImagePath: "assets/image_SVG/consultaionIcon.svg",
+      //   onTap: () {
+      //     Navigator.pushReplacement(
+      //         context,
+      //         MaterialPageRoute(
+      //           builder: (context) => const ConsultationsView(),
+      //         ));
+      //   },
+      // ),
+
       // MenuItemDoctors(
       //   title: 'Consultations',
       //   ImagePath: "assets/image_SVG/consultaionIcon.svg",
@@ -122,18 +141,23 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
       MenuItemDoctors(
         title: 'Diagnoses',
         ImagePath: "assets/image_SVG/DiagnosisIcon.svg",
-         onTap: () {
+        onTap: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => const DiagnosisModuleScreen(),));
+              context,
+              MaterialPageRoute(
+                builder: (context) => const DiagnosisModuleScreen(),
+              ));
         },
       ),
-
       MenuItemDoctors(
         title: 'Finance',
         ImagePath: "assets/image_SVG/financeIcon.svg",
         onTap: () {
           Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => const FinanceDoctorScreen(),));
+              context,
+              MaterialPageRoute(
+                builder: (context) => const FinanceDoctorScreen(),
+              ));
         },
       ),
     ];
@@ -196,8 +220,8 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
           if (item.title == 'Log Out') {
             handleLogout(context);
           } else if (item.onTap != null) {
-             item.onTap.call();
-           // Navigator.pushNamed(context, item.onTap as String);
+            item.onTap.call();
+            // Navigator.pushNamed(context, item.onTap as String);
           }
         },
       );
@@ -222,7 +246,7 @@ class _SliderBarDoctorState extends State<SliderBarDoctor> {
               Navigator.pushNamedAndRemoveUntil(
                 context,
                 '/login',
-                    (route) => false,
+                (route) => false,
               );
             },
             child: const Text('Log Out', style: TextStyle(color: Colors.red)),

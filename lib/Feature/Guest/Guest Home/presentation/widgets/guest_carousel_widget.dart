@@ -27,7 +27,8 @@ class _GuestCarouselWidgetState extends State<GuestCarouselWidget> {
     if (_controller.hasClients) {
       int next = _controller.page!.round() + 1;
       if (next == images.length) next = 0;
-      _controller.animateToPage(next, duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
+      _controller.animateToPage(next,
+          duration: const Duration(milliseconds: 500), curve: Curves.easeInOut);
       Future.delayed(const Duration(seconds: 3), autoSlide);
     }
   }
@@ -52,11 +53,12 @@ class _GuestCarouselWidgetState extends State<GuestCarouselWidget> {
             },
           ),
         ),
-        const Gap( 8),
+        const Gap(8),
         SmoothPageIndicator(
           controller: _controller,
           count: images.length,
-          effect: const WormEffect(dotHeight: 8, dotWidth: 8, activeDotColor: Colors.blue),
+          effect: const WormEffect(
+              dotHeight: 8, dotWidth: 8, activeDotColor: Colors.blue),
         ),
       ],
     );

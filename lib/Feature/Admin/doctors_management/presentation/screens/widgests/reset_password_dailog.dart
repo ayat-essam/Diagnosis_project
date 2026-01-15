@@ -25,28 +25,22 @@ class RestPasswordDailog extends StatelessWidget {
             children: [
               const DialogHeader(title: 'Reste Password'),
               Gap(15.h),
-               TextformFieldAndTitle(
+              TextformFieldAndTitle(
                 title: "Current Password",
-                initialValue:'' ,
-                 onChanged: (value){
-
-                },
+                initialValue: '',
+                onChanged: (value) {},
               ),
               Gap(8.h),
-               TextformFieldAndTitle(
+              TextformFieldAndTitle(
                 title: "New Password",
-                initialValue:'' ,
-                onChanged: (value){
-
-                },
+                initialValue: '',
+                onChanged: (value) {},
               ),
               Gap(8.h),
-               TextformFieldAndTitle(
+              TextformFieldAndTitle(
                 title: "Confirm Password",
-                initialValue:'' ,
-                onChanged: (value){
-
-                },
+                initialValue: '',
+                onChanged: (value) {},
               ),
               Gap(24.h),
               TwoButtonRow(

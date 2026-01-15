@@ -7,7 +7,9 @@ class SetDoctorRateLimitUseCase {
 
   SetDoctorRateLimitUseCase({required this.repository});
 
-  Future<Either<ErrorModel, String>> call({required int maxRequestsPerDay}) async {
-    return await repository.setDoctorRateLimit(maxRequestsPerDay: maxRequestsPerDay);
+  Future<Either<ErrorModel, String>> call(
+      {required int maxRequestsPerDay}) async {
+    return await repository.setDoctorRateLimit(
+        maxRequestsPerDay: maxRequestsPerDay);
   }
 }

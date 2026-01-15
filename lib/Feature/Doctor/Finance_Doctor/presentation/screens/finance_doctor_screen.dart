@@ -17,24 +17,23 @@ class FinanceDoctorScreen extends StatefulWidget {
 class _FinanceDoctorScreenState extends State<FinanceDoctorScreen> {
   @override
   Widget build(BuildContext context) {
-
-    return  const Scaffold(
-      backgroundColor: AppColors.whiteBackground,
-      body: SingleChildScrollView(
-        padding: EdgeInsets.all(16),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.start,
-          children: [
-            CustomAppBar(title: "Good morning Dr.Ahmed",),
-            FinanceHeader(),
-            Gap(16),
-            EarningCardWidget(),
-            Gap(16),
-            TransactionBarChartWidget(),
-          ],
-        ),
-      )
-
-    );
+    return const Scaffold(
+        backgroundColor: AppColors.whiteBackground,
+        body: SingleChildScrollView(
+          padding: EdgeInsets.all(16),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            children: [
+              CustomAppBar(
+                title: "Good morning Dr.Ahmed",
+              ),
+              FinanceHeader(),
+              Gap(16),
+              EarningCardWidget(),
+              Gap(16),
+              TransactionBarChartWidget(),
+            ],
+          ),
+        ));
   }
 }

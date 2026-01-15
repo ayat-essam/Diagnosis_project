@@ -13,9 +13,10 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
     required this.updateUserSettingsUseCase,
   }) : super(const UserSettingsState());
 
-
   Future<void> getUserSettings() async {
-    emit(state.copyWith(isLoading: true,));
+    emit(state.copyWith(
+      isLoading: true,
+    ));
 
     final result = await getUserSettingsUseCase();
 
@@ -37,7 +38,9 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
   }
 
   Future<void> updateUserSettings() async {
-    emit(state.copyWith(isLoading: true,));
+    emit(state.copyWith(
+      isLoading: true,
+    ));
 
     final result = await updateUserSettingsUseCase(
       userSettingsModel: UserSettingsModel(
@@ -52,15 +55,15 @@ class UserSettingsCubit extends Cubit<UserSettingsState> {
     );
   }
 
-  void changeReceiveEmailNotifications(bool value)async {
+  void changeReceiveEmailNotifications(bool value) async {
     emit(state.copyWith(receiveEmailNotifications: value));
 
-   await updateUserSettings();
+    await updateUserSettings();
   }
 
-  void changeTwoFactorEnabled(bool value)async {
+  void changeTwoFactorEnabled(bool value) async {
     emit(state.copyWith(twoFactorEnabled: value));
 
-   await updateUserSettings();
+    await updateUserSettings();
   }
 }

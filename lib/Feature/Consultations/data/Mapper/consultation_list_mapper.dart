@@ -1,4 +1,4 @@
-// import 'package:diagnosis_project/Feature/Consultations/Data/Mapper/consultation_mapper.dart';
+// import 'package:diagnosis_project/Feature/Consultations/data/Mapper/consultation_mapper.dart';
 //
 // import '../../Domain/entity/consultation.dart';
 // import '../models/conultation_model.dart';

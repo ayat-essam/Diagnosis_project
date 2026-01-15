@@ -32,7 +32,7 @@ class CustomAppBarWidget extends StatelessWidget {
           ),
         ],
       ),
-      actions:  const [
+      actions: const [
         Padding(
           padding: EdgeInsets.only(right: 20),
           child: NotificationAppBarWdget(),

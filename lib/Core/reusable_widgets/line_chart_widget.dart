@@ -6,7 +6,6 @@ import 'package:fl_chart/fl_chart.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 
-
 class LineChartWidget extends StatelessWidget {
   final List<LineChartBarData> lineBarsData;
   final List<Map<String, dynamic>>? legendItems;

@@ -1,9 +1,10 @@
 import 'package:diagnosis_project/Core/DI/get_it.dart';
-import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar.dart';
+import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar_widget.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_button.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/AI_Diagnosis_cubit/ai_diagnosis_settings_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/cubit/DoctorWork/doctor_work_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/presentation/widgets/add_admin_dialog.dart';
+import 'package:diagnosis_project/Feature/Admin/presention/Widgets/slider_bar_admin.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
@@ -37,16 +38,10 @@ class _AdminSettingScreenState extends State<AdminSettingScreen> {
       ],
       child: Scaffold(
           backgroundColor: AppColors.whiteBackground,
+          drawer: const SliderBarAdmin(),
           appBar: PreferredSize(
-            preferredSize: const Size.fromHeight(75),
-            child: CustomAppBar(
-              showMenu: true,
-              onMenuTap: () {},
-              showLogo: true,
-              appName: "Diagnosis",
-              logoPath: "assets/image/logo2.png",
-              notificationCount: 5,
-            ),
+            preferredSize: Size.fromHeight(70.h),
+            child: const CustomAppBarWidget(),
           ),
           body: SingleChildScrollView(
             padding: EdgeInsets.all(16.w),
@@ -75,7 +70,7 @@ class _AdminSettingScreenState extends State<AdminSettingScreen> {
                           builder: (context) => const AddAdminDialog(),
                         );
                       },
-                      text: 'Add doctor',
+                      text: 'Add Admin',
                       width: 145.w,
                       prefixIcon: Icons.add,
                     )

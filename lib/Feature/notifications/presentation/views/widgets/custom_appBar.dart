@@ -11,7 +11,10 @@ class CustomAppBar extends StatelessWidget {
     super.key,
     required this.showMenu,
     this.onMenuTap,
-    required this.notificationCount, required bool showLogo, required String logoPath, required String appName,
+    required this.notificationCount,
+    required bool showLogo,
+    required String logoPath,
+    required String appName,
   });
 
   @override
@@ -21,11 +24,10 @@ class CustomAppBar extends StatelessWidget {
       elevation: 0,
       leading: showMenu
           ? IconButton(
-        icon: const Icon(Icons.menu, color: Colors.black),
-        onPressed: onMenuTap,
-      )
+              icon: const Icon(Icons.menu, color: Colors.black),
+              onPressed: onMenuTap,
+            )
           : null,
-
       title: const Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
@@ -47,7 +49,6 @@ class CustomAppBar extends StatelessWidget {
           ),
         ],
       ),
-
       actions: [
         Stack(
           clipBehavior: Clip.none,

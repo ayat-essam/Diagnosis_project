@@ -5,10 +5,8 @@ import 'package:diagnosis_project/Feature/Auth/Data/models/register_request.dart
 import 'package:diagnosis_project/Feature/Auth/Data/models/register_response.dart';
 import 'package:diagnosis_project/Feature/Auth/Domain/Entity/user_entity.dart';
 
-abstract class AuthRemoteDataSource{
+abstract class AuthRemoteDataSource {
+  Future<LoginResponse> login(LoginRequest loginReq);
 
-  Future<LoginResponse> login (LoginRequest loginReq);
-
-  Future<RegisterResponse> register (RegisterRequest registerReq);
-
+  Future<RegisterResponse> register(RegisterRequest registerReq);
 }

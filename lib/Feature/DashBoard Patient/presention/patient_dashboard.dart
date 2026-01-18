@@ -4,6 +4,7 @@ import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/Widgets
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/Widgets/patient_bar_chart.dart';
 import 'package:diagnosis_project/Core/reusable_widgets/custom_app_bar_widget.dart';
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/Widgets/patient_line_chart.dart';
+import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/Widgets/slider_bar.dart';
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/manager/cubit/dash_patient_cubit.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
@@ -23,7 +24,7 @@ class PatientDashboard extends StatelessWidget {
           preferredSize: Size.fromHeight(70.h),
           child: const CustomAppBarWidget(),
         ),
-        // drawer: const SliderBar(),
+         //drawer: const SliderBar(),
         body: SingleChildScrollView(
           padding: const EdgeInsets.all(16),
           child: Column(

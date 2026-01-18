@@ -1,14 +1,20 @@
+import 'package:diagnosis_project/Feature/Admin/Admin_doctor_profile/presentation/views/admin_doctor-profile.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/entities/doctor_entity.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/doctors_mangement_cubit.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/action_option.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/deactivate_dialog.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/screens/widgests/reset_password_dailog.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/reset_password.dart';
+import 'package:diagnosis_project/Feature/Auth/Presention/Reset%20Password/view_models/reset_pass/resete_pass_state.dart';
 import 'package:diagnosis_project/core/Theme%20App/colors.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
 class ActionDialog extends StatelessWidget {
-  const ActionDialog({super.key});
-
+  const ActionDialog({super.key, required this.doctorEntity});
+  final DoctorEntity doctorEntity;
   @override
   Widget build(BuildContext context) {
     return Dialog(
@@ -24,16 +30,29 @@ class ActionDialog extends StatelessWidget {
               ActionOption(
                 title: 'view profile',
                 image: 'assets/image/Eye.png',
-                onTap: () {},
+                onTap: () {
+                  Navigator.pop(context);
+                  Navigator.push(context, MaterialPageRoute(builder: (context) {
+                    return AdminDoctorProfile(id: doctorEntity.id);
+                  }));
+                },
               ),
               Gap(5.h),
               ActionOption(
                 title: 'Deactivate doctor',
                 image: 'assets/image/deactivate.png',
                 onTap: () {
-                   showDialog(
-                      context: context,
-                      builder: (context) => const DeactivateDialog());
+                  Navigator.pop(context); // Close Action Dialog first
+                  final cubit = context.read<
+                      DoctorsManagementCubit>(); // get cubit from parent context
+
+                  showDialog(
+                    context: context,
+                    builder: (_) => BlocProvider.value(
+                      value: cubit,
+                      child: DeactivateDialog(doctorEntity: doctorEntity),
+                    ),
+                  );
                 },
               ),
               Gap(5.h),
@@ -41,9 +60,12 @@ class ActionDialog extends StatelessWidget {
                 title: 'Rest Password',
                 image: 'assets/image/reset_password.png',
                 onTap: () {
-                  showDialog(
-                      context: context,
-                      builder: (context) => const RestPasswordDailog());
+                  Navigator.push(context, MaterialPageRoute(builder: (context){
+                    return const ResetPasswordPage();
+                  }));
+                  // showDialog(
+                  //     context: context,
+                  //     builder: (context) => const RestPasswordDailog());
                 },
               )
             ],

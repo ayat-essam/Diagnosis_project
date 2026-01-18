@@ -22,7 +22,9 @@ class DrawerItemPatients extends StatelessWidget {
     return Container(
       margin: const EdgeInsets.only(bottom: 8),
       decoration: BoxDecoration(
-        color: isActive ? AppColors.BluePrimary.withOpacity(0.1) : Colors.transparent,
+        color: isActive
+            ? AppColors.BluePrimary.withOpacity(0.1)
+            : Colors.transparent,
         borderRadius: BorderRadius.circular(10),
       ),
       child: ListTile(
@@ -32,9 +34,8 @@ class DrawerItemPatients extends StatelessWidget {
           height: 40,
           padding: const EdgeInsets.all(8),
           decoration: BoxDecoration(
-            color: isActive
-                ? AppColors.BluePrimary
-                : Colors.grey.withOpacity(0.1),
+            color:
+                isActive ? AppColors.BluePrimary : Colors.grey.withOpacity(0.1),
             borderRadius: BorderRadius.circular(8),
           ),
           child: buildIcon(),
@@ -43,22 +44,22 @@ class DrawerItemPatients extends StatelessWidget {
           title,
           style: isActive
               ? StyleApp.font16WhiteMedium.copyWith(
-            color: AppColors.BluePrimary,
-            fontWeight: FontWeight.w600,
-          )
+                  color: AppColors.BluePrimary,
+                  fontWeight: FontWeight.w600,
+                )
               : StyleApp.font16WhiteMedium.copyWith(
-            color: Colors.grey[700],
-          ),
+                  color: Colors.grey[700],
+                ),
         ),
         trailing: isActive
             ? Container(
-          width: 8,
-          height: 8,
-          decoration: BoxDecoration(
-            color: AppColors.BluePrimary,
-            shape: BoxShape.circle,
-          ),
-        )
+                width: 8,
+                height: 8,
+                decoration: BoxDecoration(
+                  color: AppColors.BluePrimary,
+                  shape: BoxShape.circle,
+                ),
+              )
             : null,
         onTap: onTap,
         shape: RoundedRectangleBorder(
@@ -69,7 +70,7 @@ class DrawerItemPatients extends StatelessWidget {
   }
 
   Widget buildIcon() {
-    iconPath.toLowerCase().endsWith('.svg') ;
+    iconPath.toLowerCase().endsWith('.svg');
     return SvgPicture.asset(
       iconPath,
       colorFilter: ColorFilter.mode(
@@ -80,5 +81,4 @@ class DrawerItemPatients extends StatelessWidget {
       height: 24,
     );
   }
-
 }

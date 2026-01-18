@@ -6,11 +6,12 @@ import 'package:diagnosis_project/Feature/Drug Checker/Presentation/screens/widg
 import 'package:diagnosis_project/Feature/Drug Checker/Presentation/screens/widgets/drug_card.dart';
 import 'package:diagnosis_project/Feature/Drug%20Checker/Presentation/screens/widgets/gradientCard.dart';
 import 'package:diagnosis_project/Feature/Drug Checker/Presentation/screens/widgets/searchBarWidget.dart';
+
 class DrugCheckerView extends StatefulWidget {
   DrugCheckerView({super.key});
 
   @override
-  State<DrugCheckerView> createState() => _DrugCheckerViewState();  
+  State<DrugCheckerView> createState() => _DrugCheckerViewState();
 }
 
 class _DrugCheckerViewState extends State<DrugCheckerView> {

@@ -34,30 +34,28 @@ class _AddDoctorDialogState extends State<AddDoctorDialog> {
   Widget build(BuildContext context) {
     return BlocProvider(
       create: (context) => sl<AddDoctorCubit>(),
-      child: Builder(
-        builder: (context) {
-          return Dialog(
-              backgroundColor: AppColors.greyLight,
-              shape:
-                  RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
-              child: Container(
-                padding: const EdgeInsets.all(20),
-                child: SingleChildScrollView(
-                  child: Column(
-                    mainAxisSize: MainAxisSize.min,
-                    children: [
-                      Text("Add doctor", style: StyleApp.font18GrayDarkBold),
-                      Gap(20.h),
-                      StepIndicator(currentStep: _currentStep),
-                      Gap(20.h),
-                      _getCurrentStepWidget(context),
-                      const AddDoctorblocListener()
-                    ],
-                  ),
+      child: Builder(builder: (context) {
+        return Dialog(
+            backgroundColor: AppColors.greyLight,
+            shape:
+                RoundedRectangleBorder(borderRadius: BorderRadius.circular(12)),
+            child: Container(
+              padding: const EdgeInsets.all(20),
+              child: SingleChildScrollView(
+                child: Column(
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    Text("Add doctor", style: StyleApp.font18GrayDarkBold),
+                    Gap(20.h),
+                    StepIndicator(currentStep: _currentStep),
+                    Gap(20.h),
+                    _getCurrentStepWidget(context),
+                    const AddDoctorblocListener()
+                  ],
                 ),
-              ));
-        }
-      ),
+              ),
+            ));
+      }),
     );
   }
 
@@ -85,4 +83,3 @@ class _AddDoctorDialogState extends State<AddDoctorDialog> {
     }
   }
 }
-

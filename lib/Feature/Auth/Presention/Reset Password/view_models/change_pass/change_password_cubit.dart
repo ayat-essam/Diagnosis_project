@@ -7,15 +7,13 @@ import '../../../../../../Core/error/exceptions.dart';
 import 'change_password_state.dart';
 
 class ChangePasswordCubit extends Cubit<ChangePasswordState> {
-  ChangePasswordCubit(this.apiConsumer)
-      : super(ChangePasswordInitial());
+  ChangePasswordCubit(this.apiConsumer) : super(ChangePasswordInitial());
 
   final ApiConsumer apiConsumer;
 
   final TextEditingController currentPasswordController =
       TextEditingController();
-  final TextEditingController newPasswordController =
-      TextEditingController();
+  final TextEditingController newPasswordController = TextEditingController();
   final TextEditingController confirmNewPasswordController =
       TextEditingController();
 
@@ -28,22 +26,19 @@ class ChangePasswordCubit extends Cubit<ChangePasswordState> {
         data: {
           "currentPassword": currentPasswordController.text.trim(),
           "newPassword": newPasswordController.text.trim(),
-          "confirmNewPassword":
-              confirmNewPasswordController.text.trim(),
+          "confirmNewPassword": confirmNewPasswordController.text.trim(),
         },
       );
 
       emit(
         ChangePasswordSuccess(
-          message: response["message"] ??
-              "Password changed successfully",
+          message: response["message"] ?? "Password changed successfully",
         ),
       );
     } on ServerException catch (e) {
       emit(
         ChangePasswordFailure(
-          message: e.errorModel.errorMessage ??
-              "Something went wrong",
+          message: e.errorModel.errorMessage ?? "Something went wrong",
         ),
       );
     }

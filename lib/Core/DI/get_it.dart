@@ -16,12 +16,24 @@ import 'package:diagnosis_project/Feature/Admin/Admin%20Setting%20System/present
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/datasource/doctor_management_remote_data_source.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/datasource/doctor_management_remote_data_source_imp.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/data/repositories/doctors_management_repo_imp.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/add_doctor_use_case.dart';
-import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/doctors_mangement_repo.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/add_doctor_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/repos/doctors_mangement_repo.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/deactivate_doctor_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/get_doctor_profile_use_case.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/domain/usecases/get_doctors_usecase.dart';
 import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/add_doctor_cubit.dart';
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/data/repo/dashboard_repo_impl.dart';
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/domain/repo/dashboard_repo.dart';
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/manager/cubit/dash_patient_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/doctors_management/presentation/cubit/doctors_mangement_cubit.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/data/datasource/patient_management_remote_data_source.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/data/datasource/patient_management_remote_data_source_imp.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/data/repositories/patients_management_repo_imp.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/repos/patient_mangement_repo.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/usecases/delete_patient_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/usecases/get_patient_profile_use_case.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/usecases/get_patients_usecase.dart';
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/presentation/cubit/patients_mangement_cubit.dart';
 import 'package:diagnosis_project/Feature/Settings/data/datasource/profile_remote_data_source.dart';
 import 'package:diagnosis_project/Feature/Settings/data/datasource/user_settings_data_source.dart';
 import 'package:diagnosis_project/Feature/Settings/data/repositories/pofile_repository_imp.dart';
@@ -34,6 +46,18 @@ import 'package:diagnosis_project/Feature/Settings/domain/usecases/update_profil
 import 'package:diagnosis_project/Feature/Settings/domain/usecases/update_user_settings_use_case.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/cubit/profile_cubit.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/cubit/user_settings_cubit.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/datasources/prescription_remote_datasource.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/datasources/treatment_remote_datasource.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/prescriprion_remotesource_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/prescription_repository_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/treatment_remotesource_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/data/repositories/treatment_repository_impl.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/repositories/Treatment_repository.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/repositories/prescription_repository.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/usecase/add_prescription_usecase.dart';
+import 'package:diagnosis_project/Feature/Treatment/domain/usecase/treatment_usecase.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/cubit/prescription/prescription_cubit.dart';
+import 'package:diagnosis_project/Feature/Treatment/presentation/cubit/treatment_plan/treatment_plan_cubit.dart';
 import 'package:get_it/get_it.dart';
 import 'package:dio/dio.dart';
 import 'package:diagnosis_project/Core/api/api_consumer.dart';
@@ -55,8 +79,32 @@ Future<void> setupServiceLocator() async {
   );
   // ---------------- Domain Layer (DoctorManagement Use Cases) ----------------
   sl.registerLazySingleton(() => AddDoctorUseCase(sl()));
+  sl.registerLazySingleton(() => GetDoctorsUseCase(sl()));
+  sl.registerLazySingleton(() => GetDoctorProfileUseCase(sl()));
+  sl.registerLazySingleton(() => DeactivateDoctorUsecase(sl()));
 
   sl.registerFactory(() => AddDoctorCubit(sl()));
+  sl.registerFactory(() => DoctorsManagementCubit(
+      getDoctorProfileUseCase: sl(),
+      getDoctorsUseCase: sl(),
+      deactivateDoctorUsecase: sl()));
+  // ---------------- Data Layer (Patientmangement Data Sources) ----------------
+  sl.registerLazySingleton<PatientManagementRemoteDataSource>(
+    () => PatientManagementRemoteDataSourceImp(sl()),
+  );
+  // ---------------- Data Layer (Patientmangement Repositories) ----------------
+  sl.registerLazySingleton<PatientMangementRepo>(
+    () => PatientsManagementRepoImp(dataSource: sl()),
+  );
+  // ---------------- Domain Layer (Patientmangement Use Cases) ----------------
+  sl.registerLazySingleton(() => DeletePatientUsecase(sl()));
+  sl.registerLazySingleton(() => GetPatientsUsecase(sl()));
+  sl.registerLazySingleton(() => GetPatientProfileUseCase(sl()));
+
+  sl.registerFactory(() => PatientsMangementCubit(
+      getPatientsUsecase: sl(),
+      getPatientProfileUseCase: sl(),
+      deletePatientUsecase: sl()));
 
 // ---------------- data Layer ( Profile data Source) ----------------
   sl.registerLazySingleton<ProfileRemoteDataSource>(
@@ -148,10 +196,23 @@ Future<void> setupServiceLocator() async {
     () => DoctorWorkCubit(
         setDoctorRateLimitUseCase: sl(), setDoctorWorkHourUseCase: sl()),
   );
-  sl.registerLazySingleton<DashboardRepo>(
-    () => DashboardRepoImpl(apiConsumer: sl()),
-  );
-  sl.registerFactory(
-    () => DashPatientCubit(sl()),
-  );
+
+  //--------------Domain Layer(Treatment-get patient)--------------------///
+  sl.registerLazySingleton(() => AddPrescriptionUseCase(sl()));
+  sl.registerFactory(() => AddPrescriptionCubit(sl()));
+  //--------------Data Layer(Treatment-get patient)--------------------///
+  sl.registerLazySingleton<PrescriptionRepository>(
+      () => PrescriptionRepositoryImpl(sl()));
+
+  //------------Data Layer(Treatment-get patient)//
+  sl.registerLazySingleton<PrescriptionRemoteDataSource>(
+      () => PrescriptionRemoteDataSourceImpl(sl()));
+
+  ///-------------Data layer(treatment-plan) ///
+  sl.registerLazySingleton<TreatmentUseCase>(() => TreatmentUseCase(sl()));
+  sl.registerFactory<TreatmentCubit>(() => TreatmentCubit(sl()));
+  sl.registerLazySingleton<TreatmentRepository>(
+      () => TreatmentRepositoryImpl(sl()));
+  sl.registerLazySingleton<TreatmentRemoteDataSource>(
+      () => TreatmentRemoteDataSourceImpl(sl()));
 }

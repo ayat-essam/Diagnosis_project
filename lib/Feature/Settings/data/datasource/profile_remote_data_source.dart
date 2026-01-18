@@ -3,8 +3,7 @@ import 'package:diagnosis_project/Feature/Settings/data/models/profile_model.dar
 
 abstract class ProfileRemoteDataSource {
   Future<ProfileModel> getProfile();
-  Future<void> updateProfile(
-      {required ProfileModel profileModel});
+  Future<void> updateProfile({required ProfileModel profileModel});
 }
 
 class ProfileRemoteDataSourceImp implements ProfileRemoteDataSource {
@@ -17,8 +16,7 @@ class ProfileRemoteDataSourceImp implements ProfileRemoteDataSource {
   }
 
   @override
-  Future<void> updateProfile(
-      {required ProfileModel profileModel}) async {
+  Future<void> updateProfile({required ProfileModel profileModel}) async {
     await apiConsumer.put(
       "/Settings/profile",
       data: profileModel.toJson(),

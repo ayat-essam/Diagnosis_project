@@ -1,5 +1,7 @@
 class AddDoctorRequest {
   final String userName;
+  final String fName;
+  final String lName;
   final String email;
   final String password;
   final String confirmPassword;
@@ -13,6 +15,8 @@ class AddDoctorRequest {
 
   AddDoctorRequest({
     required this.userName,
+    required this.fName,
+    required this.lName,
     required this.email,
     required this.password,
     required this.confirmPassword,
@@ -28,6 +32,8 @@ class AddDoctorRequest {
   Map<String, dynamic> toJson() {
     return {
       "userName": userName,
+      "FName": fName,
+      "lName": lName,
       "email": email,
       "password": password,
       "confirmPassword": confirmPassword,

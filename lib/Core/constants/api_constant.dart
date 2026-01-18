@@ -1,12 +1,18 @@
 class ApiConstants {
   static String baseURL = 'http://diagnosis.runasp.net';
-
+  
   static String resetPasswordURL = '$baseURL/Auth/change-password';
   static String forgetPasswordURL = '$baseURL/Auth/forget-password';
   static String changePasswordURL = '$baseURL/Auth/change-password';
   static const String login = '/Auth/Login';
   static const String register = 'Auth/register';
   static const String addDoctorEndPoint = '/DoctorManagement/add-doctor';
+  static const String getDoctorsEndPoint = '/DoctorManagement';
+  static const String getDoctorProfileEndPoint = '/DoctorManagement/';
+  static const String deactivateDoctorEndPoint = '/DoctorManagement//status/';
+  static const String getPatientsEndPoint = '/PatientManagement';
+  static const String getPatientProfileEndPoint = '/PatientManagement/';
+  static const String deletePatientEndPoint = '/PatientManagement//status/';
   static const String systemSettingsBase = '/SystemSettings';
   static const String addAdmin = '$systemSettingsBase/add-admin';
   static const String aiRateLimit = '$systemSettingsBase/ai/rate-limit';

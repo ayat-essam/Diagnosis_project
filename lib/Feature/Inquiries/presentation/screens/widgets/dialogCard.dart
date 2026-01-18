@@ -198,7 +198,7 @@ class Attachmens extends StatelessWidget {
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
               children: files!.map((filePath) {
-                 final fileName = getCleanFileName(filePath);
+                final fileName = getCleanFileName(filePath);
 
                 return Padding(
                   padding: const EdgeInsets.symmetric(vertical: 6),

@@ -34,13 +34,13 @@ class DetailsStep extends StatelessWidget {
         TextformFieldAndTitle(
           title: "Date of Birth",
           initialValue: cubit.state.birthDate.toString(),
-          onChanged: cubit.onBirthDateChanged,
+          onChanged: (val) => cubit.onBirthDateChanged(val),
         ),
         Gap(8.h),
         TextformFieldAndTitle(
           title: "National ID",
           initialValue: cubit.state.nationalId,
-          onChanged: cubit.onNationalIdChanged,
+          onChanged: (val) => cubit.onNationalIdChanged(val),
         ),
         Gap(8.h),
         Text(
@@ -60,13 +60,13 @@ class DetailsStep extends StatelessWidget {
         //       child: Row(
         //         children: [
         //           const Radio<String>(
-        //               value: 'Male', activeColor: AppColors.BluePrimary),
+        //             value: 'Male', activeColor: AppColors.BluePrimary),
         //           Text('Male',
         //               style: StyleApp.font12BlackSemiBold
         //                   .copyWith(color: AppColors.grayDark)),
         //           Gap(8.w),
         //           const Radio<String>(
-        //               value: 'Female', activeColor: AppColors.BluePrimary),
+        //             value: 'Female', activeColor: AppColors.BluePrimary),
         //           Text(
         //             'Female',
         //             style: StyleApp.font12BlackSemiBold

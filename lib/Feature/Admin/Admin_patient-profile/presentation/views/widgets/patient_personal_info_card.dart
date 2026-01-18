@@ -1,9 +1,12 @@
+import 'package:diagnosis_project/Feature/Admin/patients_mangement/domain/entities/patient_profile_entity.dart';
 import 'package:diagnosis_project/Feature/Settings/presentation/views/widgets/gradient_border.dart';
 import 'package:flutter/material.dart';
+import 'package:skeletonizer/skeletonizer.dart';
 
-class PersonalInfoCard extends StatelessWidget {
-  const PersonalInfoCard({super.key});
-
+class PatientPersonalInfoCard extends StatelessWidget {
+  const PatientPersonalInfoCard(
+      {super.key, required this.patientProfileEntity});
+  final PatientProfileEntity patientProfileEntity;
   @override
   Widget build(BuildContext context) {
     return GradientBorder(
@@ -18,22 +21,24 @@ class PersonalInfoCard extends StatelessWidget {
           mainAxisSize: MainAxisSize.min,
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-            const Text(
-              "Personal Information",
-              style: TextStyle(
-                  fontSize: 15,
-                  fontWeight: FontWeight.w500,
-                  color: Color(0xff505050),
-                  fontFamily: 'Poppins'),
+            const Skeleton.keep(
+              child: Text(
+                "Personal Information",
+                style: TextStyle(
+                    fontSize: 15,
+                    fontWeight: FontWeight.w500,
+                    color: Color(0xff505050),
+                    fontFamily: 'Poppins'),
+              ),
             ),
             const SizedBox(height: 15),
-            infoRow("First Name", "Lisa"),
+            infoRow("Full Name", patientProfileEntity.firstName),
             const SizedBox(height: 25),
-            infoRow("Second Name", "Thompson"),
+            infoRow("Second Name", patientProfileEntity.lastName),
             const SizedBox(height: 25),
-            infoRow("Email", "123patient@email.com"),
+            infoRow("Email", patientProfileEntity.email),
             const SizedBox(height: 25),
-            infoRow("Gender", "Female"),
+            infoRow("Gender", patientProfileEntity.gender),
           ],
         ),
       ),
@@ -46,13 +51,15 @@ class PersonalInfoCard extends StatelessWidget {
       children: [
         Row(
           children: [
-            Text(
-              label,
-              style: const TextStyle(
-                  fontSize: 10,
-                  fontWeight: FontWeight.w400,
-                  color: Color(0xff505050),
-                  fontFamily: 'Poppins'),
+            Skeleton.keep(
+              child: Text(
+                label,
+                style: const TextStyle(
+                    fontSize: 10,
+                    fontWeight: FontWeight.w400,
+                    color: Color(0xff505050),
+                    fontFamily: 'Poppins'),
+              ),
             ),
             const Spacer(),
             Text(

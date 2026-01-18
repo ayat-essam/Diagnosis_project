@@ -29,7 +29,7 @@ class _GuestHomeScreenState extends State<GuestHomeScreen> {
     return Scaffold(
       key: _scaffoldKey,
       backgroundColor: AppColors.whiteBackground,
-drawer: const SliderBar(),
+      drawer: const SliderBar(),
       appBar: PreferredSize(
         preferredSize: Size.fromHeight(75.h),
         child: CustomAppBar(
@@ -43,9 +43,7 @@ drawer: const SliderBar(),
           notificationCount: 5,
         ),
       ),
-
       body: pages[currentIndex],
-
       bottomNavigationBar: CustomBottomNav(
         currentIndex: currentIndex,
         onTap: (index) {

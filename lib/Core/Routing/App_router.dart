@@ -12,7 +12,6 @@ import '../../Feature/DashBoard Patient/presention/Widgets/slider_bar.dart';
 import '../../Feature/DashBoard Patient/presention/patient_dashboard.dart';
 import '../../Feature/Directory/presentation/screens/Directory_ Screen.dart';
 
-
 import '../../Feature/Drug Checker/Presentation/screens/Drug_Checker_Screen.dart';
 import '../../Feature/Help/presentation/screens/Help_Screen.dart';
 

@@ -22,8 +22,8 @@ class AddDoctorblocListener extends StatelessWidget {
         }
 
         if (state.successMessage != null) {
-          Navigator.pop(context);
-          Navigator.pop(context);
+          Navigator.of(context, rootNavigator: true).pop(true);
+
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
                 content: Text(state.successMessage!),

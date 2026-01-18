@@ -19,6 +19,4 @@ class RegisterResponse {
   //     token: token ?? this.token,
   //   );
   // }
-
-
 }

@@ -36,43 +36,36 @@ void showAIResultDialog(BuildContext context) {
                 color: AppColors.grayTextChart,
               ),
               Gap(12.h),
-
               const MetricText(
                 title: 'Accuracy',
                 value: '87%',
                 valueColor: AppColors.BluePrimary,
               ),
               Gap(8.h),
-
               const MetricText(
                 title: 'Repetitions',
                 value: '45',
                 valueColor: AppColors.BluePrimary,
               ),
               Gap(8.h),
-
               const MetricText(
                 title: 'Errors',
                 value: '3',
                 valueColor: AppColors.BluePrimary,
               ),
               Gap(8.h),
-
               const MetricText(
                 title: 'Duration',
                 value: '15 minutes',
                 valueColor: AppColors.BluePrimary,
               ),
               Gap(8.h),
-
               const MetricText(
                 title: 'Doctor’s Note',
                 value: '“Good performance, focus more on shoulder posture”',
                 valueColor: AppColors.BluePrimary,
               ),
-
               Gap(15.h),
-
               SizedBox(
                 width: double.infinity,
                 child: CustomButton(
@@ -88,7 +81,6 @@ void showAIResultDialog(BuildContext context) {
           ),
         ),
       );
-
     },
   );
 }

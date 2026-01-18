@@ -17,6 +17,7 @@ class CustomAppButton extends StatelessWidget {
     this.backgroundColor = AppColors.BluePrimary,
     this.verticalPadding = 6,
     this.borderColor = AppColors.BluePrimary,
+    // required this.textColor,
   });
   final String text;
   final double borderRedius;
@@ -24,6 +25,7 @@ class CustomAppButton extends StatelessWidget {
   final IconData? prefixIcon;
   final Color backgroundColor;
   final Color borderColor;
+  // final Color textColor;
   final double verticalPadding;
 
   @override

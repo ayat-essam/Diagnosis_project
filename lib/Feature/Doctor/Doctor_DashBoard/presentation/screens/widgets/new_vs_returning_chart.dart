@@ -7,13 +7,25 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:gap/gap.dart';
 
+import '../../../domain/entities/doctor_dashboard_entity.dart';
 import 'custom_linear_gradiant_circle.dart';
 
 class NewVsReturningChart extends StatelessWidget {
-  const NewVsReturningChart({super.key});
+  final List<NewVsReturningEntity> data;
+
+  const NewVsReturningChart({super.key, required this.data});
 
   @override
   Widget build(BuildContext context) {
+    final maxValue = data.isEmpty
+        ? 10
+        : data
+            .map((e) => e.newPatients > e.returningPatients
+                ? e.newPatients
+                : e.returningPatients)
+            .reduce((a, b) => a > b ? a : b)
+            .toDouble();
+
     return CustomLinearGradiantContainer(
       child: SizedBox(
           height: 220.h,
@@ -39,7 +51,7 @@ class NewVsReturningChart extends StatelessWidget {
                   child: BarChart(
                     BarChartData(
                       alignment: BarChartAlignment.spaceBetween,
-                      maxY: 70,
+                      maxY: maxValue + 10,
                       barTouchData: BarTouchData(enabled: false),
                       titlesData: FlTitlesData(
                         topTitles: const AxisTitles(
@@ -53,11 +65,21 @@ class NewVsReturningChart extends StatelessWidget {
                           sideTitles: SideTitles(
                             showTitles: true,
                             reservedSize: 40,
-                            getTitlesWidget: (value, meta) => SideTitleWidget(
-                              axisSide: meta.axisSide,
-                              child: Text(ChartData.days[value.toInt()],
-                                  style: StyleApp.font9grayTextChart),
-                            ),
+                            getTitlesWidget: (value, meta) {
+                              final index = value.toInt();
+                              if (index < 0 || index >= data.length) {
+                                return const SizedBox.shrink();
+                              }
+                              return SideTitleWidget(
+                                axisSide: meta.axisSide,
+                                child: Text(
+                                  data[index].day,
+                                  style: StyleApp.font9grayTextChart,
+                                ),
+                              );
+                            },
+
+                           
                           ),
                         ),
                         leftTitles: AxisTitles(
@@ -93,49 +115,33 @@ class NewVsReturningChart extends StatelessWidget {
   }
 
   List<BarChartGroupData> _generateBarGroups() {
-    final patientData = ChartData.patientData;
-    const days = ChartData.days;
-
-    return List.generate(days.length, (i) {
-      final newPatients = patientData['New']![i];
-      final returningPatients = patientData['Returning']![i];
+    return List.generate(data.length, (i) {
+      final item = data[i];
 
       return BarChartGroupData(
         x: i,
-        barsSpace: 2,
+        barsSpace: 4,
         barRods: [
           BarChartRodData(
-            toY: newPatients,
+            toY: item.newPatients.toDouble(),
             color: AppColors.BluePrimary,
-            width: 20,
+            width: 16,
             borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(3), topRight: Radius.circular(3)),
+              topLeft: Radius.circular(4),
+              topRight: Radius.circular(4),
+            ),
           ),
           BarChartRodData(
-            toY: returningPatients,
+            toY: item.returningPatients.toDouble(),
             color: AppColors.blueDark,
-            width: 20,
+            width: 16,
             borderRadius: const BorderRadius.only(
-                topLeft: Radius.circular(3), topRight: Radius.circular(3)),
+              topLeft: Radius.circular(4),
+              topRight: Radius.circular(4),
+            ),
           ),
         ],
       );
     });
   }
-}
-
-class ChartData {
-  static const List<String> days = [
-    'Sun',
-    'Mon',
-    'Tue',
-    'Wed',
-    'Thu',
-    'Fri',
-  ];
-
-  static final Map<String, List<double>> patientData = {
-    'New': [30, 45, 35, 20, 50, 40, 30],
-    'Returning': [15, 25, 10, 30, 15, 18, 20],
-  };
 }

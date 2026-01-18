@@ -2,7 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../../Core/Theme App/colors.dart';
 import '../../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
-import '../../../../Doctor/Doctors/widgets/custom_bottom_nav.dart';
+import '../../../../Doctor/Doctors/presentation/screens/widgets/custom_bottom_nav.dart';
 import '../../../../notifications/presentation/views/widgets/custom_appBar.dart';
 import 'guest_home_content.dart';
 

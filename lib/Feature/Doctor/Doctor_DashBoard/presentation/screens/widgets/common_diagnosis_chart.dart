@@ -51,6 +51,7 @@ class CommonDiagnosisChart extends StatelessWidget {
                     CustomAppButton(
                       onTap: () {},
                       text: 'This month',
+                      borderColor: AppColors.BluePrimary,
                       borderRedius: 25.r,
                       width: 110.w,
                       backgroundColor: AppColors.whiteBackground,

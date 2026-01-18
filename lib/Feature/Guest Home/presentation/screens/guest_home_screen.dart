@@ -3,7 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import '../../../../Core/Theme App/colors.dart';
 import '../../../../Core/reusable_widgets/custom_app_bar.dart';
 import '../../../DashBoard Patient/presention/Widgets/slider_bar.dart';
-import '../../../Doctor/Doctors/widgets/custom_bottom_nav.dart';
+import '../../../Doctor/Doctors/presentation/screens/widgets/custom_bottom_nav.dart';
 import 'guest_home_content.dart';
 
 class GuestHomeScreen extends StatefulWidget {

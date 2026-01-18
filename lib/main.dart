@@ -12,7 +12,7 @@ import 'package:diagnosis_project/Feature/Consultations/presentation/views/Consu
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/doctor_dashboard_screen.dart';
-import 'package:diagnosis_project/Feature/Doctor/Doctors/doctors_screen.dart';
+import 'package:diagnosis_project/Feature/Doctor/Doctors/presentation/screens/doctors_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/screens/recent_transactions_screen.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
 import 'package:diagnosis_project/Feature/Treatment/presentation/screens/treatment_mangment.dart';

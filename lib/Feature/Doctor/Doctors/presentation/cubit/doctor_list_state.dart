@@ -1,4 +1,4 @@
-import 'package:diagnosis_project/Feature/Doctor/My%20Patient/Presention/cubit/doctor_list_cubit.dart';
+import 'package:diagnosis_project/Feature/Doctor/Doctors/presentation/cubit/doctor_list_cubit.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 import '../../domain/usecases/get_doctor_list_usecase.dart';

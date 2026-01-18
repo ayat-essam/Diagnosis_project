@@ -1,8 +1,16 @@
-import 'package:flutter/material.dart';
-import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:flutter_svg/svg.dart';
 
-import '../../../Core/Theme App/colors.dart';
+import 'package:dio/dio.dart';
+import 'package:flutter/material.dart';
+import 'package:flutter_bloc/flutter_bloc.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
+
+import '../../../../../Core/Theme App/colors.dart';
+import '../../../../../Core/api/dio_consumer.dart';
+import '../../data/data_sources/doctor_remote_data_source.dart';
+import '../../data/repository/doctor_repository_impl.dart';
+import '../../domain/usecases/get_doctor_list_usecase.dart';
+import '../cubit/doctor_list_cubit.dart';
+import '../cubit/doctor_list_state.dart';
 import 'widgets/custom_bottom_nav.dart';
 import 'widgets/doctor_card.dart';
 
@@ -11,12 +19,29 @@ class DoctorsScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final apiConsumer = DioConsumer(dio: Dio());
+    final remote = DoctorRemoteDataSourceImpl(apiConsumer: apiConsumer);
+    final repo = DoctorRepositoryImpl(remoteDataSource: remote);
+
+    return BlocProvider(
+      create: (_) => DoctorListCubit(
+        GetDoctorListUseCase(repo),
+      )..getDoctors(),
+      child: const DoctorsScreenView(),
+    );
+  }
+}
+
+class DoctorsScreenView extends StatelessWidget {
+  const DoctorsScreenView({super.key});
+
+  @override
+  Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         backgroundColor: Colors.white,
         elevation: 6,
         shadowColor: Colors.black.withOpacity(0.2),
-        // shadowColor: Colors.transparent,
         bottom: PreferredSize(
           preferredSize: Size.fromHeight(4.0),
           child: Container(
@@ -59,7 +84,6 @@ class DoctorsScreen extends StatelessWidget {
                   ),
                 ),
               ),
-              //SvgPicture.asset('assets/image_SVG/notification.svg'),
             ]),
             SizedBox(width: 10.w),
             CircleAvatar(
@@ -90,23 +114,47 @@ class DoctorsScreen extends StatelessWidget {
             ],
           ),
           Expanded(
-            child: ListView.builder(
-              shrinkWrap: true,
-              itemCount: 10,
-              itemBuilder: (context, index) {
-                return DoctorCard(
-                  name: "Dr. Jelen Kaya",
-                  specialty: "Dermatologist",
-                  experience: "10",
-                  nextAvailable: "Today, 3:00 PM",
-                  rating: "4.9",
-                  reviews: "270",
-                  image: "assets/image/doctor_profile.png",
-                  onBook: () {},
-                );
+            child: BlocBuilder<DoctorListCubit, DoctorListState>(
+              builder: (context, state) {
+                if (state is DoctorListLoading) {
+                  return const Center(child: CircularProgressIndicator());
+                }
+
+                if (state is DoctorListSuccess) {
+                  return ListView.builder(
+                    itemCount: state.doctors.length,
+                    itemBuilder: (context, index) {
+                      final doctor = state.doctors[index];
+
+                      return DoctorCard(
+                        name: doctor.name,
+                        specialty: doctor.specialization ?? 'General',
+                        experience: doctor.experienceYears.toString(),
+                        rating: doctor.rating?.toStringAsFixed(1) ?? '0',
+                        image: doctor.profileImageUrl?.isNotEmpty == true
+                            ? doctor.profileImageUrl!
+                            : 'assets/image/doctor_profile.png',
+                        onBook: () {},
+                        nextAvailable: "Today, 3:00 PM",
+                        reviews: "270",
+                      );
+                    },
+                  );
+                }
+
+                if (state is DoctorListError) {
+                  return Center(
+                    child: Text(
+                      state.message,
+                      style: const TextStyle(color: Colors.red),
+                    ),
+                  );
+                }
+
+                return const SizedBox();
               },
             ),
-          )
+          ),
         ],
       ),
       bottomNavigationBar: CustomBottomNav(

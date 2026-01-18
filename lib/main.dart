@@ -11,7 +11,7 @@ import 'package:diagnosis_project/Feature/Consultations/presentation/views/Consu
 import 'package:diagnosis_project/Feature/DashBoard%20Patient/presention/patient_dashboard.dart';
 import 'package:diagnosis_project/Feature/Diagnosis%20Module/Presentation/screens/Diagnosis_Module_Screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Doctor_DashBoard/presentation/screens/doctor_dashboard_screen.dart';
-import 'package:diagnosis_project/Feature/Doctor/Doctors/doctors_screen.dart';
+import 'package:diagnosis_project/Feature/Doctor/Doctors/presentation/screens/doctors_screen.dart';
 import 'package:diagnosis_project/Feature/Doctor/Finance_Doctor/presentation/screens/recent_transactions_screen.dart';
 import 'package:diagnosis_project/Feature/Guest%20Book%20Apoinment/Presention/screens/guest_book_apointment_screen.dart';
 
@@ -30,6 +30,7 @@ import 'Core/DI/depancicy_injection.dart';
 import 'Core/Theme App/colors.dart';
 import 'Feature/Admin/Admin Setting System/presentation/screens/admin_setting_screen.dart';
 import 'Feature/Doctor/Finance_Doctor/presentation/screens/finance_doctor_screen.dart';
+import 'Feature/Doctor/My Patient/Presention/my_patient_screen.dart';
 import 'Feature/Guest Home/presentation/screens/guest_home_screen.dart';
 import 'Feature/Help/presentation/screens/Help_Screen.dart';
 import 'Feature/SuggestedTreatment/presentation/view/suggested_treatment.dart';
@@ -81,7 +82,7 @@ class MyApp extends StatelessWidget {
                   ],
                   supportedLocales: S.delegate.supportedLocales,
                   debugShowCheckedModeBanner: false,
-                  home: const DoctorDashboardScreen(),
+                  home: const DoctorsScreen(),
 
 
                   //DoctorsScreen(),
